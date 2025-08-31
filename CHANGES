@@ -1,0 +1,18 @@
+(Errata release) We've updated libmpv to version 1.32.9 as there was a security vulnerability that was fixed.
+
+### Changes
+
+This release contains a variety of changes, including, but not limited to:
+
+- `[*]` Fixed [CVE-2024-10573](https://nvd.nist.gov/vuln/detail/CVE-2024-10573)
+
+Review the commit history if you want to get a deep insight about the changes.
+
+### Feedback?
+
+If you have issues with this version, report to us by [making a new issue ticket](https://gitlab.com/aptivi/main/BassBoom/-/issues/new).
+
+### Sum hashes
+
+To verify integrity of your download, compare the SHA256 sum of your downloaded file with the following information:
+
