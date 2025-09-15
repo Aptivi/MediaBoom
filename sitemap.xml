@@ -2,295 +2,295 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Albums.MusicFileLabeler.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Albums.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.BasoliaMedia.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Exceptions.BasoliaException.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Exceptions.BasoliaMiscException.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Exceptions.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.File.FileTools.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.File.FileType.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.File.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Helpers.MpvCommandHandler.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Helpers.MpvPropertyHandler.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Helpers.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.InitBasolia.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Lyrics.Lyric.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Lyrics.LyricLine.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Lyrics.LyricLineWord.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Lyrics.LyricReader.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Lyrics.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.AudioInfoTools.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.PlaybackPositioningTools.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.PlaybackState.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.PlaybackTools.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.Playlists.Enumerations.SongType.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.Playlists.Enumerations.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.Playlists.Instances.TrackInfo.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.Playlists.Instances.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.Playlists.Playlist.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.Playlists.PlaylistParser.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.Playlists.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Playback.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Radio.IRadioServer.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Radio.IcecastServer.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Radio.RadioServerType.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Radio.RadioTools.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Radio.ShoutcastServer.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Radio.ShoutcastVersion.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Radio.StreamInfo.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.Radio.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Basolia.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.MpvEofReason.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.MpvError.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.MpvEventId.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.MpvLogLevel.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.MpvRenderParamType.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.MpvValueFormat.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/api/BassBoom.Native.Interop.Enumerations.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/BassBoom/index.html</loc>
-    <lastmod>2025-09-15T11:25:15+00:00</lastmod>
+    <lastmod>2025-09-15T11:30:16+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
