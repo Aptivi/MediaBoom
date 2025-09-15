@@ -26,6 +26,9 @@ jobs:
       - name: Setup Mono (Unix)
         if: matrix.runs-on == 'ubuntu-latest'
         run: sudo apt install mono-complete
+      - name: Setup Mono (macOS)
+        if: matrix.runs-on == 'macos-latest'
+        run: brew install mono
       - name: Setup real 7zip (macOS)
         if: matrix.runs-on == 'macos-latest'
         uses: milliewalky/setup-7-zip@v2
