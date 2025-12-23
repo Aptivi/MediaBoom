@@ -3,5 +3,5 @@
 set ROOTDIR=%~dp0\..
 
 REM Download libmpv for Windows and build
-if not exist "%TEMP%\" powershell -Command "Invoke-WebRequest https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-22-5820906/ -OutFile ""%TEMP%\"""
-if not exist "%TEMP%\" powershell -Command "Invoke-WebRequest https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-22-5820906/ -OutFile ""%TEMP%\"""
+if not exist "%TEMP%\" powershell -Command "Invoke-WebRequest https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-23-6dff941/ -OutFile ""%TEMP%\"""
+if not exist "%TEMP%\" powershell -Command "Invoke-WebRequest https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-23-6dff941/ -OutFile ""%TEMP%\"""
