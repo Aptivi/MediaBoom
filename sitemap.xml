@@ -2,295 +2,295 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Albums.MusicFileLabeler.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Albums.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.BasoliaMedia.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Exceptions.BasoliaException.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Exceptions.BasoliaMiscException.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Exceptions.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.File.FileTools.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.File.FileType.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.File.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Helpers.MpvCommandHandler.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Helpers.MpvPropertyHandler.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Helpers.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.InitBasolia.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Lyrics.Lyric.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Lyrics.LyricLine.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Lyrics.LyricLineWord.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Lyrics.LyricReader.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Lyrics.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.AudioInfoTools.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.PlaybackPositioningTools.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.PlaybackState.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.PlaybackTools.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.Playlists.Enumerations.SongType.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.Playlists.Enumerations.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.Playlists.Instances.TrackInfo.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.Playlists.Instances.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.Playlists.Playlist.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.Playlists.PlaylistParser.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.Playlists.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Playback.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Radio.IRadioServer.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Radio.IcecastServer.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Radio.RadioServerType.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Radio.RadioTools.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Radio.ShoutcastServer.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Radio.ShoutcastVersion.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Radio.StreamInfo.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.Radio.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Basolia.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.MpvEofReason.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.MpvError.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.MpvEventId.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.MpvLogLevel.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.MpvRenderParamType.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.MpvValueFormat.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/api/MediaBoom.Native.Interop.Enumerations.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/MediaBoom/index.html</loc>
-    <lastmod>2025-12-25T05:11:00+00:00</lastmod>
+    <lastmod>2025-12-25T05:26:53+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
