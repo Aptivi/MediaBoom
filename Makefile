@@ -1,11 +1,11 @@
 MODAPI = 3
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
 
-OUTPUT = "$(ROOT_DIR)/private/BassBoom.Cli/bin/$(ENVIRONMENT)/net8.0"
-BINARIES = "$(ROOT_DIR)/assets/bassboom"
-MANUALS = "$(ROOT_DIR)/assets/bassboom.1"
-DESKTOPS = "$(ROOT_DIR)/assets/bassboom.desktop"
-BRANDINGS = "$(ROOT_DIR)/assets/OfficialAppIcon-BassBoom-512.png"
+OUTPUT = "$(ROOT_DIR)/private/MediaBoom.Cli/bin/$(ENVIRONMENT)/net8.0"
+BINARIES = "$(ROOT_DIR)/assets/mediaboom"
+MANUALS = "$(ROOT_DIR)/assets/mediaboom.1"
+DESKTOPS = "$(ROOT_DIR)/assets/mediaboom.desktop"
+BRANDINGS = "$(ROOT_DIR)/assets/OfficialAppIcon-MediaBoom-512.png"
 
 ARCH := $(shell if [ `uname -m` = "x86_64" ]; then echo "linux-x64"; else echo "linux-arm64"; fi)
 
@@ -50,19 +50,19 @@ init-offline:
 	$(MAKE) invoke-init-offline
 
 install:
-	mkdir -m 755 -p $(FDESTDIR)/bin $(FDESTDIR)/lib/bassboom-$(MODAPI) $(FDESTDIR)/share/applications $(FDESTDIR)/share/man/man1/
+	mkdir -m 755 -p $(FDESTDIR)/bin $(FDESTDIR)/lib/mediaboom-$(MODAPI) $(FDESTDIR)/share/applications $(FDESTDIR)/share/man/man1/
 	install -m 755 -t $(FDESTDIR)/bin/ $(BINARIES)
 	install -m 644 -t $(FDESTDIR)/share/man/man1/ $(MANUALS)
-	find "$(OUTPUT)" -mindepth 1 -type d -exec sh -c 'mkdir -p -m 755 "$(FDESTDIR)/lib/bassboom-$(MODAPI)/$$(realpath --relative-to "$(OUTPUT)" "$$0")"' {} \;
-	find "$(OUTPUT)" -mindepth 1 -type f -exec sh -c 'install -m 644 -t "$(FDESTDIR)/lib/bassboom-$(MODAPI)/$$(dirname $$(realpath --relative-to "$(OUTPUT)" "$$0"))" "$$0"' {} \;
+	find "$(OUTPUT)" -mindepth 1 -type d -exec sh -c 'mkdir -p -m 755 "$(FDESTDIR)/lib/mediaboom-$(MODAPI)/$$(realpath --relative-to "$(OUTPUT)" "$$0")"' {} \;
+	find "$(OUTPUT)" -mindepth 1 -type f -exec sh -c 'install -m 644 -t "$(FDESTDIR)/lib/mediaboom-$(MODAPI)/$$(dirname $$(realpath --relative-to "$(OUTPUT)" "$$0"))" "$$0"' {} \;
 	install -m 755 -t $(FDESTDIR)/share/applications/ $(DESKTOPS)
-	install -m 755 -t $(FDESTDIR)/lib/bassboom-$(MODAPI)/ $(BRANDINGS)
-	mv $(FDESTDIR)/bin/bassboom $(FDESTDIR)/bin/bassboom-$(MODAPI)
-	mv $(FDESTDIR)/share/man/man1/bassboom.1 $(FDESTDIR)/share/man/man1/bassboom-$(MODAPI).1
-	mv $(FDESTDIR)/share/applications/bassboom.desktop $(FDESTDIR)/share/applications/bassboom-$(MODAPI).desktop
-	sed -i 's|/usr/lib/bassboom|/usr/lib/bassboom-$(MODAPI)|g' $(FDESTDIR)/bin/bassboom-*
-	sed -i 's|/usr/lib/bassboom|/usr/lib/bassboom-$(MODAPI)|g' $(FDESTDIR)/share/applications/bassboom-$(MODAPI).desktop
-	sed -i 's|/usr/bin/bassboom|/usr/bin/bassboom-$(MODAPI)|g' $(FDESTDIR)/share/applications/bassboom-$(MODAPI).desktop
+	install -m 755 -t $(FDESTDIR)/lib/mediaboom-$(MODAPI)/ $(BRANDINGS)
+	mv $(FDESTDIR)/bin/mediaboom $(FDESTDIR)/bin/mediaboom-$(MODAPI)
+	mv $(FDESTDIR)/share/man/man1/mediaboom.1 $(FDESTDIR)/share/man/man1/mediaboom-$(MODAPI).1
+	mv $(FDESTDIR)/share/applications/mediaboom.desktop $(FDESTDIR)/share/applications/mediaboom-$(MODAPI).desktop
+	sed -i 's|/usr/lib/mediaboom|/usr/lib/mediaboom-$(MODAPI)|g' $(FDESTDIR)/bin/mediaboom-*
+	sed -i 's|/usr/lib/mediaboom|/usr/lib/mediaboom-$(MODAPI)|g' $(FDESTDIR)/share/applications/mediaboom-$(MODAPI).desktop
+	sed -i 's|/usr/bin/mediaboom|/usr/bin/mediaboom-$(MODAPI)|g' $(FDESTDIR)/share/applications/mediaboom-$(MODAPI).desktop
 	find '$(FDESTDIR)/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
 
 # Below targets specify functions for full build

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "MediaBoom.Cli": {
+      "commandName": "Project"
+    },
+    "MediaBoom.Cli - Radio": {
+      "commandName": "Project",
+      "commandLineArgs": "-r"
+    }
+  }
+}

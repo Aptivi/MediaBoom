@@ -15,4 +15,4 @@ set DOTNET_NOLOGO=1
 set ROOTDIR=%~dp0\..
 
 echo Building with configuration %releaseconfig%...
-"%ProgramFiles%\dotnet\dotnet.exe" build "%ROOTDIR%\BassBoom.sln" -p:Configuration=%releaseconfig% %buildoptions%
+"%ProgramFiles%\dotnet\dotnet.exe" build "%ROOTDIR%\MediaBoom.sln" -p:Configuration=%releaseconfig% %buildoptions%

@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageId>MediaBoom.Native</PackageId>
+    <Title>MediaBoom.Native</Title>
+    <PackageDescription>MediaBoom! Native libraries suppport for Basolia (LibMPV)</PackageDescription>
+    <PackageTags>mediaboom;basolia;native;runtime;csharp;library</PackageTags>
+    <PackageProjectUrl>https://github.com/Aptivi/MediaBoom</PackageProjectUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageIcon>OfficialAppIcon-MediaBoom-512.png</PackageIcon>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Aptivi/MediaBoom.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- This is the only way to reliably copy all the runtimes -->
+    <None Include="runtimes\**\*.*" Pack="True" PackagePath="runtimes" Condition="'$(SystemWide)' != 'true'">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    
+    <!-- Necessary targets -->
+    <None Include="MediaBoom.Native.targets" Pack="True" PackagePath="/" />
+
+    <!-- For packaging -->
+    <None Include="../../assets/OfficialAppIcon-MediaBoom-512.png" Pack="true" PackagePath="\" />
+    <None Include="../../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SpecProbe.Loader" Version="3.5.1" />
+    <PackageReference Include="SpecProbe.Software" Version="3.5.1" />
+  </ItemGroup>
+
+</Project>

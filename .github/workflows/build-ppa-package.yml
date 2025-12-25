@@ -37,8 +37,8 @@ jobs:
         run: |
           mv debian ..
           mv .github ..
-          tar cfv ../bassboom-3_2.0.3.0-1.0.0.0.orig.tar .
-          xz ../bassboom-3_2.0.3.0-1.0.0.0.orig.tar
+          tar cfv ../mediaboom-3_2.0.3.0-1.0.0.0.orig.tar .
+          xz ../mediaboom-3_2.0.3.0-1.0.0.0.orig.tar
           mv ../debian .
 
       - name: Build package
@@ -54,4 +54,4 @@ jobs:
 
       - name: Try to install
         run: |
-          sudo apt install ./bassboom-3_*.deb
+          sudo apt install ./mediaboom-3_*.deb

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=MediaBoom (/usr/lib/mediaboom)
+Comment=Cross-platform music and video player written in C#
+Exec=/usr/bin/mediaboom
+Icon=/usr/lib/mediaboom/OfficialAppIcon-MediaBoom-512.png
+Terminal=true
+Type=Application
+Categories=Audio;AudioVideo;Music;ConsoleOnly;

@@ -34,7 +34,7 @@
         ],
         "dest": "../docs",
         "globalMetadata": {
-            "_appTitle": "BassBoom Basolia API - Aptivi",
+            "_appTitle": "MediaBoom Basolia API - Aptivi",
             "_enableSearch": true
         },
         "globalMetadataFiles": [],
@@ -47,7 +47,7 @@
         "cleanupCacheHistory": false,
         "disableGitFeatures": false,
         "sitemap": {
-            "baseUrl": "https://aptivi.github.io/BassBoom/"
+            "baseUrl": "https://aptivi.github.io/MediaBoom/"
         }
     }
 }

@@ -27,26 +27,26 @@ jobs:
       - name: Release Asset Preparation
         run: |
           cmd.exe /c "tools\build.cmd Debug -p:ContinuousIntegrationBuild=true"
-          dotnet build -p:Configuration=Debug -p:Platform=x64 public/BassBoom.Installers/BassBoom.Installer.sln
-          dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/BassBoom.Installers/BassBoom.Installer.sln
-          Move-Item public/BassBoom.Installers/BassBoom.InstallerBundle/bin/x64/Debug/BassBoom.InstallerBundle.exe vnd/bassboom-win-x64-installer.exe
-          Move-Item public/BassBoom.Installers/BassBoom.InstallerBundle/bin/ARM64/Debug/BassBoom.InstallerBundle.exe vnd/bassboom-win-arm64-installer.exe
+          dotnet build -p:Configuration=Debug -p:Platform=x64 public/MediaBoom.Installers/MediaBoom.Installer.sln
+          dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/MediaBoom.Installers/MediaBoom.Installer.sln
+          Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/x64/Debug/MediaBoom.InstallerBundle.exe vnd/mediaboom-win-x64-installer.exe
+          Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/ARM64/Debug/MediaBoom.InstallerBundle.exe vnd/mediaboom-win-arm64-installer.exe
       - uses: actions/upload-artifact@v4
         with:
           name: installer-x64-msi
-          path: "vnd/bassboom-win-x64-installer.exe"
+          path: "vnd/mediaboom-win-x64-installer.exe"
       - uses: actions/upload-artifact@v4
         with:
           name: installer-arm64-msi
-          path: "vnd/bassboom-win-arm64-installer.exe"
+          path: "vnd/mediaboom-win-arm64-installer.exe"
       - uses: actions/upload-artifact@v4
         with:
-          name: bb-build-dotnet
-          path: "private/BassBoom.Cli/bin/Debug/net8.0"
+          name: mb-build-dotnet
+          path: "private/MediaBoom.Cli/bin/Debug/net8.0"
       - uses: actions/upload-artifact@v4
         with:
-          name: bb-build-dotnetfx
-          path: "private/BassBoom.Cli/bin/Debug/net48"
+          name: mb-build-dotnetfx
+          path: "private/MediaBoom.Cli/bin/Debug/net48"
       - name: Package Publication
         run: |
           dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"

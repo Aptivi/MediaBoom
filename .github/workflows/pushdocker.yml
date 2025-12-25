@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@master
         with:
-          images: eofla/bassboom
+          images: eofla/mediaboom
       - name: Build and push Docker image
         uses: docker/build-push-action@master
         with:

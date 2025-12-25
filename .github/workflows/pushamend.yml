@@ -39,7 +39,7 @@ jobs:
           [apt-ppa]
           fqdn = ppa.launchpad.net
           method = sftp
-          incoming = ~eofla/ubuntu/bassboom/
+          incoming = ~eofla/ubuntu/mediaboom/
           login = eofla
           allow_unsigned_uploads = 0
           EOF
@@ -53,12 +53,12 @@ jobs:
     
       - name: Download original source
         run: |
-          wget --output-document=../bassboom-3_2.0.3.0-1.0.0.0.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/bassboom/+sourcefiles/bassboom-3/2.0.3.0-1.0.0.0/bassboom-3_2.0.3.0-1.0.0.0.orig.tar.xz
-          tar xf ../bassboom-3_2.0.3.0-1.0.0.0.orig.tar.xz .
+          wget --output-document=../mediaboom-3_2.0.3.0-1.0.0.0.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/mediaboom/+sourcefiles/mediaboom-3/2.0.3.0-1.0.0.0/mediaboom-3_2.0.3.0-1.0.0.0.orig.tar.xz
+          tar xf ../mediaboom-3_2.0.3.0-1.0.0.0.orig.tar.xz .
           mv .github ..
 
       - name: Build source package
         run: debuild -S
         
       - name: Push to Launchpad
-        run: dput apt-ppa ../bassboom-3_*_source.changes
+        run: dput apt-ppa ../mediaboom-3_*_source.changes

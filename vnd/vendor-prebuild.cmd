@@ -9,11 +9,11 @@ if not exist "%TEMP%\" powershell -Command "Invoke-WebRequest https://github.com
 pushd "%ROOTDIR%\tools\"
 "%ProgramFiles%\7-Zip\7z.exe" x "%TEMP%\" libmpv-2.dll
 popd
-mkdir "%ROOTDIR%\public\BassBoom.Native\runtimes\win-x64\native\"
-move "%ROOTDIR%\tools\libmpv-2.dll" "%ROOTDIR%\public\BassBoom.Native\runtimes\win-x64\native\"
+mkdir "%ROOTDIR%\public\MediaBoom.Native\runtimes\win-x64\native\"
+move "%ROOTDIR%\tools\libmpv-2.dll" "%ROOTDIR%\public\MediaBoom.Native\runtimes\win-x64\native\"
 
 pushd "%ROOTDIR%\tools\"
 "%ProgramFiles%\7-Zip\7z.exe" x "%TEMP%\" libmpv-2.dll
 popd
-mkdir "%ROOTDIR%\public\BassBoom.Native\runtimes\win-arm64\native\"
-move "%ROOTDIR%\tools\libmpv-2.dll" "%ROOTDIR%\public\BassBoom.Native\runtimes\win-arm64\native\"
+mkdir "%ROOTDIR%\public\MediaBoom.Native\runtimes\win-arm64\native\"
+move "%ROOTDIR%\tools\libmpv-2.dll" "%ROOTDIR%\public\MediaBoom.Native\runtimes\win-arm64\native\"

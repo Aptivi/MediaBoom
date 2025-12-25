@@ -2,15 +2,13 @@ name: libmpv library (macOS - AMD64)
 
 on:
   push:
-    branches:
-      - x/exp/libmpv
+    branches: [ "main", "x/oob/v0.1.x", "x/oob/v0.2.x", "x/exp/libmpv" ]
   pull_request:
-    branches:
-      - x/exp/libmpv
+    branches: [ "main", "x/oob/v0.1.x", "x/oob/v0.2.x", "x/exp/libmpv" ]
     
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-15-intel
 
     steps:
       - uses: actions/checkout@v4

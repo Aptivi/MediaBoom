@@ -2,11 +2,9 @@ name: libmpv library (macOS - ARM64)
 
 on:
   push:
-    branches:
-      - x/exp/libmpv
+    branches: [ "main", "x/oob/v0.1.x", "x/oob/v0.2.x", "x/exp/libmpv" ]
   pull_request:
-    branches:
-      - x/exp/libmpv
+    branches: [ "main", "x/oob/v0.1.x", "x/oob/v0.2.x", "x/exp/libmpv" ]
     
 jobs:
   build:

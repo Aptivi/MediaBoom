@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <ApplicationIcon>../../assets/OfficialAppIcon-MediaBoom.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Terminaux" Version="6.1.12.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\public\MediaBoom.Basolia\MediaBoom.Basolia.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Assets Include="..\..\assets\*.cmd" />
+  </ItemGroup>
+  <Target Name="UpdateCmdLaunchers" BeforeTargets="Compile">
+    <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />
+  </Target>
+
+</Project>
