@@ -19,7 +19,6 @@
 
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Native.Interop.Init;
-using System.Runtime.InteropServices;
 
 namespace MediaBoom.Native.Interop.Analysis
 {

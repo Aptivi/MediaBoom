@@ -27,7 +27,6 @@ using MediaBoom.Cli.Tools;
 using System;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles;

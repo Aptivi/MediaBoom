@@ -17,20 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using MediaBoom.Basolia;
-using MediaBoom.Basolia.File;
-using MediaBoom.Basolia.Playback;
-using MediaBoom.Cli.Tools;
-using SpecProbe.Software.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
+using MediaBoom.Basolia;
+using MediaBoom.Basolia.File;
+using MediaBoom.Basolia.Playback;
+using MediaBoom.Cli.Tools;
+using SpecProbe.Software.Platform;
 using Terminaux.Base.Buffered;
-using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace MediaBoom.Cli.CliBase
@@ -46,7 +45,6 @@ namespace MediaBoom.Cli.CliBase
         internal static bool paused = false;
         internal static bool failedToPlay = false;
         internal static bool isRadioMode = false;
-        internal static bool redraw = true;
         internal static readonly List<CachedSongInfo> cachedInfos = [];
 
         internal static CachedSongInfo? CurrentCachedInfo =>
@@ -110,16 +108,18 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void ShowHelp()
         {
-            InfoBoxModalColor.WriteInfoBoxModal("Available keystrokes",
-                KeybindingTools.RenderKeybindingHelpText(Player.allBindings)
-            );
+            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(Player.allBindings), new InfoBoxSettings()
+            {
+                Title = "Available keystrokes",
+            });
         }
 
         internal static void ShowHelpRadio()
         {
-            InfoBoxModalColor.WriteInfoBoxModal("Available keystrokes",
-                KeybindingTools.RenderKeybindingHelpText(Radio.allBindings)
-            );
+            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(Radio.allBindings), new InfoBoxSettings()
+            {
+                Title = "Available keystrokes",
+            });
         }
 
         internal static void HandleKeypressCommon(ConsoleKeyInfo keystroke, Screen playerScreen, bool radio)
@@ -137,12 +137,10 @@ namespace MediaBoom.Cli.CliBase
                         ShowHelpRadio();
                     else
                         ShowHelp();
-                    redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.Z:
                     ShowSpecs();
-                    redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.L:
@@ -153,7 +151,6 @@ namespace MediaBoom.Cli.CliBase
                     playerScreen.RequireRefresh();
                     if (string.IsNullOrEmpty(path))
                     {
-                        redraw = true;
                         playerScreen.RequireRefresh();
                         break;
                     }
@@ -166,7 +163,6 @@ namespace MediaBoom.Cli.CliBase
                     // Get a list of paths and write the file
                     string[] paths = cachedInfos.Select((csi) => csi.MusicPath).ToArray();
                     File.WriteAllLines(path, paths);
-                    redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.Q:

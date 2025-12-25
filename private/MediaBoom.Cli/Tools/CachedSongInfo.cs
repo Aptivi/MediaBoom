@@ -18,7 +18,6 @@
 //
 
 using MediaBoom.Basolia.Lyrics;
-using MediaBoom.Basolia.Playback;
 using System;
 
 namespace MediaBoom.Cli.Tools

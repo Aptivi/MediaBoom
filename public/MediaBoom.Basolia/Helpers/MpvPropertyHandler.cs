@@ -21,7 +21,6 @@ using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Native;
 using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
-using MediaBoom.Native.Interop.Init;
 using System;
 using System.Runtime.InteropServices;
 

@@ -17,27 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using MediaBoom.Basolia.File;
-using MediaBoom.Basolia.Playback;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.File;
+using MediaBoom.Basolia.Playback;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Transformation;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Inputs;
-using MediaBoom.Basolia.Exceptions;
-using Terminaux.Inputs.Styles;
-using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
-using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace MediaBoom.Cli.CliBase
 {
@@ -109,7 +110,7 @@ namespace MediaBoom.Cli.CliBase
 
                 // Get the positions and the amount of songs per page
                 int startPos = 4;
-                int endPos = ConsoleWrapper.WindowHeight - 3;
+                int endPos = ConsoleWrapper.WindowHeight - 4;
                 int songsPerPage = endPos - startPos;
 
                 // Get the position
@@ -131,43 +132,69 @@ namespace MediaBoom.Cli.CliBase
                     Text = name,
                     Left = 2,
                     Top = 1,
-                    InteriorWidth = ConsoleWrapper.WindowWidth - 6,
-                    InteriorHeight = songsPerPage,
+                    Width = ConsoleWrapper.WindowWidth - 6,
+                    Height = songsPerPage,
                     FrameColor = disco,
                     TitleColor = disco,
                 };
                 var durationBar = new SimpleProgress((int)(100 * (position / (double)Common.CurrentCachedInfo.Duration)), 100)
                 {
-                    LeftMargin = 2,
-                    RightMargin = 2,
+                    Width = ConsoleWrapper.WindowWidth - 4,
                     ShowPercentage = false,
                     ProgressForegroundColor = TransformationTools.GetDarkBackground(disco),
                     ProgressActiveForegroundColor = disco,
                 };
                 buffer.Append(
                     listBoxFrame.Render() +
-                    ContainerTools.RenderRenderable(durationBar, new(2, ConsoleWrapper.WindowHeight - 3))
+                    RendererTools.RenderRenderable(durationBar, new(2, ConsoleWrapper.WindowHeight - 3))
                 );
 
                 // Render the indicator
                 string indicator =
-                    $"┤ Seek: {PlayerControls.seekRate:0.00} | " +
-                    $"Volume: {Common.volume:0}%{disco.VTSequenceForeground} ├";
+                    $"Seek: {PlayerControls.seekRate:0.00} | " +
+                    $"Volume: {Common.volume:0}%{disco.VTSequenceForeground}";
 
                 // Render the lyric
                 string lyric = Common.CurrentCachedInfo.LyricInstance is not null ? Common.CurrentCachedInfo.LyricInstance.GetLastLineCurrent(MediaBoomCli.basolia) : "";
                 string finalLyric = string.IsNullOrWhiteSpace(lyric) ? "..." : lyric;
 
                 // Render the results
-                var lyricText = new AlignedText()
+                string indicatorTextStr = $"{posSpan} / {Common.CurrentCachedInfo.DurationSpan} | {indicator}";
+                string lyricTextStr = Common.CurrentCachedInfo.LyricInstance is not null && PlaybackTools.IsPlaying(MediaBoomCli.basolia) ? $"{finalLyric}" : "";
+                int indicatorWidth = ConsoleChar.EstimateCellWidth(indicatorTextStr);
+                int lyricTextWidth = ConsoleChar.EstimateCellWidth(lyricTextStr);
+                var eraser = new Eraser()
                 {
-                    Top = ConsoleWrapper.WindowHeight - 3,
+                    Left = 2,
+                    Top = ConsoleWrapper.WindowHeight - 4,
+                    Width = ConsoleWrapper.WindowWidth - 4,
+                    Height = 1,
+                };
+                var indicatorText = new BoundedText()
+                {
+                    Left = 2,
+                    Top = ConsoleWrapper.WindowHeight - 4,
                     ForegroundColor = disco,
-                    Text = Common.CurrentCachedInfo.LyricInstance is not null && PlaybackTools.IsPlaying(MediaBoomCli.basolia) ? $"┤ {finalLyric} ├" : ""
+                    Width = ConsoleWrapper.WindowWidth - 7 - lyricTextWidth,
+                    Height = 1,
+                    Text = indicatorTextStr
+                };
+                var lyricText = new BoundedText()
+                {
+                    Left = 2,
+                    Top = ConsoleWrapper.WindowHeight - 4,
+                    ForegroundColor = disco,
+                    Width = ConsoleWrapper.WindowWidth - 4,
+                    Height = 1,
+                    Text = lyricTextStr,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Right,
+                    }
                 };
                 buffer.Append(
-                    TextWriterWhereColor.RenderWhereColor($"┤ {posSpan} / {Common.CurrentCachedInfo.DurationSpan} ├", 4, ConsoleWrapper.WindowHeight - 5, disco) +
-                    TextWriterWhereColor.RenderWhereColor(indicator, ConsoleWrapper.WindowWidth - ConsoleChar.EstimateCellWidth(indicator) - 4, ConsoleWrapper.WindowHeight - 5, disco) +
+                    eraser.Render() +
+                    indicatorText.Render() +
                     lyricText.Render()
                 );
                 return buffer.ToString();
@@ -234,16 +261,15 @@ namespace MediaBoom.Cli.CliBase
                 case ConsoleKey.B:
                     PlayerControls.SeekBeginning();
                     PlayerControls.PreviousSong();
-                    Common.redraw = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.N:
                     PlayerControls.SeekBeginning();
                     PlayerControls.NextSong();
-                    Common.redraw = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.I:
                     PlayerControls.ShowSongInfo();
-                    Common.redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.A:
@@ -251,12 +277,10 @@ namespace MediaBoom.Cli.CliBase
                         PlayerControls.PromptForAddSongs();
                     else
                         PlayerControls.PromptForAddSong();
-                    Common.redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.S:
                     PlayerControls.PromptForAddDirectory();
-                    Common.redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.R:
@@ -266,7 +290,7 @@ namespace MediaBoom.Cli.CliBase
                         PlayerControls.RemoveAllSongs();
                     else
                         PlayerControls.RemoveCurrentSong();
-                    Common.redraw = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.C:
                     if (Common.CurrentCachedInfo is null)
@@ -304,7 +328,7 @@ namespace MediaBoom.Cli.CliBase
                     PlayerControls.PreviousSong();
                     playerThread = new(HandlePlay);
                     PlayerControls.Play();
-                    Common.redraw = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.F:
                     PlayerControls.SeekPreviousLyric();
@@ -325,11 +349,11 @@ namespace MediaBoom.Cli.CliBase
                     PlayerControls.NextSong();
                     playerThread = new(HandlePlay);
                     PlayerControls.Play();
-                    Common.redraw = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.Spacebar:
                     PlayerControls.Pause();
-                    Common.redraw = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.R:
                     PlayerControls.Stop(false);
@@ -338,19 +362,17 @@ namespace MediaBoom.Cli.CliBase
                         PlayerControls.RemoveAllSongs();
                     else
                         PlayerControls.RemoveCurrentSong();
-                    Common.redraw = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.Escape:
                     PlayerControls.Stop();
                     break;
                 case ConsoleKey.I:
                     PlayerControls.ShowSongInfo();
-                    Common.redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.S:
                     PlayerControls.PromptSeek();
-                    Common.redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.D:
@@ -358,7 +380,6 @@ namespace MediaBoom.Cli.CliBase
                     Common.HandleKeypressCommon(keystroke, playerScreen, false);
                     playerThread = new(HandlePlay);
                     PlayerControls.Play();
-                    Common.redraw = true;
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.C:
@@ -385,7 +406,7 @@ namespace MediaBoom.Cli.CliBase
                         return;
                     else
                     {
-                        Common.redraw = true;
+                        ScreenTools.CurrentScreen?.RequireRefresh();
                         Common.populate = true;
                     }
                     Common.currentPos = Common.cachedInfos.IndexOf(musicFile) + 1;
@@ -407,9 +428,8 @@ namespace MediaBoom.Cli.CliBase
 
         private static string HandleDraw()
         {
-            if (!Common.redraw)
+            if (!ScreenTools.CurrentScreen?.RefreshWasDone ?? false)
                 return "";
-            Common.redraw = false;
 
             // Prepare things
             var drawn = new StringBuilder();
@@ -419,11 +439,9 @@ namespace MediaBoom.Cli.CliBase
             var keybindings = new Keybindings()
             {
                 KeybindingList = showBindings,
-                Left = 0,
-                Top = ConsoleWrapper.WindowHeight - 1,
                 Width = ConsoleWrapper.WindowWidth - 1,
             };
-            drawn.Append(keybindings.Render());
+            drawn.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
             // In case we have no songs in the playlist...
             if (Common.cachedInfos.Count == 0)
@@ -466,7 +484,7 @@ namespace MediaBoom.Cli.CliBase
             // Now, populate the input choice information instances that represent songs
             var choices = new List<InputChoiceInfo>();
             int startPos = 4;
-            int endPos = ConsoleWrapper.WindowHeight - 3;
+            int endPos = ConsoleWrapper.WindowHeight - 4;
             int songsPerPage = endPos - startPos;
             int max = Common.cachedInfos.Select((_, idx) => idx).Max((idx) => $"  {idx + 1}) ".Length);
             for (int i = 0; i < Common.cachedInfos.Count; i++)
@@ -484,8 +502,8 @@ namespace MediaBoom.Cli.CliBase
                 Text = name,
                 Left = 2,
                 Top = 1,
-                InteriorWidth = ConsoleWrapper.WindowWidth - 6,
-                InteriorHeight = songsPerPage,
+                Width = ConsoleWrapper.WindowWidth - 6,
+                Height = songsPerPage,
             };
             var playlistSelections = new Selection([.. choices])
             {

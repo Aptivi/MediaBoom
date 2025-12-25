@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using MediaBoom.Basolia;
-using MediaBoom.Cli.CliBase;
 using System;
 using System.IO;
-using System.Reflection;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base.Extensions;
 using System.Linq;
+using System.Reflection;
+using MediaBoom.Basolia;
+using MediaBoom.Cli.CliBase;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Base;
-using MediaBoom.Basolia.Playback;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace MediaBoom.Cli
 {
@@ -43,7 +43,7 @@ namespace MediaBoom.Cli
         {
             try
             {
-                ConsoleMisc.SetTitle($"MediaBoom CLI - Basolia v{version?.ToString(3)} - Beta {version?.Minor}");
+                ConsoleMisc.SetTitle($"MediaBoom CLI - Basolia v{version?.ToString()}");
 
                 // First, prompt for the music path if no arguments are provided.
                 string[] arguments = args.Where((arg) => !arg.StartsWith("-")).ToArray();
@@ -70,7 +70,7 @@ namespace MediaBoom.Cli
                 mpgVer = InitBasolia.NativeLibVersion;
 
                 // Now, open an interactive TUI
-                ConsoleResizeHandler.StartResizeListener((_, _, _, _) => Common.redraw = true);
+                ConsoleResizeHandler.StartResizeListener((_, _, _, _) => ScreenTools.CurrentScreen?.RequireRefresh());
                 if (isRadio)
                     Radio.RadioLoop();
                 else
