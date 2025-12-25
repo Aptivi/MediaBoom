@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -25,6 +25,7 @@ using System.Threading;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.File;
 using MediaBoom.Basolia.Playback;
+using MediaBoom.Cli.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
@@ -49,40 +50,40 @@ namespace MediaBoom.Cli.CliBase
         internal static readonly List<string> passedMusicPaths = [];
         internal static readonly Keybinding[] showBindings =
         [
-            new("Play/Pause", ConsoleKey.Spacebar),
-            new("Stop", ConsoleKey.Escape),
-            new("Exit", ConsoleKey.Q),
-            new("Help", ConsoleKey.H),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE"), ConsoleKey.Spacebar),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_STOP"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_QUIT"), ConsoleKey.Q),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_HELP"), ConsoleKey.H),
         ];
         internal static readonly Keybinding[] allBindings =
         [
-            new("Play/Pause", ConsoleKey.Spacebar),
-            new("Stop", ConsoleKey.Escape),
-            new("Exit", ConsoleKey.Q),
-            new("Increase volume", ConsoleKey.UpArrow),
-            new("Decrease volume", ConsoleKey.DownArrow),
-            new("Seek backwards", ConsoleKey.LeftArrow),
-            new("Seek forwards", ConsoleKey.RightArrow),
-            new("Decrease seek duration", ConsoleKey.LeftArrow, ConsoleModifiers.Control),
-            new("Increase seek duration", ConsoleKey.RightArrow, ConsoleModifiers.Control),
-            new("Song information", ConsoleKey.I),
-            new("Add a music file", ConsoleKey.A),
-            new("Add a music group from playlist", ConsoleKey.A, ConsoleModifiers.Shift),
-            new("Add a music directory to the list (when idle)", ConsoleKey.S),
-            new("Previous song", ConsoleKey.B),
-            new("Next song", ConsoleKey.N),
-            new("Remove current song", ConsoleKey.R),
-            new("Remove all songs", ConsoleKey.R, ConsoleModifiers.Control),
-            new("Selectively seek (when playing)", ConsoleKey.S),
-            new("Seek to previous lyric (when playing)", ConsoleKey.F),
-            new("Seek to next lyric (when playing)", ConsoleKey.G),
-            new("Seek to current lyric (when playing)", ConsoleKey.J),
-            new("Seek to which lyric (when playing)", ConsoleKey.K),
-            new("Set repeat checkpoint", ConsoleKey.C),
-            new("Seek to repeat checkpoint", ConsoleKey.C, ConsoleModifiers.Shift),
-            new("Disco Mode!", ConsoleKey.L),
-            new("Save to playlist", ConsoleKey.F1),
-            new("System information", ConsoleKey.Z),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE"), ConsoleKey.Spacebar),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_STOP"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_QUIT"), ConsoleKey.Q),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEUP"), ConsoleKey.UpArrow),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEDOWN"), ConsoleKey.DownArrow),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_BACKWARDS"), ConsoleKey.LeftArrow),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_FORWARDS"), ConsoleKey.RightArrow),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_DECREASESEEKDURATION"), ConsoleKey.LeftArrow, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_INCREASESEEKDURATION"), ConsoleKey.RightArrow, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SONGINFO"), ConsoleKey.I),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_ADDFILE"), ConsoleKey.A),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_ADDGROUP"), ConsoleKey.A, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_ADDDIR"), ConsoleKey.S),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_PREVSONG"), ConsoleKey.B),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_NEXTSONG"), ConsoleKey.N),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVECURRSONG"), ConsoleKey.R),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVEALLSONGS"), ConsoleKey.R, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKSELECTIVE"), ConsoleKey.S),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOPREVLYRIC"), ConsoleKey.F),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTONEXTLYRIC"), ConsoleKey.G),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOCURRLYRIC"), ConsoleKey.J),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOWHICHLYRIC"), ConsoleKey.K),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SETREPEATCHECKPOINT"), ConsoleKey.C),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOREPEATCHECKPOINT"), ConsoleKey.C, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_DISCO"), ConsoleKey.L),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST"), ConsoleKey.F1),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO"), ConsoleKey.Z),
         ];
 
         public static void PlayerLoop()
@@ -151,8 +152,8 @@ namespace MediaBoom.Cli.CliBase
 
                 // Render the indicator
                 string indicator =
-                    $"Seek: {PlayerControls.seekRate:0.00} | " +
-                    $"Volume: {Common.volume:0}%{disco.VTSequenceForeground}";
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_SEEKINDICATOR") + $" {PlayerControls.seekRate:0.00} | " +
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume:0}%{disco.VTSequenceForeground}";
 
                 // Render the lyric
                 string lyric = Common.CurrentCachedInfo.LyricInstance is not null ? Common.CurrentCachedInfo.LyricInstance.GetLastLineCurrent(MediaBoomCli.basolia) : "";
@@ -227,14 +228,14 @@ namespace MediaBoom.Cli.CliBase
                 {
                     if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
                         PlaybackTools.Stop(MediaBoomCli.basolia);
-                    InfoBoxModalColor.WriteInfoBoxModal("There's an error with Basolia when trying to process the music file.\n\n" + bex.Message);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_BASOLIAERROR") + "\n\n" + bex.Message);
                     playerScreen.RequireRefresh();
                 }
                 catch (Exception ex)
                 {
                     if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
                         PlaybackTools.Stop(MediaBoomCli.basolia);
-                    InfoBoxModalColor.WriteInfoBoxModal("There's an unknown error when trying to process the music file.\n\n" + ex.Message);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_ERROR") + "\n\n" + ex.Message);
                     playerScreen.RequireRefresh();
                 }
             }
@@ -421,7 +422,7 @@ namespace MediaBoom.Cli.CliBase
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal($"Playback failure: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_PLAYBACKFAILED") + $" {ex.Message}");
                 Common.failedToPlay = true;
             }
         }
@@ -461,7 +462,7 @@ namespace MediaBoom.Cli.CliBase
                     var message = new AlignedText()
                     {
                         Top = height,
-                        Text = "Press 'A' to insert a single song to the playlist, or 'S' to insert the whole music library.",
+                        Text = LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TIP"),
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle

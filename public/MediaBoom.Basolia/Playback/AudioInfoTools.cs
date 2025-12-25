@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -23,6 +23,7 @@ using System.Diagnostics;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Basolia.Helpers;
+using MediaBoom.Basolia.Languages;
 
 namespace MediaBoom.Basolia.Playback
 {
@@ -40,15 +41,15 @@ namespace MediaBoom.Basolia.Playback
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't query a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if we're playing
             if (PlaybackTools.IsPlaying(basolia))
-                throw new BasoliaException("Trying to get the duration during playback causes playback corruption! Don't call this function during playback.", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONONPLAYBACK"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Always zero for radio stations
             if (FileTools.IsRadioStation(basolia))
@@ -74,7 +75,7 @@ namespace MediaBoom.Basolia.Playback
         public static TimeSpan GetDurationSpan(BasoliaMedia? basolia)
         {
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Get the duration and return the time span
             long durationSeconds = GetDuration(basolia);
@@ -92,11 +93,11 @@ namespace MediaBoom.Basolia.Playback
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't query a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // TODO: Unstub this function
             return 0;
@@ -113,11 +114,11 @@ namespace MediaBoom.Basolia.Playback
             int getStatus = 0;
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't query a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             unsafe
             {
@@ -142,11 +143,11 @@ namespace MediaBoom.Basolia.Playback
             int getStatus = 0;
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't query a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             unsafe
             {
@@ -171,11 +172,11 @@ namespace MediaBoom.Basolia.Playback
             double getStatus = 0;
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't query a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             unsafe
             {
@@ -200,11 +201,11 @@ namespace MediaBoom.Basolia.Playback
             int bufferSize = 0;
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't query a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             unsafe
             {

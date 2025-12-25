@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -25,6 +25,8 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Linq;
 using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Languages;
+using Textify.General;
 
 namespace MediaBoom.Basolia.Radio
 {
@@ -126,7 +128,7 @@ namespace MediaBoom.Basolia.Radio
             }
             catch (Exception ex)
             {
-                throw new BasoliaMiscException($"Failed to parse radio server {ServerHost}. More information can be found in the inner exception.", ex);
+                throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED").FormatString(ServerHost), ex);
             }
         }
 
@@ -142,7 +144,7 @@ namespace MediaBoom.Basolia.Radio
             }
             catch (Exception ex)
             {
-                throw new BasoliaMiscException($"Failed to parse radio server {ServerHost}. More information can be found in the inner exception.", ex);
+                throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED").FormatString(ServerHost), ex);
             }
         }
 
@@ -159,9 +161,9 @@ namespace MediaBoom.Basolia.Radio
             // Use all the keys in the first object except the "streams" and "version", where we'd later use the former in StreamInfo to install
             // all the streams into the new class instance.
             if (streamToken is null)
-                throw new BasoliaMiscException("Stream token is null.");
+                throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMTOKENNULL_ICECAST"));
             var sources = (JArray?)streamToken["source"] ??
-                throw new BasoliaMiscException("There are no sources.");
+                throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSOURCES"));
             var inactive = sources.Where((token) => token["server_name"] is null);
             var active = sources.Except(inactive);
             totalStreams = sources.Count;

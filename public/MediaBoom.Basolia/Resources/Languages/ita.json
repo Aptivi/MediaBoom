@@ -1,0 +1,381 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA",
+      "text": "Istanza di Basolia non fornita"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_LIBMPVLIBINVALID",
+      "text": "Il percorso della libreria libmpv {0} non contiene una libreria libmpv valida."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OUT123LIBINVALID",
+      "text": "Il percorso della libreria out123 {0} non contiene una libreria out123 valida."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_VERSIONNEEDSLIB",
+      "text": "Impossibile ottenere la versione finché la libreria non viene inizializzata"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_NEEDSINIT",
+      "text": "Basolia non ha ancora inizializzato la libreria libmpv!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERQUERY",
+      "text": "Impossibile interrogare i driver"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICEQUERY",
+      "text": "Impossibile interrogare i dispositivi"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERNOTFOUND",
+      "text": "Il driver {0} non esiste"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICENOTFOUND",
+      "text": "Il dispositivo {0} non esiste"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALERROR",
+      "text": "Errore generale di Basolia"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR",
+      "text": "libmpv ha restituito il seguente errore:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALOUTERROR",
+      "text": "Errore generale del sistema di output di Basolia"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_OUT123ERROR",
+      "text": "OUT123 ha restituito il seguente errore:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_FILEALREADYOPEN",
+      "text": "Impossibile aprire questo file mentre il file corrente o una stazione radio sono ancora aperti"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICFILEPATH",
+      "text": "Fornire un percorso a un file musicale"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILENOTFOUND",
+      "text": "Il file musicale non esiste"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILEOPENFAILED",
+      "text": "Impossibile aprire il file"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_URLALREADYOPEN",
+      "text": "Impossibile aprire questo URL mentre il file corrente o una stazione radio sono ancora aperti"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICURL",
+      "text": "Fornire un percorso a un file musicale o a una stazione radio"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NORADIOSTATION",
+      "text": "Questa stazione radio non esiste. Codice di errore:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTARADIOSTATION",
+      "text": "Questa non sembra una stazione radio. Sei sicuro?"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTMPEGRADIOSTATION",
+      "text": "Questa non sembra una stazione radio MP3. Hai un tipo {0}. Sei sicuro?"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Impossibile aprire la stazione radio"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSAUDIOSTREAM",
+      "text": "Il flusso audio non è disponibile"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICSTREAMOPENFAILED",
+      "text": "Impossibile aprire il flusso"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_ALREADYCLOSED",
+      "text": "Impossibile chiudere un file o una stazione radio già chiusa"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_CLOSEFAILED",
+      "text": "Impossibile chiudere il file"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY",
+      "text": "Impossibile interrogare un file non aperto"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONONPLAYBACK",
+      "text": "Il tentativo di ottenere la durata durante la riproduzione causa un danneggiamento della riproduzione! Non chiamare questa funzione durante la riproduzione."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONSCANFAILED",
+      "text": "Impossibile analizzare il file per informazioni sulla lunghezza"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILELENGTHFAILED",
+      "text": "Impossibile determinare la lunghezza del file"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTGETFAILED",
+      "text": "Impossibile ottenere l'output."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMELENGETFAILED",
+      "text": "Impossibile ottenere la lunghezza del frame."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_SPFGETFAILED",
+      "text": "Impossibile ottenere i campioni per frame."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_TPFGETFAILED",
+      "text": "Impossibile ottenere i secondi per frame."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_GENERICBUFFSIZEGETFAILED",
+      "text": "Impossibile ottenere la dimensione generica del buffer."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ID3ONPLAYBACK",
+      "text": "Il tentativo di ottenere i metadati ID3 durante la riproduzione causa un danneggiamento della riproduzione! Non chiamare questa funzione durante la riproduzione."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMESCANFAILED",
+      "text": "Impossibile analizzare il file per informazioni sui frame"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_METADATAGETFAILED",
+      "text": "Impossibile ottenere informazioni sui metadati"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ICYONPLAYBACK",
+      "text": "Il tentativo di ottenere i metadati ICY durante la riproduzione causa un danneggiamento della riproduzione! Non chiamare questa funzione durante la riproduzione."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOONPLAYBACK",
+      "text": "Il tentativo di ottenere informazioni sui frame durante la riproduzione causa un danneggiamento della riproduzione! Non chiamare questa funzione durante la riproduzione."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOGETFAILED",
+      "text": "Impossibile ottenere informazioni sui frame"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_DECODE",
+      "text": "Impossibile decodificare il frame di un file non aperto"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODEFAILED",
+      "text": "Impossibile decodificare il frame"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERNOTFOUND",
+      "text": "Decoder {0} non trovato"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERUNSUPPORTED",
+      "text": "Decoder {0} non supportato dal dispositivo"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERSETFAILED",
+      "text": "Impossibile impostare il decoder su {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILEFORMATFAILED",
+      "text": "Impossibile determinare il formato del file"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ENCODINGNOTFOUND",
+      "text": "Codifica {0} non trovata."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FORMATINFOGETFAILED",
+      "text": "Impossibile ottenere informazioni sul formato"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGGETFAILED",
+      "text": "Impossibile reimpostare la codifica di output"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTFORMATSETFAILED",
+      "text": "Impossibile impostare il formato di output"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGSETFAILED",
+      "text": "Impossibile impostare la codifica di output su:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_INDEPENDENT_EXCEPTION_ROOTLIBPATHNEEDED",
+      "text": "Fornire un percorso della libreria principale."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_LYRICS_EXCEPTION_LYRICSNOTFOUND",
+      "text": "Il testo non esiste"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILENOTFOUND",
+      "text": "Il file della playlist {0} non esiste"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILEEXTINVALID",
+      "text": "Estensione file playlist {0} non valida"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILEEMPTY",
+      "text": "La rappresentazione della playlist non è fornita."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_NOTEXTHEADER",
+      "text": "Questa non è un'intestazione estesa:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_EXTINFNEEDSARGS",
+      "text": "EXTINF richiede esattamente due argomenti e non è presente alcun indicatore di argomento."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
+      "text": "File musicale {0} non trovato o non è un file MPEG"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
+      "text": "Le informazioni sulla traccia devono fornire esattamente due argomenti: la durata della traccia in secondi (-1 se si tratta di un live streaming) e il titolo grezzo della traccia."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFOINVALIDSECS",
+      "text": "Le informazioni sulla traccia non hanno fornito correttamente il numero di secondi [{0}]."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DURATIONFAILED",
+      "text": "Impossibile determinare la durata corrente del file"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_SEEK",
+      "text": "Impossibile cercare un file non aperto"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOSTARTFAILED",
+      "text": "Impossibile cercare all'inizio del file"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOFRAMEFAILED",
+      "text": "Impossibile cercare al fotogramma n. {0} del file"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOLYRICLINEFAILED",
+      "text": "Riga del testo non fornita per la ricerca"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DROPFAILED",
+      "text": "Impossibile eliminare."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY",
+      "text": "Impossibile riprodurre un file non aperto"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PAUSE",
+      "text": "Impossibile mettere in pausa un file non aperto"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_STOP",
+      "text": "Impossibile interrompere un file non aperto"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETVOLUMEFAILED",
+      "text": "Impossibile impostare il volume su {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETVOLUMEFAILED",
+      "text": "Impossibile ottenere il volume (base, in realtà, e i decibel)"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQBANDFAILED",
+      "text": "Impossibile impostare la banda dell'equalizzatore {0}/32 su {1} in {2}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQRANGEBANDFAILED",
+      "text": "Impossibile impostare le bande dell'equalizzatore {0}/32 -> {1}/32 su {2} in {3}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RESETEQBANDSFAILED",
+      "text": "Impossibile ripristinare le bande dell'equalizzatore ai valori iniziali!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETNATIVESTATEFAILED",
+      "text": "Impossibile ottenere lo stato nativo di {0}!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_OPENOUTPUTFAILED",
+      "text": "Impossibile aprire l'output sul dispositivo {0} sul driver {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_NEEDSOUTPUT",
+      "text": "È necessario aprire l'output"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RATEENCODINGUNSUPPORTED",
+      "text": "La frequenza selezionata [{0} Hz] e la codifica [{1}] non sono supportate"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_STARTOUTPUTFAILED",
+      "text": "Impossibile avviare l'output."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FEEDFAILED",
+      "text": "Impossibile inviare."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED",
+      "text": "Impossibile analizzare il server radio {0}. Ulteriori informazioni sono disponibili nell'eccezione interna."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMTOKENNULL_ICECAST",
+      "text": "Il token dello stream è nullo."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSOURCES",
+      "text": "Non ci sono sorgenti."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NEEDSRADIOSTATIONPATH",
+      "text": "Fornisci un percorso per una stazione radio."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_SERVERTYPEFAILED",
+      "text": "Impossibile determinare il tipo di server della stazione radio."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMTOKENNULL_SHOUTCASTV2",
+      "text": "Il token dello stream Shoutcast v2.x è nullo."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSTREAM_SHOUTCASTV2",
+      "text": "Non esiste alcun stream Shoutcast v2.x."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSTREAM_ICECAST",
+      "text": "Non esiste alcun stream Icecast."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
+      "text": "Impossibile analizzare l'ID stream {0}. Ulteriori informazioni sono disponibili nell'eccezione interna."
+    }
+  ]
+}

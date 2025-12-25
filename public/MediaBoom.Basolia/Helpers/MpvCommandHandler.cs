@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -18,6 +18,7 @@
 //
 
 using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Languages;
 using MediaBoom.Native;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Native.Interop.Init;
@@ -40,7 +41,7 @@ namespace MediaBoom.Basolia.Helpers
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // We're now entering the dangerous zone
             unsafe
@@ -52,8 +53,10 @@ namespace MediaBoom.Basolia.Helpers
                 foreach (var ptr in argPointers)
                     Marshal.FreeHGlobal(ptr);
                 Marshal.FreeHGlobal(argPointer);
+
+                // TODO: MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED -> Failed to execute command
                 if (commandResult < MpvError.MPV_ERROR_SUCCESS)
-                    throw new BasoliaException($"Failed to execute command [{string.Join(", ", commandArgs)}]", commandResult);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED") + $" [{string.Join(", ", commandArgs)}]", commandResult);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -19,11 +19,13 @@
 
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-using HtmlAgilityPack;
-using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using HtmlAgilityPack;
 using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Languages;
+using Newtonsoft.Json.Linq;
+using Textify.General;
 
 namespace MediaBoom.Basolia.Radio
 {
@@ -165,7 +167,7 @@ namespace MediaBoom.Basolia.Radio
             }
             catch (Exception ex)
             {
-                throw new BasoliaMiscException($"Failed to parse radio server {ServerHost}. More information can be found in the inner exception.", ex);
+                throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED").FormatString(ServerHost), ex);
             }
         }
 
@@ -186,7 +188,7 @@ namespace MediaBoom.Basolia.Radio
             }
             catch (Exception ex)
             {
-                throw new BasoliaMiscException($"Failed to parse radio server {ServerHost}. More information can be found in the inner exception.", ex);
+                throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED").FormatString(ServerHost), ex);
             }
         }
 
@@ -234,7 +236,7 @@ namespace MediaBoom.Basolia.Radio
             // Use all the keys in the first object except the "streams" and "version", where we'd later use the former in StreamInfo to install
             // all the streams into the new class instance.
             if (streamToken is null)
-                throw new BasoliaMiscException("Shoutcast v2.x stream token is null");
+                throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMTOKENNULL_SHOUTCASTV2"));
             totalStreams = (int?)streamToken["totalstreams"] ?? 0;
             activeStreams = (int?)streamToken["activestreams"] ?? 0;
             currentListeners = (int?)streamToken["currentlisteners"] ?? 0;

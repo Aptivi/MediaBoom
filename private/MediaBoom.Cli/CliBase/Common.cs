@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -25,6 +25,7 @@ using System.Runtime.InteropServices;
 using MediaBoom.Basolia;
 using MediaBoom.Basolia.File;
 using MediaBoom.Basolia.Playback;
+using MediaBoom.Cli.Languages;
 using MediaBoom.Cli.Tools;
 using SpecProbe.Software.Platform;
 using Terminaux.Base.Buffered;
@@ -110,7 +111,7 @@ namespace MediaBoom.Cli.CliBase
         {
             InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(Player.allBindings), new InfoBoxSettings()
             {
-                Title = "Available keystrokes",
+                Title = LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_AVAILABLEKEYSTROKES"),
             });
         }
 
@@ -118,7 +119,7 @@ namespace MediaBoom.Cli.CliBase
         {
             InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(Radio.allBindings), new InfoBoxSettings()
             {
-                Title = "Available keystrokes",
+                Title = LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_AVAILABLEKEYSTROKES"),
             });
         }
 
@@ -147,7 +148,7 @@ namespace MediaBoom.Cli.CliBase
                     enableDisco = !enableDisco;
                     break;
                 case ConsoleKey.F1:
-                    string path = InfoBoxInputColor.WriteInfoBoxInput("Enter a path to the playlist file that you would like to save");
+                    string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_PATHTOPLAYLIST"));
                     playerScreen.RequireRefresh();
                     if (string.IsNullOrEmpty(path))
                     {

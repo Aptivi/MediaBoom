@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -19,6 +19,7 @@
 
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.File;
+using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Playback;
 using MediaBoom.Native;
 using MediaBoom.Native.Exceptions;
@@ -26,6 +27,7 @@ using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Native.Interop.Init;
 using System;
 using System.Diagnostics;
+using Textify.General;
 
 namespace MediaBoom.Basolia
 {
@@ -70,7 +72,7 @@ namespace MediaBoom.Basolia
             }
             catch (Exception ex)
             {
-                throw new BasoliaNativeLibraryException($"libmpv library path {NativeInitializer.libmpvLibPath} doesn't contain a valid libmpv library. mpv_create() and mpv_initialize() were called. {ex.Message}");
+                throw new BasoliaNativeLibraryException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_LIBMPVLIBINVALID").FormatString(NativeInitializer.libmpvLibPath) + $" {ex.Message}");
             }
         }
     }

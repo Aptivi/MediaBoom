@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -18,11 +18,12 @@
 //
 
 using System;
+using MediaBoom.Basolia.Languages;
 
 namespace MediaBoom.Basolia.Exceptions
 {
     /// <summary>
-    /// Basolia miscellaneous exception (ones that don't have to do with libmpv or OUT123)
+    /// Basolia miscellaneous exception (ones that don't have to do with libmpv)
     /// </summary>
     public class BasoliaMiscException : Exception
     {
@@ -30,7 +31,7 @@ namespace MediaBoom.Basolia.Exceptions
         /// Creates a new instance of Basolia error.
         /// </summary>
         internal BasoliaMiscException() :
-            base("General Basolia error")
+            base(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALERROR"))
         { }
 
         /// <summary>

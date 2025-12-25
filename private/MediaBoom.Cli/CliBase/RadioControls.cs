@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -17,18 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using BassBoom.Basolia.Enumerations;
 using MediaBoom.Basolia.File;
 using MediaBoom.Basolia.Playback;
 using MediaBoom.Basolia.Playback.Playlists;
 using MediaBoom.Basolia.Playback.Playlists.Enumerations;
 using MediaBoom.Basolia.Radio;
+using MediaBoom.Cli.Languages;
 using MediaBoom.Cli.Tools;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
+using Textify.General;
 
 namespace MediaBoom.Cli.CliBase
 {
@@ -92,7 +95,7 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void PromptForAddStation()
         {
-            string path = InfoBoxInputColor.WriteInfoBoxInput("Enter a path to the radio station. The URL to the station must provide an MPEG radio station. AAC ones are not supported yet.");
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_STATIONPROMPT"));
             ScreenTools.CurrentScreen?.RequireRefresh();
             Common.populate = true;
             PopulateRadioStationInfo(path);
@@ -102,7 +105,7 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void PromptForAddStations()
         {
-            string path = InfoBoxInputColor.WriteInfoBoxInput("Enter a path to the playlist of radio stations. The URLs to the stations must provide an MPEG radio station. AAC ones are not supported yet.");
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT"));
             string extension = Path.GetExtension(path);
             ScreenTools.CurrentScreen?.RequireRefresh();
             if (File.Exists(path) && (extension == ".m3u" || extension == ".m3u8"))
@@ -123,7 +126,7 @@ namespace MediaBoom.Cli.CliBase
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Radio station playlist is not found.");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND"));
         }
 
         internal static void PopulateRadioStationInfo(string musicPath)
@@ -135,7 +138,7 @@ namespace MediaBoom.Cli.CliBase
             Common.Switch(musicPath);
             if (!Common.cachedInfos.Any((csi) => csi.MusicPath == musicPath))
             {
-                InfoBoxNonModalColor.WriteInfoBox($"Opening {musicPath}...", false);
+                InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_OPENINGMUSICFILE"), musicPath);
 
                 // Try to open the lyrics
                 var instance = new CachedSongInfo(musicPath, -1, null, FileTools.CurrentFile(MediaBoomCli.basolia)?.StationName ?? "", true, null);
@@ -186,14 +189,10 @@ namespace MediaBoom.Cli.CliBase
             if (Common.CurrentCachedInfo is null)
                 return;
             InfoBoxModalColor.WriteInfoBoxModal(
-                $$"""
-                Station info
-                ============
-
-                Radio station URL: {{Common.CurrentCachedInfo.MusicPath}}
-                Radio station name: {{Common.CurrentCachedInfo.StationName}}
-                Radio station current song: {{PlaybackTools.GetRadioNowPlaying(MediaBoomCli.basolia)}}
-                """
+                LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO") + "\n\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO_URL") + $" {Common.CurrentCachedInfo.MusicPath}" + "\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO_NAME") + $" {Common.CurrentCachedInfo.StationName}" + "\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO_CURRSONG") + $" {PlaybackTools.GetRadioNowPlaying(MediaBoomCli.basolia)}"
             );
         }
 
@@ -207,37 +206,30 @@ namespace MediaBoom.Cli.CliBase
             {
                 foreach (var stream in station.Streams)
                 {
-                    streamBuilder.AppendLine($"Name: {stream.StreamTitle}");
-                    streamBuilder.AppendLine($"Home page: {stream.StreamHomepage}");
-                    streamBuilder.AppendLine($"Genre: {stream.StreamGenre}");
-                    streamBuilder.AppendLine($"Now playing: {stream.SongTitle}");
-                    streamBuilder.AppendLine($"Stream path: {stream.StreamPath}");
-                    streamBuilder.AppendLine($"Listeners: {stream.CurrentListeners} with {stream.PeakListeners} at peak");
-                    streamBuilder.AppendLine($"Bit rate: {stream.BitRate} kbps");
-                    streamBuilder.AppendLine($"Media type: {stream.MimeInfo}");
-                    streamBuilder.AppendLine("===============================");
+                    streamBuilder.AppendLine(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_NAME") + $" {stream.StreamTitle}");
+                    streamBuilder.AppendLine("    " + LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_HOMEPAGE") + $" {stream.StreamHomepage}");
+                    streamBuilder.AppendLine("    " + LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE") + $" {stream.StreamGenre}");
+                    streamBuilder.AppendLine("    " + LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_NOWPLAYING") + $" {stream.SongTitle}");
+                    streamBuilder.AppendLine("    " + LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_STREAMPATH") + $" {stream.StreamPath}");
+                    streamBuilder.AppendLine("    " + LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_LISTENERS").FormatString(stream.CurrentListeners, stream.PeakListeners));
+                    streamBuilder.AppendLine("    " + LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_BITRATE") + $" {stream.BitRate} kbps");
+                    streamBuilder.AppendLine("    " + LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_MEDIATYPE") + $" {stream.MimeInfo}");
+                    streamBuilder.AppendLine();
                 }
                 InfoBoxModalColor.WriteInfoBoxModal(
-                    $$"""
-                    Radio server info
-                    =================
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO") + "\n\n" +
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO_URL") + $" {station.ServerHostFull}" + "\n" +
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_HTTPS") + $" {station.ServerHttps}" + "\n" +
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_TYPE") + $" {station.ServerType}" + "\n" +
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_STREAMS").FormatString(station.TotalStreams, station.ActiveStreams) + "\n" +
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_LISTENERS").FormatString(station.CurrentListeners, station.PeakListeners) + "\n\n" +
 
-                    Radio station URL: {{station.ServerHostFull}}
-                    Radio station uses HTTPS: {{station.ServerHttps}}
-                    Radio station server type: {{station.ServerType}}
-                    Radio station streams: {{station.TotalStreams}} with {{station.ActiveStreams}} active
-                    Radio station listeners: {{station.CurrentListeners}} with {{station.PeakListeners}} at peak
-                
-                    Stream info
-                    ===========
-
-                    ===============================
-                    {{streamBuilder}}
-                    """
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO") + "\n\n" +
+                    streamBuilder.ToString()
                 );
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal($"Unable to get extended radio station info for {Common.CurrentCachedInfo.MusicPath}");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFOEXT_UNABLETOOBTAIN").FormatString(Common.CurrentCachedInfo.MusicPath));
         }
     }
 }

@@ -1,0 +1,727 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICE",
+      "text": "Gerät:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DRIVER",
+      "text": "Treiber:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICECACHED",
+      "text": "Gerät (gespeichert):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DRIVERCACHED",
+      "text": "Treiber (gespeichert):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING",
+      "text": "Aktuelle Geräte können während der Wiedergabe nicht abgefragt werden."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICEANDDRIVER",
+      "text": "Gerät und Treiber"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS",
+      "text": "Verfügbare Geräte und Treiber"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_EXTRASPECS",
+      "text": "Zusätzliche Spezifikationen (für Entwickler)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_PCMSAMPLESIZE",
+      "text": "PCM-Samplegröße:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ZEROSAMPLE",
+      "text": "Null-Sample (Offset 0):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DURATIONSAMPLES",
+      "text": "Dauer in Samples:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_FRAMELEN",
+      "text": "Frame-Länge:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SPF",
+      "text": "Samples/Frame:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_TPF",
+      "text": "Sekunden/Frame:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DECODERS",
+      "text": "Decoder"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS",
+      "text": "Unterstützte Decoder:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ALLDECODERS",
+      "text": "Alle Decoder:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ENCODINGSANDRATES",
+      "text": "Kodierungen und Raten"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ENCODINGS",
+      "text": "Kodierungen:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_RATES",
+      "text": "Raten:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_BUFFERINFO",
+      "text": "Pufferinformationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE",
+      "text": "Allgemeine Puffergröße:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS",
+      "text": "MediaBoom-Spezifikationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER",
+      "text": "Basolia-Version:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER",
+      "text": "MPG123-Version:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER",
+      "text": "OUT123-Version:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS",
+      "text": "Systemspezifikationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEM",
+      "text": "System:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMARCH",
+      "text": "Systemarchitektur:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_PROCESSARCH",
+      "text": "Prozessarchitektur:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMDESC",
+      "text": "Systembeschreibung:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_DOTNETDESC",
+      "text": ".NET-Beschreibung:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEKEYSTROKES",
+      "text": "Verfügbare Tastenkombinationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SELECTDRIVER",
+      "text": "Treiber auswählen. ESC zum Beenden."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SELECTDEVICE",
+      "text": "Gerät auswählen. Aktueller Treiber ist {0}. ESC zum Beenden."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_PATHTOPLAYLIST",
+      "text": "Geben Sie den Pfad zur Playlist-Datei ein, die Sie speichern möchten."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEUP",
+      "text": "Lautstärke erhöhen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEDOWN",
+      "text": "Lautstärke verringern"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_HELP",
+      "text": "Hilfe"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER",
+      "text": "Equalizer öffnen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO",
+      "text": "Systeminformationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISCO",
+      "text": "Disko-Modus!"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST",
+      "text": "Lautstärkeanhebung aktivieren"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO",
+      "text": "Geräte- und Treiberinformationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET",
+      "text": "Gerät und Treiber einstellen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET",
+      "text": "Gerät und Treiber zurücksetzen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST",
+      "text": "In Playlist speichern"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_QUIT",
+      "text": "Beenden"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE",
+      "text": "Lautstärke verringern"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE",
+      "text": "Lautstärke erhöhen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND",
+      "text": "Vorherige Band"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND",
+      "text": "Nächste Band"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET",
+      "text": "Zurücksetzen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAERROR",
+      "text": "Bei der Verarbeitung des Equalizer-Vorgangs ist ein Fehler in Basolia aufgetreten."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR",
+      "text": "Bei der Verarbeitung des Equalizer-Vorgangs ist ein Fehler in der Basolia-Ausgabe aufgetreten."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_ERROR",
+      "text": "Bei der Verarbeitung des Equalizer-Vorgangs ist ein unbekannter Fehler aufgetreten."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_NOTPLAYING",
+      "text": "Keine Wiedergabe. Der Musik-Player ist im Leerlauf."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASS",
+      "text": "Bass"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_UPPERMID",
+      "text": "Obere Mitten"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_TREBLE",
+      "text": "Höhen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_DEVICEBAND",
+      "text": "Gerätespezifische Band"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND",
+      "text": "Unbekannter Bandtyp"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BAND",
+      "text": "Band"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE",
+      "text": "Wiedergabe/Pause"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_STOP",
+      "text": "Stopp"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_BACKWARDS",
+      "text": "Rückwärts suchen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_FORWARDS",
+      "text": "Vorwärts suchen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_DECREASESEEKDURATION",
+      "text": "Suchdauer verkürzen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_INCREASESEEKDURATION",
+      "text": "Suchdauer verlängern"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SONGINFO",
+      "text": "Songinformationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDFILE",
+      "text": "Musikdatei hinzufügen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDGROUP",
+      "text": "Musikgruppe aus Playlist hinzufügen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDDIR",
+      "text": "Musikverzeichnis zur Liste hinzufügen (im Leerlauf)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PREVSONG",
+      "text": "Vorheriger Song"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_NEXTSONG",
+      "text": "Nächster Song"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVECURRSONG",
+      "text": "Aktuellen Song entfernen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVEALLSONGS",
+      "text": "Alle Songs entfernen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKSELECTIVE",
+      "text": "Selektiv suchen (während der Wiedergabe)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOPREVLYRIC",
+      "text": "Zum vorherigen Liedtext suchen (während der Wiedergabe)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTONEXTLYRIC",
+      "text": "Zum nächsten Liedtext suchen (während der Wiedergabe)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOCURRLYRIC",
+      "text": "Zum aktuellen Liedtext suchen (während der Wiedergabe)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOWHICHLYRIC",
+      "text": "Zu welchem ​​Liedtext suchen (während der Wiedergabe)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SETREPEATCHECKPOINT",
+      "text": "Wiederholungs-Checkpoint setzen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOREPEATCHECKPOINT",
+      "text": "Zum Wiederholungs-Checkpoint suchen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYTESTSOUND",
+      "text": "Testton abspielen (zum Testen von Gerät und Treiber)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_SEEKINDICATOR",
+      "text": "Suche:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_VOLINDICATOR",
+      "text": "Lautstärke:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAERROR",
+      "text": "Bei der Verarbeitung der Musikdatei tritt ein Fehler in Basolia auf."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR",
+      "text": "Bei der Verarbeitung der Musikdatei tritt ein Fehler in der Basolia-Ausgabe auf."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_ERROR",
+      "text": "Beim Verarbeiten der Musikdatei ist ein unbekannter Fehler aufgetreten."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_PLAYBACKFAILED",
+      "text": "Wiedergabefehler:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TIP",
+      "text": "Drücken Sie „A“, um einen einzelnen Song zur Playlist hinzuzufügen, oder „S“, um die gesamte Musikbibliothek einzufügen."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_SELECTLYRICSEEK",
+      "text": "Wählen Sie einen Liedtext aus."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICFILEPROMPT",
+      "text": "Geben Sie einen Pfad zur Musikdatei ein."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICFILENOTFOUND",
+      "text": "Datei „{0}“ existiert nicht."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICPLAYLISTPROMPT",
+      "text": "Geben Sie einen Pfad zur Musik-Playlist ein."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICPLAYLISTNOTFOUND",
+      "text": "Musik-Playlist wurde nicht gefunden."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICLIBRARYPROMPT",
+      "text": "Geben Sie einen Pfad zum Musikbibliotheksverzeichnis ein."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICLIBRARYNOTFOUND",
+      "text": "Musikbibliotheksverzeichnis wurde nicht gefunden."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICFILE",
+      "text": "{0} wird geöffnet..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_NOWPLAYING",
+      "text": "Aktuelle Wiedergabe:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNARTIST",
+      "text": "Unbekannter Interpret"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNGENRE",
+      "text": "Unbekanntes Genre"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE",
+      "text": "Versuche, die Liedtextdatei {0} zu öffnen..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILEFAILED",
+      "text": "Liedtextdatei {0} kann nicht geöffnet werden:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TARGETPOSPROMPT",
+      "text": "Schreiben Sie die Zielposition in diesem Format:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDPLAYING",
+      "text": "Testton wird abgespielt..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_EXCEPTION_TESTSOUNDMISSING",
+      "text": "Testtondaten fehlen."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_TITLE",
+      "text": "Soundtest"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_DESC",
+      "text": "Ist mit der aktuellen Konfiguration alles in Ordnung?"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_YES",
+      "text": "Ja"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_NO",
+      "text": "Nein"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_SUCCESS",
+      "text": "Herzlichen Glückwunsch! Sie haben alles richtig eingerichtet!"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_FAILURE",
+      "text": "Überprüfen Sie Ihr Gerät und versuchen Sie es erneut."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_UNKNOWN",
+      "text": "Unbekannt"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO",
+      "text": "Songinfo"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ARTIST",
+      "text": "Künstler:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_TITLE",
+      "text": "Titel:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM",
+      "text": "Album:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE",
+      "text": "Genre:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT",
+      "text": "Kommentar:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION",
+      "text": "Dauer:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS",
+      "text": "Text:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_LINES",
+      "text": "{0} Zeilen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS",
+      "text": "Kein Text"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO",
+      "text": "Layerinfo"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION",
+      "text": "Version:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER",
+      "text": "Layer:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE",
+      "text": "Rate:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE",
+      "text": "Modus:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT",
+      "text": "Moduserweiterung:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE",
+      "text": "Bildgröße:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS",
+      "text": "Flags:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS",
+      "text": "Hervorhebung:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE",
+      "text": "Bitrate:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR",
+      "text": "ABR-Rate:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR",
+      "text": "VBR:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE",
+      "text": "Nativer Zustand"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING",
+      "text": "Präzises Rendering:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL",
+      "text": "Pufferfüllung:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY",
+      "text": "Dekodierverzögerung:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY",
+      "text": "Kodierungsverzögerung:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING",
+      "text": "Kodierungsauffüllung:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN",
+      "text": "Frankenstein-Stream:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER",
+      "text": "Neuer Decoder:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS",
+      "text": "Texte und Extras"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO",
+      "text": "Radiosenderinformationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFOEXT",
+      "text": "Erweiterte Radiosenderinformationen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATION",
+      "text": "Radiosender hinzufügen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATIONGROUP",
+      "text": "Radiosendergruppe aus Playlist hinzufügen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_PREVSTATION",
+      "text": "Vorheriger Radiosender"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_NEXTSTATION",
+      "text": "Nächster Radiosender"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_REMOVECURRSTATION",
+      "text": "Aktuellen Radiosender entfernen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_REMOVEALLSTATIONS",
+      "text": "Alle Radiosender entfernen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_TIP",
+      "text": "Drücken Sie „A“, um einen Radiosender zur Playlist hinzuzufügen."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT",
+      "text": "Geben Sie den Pfad zum Radiosender ein. Die URL des Senders muss einen MPEG-Radiosender angeben. AAC-Sender werden derzeit nicht unterstützt."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT",
+      "text": "Geben Sie den Pfad zur Playlist der Radiosender ein. Die URLs der Sender müssen einen MPEG-Radiosender angeben. AAC-Sender werden derzeit nicht unterstützt."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND",
+      "text": "Radiosender-Playlist nicht gefunden."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO",
+      "text": "Senderinfo"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_URL",
+      "text": "Radiosender-URL:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_NAME",
+      "text": "Radiosendername:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_CURRSONG",
+      "text": "Radiosender-Aktueller Song:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO",
+      "text": "Radioserverinfo"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_HTTPS",
+      "text": "Radiosender verwendet HTTPS:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_TYPE",
+      "text": "Radiosender-Servertyp:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_STREAMS",
+      "text": "Radiosender-Streams: {0} mit {1} aktiv"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_LISTENERS",
+      "text": "Radiosender-Hörer: {0} mit {1} in Spitzenzeiten"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO",
+      "text": "Streaminfo"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_NAME",
+      "text": "Name:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_HOMEPAGE",
+      "text": "Homepage:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_STREAMPATH",
+      "text": "Streampfad:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_LISTENERS",
+      "text": "Hörer: {0} mit {1} in Spitzenzeiten"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_BITRATE",
+      "text": "Bitrate:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_MEDIATYPE",
+      "text": "Medientyp:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_UNABLETOOBTAIN",
+      "text": "Erweiterte Radiosenderinfos für {0} konnten nicht abgerufen werden."
+    },
+    {
+      "loc": "MEDIABOOM_APP_NOTFOUND",
+      "text": "Musikdatei {0} existiert nicht."
+    },
+    {
+      "loc": "MEDIABOOM_APP_FATALERROR",
+      "text": "Schwerwiegender Fehler in der MediaBoom-CLI."
+    }
+  ]
+}

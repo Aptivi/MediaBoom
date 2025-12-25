@@ -1,0 +1,42 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi-Latn",
+    "hi-Latn-IN"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_GENERALERROR",
+      "text": "mool laibreree truti"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_LIBPATH",
+      "text": "laibreree path {0} hai"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
+      "text": "laibreree path {0} maujood nahin hai."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
+      "text": "32-bit pletaform ab samarthit nahin hain."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
+      "text": "paryaavaran char mpg123_moddir set nahin kiya ja sakata"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
+      "text": "laibreree lod karane mein viphal."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",
+      "text": "pahale laibreree ko aarambh kie bina {0} ke lie pratinidhi praapt nahin kiya ja sakata"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOTFOUND",
+      "text": "{0} ke lie pratinidhi praapt nahin kiya ja sakata"
+    }
+  ]
+}

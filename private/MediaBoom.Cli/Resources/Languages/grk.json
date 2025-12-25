@@ -1,0 +1,719 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICE",
+      "text": "Συσκευή:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DRIVER",
+      "text": "Πρόγραμμα οδήγησης:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICECACHED",
+      "text": "Συσκευή (αποθηκευμένη στην προσωρινή μνήμη):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DRIVERCACHED",
+      "text": "Πρόγραμμα οδήγησης (αποθηκευμένη στην προσωρινή μνήμη):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING",
+      "text": "Δεν είναι δυνατή η υποβολή ερωτημάτων για τρέχουσες συσκευές ενώ δεν αναπαράγεται."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICEANDDRIVER",
+      "text": "Συσκευή και πρόγραμμα οδήγησης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS",
+      "text": "Διαθέσιμες συσκευές και προγράμματα οδήγησης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_EXTRASPECS",
+      "text": "Επιπλέον προδιαγραφές (για προγραμματιστές)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_PCMSAMPLESIZE",
+      "text": "Μέγεθος δείγματος PCM:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ZEROSAMPLE",
+      "text": "Μηδενικό δείγμα (μετατόπιση 0):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DURATIONSAMPLES",
+      "text": "Διάρκεια σε δείγματα:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_FRAMELEN",
+      "text": "Μήκος καρέ:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SPF",
+      "text": "Δείγματα/καρέ:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_TPF",
+      "text": "Δευτερόλεπτα/καρέ:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DECODERS",
+      "text": "Αποκωδικοποιητές"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS",
+      "text": "Υποστηριζόμενοι αποκωδικοποιητές:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ALLDECODERS",
+      "text": "Όλοι οι αποκωδικοποιητές:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ENCODINGSANDRATES",
+      "text": "Κωδικοποιήσεις και ρυθμοί"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ENCODINGS",
+      "text": "Κωδικοποιήσεις:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_RATES",
+      "text": "Ρυθμοί:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_BUFFERINFO",
+      "text": "Πληροφορίες buffer"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE",
+      "text": "Γενικό μέγεθος buffer:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS",
+      "text": "Προδιαγραφές MediaBoom"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER",
+      "text": "Έκδοση Basolia:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER",
+      "text": "Έκδοση MPG123:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER",
+      "text": "Έκδοση OUT123:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS",
+      "text": "Προδιαγραφές συστήματος"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEM",
+      "text": "Σύστημα:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMARCH",
+      "text": "Αρχιτεκτονική συστήματος:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_PROCESSARCH",
+      "text": "Αρχιτεκτονική διεργασίας:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMDESC",
+      "text": "Περιγραφή συστήματος:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_DOTNETDESC",
+      "text": "Περιγραφή .NET:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEKEYSTROKES",
+      "text": "Διαθέσιμα πλήκτρα"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SELECTDRIVER",
+      "text": "Επιλέξτε ένα πρόγραμμα οδήγησης. ESC για τερματισμό."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SELECTDEVICE",
+      "text": "Επιλέξτε μια συσκευή. Το τρέχον πρόγραμμα οδήγησης είναι {0}. ESC για τερματισμό."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_PATHTOPLAYLIST",
+      "text": "Εισαγάγετε μια διαδρομή προς το αρχείο λίστας αναπαραγωγής που θέλετε να αποθηκεύσετε"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEUP",
+      "text": "Αύξηση έντασης ήχου"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEDOWN",
+      "text": "Μείωση έντασης ήχου"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_HELP",
+      "text": "Βοήθεια"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER",
+      "text": "Άνοιγμα του ισοσταθμιστή"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO",
+      "text": "Πληροφορίες συστήματος"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISCO",
+      "text": "Λειτουργία ντίσκο!"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST",
+      "text": "Ενεργοποίηση ενίσχυσης έντασης ήχου"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO",
+      "text": "Πληροφορίες συσκευής και προγράμματος οδήγησης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET",
+      "text": "Ορισμός συσκευής και προγράμματος οδήγησης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET",
+      "text": "Επαναφορά συσκευής και προγράμματος οδήγησης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST",
+      "text": "Αποθήκευση στη λίστα αναπαραγωγής"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_QUIT",
+      "text": "Έξοδος"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE",
+      "text": "Μείωση"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE",
+      "text": "Αύξηση"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND",
+      "text": "Προηγούμενη ζώνη"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND",
+      "text": "Επόμενη ζώνη"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET",
+      "text": "Επαναφορά"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAERROR",
+      "text": "Υπάρχει σφάλμα με το Basolia κατά την προσπάθεια επεξεργασίας της λειτουργίας ισοσταθμιστή."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR",
+      "text": "Υπάρχει σφάλμα με την έξοδο του Basolia κατά την προσπάθεια επεξεργασίας της λειτουργίας ισοσταθμιστή."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_ERROR",
+      "text": "Υπάρχει άγνωστο σφάλμα κατά την προσπάθεια επεξεργασίας της λειτουργίας ισοσταθμιστή."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_NOTPLAYING",
+      "text": "Δεν αναπαράγεται. Το πρόγραμμα αναπαραγωγής μουσικής είναι αδρανές."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASS",
+      "text": "Μπάσα"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_UPPERMID",
+      "text": "Άνω Μεσαίες"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_TREBLE",
+      "text": "Πρίμα"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_DEVICEBAND",
+      "text": "Ζώνη συγκεκριμένης συσκευής"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND",
+      "text": "Άγνωστος τύπος ζώνης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BAND",
+      "text": "Ζώνη"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE",
+      "text": "Αναπαραγωγή/Παύση"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_STOP",
+      "text": "Διακοπή"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_BACKWARDS",
+      "text": "Αναζήτηση προς τα πίσω"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_FORWARDS",
+      "text": "Αναζήτηση προς τα εμπρός"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_DECREASESEEKDURATION",
+      "text": "Μείωση διάρκειας αναζήτησης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_INCREASESEEKDURATION",
+      "text": "Αύξηση διάρκειας αναζήτησης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SONGINFO",
+      "text": "Πληροφορίες τραγουδιού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDFILE",
+      "text": "Προσθήκη αρχείου μουσικής"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDGROUP",
+      "text": "Προσθήκη μουσικής ομάδας από τη λίστα αναπαραγωγής"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDDIR",
+      "text": "Προσθήκη καταλόγου μουσικής στη λίστα (όταν είναι αδρανής)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PREVSONG",
+      "text": "Προηγούμενο τραγούδι"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_NEXTSONG",
+      "text": "Επόμενο τραγούδι"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVECURRSONG",
+      "text": "Κατάργηση τρέχοντος τραγουδιού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVEALLSONGS",
+      "text": "Κατάργηση όλων των τραγουδιών"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKSELECTIVE",
+      "text": "Επιλεκτική αναζήτηση (κατά την αναπαραγωγή)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOPREVLYRIC",
+      "text": "Αναζήτηση στον προηγούμενο στίχο (κατά την αναπαραγωγή)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTONEXTLYRIC",
+      "text": "Αναζήτηση στον επόμενο στίχο (κατά την αναπαραγωγή)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOCURRLYRIC",
+      "text": "Αναζήτηση στον τρέχοντα στίχο (κατά την αναπαραγωγή)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOWHICHLYRIC",
+      "text": "Αναζήτηση σε ποιον στίχο (κατά την αναπαραγωγή)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SETREPEATCHECKPOINT",
+      "text": "Ορισμός σημείου ελέγχου επανάληψης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOREPEATCHECKPOINT",
+      "text": "Αναζήτηση σε σημείο ελέγχου επανάληψης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYTESTSOUND",
+      "text": "Αναπαραγωγή δοκιμαστικού ήχου (για δοκιμή συσκευής και προγράμματος οδήγησης)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_SEEKINDICATOR",
+      "text": "Αναζήτηση:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_VOLINDICATOR",
+      "text": "Ένταση ήχου:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAERROR",
+      "text": "Υπάρχει σφάλμα με το Basolia κατά την προσπάθεια επεξεργασίας του αρχείου μουσικής."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR",
+      "text": "Υπάρχει σφάλμα με την έξοδο του Basolia κατά την προσπάθεια επεξεργασίας του αρχείου μουσικής."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_ERROR",
+      "text": "Υπάρχει άγνωστο σφάλμα κατά την προσπάθεια επεξεργασίας του αρχείου μουσικής."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_PLAYBACKFAILED",
+      "text": "Αποτυχία αναπαραγωγής:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TIP",
+      "text": "Πατήστε 'A' για να εισαγάγετε ένα μόνο τραγούδι στη λίστα αναπαραγωγής ή 'S' για να εισαγάγετε ολόκληρη τη μουσική βιβλιοθήκη."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_SELECTLYRICSEEK",
+      "text": "Επιλέξτε έναν στίχο για αναζήτηση"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICFILEPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή προς το αρχείο μουσικής"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICFILENOTFOUND",
+      "text": "Το αρχείο '{0}' δεν υπάρχει."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICPLAYLISTPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή προς τη λίστα αναπαραγωγής μουσικής"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICPLAYLISTNOTFOUND",
+      "text": "Η λίστα αναπαραγωγής μουσικής δεν βρέθηκε."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICLIBRARYPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή προς τον κατάλογο της μουσικής βιβλιοθήκης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICLIBRARYNOTFOUND",
+      "text": "Ο κατάλογος της μουσικής βιβλιοθήκης δεν βρέθηκε."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICFILE",
+      "text": "Άνοιγμα {0}..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_NOWPLAYING",
+      "text": "Αναπαραγωγή τώρα:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNARTIST",
+      "text": "Άγνωστος καλλιτέχνης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNGENRE",
+      "text": "Άγνωστο είδος"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE",
+      "text": "Προσπάθεια ανοίγματος αρχείου στίχων {0}..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILEFAILED",
+      "text": "Δεν είναι δυνατό το άνοιγμα του αρχείου στίχων {0}:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TARGETPOSPROMPT",
+      "text": "Εγγραφή της θέσης-στόχου σε αυτήν τη μορφή:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDPLAYING",
+      "text": "Αναπαραγωγή δοκιμαστικού ήχου..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_EXCEPTION_TESTSOUNDMISSING",
+      "text": "Λείπουν δεδομένα δοκιμαστικού ήχου."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_TITLE",
+      "text": "Δοκιμή ήχου"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_DESC",
+      "text": "Είναι όλα εντάξει σε αυτήν την τρέχουσα διαμόρφωση;"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_YES",
+      "text": "Ναι"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_NO",
+      "text": "Όχι"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_SUCCESS",
+      "text": "Συγχαρητήρια! Έχετε ρυθμίσει τα πάντα σωστά!"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_FAILURE",
+      "text": "Ελέγξτε τη συσκευή σας και προσπαθήστε ξανά."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_UNKNOWN",
+      "text": "Άγνωστο"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO",
+      "text": "Πληροφορίες τραγουδιού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ARTIST",
+      "text": "Καλλιτέχνης:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_TITLE",
+      "text": "Τίτλος:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM",
+      "text": "Άλμπουμ:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE",
+      "text": "Είδος:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT",
+      "text": "Σχόλιο:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION",
+      "text": "Διάρκεια:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS",
+      "text": "Στίχοι:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_LINES",
+      "text": "{0} γραμμές"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS",
+      "text": "Χωρίς στίχους"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO",
+      "text": "Πληροφορίες επιπέδου"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION",
+      "text": "Έκδοση:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER",
+      "text": "Επίπεδο:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE",
+      "text": "Ρυθμός:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE",
+      "text": "Λειτουργία:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT",
+      "text": "Επέκταση λειτουργίας:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE",
+      "text": "Μέγεθος καρέ:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS",
+      "text": "Σημαίες:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS",
+      "text": "Έμφαση:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE",
+      "text": "Ρυθμός bit:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR",
+      "text": "Ρυθμός ABR:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR",
+      "text": "VBR:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE",
+      "text": "Εγγενής κατάσταση"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING",
+      "text": "Ακριβής απόδοση:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL",
+      "text": "Πλήρωση buffer:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY",
+      "text": "Καθυστέρηση αποκωδικοποίησης:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY",
+      "text": "Καθυστέρηση κωδικοποίησης:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING",
+      "text": "Επένδυση κωδικοποίησης:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN",
+      "text": "Ροή Frankenstein:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER",
+      "text": "Νέος αποκωδικοποιητής:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS",
+      "text": "Κείμενα και επιπλέον στοιχεία"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO",
+      "text": "Πληροφορίες ραδιοφωνικού σταθμού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFOEXT",
+      "text": "Εκτεταμένες πληροφορίες ραδιοφωνικού σταθμού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATION",
+      "text": "Προσθήκη ραδιοφωνικού σταθμού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATIONGROUP",
+      "text": "Προσθήκη ομάδας ραδιοφωνικών σταθμών από τη λίστα αναπαραγωγής"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_PREVSTATION",
+      "text": "Προηγούμενος ραδιοφωνικός σταθμός"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_NEXTSTATION",
+      "text": "Επόμενος ραδιοφωνικός σταθμός"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_REMOVECURRSTATION",
+      "text": "Κατάργηση τρέχοντος ραδιοφωνικού σταθμού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_REMOVEALLSTATIONS",
+      "text": "Κατάργηση όλων των ραδιοφωνικών σταθμών"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_TIP",
+      "text": "Πατήστε 'A' για να εισαγάγετε έναν ραδιοφωνικό σταθμό στη λίστα αναπαραγωγής."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή προς τον ραδιοφωνικό σταθμό. Η διεύθυνση URL προς τον σταθμό πρέπει να παρέχει έναν ραδιοφωνικό σταθμό MPEG. Δεν υποστηρίζονται ακόμη οι AAC."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή προς τη λίστα αναπαραγωγής ραδιοφωνικών σταθμών. Οι διευθύνσεις URL προς τους σταθμούς πρέπει να παρέχουν έναν ραδιοφωνικό σταθμό MPEG. Δεν υποστηρίζονται ακόμη οι διευθύνσεις AAC."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND",
+      "text": "Δεν βρέθηκε λίστα αναπαραγωγής ραδιοφωνικού σταθμού."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO",
+      "text": "Πληροφορίες σταθμού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_URL",
+      "text": "URL ραδιοφωνικού σταθμού:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_NAME",
+      "text": "Όνομα ραδιοφωνικού σταθμού:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_CURRSONG",
+      "text": "Τρέχον τραγούδι ραδιοφωνικού σταθμού:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO",
+      "text": "Πληροφορίες διακομιστή ραδιοφώνου"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_HTTPS",
+      "text": "Ο ραδιοφωνικός σταθμός χρησιμοποιεί HTTPS:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_TYPE",
+      "text": "Τύπος διακομιστή ραδιοφωνικού σταθμού:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_STREAMS",
+      "text": "Ροές ραδιοφωνικού σταθμού: {0} με ενεργό {1}"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_LISTENERS",
+      "text": "Ακροατές ραδιοφωνικού σταθμού: {0} με {1} στην κορυφή"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO",
+      "text": "Πληροφορίες ροής"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_NAME",
+      "text": "Όνομα:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_HOMEPAGE",
+      "text": "Αρχική σελίδα:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_STREAMPATH",
+      "text": "Διαδρομή ροής:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_LISTENERS",
+      "text": "Ακροατές: {0} με {1} στην κορυφή"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_BITRATE",
+      "text": "Ρυθμός μετάδοσης bit:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_MEDIATYPE",
+      "text": "Τύπος μέσου:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_UNABLETOOBTAIN",
+      "text": "Δεν είναι δυνατή η λήψη εκτεταμένων πληροφοριών ραδιοφωνικού σταθμού για {0}"
+    },
+    {
+      "loc": "MEDIABOOM_APP_NOTFOUND",
+      "text": "Το αρχείο μουσικής {0} δεν υπάρχει."
+    },
+    {
+      "loc": "MEDIABOOM_APP_FATALERROR",
+      "text": "Μοιραίο σφάλμα στο MediaBoom CLI."
+    }
+  ]
+}

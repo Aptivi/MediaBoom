@@ -1,0 +1,721 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICE",
+      "text": "Peranti:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DRIVER",
+      "text": "Pemandu:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICECACHED",
+      "text": "Peranti (dicache):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DRIVERCACHED",
+      "text": "Pemandu (cache):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING",
+      "text": "Tidak dapat menanyakan peranti semasa semasa tidak dimainkan."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICEANDDRIVER",
+      "text": "Peranti dan Pemandu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS",
+      "text": "Peranti dan pemacu yang tersedia"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_EXTRASPECS",
+      "text": "Spesifikasi tambahan (untuk pembangun)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_PCMSAMPLESIZE",
+      "text": "Saiz sampel PCM:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ZEROSAMPLE",
+      "text": "Sampel sifar (offset 0):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DURATIONSAMPLES",
+      "text": "Tempoh dalam sampel:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_FRAMELEN",
+      "text": "Panjang bingkai:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SPF",
+      "text": "Sampel/bingkai:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_TPF",
+      "text": "Saat/bingkai:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DECODERS",
+      "text": "Penyahkod"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS",
+      "text": "Penyahkod yang disokong:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ALLDECODERS",
+      "text": "Semua penyahkod:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ENCODINGSANDRATES",
+      "text": "Pengekodan dan Kadar"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ENCODINGS",
+      "text": "Pengekodan:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_RATES",
+      "text": "Kadar:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_BUFFERINFO",
+      "text": "Maklumat penimbal"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE",
+      "text": "Saiz penimbal generik:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS",
+      "text": "Spesifikasi MediaBoom"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER",
+      "text": "Versi Basolia:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER",
+      "text": "Versi MPG123:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER",
+      "text": "Versi OUT123:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS",
+      "text": "Spesifikasi sistem"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEM",
+      "text": "Sistem:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMARCH",
+      "text": "Seni Bina Sistem:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_PROCESSARCH",
+      "text": "Seni Bina Proses:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMDESC",
+      "text": "Penerangan sistem:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_DOTNETDESC",
+      "text": "Penerangan .NET:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEKEYSTROKES",
+      "text": "Ketukan kekunci yang tersedia"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SELECTDRIVER",
+      "text": "Pilih pemandu. ESC untuk berhenti."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SELECTDEVICE",
+      "text": "Pilih peranti. Pemandu semasa ialah {0}. ESC untuk berhenti."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_PATHTOPLAYLIST",
+      "text": "Masukkan laluan ke fail senarai main yang anda ingin simpan"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEUP",
+      "text": "Tingkatkan kelantangan"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEDOWN",
+      "text": "Kurangkan volum"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_HELP",
+      "text": "Tolong"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER",
+      "text": "Buka penyamaan"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO",
+      "text": "Maklumat sistem"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISCO",
+      "text": "Mod Disko!"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST",
+      "text": "Dayakan peningkatan volum"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO",
+      "text": "Maklumat peranti dan pemandu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET",
+      "text": "Tetapkan peranti dan pemacu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET",
+      "text": "Tetapkan semula peranti dan pemacu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST",
+      "text": "Simpan ke senarai main"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_QUIT",
+      "text": "Keluar"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE",
+      "text": "Kurangkan"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE",
+      "text": "Bertambah"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND",
+      "text": "Band sebelumnya"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND",
+      "text": "Kumpulan seterusnya"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET",
+      "text": "Tetapkan semula"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAERROR",
+      "text": "Terdapat ralat dengan Basolia semasa cuba memproses operasi penyamaan."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR",
+      "text": "Terdapat ralat dengan output Basolia semasa cuba memproses operasi penyamaan."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_ERROR",
+      "text": "Terdapat ralat yang tidak diketahui semasa cuba memproses operasi penyamaan."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_NOTPLAYING",
+      "text": "Bukan main. Pemain muzik melahu."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASS",
+      "text": "Bass"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_UPPERMID",
+      "text": "Pertengahan Atas"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_TREBLE",
+      "text": "Treble"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_DEVICEBAND",
+      "text": "Jalur khusus peranti"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND",
+      "text": "Jenis band tidak diketahui"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BAND",
+      "text": "Band"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE",
+      "text": "Main/Jeda"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_STOP",
+      "text": "Berhenti"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_BACKWARDS",
+      "text": "Cari ke belakang"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_FORWARDS",
+      "text": "Cari ke hadapan"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_DECREASESEEKDURATION",
+      "text": "Kurangkan tempoh pencarian"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_INCREASESEEKDURATION",
+      "text": "Tingkatkan tempoh pencarian"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SONGINFO",
+      "text": "Maklumat lagu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDFILE",
+      "text": "Tambahkan fail muzik"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDGROUP",
+      "text": "Tambahkan kumpulan muzik daripada senarai main"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDDIR",
+      "text": "Tambahkan direktori muzik pada senarai (apabila melahu)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PREVSONG",
+      "text": "Lagu sebelumnya"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_NEXTSONG",
+      "text": "Lagu seterusnya"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVECURRSONG",
+      "text": "Alih keluar lagu semasa"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVEALLSONGS",
+      "text": "Alih keluar semua lagu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKSELECTIVE",
+      "text": "Cari secara terpilih (semasa bermain)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOPREVLYRIC",
+      "text": "Cari lirik sebelumnya (semasa bermain)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTONEXTLYRIC",
+      "text": "Cari lirik seterusnya (semasa bermain)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOCURRLYRIC",
+      "text": "Cari lirik semasa (semasa bermain)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOWHICHLYRIC",
+      "text": "Cari lirik yang mana (semasa bermain)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SETREPEATCHECKPOINT",
+      "text": "Tetapkan pusat pemeriksaan berulang"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOREPEATCHECKPOINT",
+      "text": "Berusaha untuk mengulangi pusat pemeriksaan"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYTESTSOUND",
+      "text": "Mainkan bunyi ujian (untuk menguji peranti dan pemandu)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_SEEKINDICATOR",
+      "text": "Cari:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_VOLINDICATOR",
+      "text": "Kelantangan:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAERROR",
+      "text": "Terdapat ralat dengan Basolia semasa cuba memproses fail muzik."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR",
+      "text": "Terdapat ralat dengan output Basolia semasa cuba memproses fail muzik."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_ERROR",
+      "text": "Terdapat ralat yang tidak diketahui semasa cuba memproses fail muzik."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_PLAYBACKFAILED",
+      "text": "Kegagalan main balik:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TIP",
+      "text": "Tekan 'A' untuk memasukkan satu lagu ke senarai main, atau 'S' untuk memasukkan keseluruhan pustaka muzik."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_SELECTLYRICSEEK",
+      "text": "Pilih lirik untuk dicari"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICFILEPROMPT",
+      "text": "Masukkan laluan ke fail muzik"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICFILENOTFOUND",
+      "text": "Fail '{0}' tidak wujud."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICPLAYLISTPROMPT",
+      "text": "Masukkan laluan ke senarai main muzik"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICPLAYLISTNOTFOUND",
+      "text": "Senarai main muzik tidak ditemui."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICLIBRARYPROMPT",
+      "text": "Masukkan laluan ke direktori pustaka muzik"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICLIBRARYNOTFOUND",
+      "text": "Direktori perpustakaan muzik tidak ditemui."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICFILE",
+      "text": "Membuka {0}..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_NOWPLAYING",
+      "text": "Sekarang bermain:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNARTIST",
+      "text": "Artis Tidak Dikenali"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNGENRE",
+      "text": "Genre Tidak Diketahui"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE",
+      "text": "Cuba membuka fail lirik {0}..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILEFAILED",
+      "text": "Tidak dapat membuka fail lirik {0}:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TARGETPOSPROMPT",
+      "text": "Tulis kedudukan sasaran dalam format ini:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDPLAYING",
+      "text": "Memainkan bunyi ujian..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_EXCEPTION_TESTSOUNDMISSING",
+      "text": "Data bunyi ujian tiada."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_TITLE",
+      "text": "Ujian bunyi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_DESC",
+      "text": "Adakah semuanya OK dalam konfigurasi semasa ini?"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_YES",
+      "text": "ya"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_NO",
+      "text": "Tidak"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_SUCCESS",
+      "text": "tahniah! Anda telah menyediakan semuanya dengan betul!"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_FAILURE",
+      "text": "Semak peranti anda dan cuba lagi."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_UNKNOWN",
+      "text": "Tidak diketahui"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO",
+      "text": "info lagu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ARTIST",
+      "text": "Artis:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_TITLE",
+      "text": "Tajuk:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM",
+      "text": "Album:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE",
+      "text": "Genre:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT",
+      "text": "Ulasan:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION",
+      "text": "Tempoh:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS",
+      "text": "Lirik:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_LINES",
+      "text": "{0} baris"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS",
+      "text": "Tiada lirik"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO",
+      "text": "Maklumat lapisan"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION",
+      "text": "Versi:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER",
+      "text": "Lapisan:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE",
+      "text": "Kadar:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE",
+      "text": "Mod:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT",
+      "text": "Mod Ext:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE",
+      "text": "Saiz Bingkai:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS",
+      "text": "Bendera:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS",
+      "text": "Penekanan:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE",
+      "text": "Kadar bit:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR",
+      "text": "Kadar ABR:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR",
+      "text": "VBR:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE",
+      "text": "Negeri asal"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING",
+      "text": "Penyampaian tepat:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL",
+      "text": "Isi penimbal:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY",
+      "text": "Kelewatan penyahkodan:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY",
+      "text": "Kelewatan pengekodan:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING",
+      "text": "Pengekodan padding:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN",
+      "text": "aliran Frankenstein:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER",
+      "text": "Penyahkod segar:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS",
+      "text": "Teks dan Tambahan"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO",
+      "text": "Maklumat stesen radio"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFOEXT",
+      "text": "Maklumat lanjutan stesen radio"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATION",
+      "text": "Tambah stesen radio"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATIONGROUP",
+      "text": "Tambah kumpulan stesen radio daripada senarai main"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_PREVSTATION",
+      "text": "Stesen radio sebelumnya"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_NEXTSTATION",
+      "text": "Stesen radio seterusnya"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_REMOVECURRSTATION",
+      "text": "Keluarkan stesen radio semasa"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_REMOVEALLSTATIONS",
+      "text": "Alih keluar semua stesen radio"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_TIP",
+      "text": "Tekan 'A' untuk memasukkan stesen radio ke senarai main."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT",
+      "text": "Masukkan laluan ke stesen radio. URL ke stesen mesti menyediakan stesen radio MPEG. AAC belum disokong lagi."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT",
+      "text": "Masukkan laluan ke senarai main stesen radio. URL ke stesen mesti menyediakan stesen radio MPEG. AAC belum disokong lagi."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND",
+      "text": "Senarai main stesen radio tidak ditemui."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO",
+      "text": "Maklumat stesen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_URL",
+      "text": "URL stesen radio:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_NAME",
+      "text": "Nama stesen radio:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_CURRSONG",
+      "text": "Lagu semasa stesen radio:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO",
+      "text": "Maklumat pelayan radio"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_HTTPS",
+      "text": "Stesen radio menggunakan HTTPS:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_TYPE",
+      "text": "Jenis pelayan stesen radio:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_STREAMS",
+      "text": "Strim stesen radio: {0} dengan {1} aktif"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_LISTENERS",
+      "text": "Pendengar stesen radio: {0} dengan {1} di puncak"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO",
+      "text": "Maklumat aliran"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_NAME",
+      "text": "nama:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_HOMEPAGE",
+      "text": "halaman utama:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_STREAMPATH",
+      "text": "Laluan strim:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_LISTENERS",
+      "text": "Pendengar: {0} dengan {1} pada puncaknya"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_BITRATE",
+      "text": "Kadar bit:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_MEDIATYPE",
+      "text": "Jenis media:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_UNABLETOOBTAIN",
+      "text": "Tidak dapat mendapatkan maklumat stesen radio lanjutan untuk {0}"
+    },
+    {
+      "loc": "MEDIABOOM_APP_NOTFOUND",
+      "text": "Fail muzik {0} tidak wujud."
+    },
+    {
+      "loc": "MEDIABOOM_APP_FATALERROR",
+      "text": "Ralat maut dalam MediaBoom CLI."
+    }
+  ]
+}

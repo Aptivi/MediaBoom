@@ -1,0 +1,43 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_GENERALERROR",
+      "text": "Yerel kütüphane hatası"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_LIBPATH",
+      "text": "Kütüphane yolu {0}"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
+      "text": "kütüphane yolu {0} mevcut değil."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
+      "text": "32 bit platformlar artık desteklenmiyor."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
+      "text": "MPG123_MODDIR ortam değişkeni ayarlanamıyor"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
+      "text": "Kütüphaneler yüklenemedi."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",
+      "text": "Önce kütüphaneyi başlatmadan {0} için temsilci alınamıyor"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOTFOUND",
+      "text": "{0} için temsilci alınamıyor"
+    }
+  ]
+}

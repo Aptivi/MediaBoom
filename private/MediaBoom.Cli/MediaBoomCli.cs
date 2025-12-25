@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -23,6 +23,7 @@ using System.Linq;
 using System.Reflection;
 using MediaBoom.Basolia;
 using MediaBoom.Cli.CliBase;
+using MediaBoom.Cli.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
@@ -56,7 +57,7 @@ namespace MediaBoom.Cli
                     // Check for existence.
                     if (string.IsNullOrEmpty(musicPath) || (!isRadio && !File.Exists(musicPath)))
                     {
-                        TextWriterColor.Write("Music file {0} doesn't exist.", musicPath);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("MEDIABOOM_APP_NOTFOUND"), musicPath);
                         return 1;
                     }
                     if (!isRadio)
@@ -78,7 +79,7 @@ namespace MediaBoom.Cli
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write("Fatal error in the MediaBoom CLI.\n\n" + ex.ToString());
+                TextWriterColor.Write(LanguageTools.GetLocalized("MEDIABOOM_APP_FATALERROR") + "\n\n" + ex.ToString());
                 return ex.HResult;
             }
             return 0;

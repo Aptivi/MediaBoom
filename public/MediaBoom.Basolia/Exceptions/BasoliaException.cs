@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using MediaBoom.Basolia.Languages;
 using MediaBoom.Native;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Native.Interop.Init;
@@ -35,8 +36,8 @@ namespace MediaBoom.Basolia.Exceptions
         /// </summary>
         /// <param name="error">A libmpv error value to use.</param>
         internal BasoliaException(MpvError error) :
-            base($"General Basolia error\n" +
-                 $"libmpv returned the following error: [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]")
+            base(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALERROR") + "\n" +
+                 LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR") + $" [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]")
         { }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace MediaBoom.Basolia.Exceptions
         /// <param name="error">A libmpv error value to use.</param>
         internal BasoliaException(string message, MpvError error) :
             base($"{message}\n" +
-                 $"libmpv returned the following error: [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]")
+                 LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR") + $" [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]")
         { }
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace MediaBoom.Basolia.Exceptions
         /// <param name="error">A libmpv error value to use.</param>
         internal BasoliaException(string message, Exception innerException, MpvError error) :
             base($"{message}\n" +
-                 $"libmpv returned the following error: [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]", innerException)
+                 LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR") + $" [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]", innerException)
         { }
     }
 }

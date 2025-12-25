@@ -1,0 +1,41 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_GENERALERROR",
+      "text": "Erro de biblioteca nativa"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_LIBPATH",
+      "text": "O caminho da biblioteca é {0}"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
+      "text": "O caminho da biblioteca {0} não existe."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
+      "text": "Plataformas de 32 bits não são mais suportadas."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
+      "text": "Não é possível definir a variável de ambiente MPG123_MODDIR"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
+      "text": "Falha ao carregar bibliotecas."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",
+      "text": "Não é possível obter o delegado para {0} sem inicializar a biblioteca primeiro."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOTFOUND",
+      "text": "Não é possível obter o delegado para {0}"
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA",
+      "text": "Basolia-forekomst er ikke oppgitt"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_LIBMPVLIBINVALID",
+      "text": "libmpv-biblioteksti {0} inneholder ikke et gyldig libmpv-bibliotek."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OUT123LIBINVALID",
+      "text": "out123-biblioteksti {0} inneholder ikke et gyldig out123-bibliotek."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_VERSIONNEEDSLIB",
+      "text": "Kan ikke hente versjon før biblioteket er initialisert"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_NEEDSINIT",
+      "text": "Basolia initialiserte ikke libmpv-biblioteket ennå!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERQUERY",
+      "text": "Kan ikke spørre driverne"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICEQUERY",
+      "text": "Kan ikke spørre enhetene"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERNOTFOUND",
+      "text": "Driver {0} finnes ikke"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICENOTFOUND",
+      "text": "Enhet {0} finnes ikke"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALERROR",
+      "text": "Generell Basolia-feil"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR",
+      "text": "libmpv returnerte følgende feil:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALOUTERROR",
+      "text": "Generell Basolia-utdatasystemfeil"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_OUT123ERROR",
+      "text": "OUT123 returnerte følgende feil:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_FILEALREADYOPEN",
+      "text": "Kan ikke åpne denne filen mens gjeldende fil eller en radiostasjon fortsatt er åpen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICFILEPATH",
+      "text": "Oppgi en sti til en musikkfil"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILENOTFOUND",
+      "text": "Musikkfilen finnes ikke"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILEOPENFAILED",
+      "text": "Kan ikke åpne filen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_URLALREADYOPEN",
+      "text": "Kan ikke åpne denne URL-en mens gjeldende fil eller en radiostasjon fortsatt er åpen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICURL",
+      "text": "Oppgi en sti til en musikkfil eller en radiostasjon"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NORADIOSTATION",
+      "text": "Denne radiostasjonen finnes ikke. Feilkode:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTARADIOSTATION",
+      "text": "Dette ser ikke ut som en radiostasjon. Er du sikker?"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTMPEGRADIOSTATION",
+      "text": "Dette ser ikke ut som en MP3-radiostasjon. Du har en {0}-type. Er du sikker?"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Kan ikke åpne radiostasjonen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSAUDIOSTREAM",
+      "text": "Lydstrøm er ikke oppgitt"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICSTREAMOPENFAILED",
+      "text": "Kan ikke åpne strøm"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_ALREADYCLOSED",
+      "text": "Kan ikke lukke en fil eller en radiostasjon som allerede er lukket"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_CLOSEFAILED",
+      "text": "Kan ikke lukke filen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY",
+      "text": "Kan ikke spørre en fil som ikke er åpen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONONPLAYBACK",
+      "text": "Forsøk på å hente varigheten under avspilling forårsaker avspillingsfeil! Ikke kall denne funksjonen under avspilling."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONSCANFAILED",
+      "text": "Kan ikke skanne filen for lengdeinformasjon"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILELENGTHFAILED",
+      "text": "Kan ikke bestemme lengden på filen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTGETFAILED",
+      "text": "Kan ikke hente utdataene."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMELENGETFAILED",
+      "text": "Kan ikke hente bildelengden."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_SPFGETFAILED",
+      "text": "Kan ikke hente samplene per bilde."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_TPFGETFAILED",
+      "text": "Kan ikke hente sekundene per bilde."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_GENERICBUFFSIZEGETFAILED",
+      "text": "Kan ikke hente den generiske bufferstørrelsen."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ID3ONPLAYBACK",
+      "text": "Forsøk på å hente ID3-metadataene under avspilling forårsaker avspillingsfeil! Ikke kall denne funksjonen under avspilling."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMESCANFAILED",
+      "text": "Kan ikke skanne filen etter rammeinformasjon"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_METADATAGETFAILED",
+      "text": "Kan ikke hente metadatainformasjon"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ICYONPLAYBACK",
+      "text": "Forsøk på å hente ICY-metadataene under avspilling forårsaker avspillingsfeil! Ikke kall denne funksjonen under avspilling."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOONPLAYBACK",
+      "text": "Forsøk på å hente rammeinformasjonen under avspilling forårsaker avspillingsfeil! Ikke kall denne funksjonen under avspilling."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOGETFAILED",
+      "text": "Kan ikke hente rammeinformasjon"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_DECODE",
+      "text": "Kan ikke dekode rammen til en fil som ikke er åpen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODEFAILED",
+      "text": "Kan ikke dekode rammen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERNOTFOUND",
+      "text": "Dekoder {0} ble ikke funnet"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERUNSUPPORTED",
+      "text": "Dekoder {0} støttes ikke av enheten din"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERSETFAILED",
+      "text": "Kan ikke sette dekoderen til {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILEFORMATFAILED",
+      "text": "Kan ikke bestemme formatet til filen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ENCODINGNOTFOUND",
+      "text": "Koding {0} ble ikke funnet."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FORMATINFOGETFAILED",
+      "text": "Kan ikke hente formatinformasjon"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGGETFAILED",
+      "text": "Kan ikke tilbakestille utdatakoding"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTFORMATSETFAILED",
+      "text": "Kan ikke angi utdataformat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGSETFAILED",
+      "text": "Kan ikke angi utdatakoding til:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_INDEPENDENT_EXCEPTION_ROOTLIBPATHNEEDED",
+      "text": "Oppgi en rotbiblioteksti."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_LYRICS_EXCEPTION_LYRICSNOTFOUND",
+      "text": "Sangteksten finnes ikke"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILENOTFOUND",
+      "text": "Spillelistefilen {0} finnes ikke"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILEEXTINVALID",
+      "text": "Ugyldig spillelistefiltype {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILEEMPTY",
+      "text": "Spillelisterepresentasjon er ikke oppgitt."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_NOTEXTHEADER",
+      "text": "Dette er ikke en utvidet header:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_EXTINFNEEDSARGS",
+      "text": "EXTINF krever nøyaktig to argumenter, og det er ingen argumentindikator."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
+      "text": "Musikkfilen {0} ble ikke funnet, eller den er ikke en MPEG-fil."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
+      "text": "Sporinformasjonen må oppgi nøyaktig to argumenter: sporlengde i sekunder (-1 hvis det er en direktestrømming) og den rå sportittelen."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFOINVALIDSECS",
+      "text": "Sporinformasjonen oppga ikke antall sekunder [{0}] riktig."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DURATIONFAILED",
+      "text": "Kan ikke bestemme filens gjeldende varighet."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_SEEK",
+      "text": "Kan ikke søke etter en fil som ikke er åpen."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOSTARTFAILED",
+      "text": "Kan ikke søke til begynnelsen av filen."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOFRAMEFAILED",
+      "text": "Kan ikke søke etter ramme nr. {0} i filen."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOLYRICLINEFAILED",
+      "text": "Det er ikke oppgitt noen tekstlinje for å søke etter."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DROPFAILED",
+      "text": "Kan ikke slippe."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY",
+      "text": "Kan ikke spille av en fil som ikke er åpen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PAUSE",
+      "text": "Kan ikke sette en fil på pause som ikke er åpen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_STOP",
+      "text": "Kan ikke stoppe en fil som ikke er åpen"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETVOLUMEFAILED",
+      "text": "Kan ikke sette volumet til {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETVOLUMEFAILED",
+      "text": "Kan ikke hente volum (base, egentlig og desibel)"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQBANDFAILED",
+      "text": "Kan ikke sette equalizerbånd {0}/32 til {1} ​​under {2}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQRANGEBANDFAILED",
+      "text": "Kan ikke sette equalizerbånd {0}/32 -> {1}/32 til {2} under {3}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RESETEQBANDSFAILED",
+      "text": "Kan ikke tilbakestille equalizerbånd til startverdiene!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETNATIVESTATEFAILED",
+      "text": "Kan ikke hente den opprinnelige tilstanden til {0}!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_OPENOUTPUTFAILED",
+      "text": "Kan ikke åpne utdata til enhet {0} på driver {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_NEEDSOUTPUT",
+      "text": "Du må åpne utdataene"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RATEENCODINGUNSUPPORTED",
+      "text": "Valgt hastighet [{0} hz] og koding [{1}] støttes ikke"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_STARTOUTPUTFAILED",
+      "text": "Kan ikke starte utdataene."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FEEDFAILED",
+      "text": "Kan ikke mate."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED",
+      "text": "Kan ikke analysere radioserveren {0}. Mer informasjon finner du i det indre unntaket."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMTOKENNULL_ICECAST",
+      "text": "Strømtokenet er null."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSOURCES",
+      "text": "Det finnes ingen kilder."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NEEDSRADIOSTATIONPATH",
+      "text": "Oppgi en sti til en radiostasjon"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_SERVERTYPEFAILED",
+      "text": "Kan ikke bestemme servertypen for radiostasjonen."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMTOKENNULL_SHOUTCASTV2",
+      "text": "Shoutcast v2.x-strømtokenet er null"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSTREAM_SHOUTCASTV2",
+      "text": "Det finnes ingen Shoutcast v2.x-strøm."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSTREAM_ICECAST",
+      "text": "Det finnes ingen Icecast-strøm."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
+      "text": "Klarte ikke å analysere strømme-ID {0}. Mer informasjon finner du i det indre unntaket."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_GENERALERROR",
+      "text": "Feil i opprinnelig bibliotek"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_LIBPATH",
+      "text": "Bibliotekbanen er {0}"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
+      "text": "Bibliotekbanen {0} finnes ikke."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
+      "text": "32-biters plattformer støttes ikke lenger."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
+      "text": "Kan ikke angi miljøvariabelen MPG123_MODDIR"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
+      "text": "Klarte ikke å laste inn biblioteker."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",
+      "text": "Kan ikke hente representant for {0} uten å initialisere biblioteket først."
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOTFOUND",
+      "text": "Kan ikke hente representant for {0}."
+    }
+  ]
+}

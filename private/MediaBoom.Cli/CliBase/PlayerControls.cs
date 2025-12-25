@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -17,20 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using BassBoom.Basolia.Enumerations;
 using MediaBoom.Basolia.File;
 using MediaBoom.Basolia.Helpers;
 using MediaBoom.Basolia.Lyrics;
 using MediaBoom.Basolia.Playback;
 using MediaBoom.Basolia.Playback.Playlists;
 using MediaBoom.Basolia.Playback.Playlists.Enumerations;
+using MediaBoom.Cli.Languages;
 using MediaBoom.Cli.Tools;
-using System;
-using System.IO;
-using System.Linq;
-using System.Threading;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Textify.General;
 
 namespace MediaBoom.Cli.CliBase
 {
@@ -142,7 +145,7 @@ namespace MediaBoom.Cli.CliBase
 
             var lyrics = Common.CurrentCachedInfo.LyricInstance.Lines;
             var choices = lyrics.Select((line) => new InputChoiceInfo($"{line.LineSpan}", line.Line)).ToArray();
-            int index = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select a lyric to seek to");
+            int index = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_SELECTLYRICSEEK"));
             if (index == -1)
                 return;
             var lyric = lyrics[index];
@@ -220,7 +223,7 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void PromptForAddSong()
         {
-            string path = InfoBoxInputColor.WriteInfoBoxInput("Enter a path to the music file");
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_MUSICFILEPROMPT"));
             ScreenTools.CurrentScreen?.RequireRefresh();
             if (File.Exists(path))
             {
@@ -232,12 +235,12 @@ namespace MediaBoom.Cli.CliBase
                 PlaybackPositioningTools.SeekTo(MediaBoomCli.basolia, currentPos);
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal($"File \"{path}\" doesn't exist.");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_MUSICFILENOTFOUND"), path);
         }
 
         internal static void PromptForAddSongs()
         {
-            string path = InfoBoxInputColor.WriteInfoBoxInput("Enter a path to the music playlist");
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_MUSICPLAYLISTPROMPT"));
             string extension = Path.GetExtension(path);
             ScreenTools.CurrentScreen?.RequireRefresh();
             if (File.Exists(path) && (extension == ".m3u" || extension == ".m3u8"))
@@ -260,12 +263,12 @@ namespace MediaBoom.Cli.CliBase
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Music playlist is not found.");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_MUSICPLAYLISTNOTFOUND"));
         }
 
         internal static void PromptForAddDirectory()
         {
-            string path = InfoBoxInputColor.WriteInfoBoxInput("Enter a path to the music library directory");
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_MUSICLIBRARYPROMPT"));
             ScreenTools.CurrentScreen?.RequireRefresh();
             if (Directory.Exists(path))
             {
@@ -284,7 +287,7 @@ namespace MediaBoom.Cli.CliBase
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal("Music library directory is not found.");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_MUSICLIBRARYNOTFOUND"));
         }
 
         internal static void PopulateMusicFileInfo(string musicPath)
@@ -328,7 +331,7 @@ namespace MediaBoom.Cli.CliBase
                  Path.GetFileNameWithoutExtension(musicPath)) ?? "";
             string musicArtist =
                 (!string.IsNullOrEmpty(metadata?.Artist) ? metadata?.Artist :
-                 "Unknown Artist") ?? "";
+                 LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_UNKNOWNARTIST")) ?? "";
             return (musicName, musicArtist);
         }
 
@@ -342,7 +345,7 @@ namespace MediaBoom.Cli.CliBase
                  Path.GetFileNameWithoutExtension(path)) ?? "";
             string musicArtist =
                 (!string.IsNullOrEmpty(metadata?.Artist) ? metadata?.Artist :
-                 "Unknown Artist") ?? "";
+                 LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_UNKNOWNARTIST")) ?? "";
             return (musicName, musicArtist);
         }
 
@@ -351,7 +354,7 @@ namespace MediaBoom.Cli.CliBase
             string lyricsPath = Path.GetDirectoryName(musicPath) + "/" + Path.GetFileNameWithoutExtension(musicPath) + ".lrc";
             try
             {
-                InfoBoxNonModalColor.WriteInfoBox($"Trying to open lyrics file {lyricsPath}...", false);
+                InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE"), lyricsPath);
                 if (File.Exists(lyricsPath))
                     return LyricReader.GetLyrics(lyricsPath);
                 else
@@ -359,7 +362,7 @@ namespace MediaBoom.Cli.CliBase
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal($"Can't open lyrics file {lyricsPath}... {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILEFAILED") + $" {ex.Message}", lyricsPath);
             }
             return null;
         }
@@ -402,7 +405,7 @@ namespace MediaBoom.Cli.CliBase
                 return;
 
             // Prompt the user to set the current position to the specified time
-            string time = InfoBoxInputColor.WriteInfoBoxInput("Write the target position in this format: HH:MM:SS");
+            string time = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TARGETPOSPROMPT") + " HH:MM:SS");
             if (TimeSpan.TryParse(time, out TimeSpan duration))
             {
                 Player.position = (int)duration.TotalSeconds;
@@ -420,15 +423,11 @@ namespace MediaBoom.Cli.CliBase
             if (metadata is null)
                 return;
             InfoBoxModalColor.WriteInfoBoxModal(
-                $$"""
-                Song info
-                =========
-
-                Artist: {{(!string.IsNullOrEmpty(metadata.Artist) ? metadata.Artist : "Unknown")}}
-                Title: {{(!string.IsNullOrEmpty(metadata.Title) ? metadata.Title : "")}}
-                Duration: {{Common.CurrentCachedInfo.DurationSpan}}
-                Lyrics: {{(Common.CurrentCachedInfo.LyricInstance is not null ? $"{Common.CurrentCachedInfo.LyricInstance.Lines.Count} lines" : "No lyrics")}}
-                """
+                LanguageTools.GetLocalized("BASSBOOM_APP_PLAYER_INFO_SONGINFO") + "\n\n" +
+                LanguageTools.GetLocalized("BASSBOOM_APP_PLAYER_INFO_SONGINFO_ARTIST") + $" {(!string.IsNullOrEmpty(metadata.Artist) ? metadata.Artist : LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_INFO_UNKNOWN"))}" + "\n" +
+                LanguageTools.GetLocalized("BASSBOOM_APP_PLAYER_INFO_SONGINFO_TITLE") + $" {(!string.IsNullOrEmpty(metadata.Title) ? metadata.Title : "")}" + "\n" +
+                LanguageTools.GetLocalized("BASSBOOM_APP_PLAYER_INFO_SONGINFO_DURATION") + $" {Common.CurrentCachedInfo.DurationSpan}" + "\n" +
+                LanguageTools.GetLocalized("BASSBOOM_APP_PLAYER_INFO_SONGINFO_LYRICS") + $" {(Common.CurrentCachedInfo.LyricInstance is not null ? LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_LINES").FormatString(Common.CurrentCachedInfo.LyricInstance.Lines.Count) : LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS"))}"
             );
         }
     }

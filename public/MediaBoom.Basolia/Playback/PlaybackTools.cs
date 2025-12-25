@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -29,6 +29,7 @@ using System.Text.RegularExpressions;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Basolia.Helpers;
+using MediaBoom.Basolia.Languages;
 
 namespace MediaBoom.Basolia.Playback
 {
@@ -44,7 +45,7 @@ namespace MediaBoom.Basolia.Playback
         public static bool IsPlaying(BasoliaMedia? basolia)
         {
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             return basolia.state == PlaybackState.Playing;
         }
 
@@ -55,7 +56,7 @@ namespace MediaBoom.Basolia.Playback
         public static PlaybackState GetState(BasoliaMedia? basolia)
         {
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             return basolia.state;
         }
 
@@ -66,7 +67,7 @@ namespace MediaBoom.Basolia.Playback
         public static string GetRadioIcy(BasoliaMedia? basolia)
         {
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             return basolia.radioIcy;
         }
 
@@ -77,7 +78,7 @@ namespace MediaBoom.Basolia.Playback
         public static string GetRadioNowPlaying(BasoliaMedia? basolia)
         {
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             string icy = GetRadioIcy(basolia);
             if (icy.Length == 0 || !FileTools.IsRadioStation(basolia))
                 return "";
@@ -95,11 +96,11 @@ namespace MediaBoom.Basolia.Playback
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't play a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // We're now entering the dangerous zone
             unsafe
@@ -139,11 +140,11 @@ namespace MediaBoom.Basolia.Playback
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't pause a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PAUSE"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             basolia.state = PlaybackState.Paused;
             MpvPropertyHandler.SetStringProperty(basolia, "pause", "yes");
         }
@@ -157,11 +158,11 @@ namespace MediaBoom.Basolia.Playback
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't stop a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_STOP"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Stop the music and seek to the beginning
             basolia.state = basolia.state == PlaybackState.Playing ? PlaybackState.Stopping : PlaybackState.Stopped;
@@ -181,7 +182,7 @@ namespace MediaBoom.Basolia.Playback
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check the volume
             if (volume < 0)
@@ -209,7 +210,7 @@ namespace MediaBoom.Basolia.Playback
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             try
             {
@@ -234,7 +235,7 @@ namespace MediaBoom.Basolia.Playback
             if (currentRadio.Stream is null)
                 return;
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             unsafe
             {
@@ -279,7 +280,7 @@ namespace MediaBoom.Basolia.Playback
             if (currentStream.Stream is null)
                 return;
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Now, get the MP3 frame
             byte[] buffer = new byte[currentStream.Stream.Length];
@@ -294,7 +295,7 @@ namespace MediaBoom.Basolia.Playback
             if (buffer is null)
                 return;
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             unsafe
             {
                 var handle = basolia._libmpvHandle;
@@ -312,7 +313,7 @@ namespace MediaBoom.Basolia.Playback
             if (buffer is null)
                 return 0;
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // TODO: Unstub this function
             return 0;

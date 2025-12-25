@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -25,6 +25,7 @@ using System.Threading;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.File;
 using MediaBoom.Basolia.Playback;
+using MediaBoom.Cli.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
@@ -46,22 +47,22 @@ namespace MediaBoom.Cli.CliBase
         internal static Thread? playerThread;
         internal static readonly Keybinding[] allBindings =
         [
-            new("Play/Pause", ConsoleKey.Spacebar),
-            new("Stop", ConsoleKey.Escape),
-            new("Exit", ConsoleKey.Q),
-            new("Increase volume", ConsoleKey.UpArrow),
-            new("Decrease volume", ConsoleKey.DownArrow),
-            new("Radio station information", ConsoleKey.I),
-            new("Radio station extended information", ConsoleKey.I, ConsoleModifiers.Control),
-            new("Add a radio station", ConsoleKey.A),
-            new("Add a radio station group from playlist", ConsoleKey.A, ConsoleModifiers.Shift),
-            new("Previous radio station", ConsoleKey.B),
-            new("Next radio station", ConsoleKey.N),
-            new("Remove current radio station", ConsoleKey.R),
-            new("Remove all radio stations", ConsoleKey.R, ConsoleModifiers.Control),
-            new("Disco Mode!", ConsoleKey.L),
-            new("Save to playlist", ConsoleKey.F1),
-            new("System information", ConsoleKey.Z),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE"), ConsoleKey.Spacebar),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_STOP"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_QUIT"), ConsoleKey.Q),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEUP"), ConsoleKey.UpArrow),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEDOWN"), ConsoleKey.DownArrow),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO"), ConsoleKey.I),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFOEXT"), ConsoleKey.I, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATION"), ConsoleKey.A),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATIONGROUP"), ConsoleKey.A, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_KEYBINDING_PREVSTATION"), ConsoleKey.B),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_KEYBINDING_NEXTSTATION"), ConsoleKey.N),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_KEYBINDING_REMOVECURRSTATION"), ConsoleKey.R),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_KEYBINDING_REMOVEALLSTATIONS"), ConsoleKey.R, ConsoleModifiers.Control),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_DISCO"), ConsoleKey.L),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST"), ConsoleKey.F1),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO"), ConsoleKey.Z),
         ];
 
         public static void RadioLoop()
@@ -96,7 +97,7 @@ namespace MediaBoom.Cli.CliBase
                 // Disco effect!
                 var buffer = new StringBuilder();
                 var disco = PlaybackTools.IsPlaying(MediaBoomCli.basolia) && Common.enableDisco ? new Color($"hsl:{hue};50;50") : MediaBoomCli.white;
-                string indicator = $"┤ Volume: {Common.volume * 100:0}%{disco.VTSequenceForeground} ├";
+                string indicator = $"┤ " + LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume * 100:0}%{disco.VTSequenceForeground} ├";
                 if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
                 {
                     hue++;
@@ -150,14 +151,14 @@ namespace MediaBoom.Cli.CliBase
                 {
                     if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
                         PlaybackTools.Stop(MediaBoomCli.basolia);
-                    InfoBoxModalColor.WriteInfoBoxModal("There's an error with Basolia when trying to process the music file.\n\n" + bex.Message);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_BASOLIAERROR") + "\n\n" + bex.Message);
                     radioScreen.RequireRefresh();
                 }
                 catch (Exception ex)
                 {
                     if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
                         PlaybackTools.Stop(MediaBoomCli.basolia);
-                    InfoBoxModalColor.WriteInfoBoxModal("There's an unknown error when trying to process the music file.\n\n" + ex.Message);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_ERROR") + "\n\n" + ex.Message);
                     radioScreen.RequireRefresh();
                 }
             }
@@ -290,7 +291,7 @@ namespace MediaBoom.Cli.CliBase
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal($"Playback failure: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_PLAYBACKFAILED") + $" {ex.Message}");
                 Common.failedToPlay = true;
             }
         }
@@ -319,7 +320,7 @@ namespace MediaBoom.Cli.CliBase
                 var message = new AlignedText()
                 {
                     Top = height,
-                    Text = "Press 'A' to insert a radio station to the playlist.",
+                    Text = LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_TIP"),
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle

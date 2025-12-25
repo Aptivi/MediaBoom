@@ -1,0 +1,42 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_GENERALERROR",
+      "text": "ネイティブライブラリエラー"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTIONS_LIBPATH",
+      "text": "ライブラリパスは {0} です"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
+      "text": "ライブラリパス {0} は存在しません。"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
+      "text": "32 ビットプラットフォームはサポートされていません。"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
+      "text": "環境変数 MPG123_MODDIR を設定できません"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
+      "text": "ライブラリのロードに失敗しました。"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",
+      "text": "ライブラリを初期化しないと {0} のデリゲートを取得できません"
+    },
+    {
+      "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOTFOUND",
+      "text": "{0} のデリゲートを取得できません"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -18,6 +18,7 @@
 //
 
 using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Languages;
 using MediaBoom.Native;
 using MediaBoom.Native.Interop.Enumerations;
 using System;
@@ -46,7 +47,7 @@ namespace MediaBoom.Basolia
             get
             {
                 if (!BasoliaInitialized)
-                    throw new BasoliaException("Can't get version until the library is initialized", MpvError.MPV_ERROR_UNINITIALIZED);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_VERSIONNEEDSLIB"), MpvError.MPV_ERROR_UNINITIALIZED);
                 return NativeInitializer.NativeLibVersion;
             }
         }
@@ -80,7 +81,7 @@ namespace MediaBoom.Basolia
         public static void CheckInited()
         {
             if (!BasoliaInitialized)
-                throw new InvalidOperationException("Basolia didn't initialize the libmpv library yet!");
+                throw new InvalidOperationException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_NEEDSINIT"));
         }
     }
 }

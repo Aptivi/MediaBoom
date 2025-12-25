@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using MediaBoom.Basolia.Languages;
 using FileIO = System.IO.File;
 
 namespace MediaBoom.Basolia.Lyrics
@@ -37,7 +38,7 @@ namespace MediaBoom.Basolia.Lyrics
         {
             // Check to see if the lyrics path exists
             if (!FileIO.Exists(path))
-                throw new FileNotFoundException("Lyric doesn't exist", path);
+                throw new FileNotFoundException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_LYRICS_EXCEPTION_LYRICSNOTFOUND"), path);
 
             // Get the lines and parse them
             var lyricFileLines = FileIO.ReadAllLines(path);

@@ -1,0 +1,719 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICE",
+      "text": "Aygıt:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DRIVER",
+      "text": "Sürücü:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICECACHED",
+      "text": "Aygıt (önbelleğe alınmış):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DRIVERCACHED",
+      "text": "Sürücü (önbelleğe alınmış):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING",
+      "text": "Oynatılmıyorken geçerli aygıtlar sorgulanamaz."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DEVICEANDDRIVER",
+      "text": "Aygıt ve Sürücü"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS",
+      "text": "Kullanılabilir aygıtlar ve sürücüler"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_EXTRASPECS",
+      "text": "Ek özellikler (geliştiriciler için)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_PCMSAMPLESIZE",
+      "text": "PCM örnek boyutu:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ZEROSAMPLE",
+      "text": "Sıfır örnek (ofset 0):"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DURATIONSAMPLES",
+      "text": "Örneklerdeki süre:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_FRAMELEN",
+      "text": "Çerçeve uzunluğu:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SPF",
+      "text": "Örnekler/çerçeve:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_TPF",
+      "text": "Saniye/çerçeve:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_DECODERS",
+      "text": "Kod çözücüler"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS",
+      "text": "Desteklenen kod çözücüler:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ALLDECODERS",
+      "text": "Tüm kod çözücüler:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ENCODINGSANDRATES",
+      "text": "Kodlamalar ve Oranlar"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_ENCODINGS",
+      "text": "Kodlamalar:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_RATES",
+      "text": "Oran:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_BUFFERINFO",
+      "text": "Arabellek bilgisi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE",
+      "text": "Genel arabellek boyutu:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS",
+      "text": "MediaBoom özellikleri"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER",
+      "text": "Basolia sürümü:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER",
+      "text": "MPG123 sürümü:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER",
+      "text": "OUT123 sürümü:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS",
+      "text": "Sistem özellikleri"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEM",
+      "text": "Sistem:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMARCH",
+      "text": "Sistem Mimarisi:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_PROCESSARCH",
+      "text": "İşlem Mimarisi:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMDESC",
+      "text": "Sistem açıklaması:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS_DOTNETDESC",
+      "text": ".NET açıklaması:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEKEYSTROKES",
+      "text": "Kullanılabilir tuş vuruşları"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SELECTDRIVER",
+      "text": "Bir sürücü seçin. Çıkmak için ESC."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_SELECTDEVICE",
+      "text": "Bir aygıt seçin. Geçerli sürücü {0}. Çıkmak için ESC."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_PATHTOPLAYLIST",
+      "text": "Kaydetmek istediğiniz çalma listesi dosyasına giden yolu girin"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEUP",
+      "text": "Sesi artır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEDOWN",
+      "text": "Sesi azalt"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_HELP",
+      "text": "Yardım"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER",
+      "text": "Ekolayzırı aç"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO",
+      "text": "Sistem bilgileri"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISCO",
+      "text": "Disko Modu!"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST",
+      "text": "Ses yükseltmeyi etkinleştir"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO",
+      "text": "Cihaz ve sürücü bilgileri"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET",
+      "text": "Cihaz ve sürücüyü ayarla"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET",
+      "text": "Cihaz ve sürücüyü sıfırla"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST",
+      "text": "Çalma listesine kaydet"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_QUIT",
+      "text": "Çıkış"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE",
+      "text": "Azalt"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE",
+      "text": "Artır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND",
+      "text": "Önceki bant"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND",
+      "text": "Sonraki bant"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET",
+      "text": "Sıfırla"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAERROR",
+      "text": "Ekolayzır işlemini işlemeye çalışırken Basolia'da bir hata var."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR",
+      "text": "Ekolayzır işlemini işlemeye çalışırken Basolia çıkışında bir hata var."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_ERROR",
+      "text": "Ekolayzır işlemini işlemeye çalışırken bilinmeyen bir hata var."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_NOTPLAYING",
+      "text": "Çalınmıyor. Müzik çalar boşta."
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BASS",
+      "text": "Bas"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_UPPERMID",
+      "text": "Üst Orta"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_TREBLE",
+      "text": "Tiz"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_DEVICEBAND",
+      "text": "Cihaza özgü bant"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND",
+      "text": "Bilinmeyen bant türü"
+    },
+    {
+      "loc": "MEDIABOOM_APP_EQUALIZER_BAND",
+      "text": "Bant"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE",
+      "text": "Oynat/Duraklat"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_STOP",
+      "text": "Durdur"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_BACKWARDS",
+      "text": "Geri ara"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_FORWARDS",
+      "text": "İleri ara"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_DECREASESEEKDURATION",
+      "text": "Arama süresini azalt"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_INCREASESEEKDURATION",
+      "text": "Arama süresini artır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SONGINFO",
+      "text": "Şarkı bilgileri"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDFILE",
+      "text": "Bir müzik dosyası ekle"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDGROUP",
+      "text": "Çalma listesinden bir müzik grubu ekle"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_ADDDIR",
+      "text": "Listede bir müzik dizini ekle (boştayken)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PREVSONG",
+      "text": "Önceki şarkı"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_NEXTSONG",
+      "text": "Sonraki şarkı"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVECURRSONG",
+      "text": "Geçerli şarkıyı kaldır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_REMOVEALLSONGS",
+      "text": "Tüm şarkıları kaldır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKSELECTIVE",
+      "text": "Seçmeli ara (çalırken)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOPREVLYRIC",
+      "text": "Önceki şarkı sözüne ara (çalırken)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTONEXTLYRIC",
+      "text": "Sonraki şarkı sözüne ara (çalırken)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOCURRLYRIC",
+      "text": "Geçerli şarkı sözüne ara (çalırken)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOWHICHLYRIC",
+      "text": "Hangi şarkı sözüne ara (çalırken)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SETREPEATCHECKPOINT",
+      "text": "Tekrar kontrol noktasını ayarla"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOREPEATCHECKPOINT",
+      "text": "Tekrar kontrol noktasına ara"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYTESTSOUND",
+      "text": "Test sesini çal (cihazı ve sürücüyü test etmek için)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_SEEKINDICATOR",
+      "text": "Ara:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_VOLINDICATOR",
+      "text": "Ses:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAERROR",
+      "text": "Müzik dosyasını işlemeye çalışırken Basolia'da bir hata oluştu."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR",
+      "text": "Müzik dosyasını işlemeye çalışırken Basolia çıktısında bir hata oluştu."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_ERROR",
+      "text": "Müzik dosyasını işlemeye çalışırken bilinmeyen bir hata oluştu."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_PLAYBACKFAILED",
+      "text": "Çalma hatası:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TIP",
+      "text": "Çalma listesine tek bir şarkı eklemek için 'A'ya veya tüm müzik kütüphanesini eklemek için 'S'ye basın."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_SELECTLYRICSEEK",
+      "text": "Aranacak bir şarkı sözü seçin"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICFILEPROMPT",
+      "text": "Müzik dosyasına giden yolu girin"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICFILENOTFOUND",
+      "text": "'{0}' dosyası mevcut değil."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICPLAYLISTPROMPT",
+      "text": "Müzik çalma listesine giden yolu girin"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICPLAYLISTNOTFOUND",
+      "text": "Müzik çalma listesi bulunamadı."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICLIBRARYPROMPT",
+      "text": "Müzik kütüphanesi dizinine giden yolu girin"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_MUSICLIBRARYNOTFOUND",
+      "text": "Müzik kütüphanesi dizini bulunamadı."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICFILE",
+      "text": "{0} açılıyor..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_NOWPLAYING",
+      "text": "Şu anda çalınıyor:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNARTIST",
+      "text": "Bilinmeyen Sanatçı"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNGENRE",
+      "text": "Bilinmeyen Tür"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE",
+      "text": "Şarkı sözü dosyası {0} açılmaya çalışılıyor..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILEFAILED",
+      "text": "Şarkı sözü dosyası {0} açılamıyor:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TARGETPOSPROMPT",
+      "text": "Hedef konumu şu biçimde yazın:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDPLAYING",
+      "text": "Test sesi çalınıyor..."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_EXCEPTION_TESTSOUNDMISSING",
+      "text": "Test sesi verisi eksik."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_TITLE",
+      "text": "Ses testi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_DESC",
+      "text": "Bu geçerli yapılandırmada her şey yolunda mı?"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_YES",
+      "text": "Evet"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_NO",
+      "text": "Hayır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_SUCCESS",
+      "text": "Tebrikler! Her şeyi düzgün bir şekilde ayarladınız!"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_FAILURE",
+      "text": "Cihazınızı kontrol edin ve tekrar deneyin."
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_UNKNOWN",
+      "text": "Bilinmeyen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO",
+      "text": "Şarkı bilgisi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ARTIST",
+      "text": "Sanatçı:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_TITLE",
+      "text": "Başlık:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM",
+      "text": "Albüm:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE",
+      "text": "Tür:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT",
+      "text": "Yorum:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION",
+      "text": "Süre:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS",
+      "text": "Şarkı sözleri:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_LINES",
+      "text": "{0} satır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS",
+      "text": "Şarkı sözü yok"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO",
+      "text": "Katman bilgisi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION",
+      "text": "Sürüm:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER",
+      "text": "Katman:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE",
+      "text": "Oran:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE",
+      "text": "Mod:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT",
+      "text": "Mod Uzantısı:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE",
+      "text": "Çerçeve Boyutu:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS",
+      "text": "Bayrak:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS",
+      "text": "Vurgu:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE",
+      "text": "Bit hızı:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR",
+      "text": "ABR hızı:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR",
+      "text": "VBR:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE",
+      "text": "Yerel durum"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING",
+      "text": "Doğru işleme:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL",
+      "text": "Arabellek doldurma:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY",
+      "text": "Kod çözme gecikmesi:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY",
+      "text": "Kodlama gecikmesi:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING",
+      "text": "Kodlama dolgusu:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN",
+      "text": "Frankenstein akışı:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER",
+      "text": "Yeni kod çözücü:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS",
+      "text": "Metinler ve Ekstralar"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO",
+      "text": "Radyo istasyonu bilgisi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFOEXT",
+      "text": "Radyo istasyonu genişletilmiş bilgisi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATION",
+      "text": "Bir radyo istasyonu ekle"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_ADDSTATIONGROUP",
+      "text": "Çalma listesinden bir radyo istasyonu grubu ekle"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_PREVSTATION",
+      "text": "Önceki radyo istasyonu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_NEXTSTATION",
+      "text": "Sonraki radyo istasyonu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_REMOVECURRSTATION",
+      "text": "Geçerli radyo istasyonunu kaldır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_REMOVEALLSTATIONS",
+      "text": "Tüm radyo istasyonlarını kaldır"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_TIP",
+      "text": "Çalma listesine bir radyo istasyonu eklemek için 'A' tuşuna basın."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT",
+      "text": "Radyo istasyonuna giden bir yol girin. İstasyona giden URL bir MPEG radyo istasyonu sağlamalıdır. AAC olanlar henüz desteklenmiyor."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT",
+      "text": "Radyo istasyonlarının çalma listesine giden bir yol girin. İstasyonların URL'leri bir MPEG radyo istasyonu sağlamalıdır. AAC olanlar henüz desteklenmiyor."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND",
+      "text": "Radyo istasyonu çalma listesi bulunamadı."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO",
+      "text": "İstasyon bilgisi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_URL",
+      "text": "Radyo istasyonu URL'si:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_NAME",
+      "text": "Radyo istasyonu adı:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFO_STATIONINFO_CURRSONG",
+      "text": "Radyo istasyonunun geçerli şarkısı:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO",
+      "text": "Radyo sunucusu bilgisi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_HTTPS",
+      "text": "Radyo istasyonu HTTPS kullanıyor:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_TYPE",
+      "text": "Radyo istasyonu sunucu türü:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_STREAMS",
+      "text": "Radyo istasyonu akışları: {0} ile {1} etkin"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_SERVERINFO_LISTENERS",
+      "text": "Radyo istasyonu dinleyicileri: {0} ile {1} zirvede"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO",
+      "text": "Akış bilgisi"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_NAME",
+      "text": "Ad:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_HOMEPAGE",
+      "text": "Ana sayfa:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_STREAMPATH",
+      "text": "Akış yolu:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_LISTENERS",
+      "text": "Dinleyiciler: {0} ile {1} zirvede"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_BITRATE",
+      "text": "Bit hızı:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_STREAMINFO_MEDIATYPE",
+      "text": "Medya türü:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_INFOEXT_UNABLETOOBTAIN",
+      "text": "{0} için genişletilmiş radyo istasyonu bilgisi alınamıyor"
+    },
+    {
+      "loc": "MEDIABOOM_APP_NOTFOUND",
+      "text": "Müzik dosyası {0} mevcut değil."
+    },
+    {
+      "loc": "MEDIABOOM_APP_FATALERROR",
+      "text": "MediaBoom CLI'da ölümcül hata."
+    }
+  ]
+}

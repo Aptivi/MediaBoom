@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -23,6 +23,7 @@ using MediaBoom.Basolia.Lyrics;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Basolia.Helpers;
+using MediaBoom.Basolia.Languages;
 
 namespace MediaBoom.Basolia.Playback
 {
@@ -42,11 +43,11 @@ namespace MediaBoom.Basolia.Playback
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!FileTools.IsOpened(basolia))
-                throw new BasoliaException("Can't play a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // We're now entering the dangerous zone
             long length;
@@ -67,7 +68,7 @@ namespace MediaBoom.Basolia.Playback
         public static TimeSpan GetCurrentDurationSpan(BasoliaMedia? basolia)
         {
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // First, get the format information
             long duration = GetCurrentDuration(basolia);
@@ -84,11 +85,11 @@ namespace MediaBoom.Basolia.Playback
             {
                 InitBasolia.CheckInited();
                 if (basolia is null)
-                    throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
                 // Check to see if the file is open
                 if (!FileTools.IsOpened(basolia))
-                    throw new BasoliaException("Can't seek a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_SEEK"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
                 // Seek to 0 sec
                 SeekTo(basolia, 0);
@@ -106,11 +107,11 @@ namespace MediaBoom.Basolia.Playback
             {
                 InitBasolia.CheckInited();
                 if (basolia is null)
-                    throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
                 // Check to see if the file is open
                 if (!FileTools.IsOpened(basolia))
-                    throw new BasoliaException("Can't seek a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_SEEK"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
                 // Seek the file
                 MpvCommandHandler.RunCommand(basolia, "seek", seconds.ToString(), "absolute");
@@ -129,13 +130,13 @@ namespace MediaBoom.Basolia.Playback
             {
                 InitBasolia.CheckInited();
                 if (basolia is null)
-                    throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
                 // Check to see if the file is open
                 if (!FileTools.IsOpened(basolia))
-                    throw new BasoliaException("Can't seek a file that's not open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_SEEK"), MpvError.MPV_ERROR_INVALID_PARAMETER);
                 if (lyricLine is null)
-                    throw new BasoliaException("Lyric line is not provided to seek to", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOLYRICLINEFAILED"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
                 // Get the length and seek
                 long length = (long)lyricLine.LineSpan.TotalSeconds;

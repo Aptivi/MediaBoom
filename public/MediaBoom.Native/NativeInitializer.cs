@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -26,6 +26,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using SpecProbe.Software.Platform;
 using SpecProbe.Loader;
+using MediaBoom.Native.Languages;
 
 namespace MediaBoom.Native
 {
@@ -85,7 +86,7 @@ namespace MediaBoom.Native
                 // Start the library up
                 var architecture = PlatformHelper.GetArchitecture();
                 if (architecture == Architecture.X86 || architecture == Architecture.Arm)
-                    throw new BasoliaNativeLibraryException("32-bit platforms are no longer supported.");
+                    throw new BasoliaNativeLibraryException(LanguageTools.GetLocalized("MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED"));
                 libManagerMpv = new LibraryManager(new LibraryFile(libmpvLibPath, "libmpv.so.2", "libmpv.2.dylib"));
                 libManagerMpv.LoadNativeLibrary();
             }
@@ -118,9 +119,9 @@ namespace MediaBoom.Native
             where TDelegate : Delegate
         {
             if (libraryManager is null)
-                throw new BasoliaNativeLibraryException($"Can't get delegate for {function} without initializing the library first");
+                throw new BasoliaNativeLibraryException(string.Format(LanguageTools.GetLocalized("MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT"), function));
             return libraryManager.GetNativeMethodDelegate<TDelegate>(function) ??
-                throw new BasoliaNativeLibraryException($"Can't get delegate for {function}");
+                throw new BasoliaNativeLibraryException(string.Format(LanguageTools.GetLocalized("MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOTFOUND"), function));
         }
     }
 }

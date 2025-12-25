@@ -1,0 +1,404 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA",
+      "text": "لم يتم توفير مثيل Basolia."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_LIBMPVLIBINVALID",
+      "text": "مسار مكتبة libmpv {0} لا يحتوي على مكتبة libmpv صالحة."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OUT123LIBINVALID",
+      "text": "مسار مكتبة out123 {0} لا يحتوي على مكتبة out123 صالحة."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_VERSIONNEEDSLIB",
+      "text": "لا يمكن الحصول على الإصدار حتى تتم تهيئة المكتبة."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_NEEDSINIT",
+      "text": "لم تُهيئ Basolia مكتبة libmpv بعد!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERQUERY",
+      "text": "لا يمكن الاستعلام عن برامج التشغيل."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICEQUERY",
+      "text": "لا يمكن الاستعلام عن الأجهزة."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERNOTFOUND",
+      "text": "برنامج التشغيل {0} غير موجود."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICENOTFOUND",
+      "text": "الجهاز {0} غير موجود."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALERROR",
+      "text": "خطأ عام في Basolia."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR",
+      "text": "أرجع libmpv الخطأ التالي:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALOUTERROR",
+      "text": "خطأ عام في نظام إخراج Basolia."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_OUT123ERROR",
+      "text": "أرجع OUT123 الخطأ التالي:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_FILEALREADYOPEN",
+      "text": "لا يمكن فتح هذا الملف بينما الملف الحالي أو محطة الراديو لا تزال مفتوحة."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICFILEPATH",
+      "text": "توفير مسار لملف موسيقى."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILENOTFOUND",
+      "text": "ملف الموسيقى غير موجود."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILEOPENFAILED",
+      "text": "لا يمكن فتح الملف."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_URLALREADYOPEN",
+      "text": "لا يمكن فتح هذا الرابط بينما الملف الحالي أو محطة الراديو لا تزال مفتوحة."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICURL",
+      "text": "توفير مسار لملف موسيقى أو محطة راديو."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NORADIOSTATION",
+      "text": "محطة الراديو هذه غير موجودة. رمز الخطأ:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTARADIOSTATION",
+      "text": "هذا لا يبدو كمحطة راديو. هل أنت متأكد؟"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTMPEGRADIOSTATION",
+      "text": "هذا لا يبدو كمحطة راديو MP3. لديك نوع {0}. هل أنت متأكد؟"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "لا يمكن فتح محطة الراديو"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSAUDIOSTREAM",
+      "text": "لا يتوفر بث صوتي"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICSTREAMOPENFAILED",
+      "text": "لا يمكن فتح البث"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_ALREADYCLOSED",
+      "text": "لا يمكن إغلاق ملف أو محطة راديو مغلقة مسبقًا"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_CLOSEFAILED",
+      "text": "لا يمكن إغلاق الملف"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY",
+      "text": "لا يمكن الاستعلام عن ملف غير مفتوح"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONONPLAYBACK",
+      "text": "محاولة الحصول على المدة أثناء التشغيل تُسبب تلفًا في التشغيل! لا تستدعي هذه الدالة أثناء التشغيل."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONSCANFAILED",
+      "text": "لا يمكن مسح الملف بحثًا عن معلومات الطول"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILELENGTHFAILED",
+      "text": "لا يمكن تحديد طول الملف"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTGETFAILED",
+      "text": "لا يمكن الحصول على الناتج."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMELENGETFAILED",
+      "text": "لا يمكن الحصول على طول الإطار."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_SPFGETFAILED",
+      "text": "لا يمكن الحصول على العينات لكل إطار."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_TPFGETFAILED",
+      "text": "لا يمكن الحصول على الثواني لكل إطار."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_GENERICBUFFSIZEGETFAILED",
+      "text": "لا يمكن الحصول على حجم المخزن المؤقت العام."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ID3ONPLAYBACK",
+      "text": "محاولة الحصول على بيانات تعريف ID3 أثناء التشغيل تُسبب تلفًا في التشغيل! لا تستدعي هذه الدالة أثناء التشغيل"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMESCANFAILED",
+      "text": ". لا يمكن مسح الملف بحثًا عن معلومات الإطار"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_METADATAGETFAILED",
+      "text": "لا يمكن الحصول على معلومات البيانات الوصفية"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ICYONPLAYBACK",
+      "text": "محاولة الحصول على بيانات ICY الوصفية أثناء التشغيل تُسبب تلفًا في التشغيل! لا تستدعي هذه الوظيفة أثناء التشغيل."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOONPLAYBACK",
+      "text": "محاولة الحصول على معلومات الإطار أثناء التشغيل تُسبب تلفًا في التشغيل! لا تستدعي هذه الوظيفة أثناء التشغيل."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOGETFAILED",
+      "text": "لا يمكن الحصول على معلومات الإطار"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_DECODE",
+      "text": "لا يمكن فك تشفير إطار ملف غير مفتوح"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODEFAILED",
+      "text": "لا يمكن فك تشفير الإطار"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERNOTFOUND",
+      "text": "لم يتم العثور على وحدة فك التشفير {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERUNSUPPORTED",
+      "text": "وحدة فك التشفير {0} غير مدعومة من جهازك"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERSETFAILED",
+      "text": "لا يمكن ضبط وحدة فك التشفير على {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILEFORMATFAILED",
+      "text": "لا يمكن تحديد تنسيق الملف"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ENCODINGNOTFOUND",
+      "text": "الترميز {0} غير موجود."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FORMATINFOGETFAILED",
+      "text": "لا يمكن الحصول على معلومات التنسيق"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGGETFAILED",
+      "text": "لا يمكن إعادة تعيين ترميز الإخراج"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTFORMATSETFAILED",
+      "text": "لا يمكن ضبط تنسيق الإخراج"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGSETFAILED",
+      "text": "لا يمكن ضبط ترميز الإخراج على:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_INDEPENDENT_EXCEPTION_ROOTLIBPATHNEEDED",
+      "text": "توفير مسار مكتبة الجذر."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_LYRICS_EXCEPTION_LYRICSNOTFOUND",
+      "text": "كلمات الأغاني غير موجودة"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILENOTFOUND",
+      "text": "ملف قائمة التشغيل {0} غير موجود"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILEEXTINVALID",
+      "text": "امتداد ملف قائمة التشغيل غير صالح {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_PLAYLISTFILEEMPTY",
+      "text": "لم يتم توفير تمثيل قائمة التشغيل."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_NOTEXTHEADER",
+      "text": "هذا ليس عنوانًا ممتدًا:"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_EXTINFNEEDSARGS",
+      "text": "يتطلب EXTINF وسيطتين فقط، ولا يوجد مؤشر وسيطة."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
+      "text": "لم يتم العثور على ملف الموسيقى {0} أو أنه ليس ملف MPEG."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
+      "text": "يجب أن توفر معلومات المسار وسيطتين فقط: طول المسار بالثواني (-1 إذا كان بثًا مباشرًا) وعنوان المسار الخام."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFOINVALIDSECS",
+      "text": "لم توفر معلومات المسار عدد الثواني [{0}] بشكل صحيح."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DURATIONFAILED",
+      "text": "لا يمكن تحديد المدة الحالية للملف."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_SEEK",
+      "text": "لا يمكن البحث عن ملف غير مفتوح."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOSTARTFAILED",
+      "text": "لا يمكن البحث عن بداية الملف."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOFRAMEFAILED",
+      "text": "لا يمكن البحث عن الإطار #{0} من الملف."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOLYRICLINEFAILED",
+      "text": "لا يتم توفير سطر كلمات الأغاني للبحث عنه."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DROPFAILED",
+      "text": "لا يمكن الإسقاط."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY",
+      "text": "لا يمكن تشغيل ملف غير مفتوح"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PAUSE",
+      "text": "لا يمكن إيقاف ملف غير مفتوح مؤقتًا"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_STOP",
+      "text": "لا يمكن إيقاف ملف غير مفتوح"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETVOLUMEFAILED",
+      "text": "لا يمكن ضبط مستوى الصوت على {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETVOLUMEFAILED",
+      "text": "لا يمكن الحصول على مستوى الصوت (الأساسي، في الواقع، والديسيبل)"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQBANDFAILED",
+      "text": "لا يمكن ضبط نطاق المعادل {0}/32 على {1} تحت {2}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQRANGEBANDFAILED",
+      "text": "لا يمكن ضبط نطاقات المعادل {0}/32 -> {1}/32 على {2} تحت {3}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RESETEQBANDSFAILED",
+      "text": "لا يمكن إعادة ضبط نطاقات المعادل إلى قيمها الأولية!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETNATIVESTATEFAILED",
+      "text": "لا يمكن الحصول على الحالة الأصلية لـ {0}!"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_OPENOUTPUTFAILED",
+      "text": "لا يمكن فتح الإخراج للجهاز {0} على برنامج التشغيل {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_NEEDSOUTPUT",
+      "text": "يجب فتح الإخراج."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RATEENCODINGUNSUPPORTED",
+      "text": "المعدل المحدد [{0} هرتز] والترميز [{1}] غير مدعومين."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_STARTOUTPUTFAILED",
+      "text": "لا يمكن بدء الإخراج."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FEEDFAILED",
+      "text": "لا يمكن التغذية."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED",
+      "text": "فشل تحليل خادم الراديو {0}. يمكن العثور على مزيد من المعلومات في الاستثناء الداخلي."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMTOKENNULL_ICECAST",
+      "text": "رمز البث فارغ."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSOURCES",
+      "text": "لا توجد مصادر."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NEEDSRADIOSTATIONPATH",
+      "text": "توفير مسار لمحطة راديو"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_SERVERTYPEFAILED",
+      "text": "تعذر تحديد نوع خادم محطة الراديو."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMTOKENNULL_SHOUTCASTV2",
+      "text": "رمز بث Shoutcast v2.x فارغ."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSTREAM_SHOUTCASTV2",
+      "text": "لا يوجد بث Shoutcast v2.x."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_NOSTREAM_ICECAST",
+      "text": "لا يوجد بث Icecast."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
+      "text": "فشل تحليل معرف البث {0}. للمزيد من المعلومات، يُرجى مراجعة الاستثناء الداخلي."
+    }
+  ]
+}

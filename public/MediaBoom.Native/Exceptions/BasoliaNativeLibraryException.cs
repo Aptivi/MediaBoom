@@ -18,24 +18,25 @@
 //
 
 using System;
+using MediaBoom.Native.Languages;
 
 namespace MediaBoom.Native.Exceptions
 {
     internal class BasoliaNativeLibraryException : Exception
     {
         internal BasoliaNativeLibraryException() :
-            base($"Native library error\n" +
-                 $"Library path is {NativeInitializer.libmpvLibPath}")
+            base(LanguageTools.GetLocalized("MEDIABOOM_NATIVE_EXCEPTIONS_GENERALERROR") + "\n" +
+                 string.Format(LanguageTools.GetLocalized("MEDIABOOM_NATIVE_EXCEPTIONS_LIBPATH"), NativeInitializer.libmpvLibPath))
         { }
 
         internal BasoliaNativeLibraryException(string message) :
             base($"{message}\n" +
-                 $"Library path is {NativeInitializer.libmpvLibPath}")
+                 string.Format(LanguageTools.GetLocalized("MEDIABOOM_NATIVE_EXCEPTIONS_LIBPATH"), NativeInitializer.libmpvLibPath))
         { }
 
         internal BasoliaNativeLibraryException(string message, Exception innerException) :
             base($"{message}\n" +
-                 $"Library path is {NativeInitializer.libmpvLibPath}", innerException)
+                 string.Format(LanguageTools.GetLocalized("MEDIABOOM_NATIVE_EXCEPTIONS_LIBPATH"), NativeInitializer.libmpvLibPath), innerException)
         { }
     }
 }

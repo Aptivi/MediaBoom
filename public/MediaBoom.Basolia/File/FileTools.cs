@@ -1,4 +1,4 @@
-﻿//
+//
 // MediaBoom  Copyright (C) 2023-2025  Aptivi
 //
 // This file is part of MediaBoom
@@ -17,15 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Helpers;
+using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Playback;
 using MediaBoom.Basolia.Radio;
 using MediaBoom.Native.Interop.Enumerations;
 using SpecProbe.Software.Platform;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
+using Textify.General;
 
 namespace MediaBoom.Basolia.File
 {
@@ -57,7 +59,7 @@ namespace MediaBoom.Basolia.File
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             return basolia.isOpened;
         }
 
@@ -69,7 +71,7 @@ namespace MediaBoom.Basolia.File
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             return basolia.isRadioStation;
         }
 
@@ -81,7 +83,7 @@ namespace MediaBoom.Basolia.File
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             return basolia.currentFile;
         }
 
@@ -94,19 +96,19 @@ namespace MediaBoom.Basolia.File
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (IsOpened(basolia))
-                throw new BasoliaException("Can't open this file while the current file or a radio station is still open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_FILEALREADYOPEN"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if we provided a path
             if (string.IsNullOrEmpty(path))
-                throw new BasoliaException("Provide a path to a music file", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICFILEPATH"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file exists
             if (!System.IO.File.Exists(path))
-                throw new BasoliaException("Music file doesn't exist", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILENOTFOUND"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Open the file
             MpvCommandHandler.RunCommand(basolia, "loadfile", path);
@@ -132,15 +134,15 @@ namespace MediaBoom.Basolia.File
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (IsOpened(basolia))
-                throw new BasoliaException("Can't open this URL while the current file or a radio station is still open", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_URLALREADYOPEN"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if we provided a path
             if (string.IsNullOrEmpty(path))
-                throw new BasoliaException("Provide a path to a music file or a radio station", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICURL"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the radio station exists
             if (PlatformHelper.IsDotNetFx())
@@ -149,14 +151,14 @@ namespace MediaBoom.Basolia.File
             var reply = await RadioTools.client.GetAsync(path, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
             RadioTools.client.DefaultRequestHeaders.Remove("Icy-MetaData");
             if (!reply.IsSuccessStatusCode)
-                throw new BasoliaException($"This radio station doesn't exist. Error code: {(int)reply.StatusCode} ({reply.StatusCode}).", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NORADIOSTATION") + $" {(int)reply.StatusCode} ({reply.StatusCode}).", MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if there are any ICY headers
             if (!reply.Headers.Any((kvp) => kvp.Key.StartsWith("icy-")))
-                throw new BasoliaException("This doesn't look like a radio station. Are you sure?", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTARADIOSTATION"), MpvError.MPV_ERROR_INVALID_PARAMETER);
             var contentType = reply.Content.Headers.ContentType;
             if (contentType.MediaType != "audio/mpeg")
-                throw new BasoliaException($"This doesn't look like an MP3 radio station. You have a(n) {contentType.MediaType} type. Are you sure?", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTMPEGRADIOSTATION").FormatString(contentType.MediaType), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // We're now entering the dangerous zone
             unsafe
@@ -181,11 +183,11 @@ namespace MediaBoom.Basolia.File
         {
             InitBasolia.CheckInited();
             if (basolia is null)
-                throw new BasoliaException("Basolia instance is not provided", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Check to see if the file is open
             if (!IsOpened(basolia))
-                throw new BasoliaException("Can't close a file or a radio station that's already closed", MpvError.MPV_ERROR_INVALID_PARAMETER);
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_ALREADYCLOSED"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // First, stop the playing song
             var state = PlaybackTools.GetState(basolia);
