@@ -1,6 +1,6 @@
 {
   "sitemap": {
-    "baseUrl": "https://aptivi.github.io/BassBoom/"
+    "baseUrl": "https://aptivi.github.io/MediaBoom/"
   },
   "source_base_path": "/home/runner/work/MediaBoom/MediaBoom/DocGen",
   "xrefmap": "xrefmap.yml",
@@ -15,685 +15,685 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Albums.MusicFileLabeler.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Albums.MusicFileLabeler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Albums.MusicFileLabeler.html"
+          "relative_path": "api/MediaBoom.Basolia.Albums.MusicFileLabeler.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Albums.MusicFileLabeler",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Albums.MusicFileLabeler.yml\" sourcestartlinenumber=\"1\">Music file labeling tools for albums</p>\n"
+      "Title": "MediaBoom.Basolia.Albums.MusicFileLabeler",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Albums.MusicFileLabeler.yml\" sourcestartlinenumber=\"1\">Music file labeling tools for albums</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Albums.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Albums.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Albums.html"
+          "relative_path": "api/MediaBoom.Basolia.Albums.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Albums",
+      "Title": "MediaBoom.Basolia.Albums",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.BasoliaMedia.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.BasoliaMedia.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.BasoliaMedia.html"
+          "relative_path": "api/MediaBoom.Basolia.BasoliaMedia.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.BasoliaMedia",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.BasoliaMedia.yml\" sourcestartlinenumber=\"1\">Basolia instance for media manipulation</p>\n"
+      "Title": "MediaBoom.Basolia.BasoliaMedia",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.BasoliaMedia.yml\" sourcestartlinenumber=\"1\">Basolia instance for media manipulation</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Exceptions.BasoliaException.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Exceptions.BasoliaException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Exceptions.BasoliaException.html"
+          "relative_path": "api/MediaBoom.Basolia.Exceptions.BasoliaException.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Exceptions.BasoliaException",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Exceptions.BasoliaException.yml\" sourcestartlinenumber=\"1\">Basolia exception</p>\n"
+      "Title": "MediaBoom.Basolia.Exceptions.BasoliaException",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Exceptions.BasoliaException.yml\" sourcestartlinenumber=\"1\">Basolia exception</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Exceptions.BasoliaMiscException.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Exceptions.BasoliaMiscException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Exceptions.BasoliaMiscException.html"
+          "relative_path": "api/MediaBoom.Basolia.Exceptions.BasoliaMiscException.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Exceptions.BasoliaMiscException",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Exceptions.BasoliaMiscException.yml\" sourcestartlinenumber=\"1\">Basolia miscellaneous exception (ones that don't have to do with libmpv or OUT123)</p>\n"
+      "Title": "MediaBoom.Basolia.Exceptions.BasoliaMiscException",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Exceptions.BasoliaMiscException.yml\" sourcestartlinenumber=\"1\">Basolia miscellaneous exception (ones that don't have to do with libmpv or OUT123)</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Exceptions.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Exceptions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Exceptions.html"
+          "relative_path": "api/MediaBoom.Basolia.Exceptions.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Exceptions",
+      "Title": "MediaBoom.Basolia.Exceptions",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.File.FileTools.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.File.FileTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.File.FileTools.html"
+          "relative_path": "api/MediaBoom.Basolia.File.FileTools.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.File.FileTools",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.File.FileTools.yml\" sourcestartlinenumber=\"1\">File tools that are essential for the music player</p>\n"
+      "Title": "MediaBoom.Basolia.File.FileTools",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.File.FileTools.yml\" sourcestartlinenumber=\"1\">File tools that are essential for the music player</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.File.FileType.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.File.FileType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.File.FileType.html"
+          "relative_path": "api/MediaBoom.Basolia.File.FileType.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.File.FileType",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.File.FileType.yml\" sourcestartlinenumber=\"1\">File type class</p>\n"
+      "Title": "MediaBoom.Basolia.File.FileType",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.File.FileType.yml\" sourcestartlinenumber=\"1\">File type class</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.File.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.File.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.File.html"
+          "relative_path": "api/MediaBoom.Basolia.File.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.File",
+      "Title": "MediaBoom.Basolia.File",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Helpers.MpvCommandHandler.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Helpers.MpvCommandHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Helpers.MpvCommandHandler.html"
+          "relative_path": "api/MediaBoom.Basolia.Helpers.MpvCommandHandler.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Helpers.MpvCommandHandler",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Helpers.MpvCommandHandler.yml\" sourcestartlinenumber=\"1\">MPV command handler</p>\n"
+      "Title": "MediaBoom.Basolia.Helpers.MpvCommandHandler",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Helpers.MpvCommandHandler.yml\" sourcestartlinenumber=\"1\">MPV command handler</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Helpers.MpvPropertyHandler.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Helpers.MpvPropertyHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Helpers.MpvPropertyHandler.html"
+          "relative_path": "api/MediaBoom.Basolia.Helpers.MpvPropertyHandler.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Helpers.MpvPropertyHandler",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Helpers.MpvPropertyHandler.yml\" sourcestartlinenumber=\"1\">MPV property handler</p>\n"
+      "Title": "MediaBoom.Basolia.Helpers.MpvPropertyHandler",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Helpers.MpvPropertyHandler.yml\" sourcestartlinenumber=\"1\">MPV property handler</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Helpers.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Helpers.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Helpers.html"
+          "relative_path": "api/MediaBoom.Basolia.Helpers.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Helpers",
+      "Title": "MediaBoom.Basolia.Helpers",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.InitBasolia.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.InitBasolia.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.InitBasolia.html"
+          "relative_path": "api/MediaBoom.Basolia.InitBasolia.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.InitBasolia",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.InitBasolia.yml\" sourcestartlinenumber=\"1\">Initialization code</p>\n"
+      "Title": "MediaBoom.Basolia.InitBasolia",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.InitBasolia.yml\" sourcestartlinenumber=\"1\">Initialization code</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Lyrics.Lyric.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Lyrics.Lyric.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Lyrics.Lyric.html"
+          "relative_path": "api/MediaBoom.Basolia.Lyrics.Lyric.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Lyrics.Lyric",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Lyrics.Lyric.yml\" sourcestartlinenumber=\"1\">A song lyric class containing lyrical lines</p>\n"
+      "Title": "MediaBoom.Basolia.Lyrics.Lyric",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Lyrics.Lyric.yml\" sourcestartlinenumber=\"1\">A song lyric class containing lyrical lines</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Lyrics.LyricLine.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Lyrics.LyricLine.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Lyrics.LyricLine.html"
+          "relative_path": "api/MediaBoom.Basolia.Lyrics.LyricLine.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Lyrics.LyricLine",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Lyrics.LyricLine.yml\" sourcestartlinenumber=\"1\">A line from the lyric with its properties</p>\n"
+      "Title": "MediaBoom.Basolia.Lyrics.LyricLine",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Lyrics.LyricLine.yml\" sourcestartlinenumber=\"1\">A line from the lyric with its properties</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Lyrics.LyricLineWord.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Lyrics.LyricLineWord.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Lyrics.LyricLineWord.html"
+          "relative_path": "api/MediaBoom.Basolia.Lyrics.LyricLineWord.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Lyrics.LyricLineWord",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Lyrics.LyricLineWord.yml\" sourcestartlinenumber=\"1\">A word from a lyric line with its properties</p>\n"
+      "Title": "MediaBoom.Basolia.Lyrics.LyricLineWord",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Lyrics.LyricLineWord.yml\" sourcestartlinenumber=\"1\">A word from a lyric line with its properties</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Lyrics.LyricReader.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Lyrics.LyricReader.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Lyrics.LyricReader.html"
+          "relative_path": "api/MediaBoom.Basolia.Lyrics.LyricReader.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Lyrics.LyricReader",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Lyrics.LyricReader.yml\" sourcestartlinenumber=\"1\">Lyrics reader module</p>\n"
+      "Title": "MediaBoom.Basolia.Lyrics.LyricReader",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Lyrics.LyricReader.yml\" sourcestartlinenumber=\"1\">Lyrics reader module</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Lyrics.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Lyrics.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Lyrics.html"
+          "relative_path": "api/MediaBoom.Basolia.Lyrics.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Lyrics",
+      "Title": "MediaBoom.Basolia.Lyrics",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.AudioInfoTools.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.AudioInfoTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.AudioInfoTools.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.AudioInfoTools.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.AudioInfoTools",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Playback.AudioInfoTools.yml\" sourcestartlinenumber=\"1\">Audio information tools</p>\n"
+      "Title": "MediaBoom.Basolia.Playback.AudioInfoTools",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Playback.AudioInfoTools.yml\" sourcestartlinenumber=\"1\">Audio information tools</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.PlaybackPositioningTools.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.PlaybackPositioningTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.PlaybackPositioningTools.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.PlaybackPositioningTools.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.PlaybackPositioningTools",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Playback.PlaybackPositioningTools.yml\" sourcestartlinenumber=\"1\">Playback positioning tools</p>\n"
+      "Title": "MediaBoom.Basolia.Playback.PlaybackPositioningTools",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Playback.PlaybackPositioningTools.yml\" sourcestartlinenumber=\"1\">Playback positioning tools</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.PlaybackState.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.PlaybackState.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.PlaybackState.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.PlaybackState.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.PlaybackState",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Playback.PlaybackState.yml\" sourcestartlinenumber=\"1\">Playback state</p>\n"
+      "Title": "MediaBoom.Basolia.Playback.PlaybackState",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Playback.PlaybackState.yml\" sourcestartlinenumber=\"1\">Playback state</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.PlaybackTools.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.PlaybackTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.PlaybackTools.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.PlaybackTools.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.PlaybackTools",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Playback.PlaybackTools.yml\" sourcestartlinenumber=\"1\">Playback tools</p>\n"
+      "Title": "MediaBoom.Basolia.Playback.PlaybackTools",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Playback.PlaybackTools.yml\" sourcestartlinenumber=\"1\">Playback tools</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.Playlists.Enumerations.SongType.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Enumerations.SongType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.Playlists.Enumerations.SongType.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Enumerations.SongType.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.Playlists.Enumerations.SongType",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Playback.Playlists.Enumerations.SongType.yml\" sourcestartlinenumber=\"1\">Song type</p>\n"
+      "Title": "MediaBoom.Basolia.Playback.Playlists.Enumerations.SongType",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Playback.Playlists.Enumerations.SongType.yml\" sourcestartlinenumber=\"1\">Song type</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.Playlists.Enumerations.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Enumerations.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.Playlists.Enumerations.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Enumerations.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.Playlists.Enumerations",
+      "Title": "MediaBoom.Basolia.Playback.Playlists.Enumerations",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.Playlists.Instances.TrackInfo.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Instances.TrackInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.Playlists.Instances.TrackInfo.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Instances.TrackInfo.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.Playlists.Instances.TrackInfo",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Playback.Playlists.Instances.TrackInfo.yml\" sourcestartlinenumber=\"1\">Track information</p>\n"
+      "Title": "MediaBoom.Basolia.Playback.Playlists.Instances.TrackInfo",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Playback.Playlists.Instances.TrackInfo.yml\" sourcestartlinenumber=\"1\">Track information</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.Playlists.Instances.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Instances.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.Playlists.Instances.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Instances.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.Playlists.Instances",
+      "Title": "MediaBoom.Basolia.Playback.Playlists.Instances",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.Playlists.Playlist.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Playlist.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.Playlists.Playlist.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.Playlists.Playlist.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.Playlists.Playlist",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Playback.Playlists.Playlist.yml\" sourcestartlinenumber=\"1\">Playlist instance</p>\n"
+      "Title": "MediaBoom.Basolia.Playback.Playlists.Playlist",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Playback.Playlists.Playlist.yml\" sourcestartlinenumber=\"1\">Playlist instance</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.Playlists.PlaylistParser.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.Playlists.PlaylistParser.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.Playlists.PlaylistParser.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.Playlists.PlaylistParser.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.Playlists.PlaylistParser",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Playback.Playlists.PlaylistParser.yml\" sourcestartlinenumber=\"1\">Playlist parser that supports M3U and M3U8</p>\n"
+      "Title": "MediaBoom.Basolia.Playback.Playlists.PlaylistParser",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Playback.Playlists.PlaylistParser.yml\" sourcestartlinenumber=\"1\">Playlist parser that supports M3U and M3U8</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.Playlists.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.Playlists.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.Playlists.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.Playlists.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback.Playlists",
+      "Title": "MediaBoom.Basolia.Playback.Playlists",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Playback.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Playback.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Playback.html"
+          "relative_path": "api/MediaBoom.Basolia.Playback.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Playback",
+      "Title": "MediaBoom.Basolia.Playback",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Radio.IRadioServer.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Radio.IRadioServer.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Radio.IRadioServer.html"
+          "relative_path": "api/MediaBoom.Basolia.Radio.IRadioServer.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Radio.IRadioServer",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Radio.IRadioServer.yml\" sourcestartlinenumber=\"1\">Radio server interface</p>\n"
+      "Title": "MediaBoom.Basolia.Radio.IRadioServer",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Radio.IRadioServer.yml\" sourcestartlinenumber=\"1\">Radio server interface</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Radio.IcecastServer.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Radio.IcecastServer.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Radio.IcecastServer.html"
+          "relative_path": "api/MediaBoom.Basolia.Radio.IcecastServer.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Radio.IcecastServer",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Radio.IcecastServer.yml\" sourcestartlinenumber=\"1\">An Icecast server</p>\n"
+      "Title": "MediaBoom.Basolia.Radio.IcecastServer",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Radio.IcecastServer.yml\" sourcestartlinenumber=\"1\">An Icecast server</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Radio.RadioServerType.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Radio.RadioServerType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Radio.RadioServerType.html"
+          "relative_path": "api/MediaBoom.Basolia.Radio.RadioServerType.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Radio.RadioServerType",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Radio.RadioServerType.yml\" sourcestartlinenumber=\"1\">Enumeration for the radio server type</p>\n"
+      "Title": "MediaBoom.Basolia.Radio.RadioServerType",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Radio.RadioServerType.yml\" sourcestartlinenumber=\"1\">Enumeration for the radio server type</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Radio.RadioTools.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Radio.RadioTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Radio.RadioTools.html"
+          "relative_path": "api/MediaBoom.Basolia.Radio.RadioTools.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Radio.RadioTools",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Radio.RadioTools.yml\" sourcestartlinenumber=\"1\">Radio tools</p>\n"
+      "Title": "MediaBoom.Basolia.Radio.RadioTools",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Radio.RadioTools.yml\" sourcestartlinenumber=\"1\">Radio tools</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Radio.ShoutcastServer.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Radio.ShoutcastServer.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Radio.ShoutcastServer.html"
+          "relative_path": "api/MediaBoom.Basolia.Radio.ShoutcastServer.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Radio.ShoutcastServer",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Radio.ShoutcastServer.yml\" sourcestartlinenumber=\"1\">A Shoutcast server</p>\n"
+      "Title": "MediaBoom.Basolia.Radio.ShoutcastServer",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Radio.ShoutcastServer.yml\" sourcestartlinenumber=\"1\">A Shoutcast server</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Radio.ShoutcastVersion.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Radio.ShoutcastVersion.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Radio.ShoutcastVersion.html"
+          "relative_path": "api/MediaBoom.Basolia.Radio.ShoutcastVersion.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Radio.ShoutcastVersion",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Radio.ShoutcastVersion.yml\" sourcestartlinenumber=\"1\">Enumeration for the Shoutcast version</p>\n"
+      "Title": "MediaBoom.Basolia.Radio.ShoutcastVersion",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Radio.ShoutcastVersion.yml\" sourcestartlinenumber=\"1\">Enumeration for the Shoutcast version</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Radio.StreamInfo.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Radio.StreamInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Radio.StreamInfo.html"
+          "relative_path": "api/MediaBoom.Basolia.Radio.StreamInfo.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Radio.StreamInfo",
-      "Summary": "<p sourcefile=\"api/BassBoom.Basolia.Radio.StreamInfo.yml\" sourcestartlinenumber=\"1\">Shoutcast stream information</p>\n"
+      "Title": "MediaBoom.Basolia.Radio.StreamInfo",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Radio.StreamInfo.yml\" sourcestartlinenumber=\"1\">Shoutcast stream information</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.Radio.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.Radio.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.Radio.html"
+          "relative_path": "api/MediaBoom.Basolia.Radio.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia.Radio",
+      "Title": "MediaBoom.Basolia.Radio",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Basolia.yml",
+      "source_relative_path": "api/MediaBoom.Basolia.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Basolia.html"
+          "relative_path": "api/MediaBoom.Basolia.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Basolia",
+      "Title": "MediaBoom.Basolia",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvEofReason.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvEofReason.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvEofReason.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvEofReason.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations.MpvEofReason",
-      "Summary": "<p sourcefile=\"api/BassBoom.Native.Interop.Enumerations.MpvEofReason.yml\" sourcestartlinenumber=\"1\">MPV end of file reasons</p>\n"
+      "Title": "MediaBoom.Native.Interop.Enumerations.MpvEofReason",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Native.Interop.Enumerations.MpvEofReason.yml\" sourcestartlinenumber=\"1\">MPV end of file reasons</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvError.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvError.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvError.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvError.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations.MpvError",
-      "Summary": "<p sourcefile=\"api/BassBoom.Native.Interop.Enumerations.MpvError.yml\" sourcestartlinenumber=\"1\">MPV error codes</p>\n"
+      "Title": "MediaBoom.Native.Interop.Enumerations.MpvError",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Native.Interop.Enumerations.MpvError.yml\" sourcestartlinenumber=\"1\">MPV error codes</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvEventId.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvEventId.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvEventId.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvEventId.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations.MpvEventId",
-      "Summary": "<p sourcefile=\"api/BassBoom.Native.Interop.Enumerations.MpvEventId.yml\" sourcestartlinenumber=\"1\">MPV event ID list</p>\n"
+      "Title": "MediaBoom.Native.Interop.Enumerations.MpvEventId",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Native.Interop.Enumerations.MpvEventId.yml\" sourcestartlinenumber=\"1\">MPV event ID list</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvLogLevel.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvLogLevel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvLogLevel.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvLogLevel.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations.MpvLogLevel",
-      "Summary": "<p sourcefile=\"api/BassBoom.Native.Interop.Enumerations.MpvLogLevel.yml\" sourcestartlinenumber=\"1\">MPV log level</p>\n"
+      "Title": "MediaBoom.Native.Interop.Enumerations.MpvLogLevel",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Native.Interop.Enumerations.MpvLogLevel.yml\" sourcestartlinenumber=\"1\">MPV log level</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag",
-      "Summary": "<p sourcefile=\"api/BassBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag.yml\" sourcestartlinenumber=\"1\">MPV render frame info flag</p>\n"
+      "Title": "MediaBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Native.Interop.Enumerations.MpvRenderFrameInfoFlag.yml\" sourcestartlinenumber=\"1\">MPV render frame info flag</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvRenderParamType.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvRenderParamType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvRenderParamType.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvRenderParamType.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations.MpvRenderParamType",
-      "Summary": "<p sourcefile=\"api/BassBoom.Native.Interop.Enumerations.MpvRenderParamType.yml\" sourcestartlinenumber=\"1\">MPV render parameter types</p>\n"
+      "Title": "MediaBoom.Native.Interop.Enumerations.MpvRenderParamType",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Native.Interop.Enumerations.MpvRenderParamType.yml\" sourcestartlinenumber=\"1\">MPV render parameter types</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag",
-      "Summary": "<p sourcefile=\"api/BassBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag.yml\" sourcestartlinenumber=\"1\">MPV render update flag</p>\n"
+      "Title": "MediaBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Native.Interop.Enumerations.MpvRenderUpdateFlag.yml\" sourcestartlinenumber=\"1\">MPV render update flag</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvValueFormat.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvValueFormat.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.MpvValueFormat.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.MpvValueFormat.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations.MpvValueFormat",
-      "Summary": "<p sourcefile=\"api/BassBoom.Native.Interop.Enumerations.MpvValueFormat.yml\" sourcestartlinenumber=\"1\">MPV value formatting options</p>\n"
+      "Title": "MediaBoom.Native.Interop.Enumerations.MpvValueFormat",
+      "Summary": "<p sourcefile=\"api/MediaBoom.Native.Interop.Enumerations.MpvValueFormat.yml\" sourcestartlinenumber=\"1\">MPV value formatting options</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BassBoom.Native.Interop.Enumerations.yml",
+      "source_relative_path": "api/MediaBoom.Native.Interop.Enumerations.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BassBoom.Native.Interop.Enumerations.html"
+          "relative_path": "api/MediaBoom.Native.Interop.Enumerations.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BassBoom.Native.Interop.Enumerations",
+      "Title": "MediaBoom.Native.Interop.Enumerations",
       "Summary": null
     },
     {
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "api/toc.json"
-        },
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -712,11 +712,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
