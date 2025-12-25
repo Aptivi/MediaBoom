@@ -81,7 +81,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "MediaBoom.Basolia.Exceptions.BasoliaMiscException",
-      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Exceptions.BasoliaMiscException.yml\" sourcestartlinenumber=\"1\">Basolia miscellaneous exception (ones that don't have to do with libmpv or OUT123)</p>\n"
+      "Summary": "<p sourcefile=\"api/MediaBoom.Basolia.Exceptions.BasoliaMiscException.yml\" sourcestartlinenumber=\"1\">Basolia miscellaneous exception (ones that don't have to do with libmpv)</p>\n"
     },
     {
       "type": "ManagedReference",

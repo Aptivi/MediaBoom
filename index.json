@@ -22,12 +22,12 @@
   "api/MediaBoom.Basolia.Exceptions.BasoliaMiscException.html": {
     "href": "api/MediaBoom.Basolia.Exceptions.BasoliaMiscException.html",
     "title": "Class BasoliaMiscException | MediaBoom Basolia API - Aptivi",
-    "summary": "Class BasoliaMiscException Basolia miscellaneous exception (ones that don't have to do with libmpv or OUT123) Inheritance object Exception BasoliaMiscException Namespace: MediaBoom.Basolia.Exceptions Assembly: MediaBoom.Basolia.dll Syntax public class BasoliaMiscException : Exception"
+    "summary": "Class BasoliaMiscException Basolia miscellaneous exception (ones that don't have to do with libmpv) Inheritance object Exception BasoliaMiscException Namespace: MediaBoom.Basolia.Exceptions Assembly: MediaBoom.Basolia.dll Syntax public class BasoliaMiscException : Exception"
   },
   "api/MediaBoom.Basolia.Exceptions.html": {
     "href": "api/MediaBoom.Basolia.Exceptions.html",
     "title": "Namespace MediaBoom.Basolia.Exceptions | MediaBoom Basolia API - Aptivi",
-    "summary": "Namespace MediaBoom.Basolia.Exceptions Classes BasoliaException Basolia exception BasoliaMiscException Basolia miscellaneous exception (ones that don't have to do with libmpv or OUT123)"
+    "summary": "Namespace MediaBoom.Basolia.Exceptions Classes BasoliaException Basolia exception BasoliaMiscException Basolia miscellaneous exception (ones that don't have to do with libmpv)"
   },
   "api/MediaBoom.Basolia.File.FileTools.html": {
     "href": "api/MediaBoom.Basolia.File.FileTools.html",
