@@ -16,8 +16,8 @@ localize() {
 
     # Download libmpv for Windows
     echo "Downloading libmpv for Windows..."
-    curl -L --output "$ROOTDIR/vnd/" https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-25-c0d989c/mpv-dev-x86_64-20251225-git-c0d989c.7z
-    curl -L --output "$ROOTDIR/vnd/" https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-25-c0d989c/mpv-dev-aarch64-20251225-git-c0d989c.7z
+    curl -L --output "$ROOTDIR/vnd/mpv-dev-x86_64-20251225-git-c0d989c.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-25-c0d989c/mpv-dev-x86_64-20251225-git-c0d989c.7z
+    curl -L --output "$ROOTDIR/vnd/mpv-dev-aarch64-20251225-git-c0d989c.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-25-c0d989c/mpv-dev-aarch64-20251225-git-c0d989c.7z
 
     # Copy dependencies to the "deps" folder underneath the root directory
     mkdir -p "$ROOTDIR/deps"
