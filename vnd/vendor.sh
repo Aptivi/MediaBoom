@@ -11,13 +11,13 @@ localize() {
 
     # Restore the packages
     echo "Restoring NuGet packages..."
-    "$dotnetpath" restore "$ROOTDIR/MediaBoom.sln" --packages "$ROOTDIR/nuget"
+    "$dotnetpath" restore "$ROOTDIR/MediaBoom.slnx" --packages "$ROOTDIR/nuget"
     checkerror $? "Failed to restore NuGet packages"
 
     # Download libmpv for Windows
     echo "Downloading libmpv for Windows..."
-    curl -L --output "$ROOTDIR/vnd/mpv-dev-x86_64-20251231-git-f57c5ca.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-31-f57c5ca/mpv-dev-x86_64-20251231-git-f57c5ca.7z
-    curl -L --output "$ROOTDIR/vnd/mpv-dev-aarch64-20251231-git-f57c5ca.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-31-f57c5ca/mpv-dev-aarch64-20251231-git-f57c5ca.7z
+    curl -L --output "$ROOTDIR/vnd/mpv-dev-x86_64-20260110-git-9483d6e.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-10-9483d6e/mpv-dev-x86_64-20260110-git-9483d6e.7z
+    curl -L --output "$ROOTDIR/vnd/" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-10-9483d6e/
 
     # Copy dependencies to the "deps" folder underneath the root directory
     mkdir -p "$ROOTDIR/deps"
@@ -53,17 +53,17 @@ prebuild() {
     export DOTNET_NOLOGO=1
 
     # Download compiled Windows libmpv libraries
-    if [ ! -f $ROOTDIR/vnd/mpv-dev-x86_64-20251231-git-f57c5ca.7z ]; then
-        curl -L --output $ROOTDIR/vnd/mpv-dev-x86_64-20251231-git-f57c5ca.7z https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-31-f57c5ca/mpv-dev-x86_64-20251231-git-f57c5ca.7z
+    if [ ! -f $ROOTDIR/vnd/mpv-dev-x86_64-20260110-git-9483d6e.7z ]; then
+        curl -L --output $ROOTDIR/vnd/mpv-dev-x86_64-20260110-git-9483d6e.7z https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-10-9483d6e/mpv-dev-x86_64-20260110-git-9483d6e.7z
         checkvendorerror $?
     fi
-    if [ ! -f $ROOTDIR/vnd/mpv-dev-aarch64-20251231-git-f57c5ca.7z ]; then
-        curl -L --output $ROOTDIR/vnd/mpv-dev-aarch64-20251231-git-f57c5ca.7z https://github.com/zhongfly/mpv-winbuild/releases/download/2025-12-31-f57c5ca/mpv-dev-aarch64-20251231-git-f57c5ca.7z
+    if [ ! -f $ROOTDIR/vnd/ ]; then
+        curl -L --output $ROOTDIR/vnd/ https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-10-9483d6e/
         checkvendorerror $?
     fi
 
     # Install the DLL for AMD64
-    cd $ROOTDIR/vnd && "$sevenzpath" x $ROOTDIR/vnd/mpv-dev-x86_64-20251231-git-f57c5ca.7z libmpv-2.dll && cd -
+    cd $ROOTDIR/vnd && "$sevenzpath" x $ROOTDIR/vnd/mpv-dev-x86_64-20260110-git-9483d6e.7z libmpv-2.dll && cd -
     checkvendorerror $?
     mkdir -p $ROOTDIR/public/MediaBoom.Native/runtimes/win-x64/native/
     checkvendorerror $?
@@ -71,7 +71,7 @@ prebuild() {
     checkvendorerror $?
     
     # Install the DLL for ARM64
-    cd $ROOTDIR/vnd && "$sevenzpath" x $ROOTDIR/vnd/mpv-dev-aarch64-20251231-git-f57c5ca.7z libmpv-2.dll && cd -
+    cd $ROOTDIR/vnd && "$sevenzpath" x $ROOTDIR/vnd/ libmpv-2.dll && cd -
     checkvendorerror $?
     mkdir -p $ROOTDIR/public/MediaBoom.Native/runtimes/win-arm64/native/
     checkvendorerror $?
@@ -88,7 +88,7 @@ build() {
 
     # Now, build.
     echo Building with configuration $releaseconf...
-    "$dotnetpath" build "$ROOTDIR/MediaBoom.sln" -p:Configuration=$releaseconf ${@:2}
+    "$dotnetpath" build "$ROOTDIR/MediaBoom.slnx" -p:Configuration=$releaseconf ${@:2}
     checkvendorerror $?
 }
 
