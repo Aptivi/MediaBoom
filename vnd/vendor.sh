@@ -11,7 +11,7 @@ localize() {
 
     # Restore the packages
     echo "Restoring NuGet packages..."
-    "$dotnetpath" restore "$ROOTDIR/MediaBoom.sln" --packages "$ROOTDIR/nuget"
+    "$dotnetpath" restore "$ROOTDIR/MediaBoom.slnx" --packages "$ROOTDIR/nuget"
     checkerror $? "Failed to restore NuGet packages"
 
     # Download libmpv for Windows
@@ -88,7 +88,7 @@ build() {
 
     # Now, build.
     echo Building with configuration $releaseconf...
-    "$dotnetpath" build "$ROOTDIR/MediaBoom.sln" -p:Configuration=$releaseconf ${@:2}
+    "$dotnetpath" build "$ROOTDIR/MediaBoom.slnx" -p:Configuration=$releaseconf ${@:2}
     checkvendorerror $?
 }
 

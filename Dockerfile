@@ -5,7 +5,7 @@ WORKDIR /MB
 COPY . ./
 
 # Attempt to build MediaBoom
-RUN dotnet build "MediaBoom.sln" -p:Configuration=Release
+RUN dotnet build "MediaBoom.slnx" -p:Configuration=Release
 
 # Run the ASP.NET image
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
