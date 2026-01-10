@@ -27,8 +27,8 @@ jobs:
       - name: Release Asset Preparation
         run: |
           cmd.exe /c "tools\build.cmd Debug -p:ContinuousIntegrationBuild=true"
-          dotnet build -p:Configuration=Debug -p:Platform=x64 public/MediaBoom.Installers/MediaBoom.Installer.sln
-          dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/MediaBoom.Installers/MediaBoom.Installer.sln
+          dotnet build -p:Configuration=Debug -p:Platform=x64 public/MediaBoom.Installers/MediaBoom.Installer.slnx
+          dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/MediaBoom.Installers/MediaBoom.Installer.slnx
           Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/x64/Debug/MediaBoom.InstallerBundle.exe vnd/mediaboom-win-x64-installer.exe
           Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/ARM64/Debug/MediaBoom.InstallerBundle.exe vnd/mediaboom-win-arm64-installer.exe
       - uses: actions/upload-artifact@v4
