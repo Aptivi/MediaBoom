@@ -2,11 +2,12 @@
     color: var(--apt-accent-1);
 }
 
-.btn-primary, .btn, .form-control {
+.btn-primary, .btn, .form-control, .form-text {
     color: var(--apt-accent-2);
     background-color: var(--apt-accent-shade-3);
     border-color: var(--apt-accent-1);
     border-width: var(--apt-styling-border-width);
+    border-radius: var(--apt-styling-border-radius);
 }
 
     .btn-primary:hover, .btn:hover, .btn-primary:active, .btn:active, .btn.show {
@@ -24,11 +25,20 @@
         box-shadow: var(--apt-styling-unified-box-shadow);
     }
 
+    .form-control:focus {
+        color: var(--apt-accent-2);
+        background-color: var(--apt-accent-shade-3);
+        box-shadow: var(--apt-accent-1-shadow) 0px 0px 0px 0.25rem;
+        border-color: var(--apt-accent-1);
+        outline: 0px;
+    }
+
 .btn-secondary {
     color: var(--apt-accent-2);
     background-color: var(--apt-accent-back);
     border-color: var(--apt-accent-1);
     border-width: var(--apt-styling-border-width);
+    border-radius: var(--apt-styling-border-radius);
 }
 
     .btn-secondary:hover, .btn-secondary:active {
@@ -51,7 +61,6 @@
     border-color: var(--apt-accent-1);
     border-width: var(--apt-styling-border-width);
     border-radius: var(--apt-styling-border-radius) !important;
-    background-color: var(--apt-accent-shade-4) !important;
     color: var(--apt-accent-2) !important;
 }
 
@@ -72,12 +81,16 @@
     border-radius: inherit !important;
 }
 
-.accordion-item:not(:first-of-type) {
-    border-top-width: var(--apt-styling-border-width);
-    border-top-style: solid;
-    border-top-color: var(--apt-accent-1);
-    margin-top: 10px;
+.accordion-item {
+    background-color: var(--apt-accent-shade-4);
 }
+
+    .accordion-item:not(:first-of-type) {
+        border-top-width: var(--apt-styling-border-width);
+        border-top-style: solid;
+        border-top-color: var(--apt-accent-1);
+        margin-top: 10px;
+    }
 
 .accordion {
     --bs-accordion-btn-icon: var(--apt-arrow-down-svg-url);
@@ -86,7 +99,7 @@
 
 .accordion-button {
     color: var(--apt-accent-1);
-    background-color: var(--apt-accent-shade-3);
+    background-color: var(--apt-accent-shade-4);
     border-color: var(--apt-accent-1);
     border-width: var(--apt-styling-border-width);
     border-radius: inherit !important;
@@ -95,7 +108,7 @@
 
     .accordion-button:not(.collapsed) {
         color: var(--apt-accent-1);
-        background-color: var(--apt-accent-shade-3);
+        background-color: var(--apt-accent-shade-4);
         border-color: var(--apt-accent-1);
         border-width: var(--apt-styling-border-width);
         border-radius: inherit !important;
@@ -113,4 +126,30 @@
 
 .d-sm-flex {
     flex-wrap: wrap;
+}
+
+.table, .table-bordered {
+    --bs-table-color: var(--apt-accent-2);
+    --bs-table-bg: var(--apt-accent-shade-3);
+    --bs-table-border-color: var(--apt-accent-1);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: var(--apt-accent-2);
+    --bs-table-striped-bg: var(--apt-accent-shade-3);
+    --bs-table-active-color: var(--apt-accent-2);
+    --bs-table-active-bg: var(--apt-accent-shade-3);
+    --bs-table-hover-color: var(--apt-accent-2);
+    --bs-table-hover-bg: var(--apt-accent-shade-3);
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    border-color: var(--apt-accent-1);
+    border-width: var(--apt-styling-border-width);
+}
+
+.fs-1 {
+    font-size: 2.75rem !important;
+}
+
+.hljs {
+    color: var(--apt-accent-2);
 }

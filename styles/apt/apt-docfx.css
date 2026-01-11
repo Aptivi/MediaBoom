@@ -81,7 +81,7 @@ span.typeparamref {
     font-style: italic;
 }
 span.languagekeyword{
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .hljs {
@@ -99,7 +99,7 @@ span.languagekeyword{
 }
 .table {
   margin-bottom: 10px;
-  background-color: #150033;
+  background-color: var(--apt-accent-shade-3);
 }
 table p {
   margin-bottom: 0;
@@ -121,7 +121,7 @@ h3,
 .h3 {
   margin-top: 15px;
   margin-bottom: 10px;
-  font-weight: 400;
+  font-weight: normal;
 }
 h4,
 .h4,
@@ -209,7 +209,7 @@ article h1, article h2, article h3, article h4{
 
 article h4{
   border: 0;
-  font-weight: bold;
+  font-weight: normal;
   margin-top: 2em;
 }
 
@@ -298,7 +298,7 @@ article section {
   display: inline-block;
 }
 .docs-search {
-  background: white;
+  background: var(--apt-accent-2);
   vertical-align: middle;
 }
 .docs-search > .search-query {
@@ -330,13 +330,13 @@ article section {
 .search-results-group-heading {
   font-family: "Open Sans";
   padding-left: 10px;
-  color: white;
+  color: var(--apt-accent-2);
 }
 .search-close {
   position: absolute;
   left: 50%;
   margin-left: -100px;
-  color: white;
+  color: var(--apt-accent-2);
   text-align: center;
   padding: 5px;
   background: #333;
@@ -467,7 +467,7 @@ body .toc{
   margin-top: -4px;
 }
 .sidetoc-heading {
-  font-weight: 500;
+  font-weight: normal;
 }
 
 .toc {
@@ -477,10 +477,10 @@ body .toc{
 .expand-stub {
   position: absolute;
   left: -10px;
-  font-weight: bold;
+  font-weight: normal;
 }
 .expand-stub + a {
-  font-weight: bold;
+  font-weight: normal;
 }
 .toc .nav > li > a.sidetoc-expand {
   position: absolute;
@@ -488,23 +488,24 @@ body .toc{
   left: 0;
 }
 .toc .nav > li > a {
-  color: #666666;
+  color: var(--apt-accent-2);
   margin-left: 5px;
   display: block;
   padding: 0;
 }
+a:hover, a:focus,
 .toc .nav > li > a:hover,
 .toc .nav > li > a:focus {
-  color: #000000;
+  color: var(--apt-accent-2);
   background: none;
   text-decoration: inherit;
 }
 .toc .nav > li.active > a {
-  color: #150033;
+  color: var(--apt-accent-shade-5);
 }
 .toc .nav > li.active > a:hover,
 .toc .nav > li.active > a:focus {
-  color: #6700FF;
+  color: var(--apt-accent-shade-5);
 }
 
 .toc .nav > li> .expand-stub {
@@ -538,7 +539,7 @@ body .toc{
 }
 
 .toc .level1 > li {
-  font-weight: bold;
+  font-weight: normal;
   margin-top: 10px;
   position: relative;
   font-size: 16px;
@@ -556,42 +557,42 @@ body .toc{
   position: fixed;
   top: 90px;
   width: 260px;
-  background-color: black;
+  background-color: var(--apt-accent-back);
   padding: 15px;
   z-index: 1;
 }
 .form-control {
   border-radius: 5px;
   border: solid;
-  border-color: #6700FF;
+  border-color: var(--apt-accent-1);
   border-width: 2px;
   border-radius: 1em !important;
-  background: #150033;
+  background: var(--apt-accent-shade-3);
 }
 pre {
   border-radius: 5px !important;
   border: solid !important;
-  border-color: #6700FF !important;
+  border-color: var(--apt-accent-1) !important;
   border-width: 2px !important;
   border-radius: 1em !important;
-  background: #150033;
+  background: var(--apt-accent-shade-3);
 }
 .toc-filter {
   border-radius: 5px;
   border: solid;
-  border-color: #6700FF;
+  border-color: var(--apt-accent-1);
   border-width: 2px;
   border-radius: 1em !important;
-  background: #150033;
-  color: #666666;
+  background: var(--apt-accent-shade-3);
+  color: var(--apt-accent-2);
   padding: 5px;
   position: relative;
   margin: 0 5px 0 5px;
 }
 .toc-filter > input {
   border: 0;
-  color: #666666;
-  background: #150033;
+  color: var(--apt-accent-2);
+  background: var(--apt-accent-shade-3);
   padding-left: 20px;
   padding-right: 20px;
   width: 100%;
@@ -649,18 +650,18 @@ pre {
 }
 .sideaffix > div.contribution > ul > li > a.contribution-link {
   padding: 6px 10px;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 14px;
 }
 .sideaffix > div.contribution > ul > li > a.contribution-link:hover {
-  color: #ffffff;
+  color: var(--apt-accent-2);
   background-color: transparent;
 }
 .sideaffix ul.nav > li > a:focus {
   background: none;
 }
 .affix h5 {
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
   padding-left: 10px;
   font-size: 12px;
@@ -676,15 +677,15 @@ pre {
 }
 .affix ul > li > a:hover {
   background: none;
-  color: #666666;
+  color: var(--apt-accent-2);
 }
 .affix ul > li.active > a,
 .affix ul > li.active > a:before {
-  color: #150033;
+  color: var(--apt-accent-2);
 }
 .affix ul > li > a {
   padding: 5px 12px;
-  color: #666666;
+  color: var(--apt-accent-2);
 }
 .affix > ul > li.active:last-child {
   margin-bottom: 50px;
@@ -697,8 +698,8 @@ pre {
 }
 .affix > ul > li.active > a,
 .affix > ul > li.active > a:before {
-  color: #150033;
-  font-weight: bold;
+  color: var(--apt-accent-shade-3);
+  font-weight: normal;
 }
 .affix ul ul > li > a {
   padding: 2px 15px;
@@ -736,7 +737,7 @@ pre {
   border-color: #cccccc;
   text-align: center;
   padding: 2px 8px;
-  background-color: white;
+  background-color: var(--apt-accent-2);
   font-size: 12px;
   cursor: pointer;
   z-index: 100;
@@ -744,9 +745,9 @@ pre {
   color: #767676;
 }
 .tryspan:hover {
-  background-color: #150033;
-  color: white;
-  border-color: #6700FF;
+  background-color: var(--apt-accent-shade-3);
+  color: var(--apt-accent-2);
+  border-color: var(--apt-accent-1);
 }
 .codewrapper:hover .tryspan {
   display: block;
@@ -762,7 +763,7 @@ footer {
   z-index: 1000;
 }
 .footer {
-  background-color: black;
+  background-color: var(--apt-accent-back);
   padding: 30px 0;
 }
 @media (min-width: 768px) {
@@ -817,7 +818,7 @@ footer {
     margin-left: -3px;
     margin-right: 5px;
     content: ", ";
-    color: #666666;
+    color: var(--apt-accent-2);
   }
   .toc .level1 > li {
     display: block;
@@ -880,7 +881,7 @@ code {
 }
 
 a code {
-  color: #150033;
+  color: var(--apt-accent-shade-3);
   background-color: #f1f2f3;
 }
 
@@ -908,7 +909,7 @@ pre > code .line-highlight {
 /* Alerts */
 .alert h5 {
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
     margin-top: 0;
 }
 
@@ -1027,7 +1028,7 @@ div.embeddedvideo iframe {
 
 /* Major sections, increase visibility **/
 #fields, #properties, #methods, #events {
-    font-weight: bold;
+    font-weight: normal;
     margin-top: 2em;
 }
 

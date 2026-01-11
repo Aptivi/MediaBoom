@@ -10,10 +10,17 @@
     background-color: var(--apt-accent-shade-4-shadow) !important;
 }
 
-.bordered, .table-bordered, .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td, .table>thead>tr>th {
+.bordered,
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td,
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th,
+.table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     border: solid;
     border-color: var(--apt-accent-1);
     border-width: var(--apt-styling-border-width);
+}
+
+.bordered-radius {
     border-radius: var(--apt-styling-border-radius);
 }
 
@@ -48,4 +55,29 @@
 
 .background-gradient {
     background: var(--apt-accent-back-gradient);
+}
+
+.icon-square {
+    width: 100%;
+    max-width: min(15rem, 80vw);
+    height: auto;
+    font-size: 8rem;
+    border-radius: var(--apt-styling-border-radius);
+    background-color: var(--apt-accent-back) !important;
+    color: var(--apt-accent-1) !important;
+}
+
+.general-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.col {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.btn {
+    max-width: 100%;
 }

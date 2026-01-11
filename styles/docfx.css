@@ -11,12 +11,24 @@
 @import url('apt/apt-common.css');
 @import url('apt/apt-overrides.css');
 
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 /* Common HTML overrides */
 html, body {
     font-family: var(--apt-font-style-sans);
     color: var(--apt-accent-2);
     background-color: var(--apt-accent-back) !important;
-    height: 100%;
 }
 
 button {
