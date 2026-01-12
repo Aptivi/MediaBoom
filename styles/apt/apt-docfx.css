@@ -134,9 +134,7 @@ h6,
 }
 .apt-head {
   margin-bottom: 0;
-  background-color: transparent;
   border: none;
-  backdrop-filter: blur(8px);
 }
 .navbar {
   margin-bottom: 0;
@@ -328,7 +326,6 @@ article section {
   padding: 10px;
 }
 .search-results-group-heading {
-  font-family: "Open Sans";
   padding-left: 10px;
   color: var(--apt-accent-2);
 }

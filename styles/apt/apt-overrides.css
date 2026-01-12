@@ -153,3 +153,17 @@
 .hljs {
     color: var(--apt-accent-2);
 }
+
+.container {
+    width: unset;
+    padding-left: 16rem;
+    padding-right: 16rem;
+}
+
+@media (max-width: 770px) {
+    .container {
+        width: unset;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
