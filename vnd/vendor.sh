@@ -16,8 +16,8 @@ localize() {
 
     # Download libmpv for Windows
     echo "Downloading libmpv for Windows..."
-    curl -L --output "$ROOTDIR/vnd/mpv-dev-x86_64-20260118-git-5f6d5b3.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-18-5f6d5b3/mpv-dev-x86_64-20260118-git-5f6d5b3.7z
-    curl -L --output "$ROOTDIR/vnd/mpv-dev-aarch64-20260118-git-5f6d5b3.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-18-5f6d5b3/mpv-dev-aarch64-20260118-git-5f6d5b3.7z
+    curl -L --output "$ROOTDIR/vnd/mpv-dev-x86_64-20260119-git-b7e8fe9.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-19-b7e8fe9/mpv-dev-x86_64-20260119-git-b7e8fe9.7z
+    curl -L --output "$ROOTDIR/vnd/mpv-dev-aarch64-20260119-git-b7e8fe9.7z" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-19-b7e8fe9/mpv-dev-aarch64-20260119-git-b7e8fe9.7z
 
     # Copy dependencies to the "deps" folder underneath the root directory
     mkdir -p "$ROOTDIR/deps"
@@ -53,17 +53,17 @@ prebuild() {
     export DOTNET_NOLOGO=1
 
     # Download compiled Windows libmpv libraries
-    if [ ! -f $ROOTDIR/vnd/mpv-dev-x86_64-20260118-git-5f6d5b3.7z ]; then
-        curl -L --output $ROOTDIR/vnd/mpv-dev-x86_64-20260118-git-5f6d5b3.7z https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-18-5f6d5b3/mpv-dev-x86_64-20260118-git-5f6d5b3.7z
+    if [ ! -f $ROOTDIR/vnd/mpv-dev-x86_64-20260119-git-b7e8fe9.7z ]; then
+        curl -L --output $ROOTDIR/vnd/mpv-dev-x86_64-20260119-git-b7e8fe9.7z https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-19-b7e8fe9/mpv-dev-x86_64-20260119-git-b7e8fe9.7z
         checkvendorerror $?
     fi
-    if [ ! -f $ROOTDIR/vnd/mpv-dev-aarch64-20260118-git-5f6d5b3.7z ]; then
-        curl -L --output $ROOTDIR/vnd/mpv-dev-aarch64-20260118-git-5f6d5b3.7z https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-18-5f6d5b3/mpv-dev-aarch64-20260118-git-5f6d5b3.7z
+    if [ ! -f $ROOTDIR/vnd/mpv-dev-aarch64-20260119-git-b7e8fe9.7z ]; then
+        curl -L --output $ROOTDIR/vnd/mpv-dev-aarch64-20260119-git-b7e8fe9.7z https://github.com/zhongfly/mpv-winbuild/releases/download/2026-01-19-b7e8fe9/mpv-dev-aarch64-20260119-git-b7e8fe9.7z
         checkvendorerror $?
     fi
 
     # Install the DLL for AMD64
-    cd $ROOTDIR/vnd && "$sevenzpath" x $ROOTDIR/vnd/mpv-dev-x86_64-20260118-git-5f6d5b3.7z libmpv-2.dll && cd -
+    cd $ROOTDIR/vnd && "$sevenzpath" x $ROOTDIR/vnd/mpv-dev-x86_64-20260119-git-b7e8fe9.7z libmpv-2.dll && cd -
     checkvendorerror $?
     mkdir -p $ROOTDIR/public/MediaBoom.Native/runtimes/win-x64/native/
     checkvendorerror $?
@@ -71,7 +71,7 @@ prebuild() {
     checkvendorerror $?
     
     # Install the DLL for ARM64
-    cd $ROOTDIR/vnd && "$sevenzpath" x $ROOTDIR/vnd/mpv-dev-aarch64-20260118-git-5f6d5b3.7z libmpv-2.dll && cd -
+    cd $ROOTDIR/vnd && "$sevenzpath" x $ROOTDIR/vnd/mpv-dev-aarch64-20260119-git-b7e8fe9.7z libmpv-2.dll && cd -
     checkvendorerror $?
     mkdir -p $ROOTDIR/public/MediaBoom.Native/runtimes/win-arm64/native/
     checkvendorerror $?
