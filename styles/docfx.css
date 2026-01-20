@@ -35,8 +35,16 @@ button {
     font-family: var(--apt-font-style-sans);
 }
 
-p {
-    font-size: var(--apt-styling-common-font-size);
+@media (min-width: 770px) {
+    p {
+        font-size: var(--apt-styling-common-font-size);
+    }
+}
+
+@media (max-width: 769px) {
+    p {
+        font-size: medium;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {

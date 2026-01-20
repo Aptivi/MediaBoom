@@ -146,8 +146,10 @@
     border-width: var(--apt-styling-border-width);
 }
 
-.fs-1 {
-    font-size: 2.75rem !important;
+@media (min-width: 770px) {
+    .fs-1 {
+        font-size: 2.75rem !important;
+    }
 }
 
 .hljs {
