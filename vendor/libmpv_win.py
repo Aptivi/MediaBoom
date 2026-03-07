@@ -36,7 +36,7 @@ def download_libmpv_win(root_dir, extract: bool = True):
             os.makedirs(native_arm_dir)
 
         # Install the libmpv-2.dll file to the native directory
-        with py7zr.SevenZipFie(path_amd, mode='r') as archive:
+        with py7zr.SevenZipFile(path_amd, mode='r') as archive:
             archive.extract(targets=[filename_amd], path=native_amd_dir)
-        with py7zr.SevenZipFie(path_arm, mode='r') as archive:
+        with py7zr.SevenZipFile(path_arm, mode='r') as archive:
             archive.extract(targets=[filename_arm], path=native_arm_dir)
