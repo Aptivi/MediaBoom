@@ -29,12 +29,5 @@ jobs:
       - name: Setup Mono (macOS)
         if: matrix.runs-on == 'macos-latest'
         run: brew install mono
-      - name: Setup real 7zip (macOS)
-        if: matrix.runs-on == 'macos-latest'
-        uses: milliewalky/setup-7-zip@v2
-      - name: Solution Compilation (Windows)
-        if: matrix.runs-on == 'windows-latest'
-        run: ./tools/build.cmd Debug -p:ContinuousIntegrationBuild=true
-      - name: Solution Compilation (Unix)
-        if: matrix.runs-on != 'windows-latest'
-        run: make dbg-ci
+      - name: Solution Compilation
+        run: python tools/adt.py build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"

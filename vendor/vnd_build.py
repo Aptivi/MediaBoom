@@ -1,5 +1,13 @@
 import os
 import subprocess
+from libmpv_win import download_libmpv_win
+
+
+def vnd_prebuild(extra_args):
+    solution = os.path.dirname(os.path.abspath(__file__ + '/../'))
+
+    # Download libmpv for Windows
+    download_libmpv_win(solution)
 
 
 def vnd_build(args, extra_args):

@@ -23,12 +23,12 @@ jobs:
         submodules: 'true'
         ref: ${{ github.ref }}
     - name: Check the links
-      run: bash vnd/update-links.sh
+      run: bash vendor/update-links.sh
     - name: Add difference and push
       uses: EndBug/add-and-commit@v9
       with:
         message: int - Updated libmpv links
         committer_name: Library Watch
         committer_email: actions@github.com
-        add: 'vnd/*'
+        add: 'vendor/*'
         push: true

@@ -41,10 +41,10 @@ rel-ci:
 doc: invoke-doc-build
 
 clean:
-	bash tools/clean.sh
+	python tools/adt.py clean
 
 all-offline:
-	$(MAKE) invoke-build-offline BUILDARGS="-p:ContinuousIntegrationBuild=true -p:SystemWide=true $(BUILDARGS)"
+	$(MAKE) invoke-build-offline ENVIRONMENT=Release BUILDARGS="-p:ContinuousIntegrationBuild=true -p:SystemWide=true $(BUILDARGS)"
 
 init-offline:
 	$(MAKE) invoke-init-offline
@@ -68,13 +68,15 @@ install:
 # Below targets specify functions for full build
 
 invoke-build:
-	bash tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS)
+	python tools/adt.py build -b "-p:Configuration=$(ENVIRONMENT) $(BUILDARGS)"
     
 invoke-doc-build:
-	bash tools/docgen.sh
+	python tools/adt.py gendocs
 
 invoke-build-offline:
-	HOME=`pwd`"/debian/homedir" bash tools/build.sh Release $(BUILDARGS)
+	HOME=`pwd`"/debian/homedir" \
+	DOTNET_CLI_HOME=`pwd`"/debian/homedir" \
+	python tools/adt.py build -b "-p:Configuration=$(ENVIRONMENT) $(BUILDARGS)"
 
 invoke-init-offline:
-	bash tools/localize.sh
+	python tools/adt.py vendorize

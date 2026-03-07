@@ -1,6 +1,7 @@
 import os
 import shutil
 import subprocess
+from libmpv_win import download_libmpv_win
 
 
 def vnd_vendorize(extra_args):
@@ -42,6 +43,9 @@ def vnd_vendorize(extra_args):
     with open(nuget_conf_path, 'w') as nuget_conf_file:
         nuget_conf_file.write(nuget_conf_contents)
     print('Prepared NuGet sources for offline use.')
+
+    # Download libmpv for Windows
+    download_libmpv_win(solution, extract=False)
     
 
 def copy_nupkgs(nuget_packages_dir, deps_dir):
