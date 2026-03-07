@@ -1,5 +1,6 @@
 import urllib.request as http_client
 import py7zr
+import os
 
 
 def download_libmpv_win(root_dir, extract: bool = True):
