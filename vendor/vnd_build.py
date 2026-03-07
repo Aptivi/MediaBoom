@@ -3,7 +3,7 @@ import subprocess
 from libmpv_win import download_libmpv_win
 
 
-def vnd_prebuild(extra_args):
+def vnd_prebuild():
     solution = os.path.dirname(os.path.abspath(__file__ + '/../'))
 
     # Download libmpv for Windows
