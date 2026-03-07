@@ -12,6 +12,8 @@ def download_libmpv_win(root_dir, extract: bool = True):
     link_base = "https://github.com/zhongfly/mpv-winbuild/releases/download/"
     path_amd = output_dir + '/' + filename_amd
     path_arm = output_dir + '/' + filename_arm
+    if not os.path.isdir(output_dir):
+        os.makedirs(output_dir)
     if not os.path.isfile(path_amd):
         http_client.urlretrieve(link_base + revision + '/' + filename_amd,
                                 output_dir + '/' + filename_amd)
@@ -29,9 +31,9 @@ def download_libmpv_win(root_dir, extract: bool = True):
 
         # Make the directory first
         if not os.path.isdir(native_amd_dir):
-            os.path.makedirs(native_amd_dir)
+            os.makedirs(native_amd_dir)
         if not os.path.isdir(native_arm_dir):
-            os.path.makedirs(native_arm_dir)
+            os.makedirs(native_arm_dir)
 
         # Install the libmpv-2.dll file to the native directory
         with py7zr.SevenZipFie(path_amd, mode='r') as archive:
