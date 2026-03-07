@@ -16,8 +16,8 @@ localize() {
 
     # Download libmpv for Windows
     echo "Downloading libmpv for Windows..."
-    curl -L --output "$ROOTDIR/vnd/" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-03-06-3b55bc9/
-    curl -L --output "$ROOTDIR/vnd/" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-03-06-3b55bc9/
+    curl -L --output "$ROOTDIR/vnd/" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-03-07-429fdcf/
+    curl -L --output "$ROOTDIR/vnd/" https://github.com/zhongfly/mpv-winbuild/releases/download/2026-03-07-429fdcf/
 
     # Copy dependencies to the "deps" folder underneath the root directory
     mkdir -p "$ROOTDIR/deps"
@@ -54,11 +54,11 @@ prebuild() {
 
     # Download compiled Windows libmpv libraries
     if [ ! -f $ROOTDIR/vnd/ ]; then
-        curl -L --output $ROOTDIR/vnd/ https://github.com/zhongfly/mpv-winbuild/releases/download/2026-03-06-3b55bc9/
+        curl -L --output $ROOTDIR/vnd/ https://github.com/zhongfly/mpv-winbuild/releases/download/2026-03-07-429fdcf/
         checkvendorerror $?
     fi
     if [ ! -f $ROOTDIR/vnd/ ]; then
-        curl -L --output $ROOTDIR/vnd/ https://github.com/zhongfly/mpv-winbuild/releases/download/2026-03-06-3b55bc9/
+        curl -L --output $ROOTDIR/vnd/ https://github.com/zhongfly/mpv-winbuild/releases/download/2026-03-07-429fdcf/
         checkvendorerror $?
     fi
 
