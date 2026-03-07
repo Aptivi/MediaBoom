@@ -2,7 +2,7 @@ Source: mediaboom-3
 Section: misc
 Priority: optional
 Maintainer: Aptivi CEO <ceo@aptivi.anonaddy.com>
-Build-Depends: debhelper-compat (= 12), dotnet-sdk-10.0 (>= 10.0.100), 7zip (>= 21.07), libmpv2 (>= 0.37.0)
+Build-Depends: debhelper-compat (= 12), dotnet-sdk-10.0 (>= 10.0.100), 7zip (>= 21.07), libmpv2 (>= 0.37.0), python3-py7zr (>= 0.11.0)
 Standards-Version: 4.4.0
 Homepage: https://aptivi.gitbook.io/mediaboom-manual
 Vcs-Browser: https://github.com/Aptivi/MediaBoom

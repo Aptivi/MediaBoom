@@ -26,6 +26,7 @@ jobs:
           dotnet-version: '10.0.x'
       - name: Release Asset Preparation
         run: |
+          pip install py7zr
           python tools/adt.py build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
           mkdir artifacts
           dotnet build -p:Configuration=Debug -p:Platform=x64 public/MediaBoom.Installers/MediaBoom.Installer.slnx

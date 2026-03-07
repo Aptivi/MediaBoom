@@ -26,6 +26,7 @@ jobs:
         run: dotnet tool install --global docfx
       - name: Release Asset Preparation
         run: |
+          pip install py7zr
           python tools/adt.py build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
           python tools/adt.py packbin
           python tools/adt.py gendocs
