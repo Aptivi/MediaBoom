@@ -5,7 +5,7 @@ import os
 
 def download_libmpv_win(root_dir, extract: bool = True):
     # Download LibMPV for Windows
-    output_dir = root_dir + "/artifacts"
+    output_dir = root_dir + "/libmpv-win"
     revision = "2026-03-06-3b55bc9"
     filename_amd = "mpv-dev-x86_64-20260306-git-3b55bc9.7z"
     filename_arm = "mpv-dev-aarch64-20260306-git-3b55bc9.7z"
