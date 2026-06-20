@@ -36,7 +36,7 @@ def vnd_packbin(extra_args):
     exec_zip_file = f'{version}-bin'
     exec_zip_path = artifacts_dir + '/' + exec_zip_file
     exec_dnfx_zip_file = f'{version}-bin-48'
-    exec_dnfx_zip_path = artifacts_dir + '/' + addons_zip_file
+    exec_dnfx_zip_path = artifacts_dir + '/' + exec_dnfx_zip_file
 
     # Generate the files
     zip_path = shutil.make_archive(exec_zip_path, 'zip', exec_dir)
