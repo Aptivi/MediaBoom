@@ -35,7 +35,7 @@ jobs:
         languages: ${{ matrix.language }}
     - name: Build
       run: |
-        pip install py7zr
+        pip install py7zr aptivi-adt
         make rel-ci
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
