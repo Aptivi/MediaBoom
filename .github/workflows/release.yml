@@ -28,13 +28,13 @@ jobs:
         run: |
           pip install py7zr aptivi-adt
           adt build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
-          adt packbin
           adt gendocs
           adt packdocs
-          dotnet build -p:Configuration=Release -p:Platform=x64 public/MediaBoom.Installers/MediaBoom.Installer.slnx
-          dotnet build -p:Configuration=Release -p:Platform=ARM64 public/MediaBoom.Installers/MediaBoom.Installer.slnx
-          Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/x64/Release/MediaBoom.InstallerBundle.exe artifacts/mediaboom-win-x64-installer.exe
-          Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/ARM64/Release/MediaBoom.InstallerBundle.exe artifacts/mediaboom-win-arm64-installer.exe
+          adt buildwix Release x64
+          adt buildwix Release ARM64
+          adt packbin
+          adt packwix Release x64
+          adt packwix Release ARM64
       - name: Release Preparation
         id: release-asset
         shell: bash

@@ -28,11 +28,11 @@ jobs:
         run: |
           pip install py7zr aptivi-adt
           adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
-          mkdir artifacts
-          dotnet build -p:Configuration=Debug -p:Platform=x64 public/MediaBoom.Installers/MediaBoom.Installer.slnx
-          dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/MediaBoom.Installers/MediaBoom.Installer.slnx
-          Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/x64/Debug/MediaBoom.InstallerBundle.exe artifacts/mediaboom-win-x64-installer.exe
-          Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/ARM64/Debug/MediaBoom.InstallerBundle.exe artifacts/mediaboom-win-arm64-installer.exe
+          adt buildwix Debug x64
+          adt buildwix Debug ARM64
+          adt packbin
+          adt packwix Debug x64
+          adt packwix Debug ARM64
       - uses: actions/upload-artifact@v7
         with:
           name: installer-x64-msi
