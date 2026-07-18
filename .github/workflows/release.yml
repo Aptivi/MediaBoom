@@ -27,10 +27,10 @@ jobs:
       - name: Release Asset Preparation
         run: |
           pip install py7zr aptivi-adt
-          python tools/adt.py build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
-          python tools/adt.py packbin
-          python tools/adt.py gendocs
-          python tools/adt.py packdocs
+          adt build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
+          adt packbin
+          adt gendocs
+          adt packdocs
           dotnet build -p:Configuration=Release -p:Platform=x64 public/MediaBoom.Installers/MediaBoom.Installer.slnx
           dotnet build -p:Configuration=Release -p:Platform=ARM64 public/MediaBoom.Installers/MediaBoom.Installer.slnx
           Move-Item public/MediaBoom.Installers/MediaBoom.InstallerBundle/bin/x64/Release/MediaBoom.InstallerBundle.exe artifacts/mediaboom-win-x64-installer.exe
@@ -58,4 +58,4 @@ jobs:
             artifacts/*.zip
             artifacts/*.exe
       - name: Package Publication
-        run: python tools/adt.py pushbin -a "${{ secrets.NUGET_APIKEY }}"
+        run: adt pushbin -a "${{ secrets.NUGET_APIKEY }}"
