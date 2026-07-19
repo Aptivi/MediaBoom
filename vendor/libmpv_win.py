@@ -1,5 +1,8 @@
+from typing import Collection
 import urllib.request as http_client
 import py7zr
+from py7zr.exceptions import UnsupportedCompressionMethodError
+from subprocess import run
 import os
 
 
@@ -36,7 +39,19 @@ def download_libmpv_win(root_dir, extract: bool = True):
             os.makedirs(native_arm_dir)
 
         # Install the libmpv-2.dll file to the native directory
-        with py7zr.SevenZipFile(path_amd, mode='r') as archive:
-            archive.extract(targets=[filename_amd], path=native_amd_dir)
-        with py7zr.SevenZipFile(path_arm, mode='r') as archive:
-            archive.extract(targets=[filename_arm], path=native_arm_dir)
+        extract_mpv(path_amd, native_amd_dir)
+        extract_mpv(path_arm, native_arm_dir)
+
+
+def bcj2_workaround(path: str, outdir: str) -> None:
+    result = run(['7z', 'x', '-y', f'-o{outdir}', f'{path}', 'libmpv-2.dll'])
+    if result.returncode != 0:
+        raise RuntimeError(f'7z error while decompressing {path}')
+
+
+def extract_mpv(path: str, outdir: str) -> None:
+    try:
+        with py7zr.SevenZipFile(path, mode='r') as archive:
+            archive.extract(targets=["libmpv-2.dll"], path=outdir)
+    except UnsupportedCompressionMethodError as e:
+        bcj2_workaround(path, outdir)
