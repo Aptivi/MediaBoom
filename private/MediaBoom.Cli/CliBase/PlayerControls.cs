@@ -51,6 +51,8 @@ namespace MediaBoom.Cli.CliBase
 
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (!MediaBoomCli.basolia.IsOpened())
+                return;
             Player.position += (int)seekRate;
             if (Player.position > Common.CurrentCachedInfo.Duration)
                 Player.position = Common.CurrentCachedInfo.Duration;
@@ -67,6 +69,8 @@ namespace MediaBoom.Cli.CliBase
 
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (!MediaBoomCli.basolia.IsOpened())
+                return;
             Player.position -= (int)seekRate;
             if (Player.position < 0)
                 Player.position = 0;
@@ -81,6 +85,8 @@ namespace MediaBoom.Cli.CliBase
 
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (!MediaBoomCli.basolia.IsOpened())
+                return;
             MediaBoomCli.basolia.SeekToTheBeginning();
             Player.position = 0;
         }
@@ -97,6 +103,8 @@ namespace MediaBoom.Cli.CliBase
 
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (!MediaBoomCli.basolia.IsOpened())
+                return;
             var lyrics = Common.CurrentCachedInfo.LyricInstance.GetLinesCurrent(MediaBoomCli.basolia);
             if (lyrics.Length == 0)
                 return;
@@ -116,6 +124,8 @@ namespace MediaBoom.Cli.CliBase
 
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (!MediaBoomCli.basolia.IsOpened())
+                return;
             var lyrics = Common.CurrentCachedInfo.LyricInstance.GetLinesCurrent(MediaBoomCli.basolia);
             if (lyrics.Length == 0)
                 return;
@@ -135,6 +145,8 @@ namespace MediaBoom.Cli.CliBase
 
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (!MediaBoomCli.basolia.IsOpened())
+                return;
             var lyrics = Common.CurrentCachedInfo.LyricInstance.GetLinesUpcoming(MediaBoomCli.basolia);
             if (lyrics.Length == 0)
             {
@@ -157,6 +169,8 @@ namespace MediaBoom.Cli.CliBase
 
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (!MediaBoomCli.basolia.IsOpened())
+                return;
             var lyrics = Common.CurrentCachedInfo.LyricInstance.Lines;
             var choices = lyrics.Select((line) => new InputChoiceInfo($"{line.LineSpan}", line.Line)).ToArray();
             int index = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_SELECTLYRICSEEK"));
@@ -176,6 +190,8 @@ namespace MediaBoom.Cli.CliBase
 
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (!MediaBoomCli.basolia.IsOpened())
+                return;
             Player.position = (int)target.TotalSeconds;
             if (Player.position > Common.CurrentCachedInfo.Duration)
                 Player.position = 0;
@@ -194,7 +210,11 @@ namespace MediaBoom.Cli.CliBase
             if (MediaBoomCli.basolia is null)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
             if (MediaBoomCli.basolia.GetState() == PlaybackState.Stopped)
+            {
+                if (Common.cachedInfos.Count > 0 && !MediaBoomCli.basolia.IsOpened())
+                    Common.Switch(Common.cachedInfos[Common.currentPos - 1].MusicPath);
                 MediaBoomCli.basolia.SeekToTheBeginning();
+            }
 
             // Start the player thread
             Common.advance = true;

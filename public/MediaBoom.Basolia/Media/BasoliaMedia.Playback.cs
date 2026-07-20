@@ -55,7 +55,14 @@ namespace MediaBoom.Basolia.Media
             long length;
             unsafe
             {
-                length = MpvPropertyHandler.GetIntegerProperty(this, "time-pos/full");
+                try
+                {
+                    length = MpvPropertyHandler.GetIntegerProperty(this, "time-pos/full");
+                }
+                catch (BasoliaException ex) when (ex.errorCode == MpvError.MPV_ERROR_PROPERTY_UNAVAILABLE)
+                {
+                    length = 0;
+                }
             }
 
             // We're now entering the safe zone
@@ -210,7 +217,7 @@ namespace MediaBoom.Basolia.Media
             {
                 state = PlaybackState.Pausing;
                 MpvPropertyHandler.SetStringProperty(this, "pause", "yes");
-                SpinWait.SpinUntil(() => state == PlaybackState.Paused);
+                SpinWait.SpinUntil(() => state == PlaybackState.Paused || state == PlaybackState.Stopped);
             }
             else
                 state = PlaybackState.Stopped;

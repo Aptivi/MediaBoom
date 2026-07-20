@@ -110,17 +110,24 @@ namespace MediaBoom.Basolia.Media
                         loadEvent.Set();
                         break;
                     case MpvEventId.MPV_EVENT_END_FILE:
-                        if (!isOpened)
-                            isOpened = false;
+                        var endFile = Marshal.PtrToStructure<MpvEventEndFile>(mpvEvent.data);
                         if (!loadEvent.IsSet)
                         {
-                            var endFile = Marshal.PtrToStructure<MpvEventEndFile>(mpvEvent.data);
                             lastError =
                                 endFile.reason == MpvEofReason.MPV_END_FILE_REASON_ERROR ?
                                 (MpvError)endFile.error :
                                 MpvError.MPV_ERROR_GENERIC;
                             if (endFile.reason == MpvEofReason.MPV_END_FILE_REASON_ERROR)
                                 loadEvent.Set();
+                        }
+                        else
+                        {
+                            if (endFile.reason == MpvEofReason.MPV_END_FILE_REASON_EOF)
+                            {
+                                if (isOpened)
+                                    isOpened = false;
+                                state = PlaybackState.Stopped;
+                            }
                         }
                         break;
                     case MpvEventId.MPV_EVENT_SHUTDOWN:

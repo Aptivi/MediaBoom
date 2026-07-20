@@ -123,8 +123,8 @@ namespace MediaBoom.Cli.CliBase
                 int songsPerPage = endPos - startPos;
 
                 // Get the position
-                long renderedPosition = MediaBoomCli.basolia.IsOpened() ? MediaBoomCli.basolia.GetCurrentDuration() : 0;
-                var posSpan = MediaBoomCli.basolia.IsOpened() ? MediaBoomCli.basolia.GetCurrentDurationSpan() : new();
+                long renderedPosition = MediaBoomCli.basolia.IsOpened() && MediaBoomCli.basolia.IsPlaying() ? MediaBoomCli.basolia.GetCurrentDuration() : position;
+                var posSpan = MediaBoomCli.basolia.IsOpened() && MediaBoomCli.basolia.IsPlaying() ? MediaBoomCli.basolia.GetCurrentDurationSpan() : TimeSpan.FromSeconds(position);
 
                 // Disco effect!
                 var disco = MediaBoomCli.basolia.IsPlaying() && Common.enableDisco ? new Color($"hsl:{hue};50;50") : MediaBoomCli.white;

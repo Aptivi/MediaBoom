@@ -31,6 +31,14 @@ namespace MediaBoom.Basolia.Exceptions
     /// </summary>
     public class BasoliaException : Exception
     {
+        internal MpvError errorCode = MpvError.MPV_ERROR_SUCCESS;
+
+        /// <summary>
+        /// Error code that was returned by this exception
+        /// </summary>
+        public MpvError ErrorCode =>
+            errorCode;
+
         /// <summary>
         /// Creates a new instance of Basolia error with the specific libmpv error.
         /// </summary>
@@ -38,7 +46,9 @@ namespace MediaBoom.Basolia.Exceptions
         internal BasoliaException(MpvError error) :
             base(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALERROR") + "\n" +
                  LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR") + $" [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]")
-        { }
+        {
+            errorCode = error;
+        }
 
         /// <summary>
         /// Creates a new instance of Basolia error with the specific libmpv error.
@@ -48,7 +58,9 @@ namespace MediaBoom.Basolia.Exceptions
         internal BasoliaException(string message, MpvError error) :
             base($"{message}\n" +
                  LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR") + $" [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]")
-        { }
+        {
+            errorCode = error;
+        }
 
         /// <summary>
         /// Creates a new instance of Basolia error with the specific libmpv error.
@@ -59,6 +71,8 @@ namespace MediaBoom.Basolia.Exceptions
         internal BasoliaException(string message, Exception innerException, MpvError error) :
             base($"{message}\n" +
                  LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR") + $" [{error} - {Marshal.PtrToStringAnsi(NativeInitializer.GetDelegate<NativeError.mpv_error_string>(NativeInitializer.libManagerMpv, nameof(NativeError.mpv_error_string)).Invoke((int)error))}]", innerException)
-        { }
+        {
+            errorCode = error;
+        }
     }
 }
