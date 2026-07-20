@@ -104,7 +104,7 @@ namespace MediaBoom.Native.Interop.Event
         /// <summary>
         /// MPV_EXPORT mpv_event *mpv_wait_event(mpv_handle *ctx, double timeout);
         /// </summary>
-        internal delegate MpvEvent mpv_wait_event(MpvHandle* ctx, double timeout);
+        internal delegate nint mpv_wait_event(MpvHandle* ctx, double timeout);
 
         /// <summary>
         /// MPV_EXPORT void mpv_wakeup(mpv_handle *ctx);

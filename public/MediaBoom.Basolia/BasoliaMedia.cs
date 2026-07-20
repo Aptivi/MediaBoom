@@ -17,17 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Threading;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.File;
 using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Playback;
 using MediaBoom.Native;
 using MediaBoom.Native.Exceptions;
+using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
+using MediaBoom.Native.Interop.Event;
 using MediaBoom.Native.Interop.Init;
-using System;
-using System.Diagnostics;
 using Textify.General;
+using Threadify.Manager;
 
 namespace MediaBoom.Basolia
 {
@@ -43,9 +48,78 @@ namespace MediaBoom.Basolia
         internal bool isOpened = false;
         internal bool isRadioStation = false;
         internal bool isOutputOpen = false;
+        internal bool isShuttingDown = false;
         internal FileType? currentFile;
+        internal ManualResetEventSlim loadEvent = new(false);
+        internal MpvEventId lastEventId = MpvEventId.MPV_EVENT_NONE;
+        internal MpvError lastError = MpvError.MPV_ERROR_SUCCESS;
 
         internal MpvHandle* _libmpvHandle;
+
+        /// <summary>
+        /// Closes the libmpv instance
+        /// </summary>
+        public void CloseInstance()
+        {
+            // Verify that we've actually loaded the library!
+            try
+            {
+                var @delegate = NativeInitializer.GetDelegate<NativeInit.mpv_terminate_destroy>(NativeInitializer.libManagerMpv, nameof(NativeInit.mpv_terminate_destroy));
+                @delegate.Invoke(_libmpvHandle);
+            }
+            catch (Exception ex)
+            {
+                // TODO: MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED -> "Instance closure failed"
+                throw new BasoliaNativeLibraryException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED") + $" {ex.Message}");
+            }
+        }
+
+        private void StartEventLoop()
+        {
+            // Start the event loop
+            var thread = new ThreadInstance("libmpv event loop", true, () => EventLoopHandler());
+            thread.Start();
+        }
+
+        private void EventLoopHandler()
+        {
+            while (!isShuttingDown)
+            {
+                // Wait for an event to come, then handle
+                var eventDelegate = NativeInitializer.GetDelegate<NativeEvent.mpv_wait_event>(NativeInitializer.libManagerMpv, nameof(NativeEvent.mpv_wait_event));
+                var mpvEventPtr = eventDelegate(_libmpvHandle, 0.5);
+                if (mpvEventPtr == 0)
+                    continue;
+                var mpvEvent = Marshal.PtrToStructure<MpvEvent>(mpvEventPtr);
+                Debug.WriteLine(mpvEvent.event_id);
+                lastEventId = mpvEvent.event_id;
+                switch (mpvEvent.event_id)
+                {
+                    case MpvEventId.MPV_EVENT_FILE_LOADED:
+                        isOpened = true;
+                        lastError = MpvError.MPV_ERROR_SUCCESS;
+                        loadEvent.Set();
+                        break;
+                    case MpvEventId.MPV_EVENT_END_FILE:
+                        if (!isOpened)
+                            isOpened = false;
+                        if (!loadEvent.IsSet)
+                        {
+                            var endFile = Marshal.PtrToStructure<MpvEventEndFile>(mpvEvent.data);
+                            lastError =
+                                endFile.reason == MpvEofReason.MPV_END_FILE_REASON_ERROR ?
+                                (MpvError)endFile.error :
+                                MpvError.MPV_ERROR_GENERIC;
+                            if (endFile.reason == MpvEofReason.MPV_END_FILE_REASON_ERROR)
+                                loadEvent.Set();
+                        }
+                        break;
+                    case MpvEventId.MPV_EVENT_SHUTDOWN:
+                        isShuttingDown = true;
+                        break;
+                }
+            }
+        }
 
         /// <summary>
         /// Makes a new Basolia instance and initializes the library, if necessary.
@@ -69,6 +143,7 @@ namespace MediaBoom.Basolia
                 if (initResult < MpvError.MPV_ERROR_SUCCESS)
                     throw new BasoliaException("Can't initialize MPV core", initResult);
                 _libmpvHandle = handle;
+                StartEventLoop();
             }
             catch (Exception ex)
             {

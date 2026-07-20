@@ -166,6 +166,7 @@ namespace MediaBoom.Cli.CliBase
             // Close the file if open
             if (FileTools.IsOpened(MediaBoomCli.basolia))
                 FileTools.CloseFile(MediaBoomCli.basolia);
+            MediaBoomCli.basolia?.CloseInstance();
 
             // Restore state
             ConsoleWrapper.CursorVisible = true;

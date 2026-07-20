@@ -17,6 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -26,6 +29,7 @@ using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Playback;
 using MediaBoom.Basolia.Radio;
 using MediaBoom.Native.Interop.Enumerations;
+using MediaBoom.Native.Interop.Event;
 using SpecProbe.Software.Platform;
 using Textify.General;
 
@@ -105,15 +109,24 @@ namespace MediaBoom.Basolia.File
             // Check to see if we provided a path
             if (string.IsNullOrEmpty(path))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSMUSICFILEPATH"), MpvError.MPV_ERROR_INVALID_PARAMETER);
+            path = Path.GetFullPath(path);
 
             // Check to see if the file exists
             if (!System.IO.File.Exists(path))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILENOTFOUND"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
+            if (basolia.isOpened && basolia.currentFile?.Path == path)
+                return;
+
+            if (basolia.isOpened)
+                CloseFile(basolia);
+
             // Open the file
-            MpvCommandHandler.RunCommand(basolia, "loadfile", path);
+            basolia.loadEvent.Reset();
             MpvPropertyHandler.SetStringProperty(basolia, "pause", "yes");
-            basolia.isOpened = true;
+            MpvCommandHandler.RunCommand(basolia, "loadfile", path);
+            if (!basolia.loadEvent.Wait(new TimeSpan(0, 0, 10)))
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT"), MpvError.MPV_ERROR_GENERIC);
             basolia.currentFile = new(false, path, null, null, "");
         }
 
@@ -156,19 +169,20 @@ namespace MediaBoom.Basolia.File
             // Check to see if there are any ICY headers
             if (!reply.Headers.Any((kvp) => kvp.Key.StartsWith("icy-")))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTARADIOSTATION"), MpvError.MPV_ERROR_INVALID_PARAMETER);
-            var contentType = reply.Content.Headers.ContentType;
-            if (contentType.MediaType != "audio/mpeg")
-                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTMPEGRADIOSTATION").FormatString(contentType.MediaType), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
-            // We're now entering the dangerous zone
-            unsafe
-            {
-                // Open the radio station
-                var handle = basolia._libmpvHandle;
-                MpvCommandHandler.RunCommand(basolia, "loadfile", path, "append");
-                basolia.isOpened = true;
-                basolia.isRadioStation = true;
-            }
+            if (basolia.isOpened && basolia.currentFile?.Path == path)
+                return;
+
+            if (basolia.isOpened)
+                CloseFile(basolia);
+
+            // Open the radio station
+            basolia.loadEvent.Reset();
+            MpvPropertyHandler.SetStringProperty(basolia, "pause", "yes");
+            MpvCommandHandler.RunCommand(basolia, "loadfile", path);
+            if (!basolia.loadEvent.Wait(new TimeSpan(0, 0, 10)))
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT"), MpvError.MPV_ERROR_GENERIC);
+            basolia.isRadioStation = true;
             basolia.currentFile = new(true, path, await reply.Content.ReadAsStreamAsync().ConfigureAwait(false), reply.Headers, reply.Headers.GetValues("icy-name").First());
 
             // If necessary, feed.

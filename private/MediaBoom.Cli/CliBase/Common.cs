@@ -77,12 +77,15 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void Switch(string musicPath)
         {
+            string fullPath = Path.GetFullPath(musicPath);
+            if (FileTools.IsOpened(MediaBoomCli.basolia) && MediaBoomCli.basolia?.currentFile?.Path == fullPath)
+                return;
             if (FileTools.IsOpened(MediaBoomCli.basolia))
                 FileTools.CloseFile(MediaBoomCli.basolia);
             if (isRadioMode)
                 FileTools.OpenUrl(MediaBoomCli.basolia, musicPath);
             else
-                FileTools.OpenFile(MediaBoomCli.basolia, musicPath);
+                FileTools.OpenFile(MediaBoomCli.basolia, fullPath);
         }
 
         internal static void ShowSpecs()
