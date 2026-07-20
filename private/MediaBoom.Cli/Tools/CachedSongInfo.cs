@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using MediaBoom.Basolia.Lyrics;
+using MediaBoom.Basolia.Media.Lyrics;
 using System;
 
 namespace MediaBoom.Cli.Tools

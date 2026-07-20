@@ -18,27 +18,34 @@
 //
 
 using System;
-using System.IO;
-using System.Linq;
+using System.Collections.Generic;
 using System.Reflection;
-using MediaBoom.Basolia;
-using MediaBoom.Cli.CliBase;
-using MediaBoom.Cli.Languages;
-using Terminaux.Base;
-using Terminaux.Base.Buffered;
-using Terminaux.Base.Extensions;
 using Colorimetry;
 using Colorimetry.Data;
+using MediaBoom.Basolia;
+using MediaBoom.Basolia.Media;
+using MediaBoom.Cli.CliBase;
+using MediaBoom.Cli.CliBase.Arguments;
+using MediaBoom.Cli.Languages;
+using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Shell.Arguments.Base;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace MediaBoom.Cli
 {
     internal class MediaBoomCli
     {
-        private static readonly Version? version = Assembly.GetAssembly(typeof(InitBasolia))?.GetName().Version;
         internal static Version? mpgVer;
         internal static BasoliaMedia? basolia;
         internal static Color white = new(ConsoleColors.White);
+        internal static bool isRadio;
+        private static readonly Version? version = Assembly.GetAssembly(typeof(InitBasolia))?.GetName().Version;
+        private static readonly Dictionary<string, ArgumentInfo> arguments = new()
+        {
+            { "radio", new("radio", "Radio mode", new RadioArgument()) },
+            { "path", new("path", "Path to MPEG music or MPEG radio URL", new PathArgument()) },
+        };
 
         static int Main(string[] args)
         {
@@ -46,23 +53,8 @@ namespace MediaBoom.Cli
             {
                 ConsoleMisc.SetTitle($"MediaBoom CLI - Basolia v{version?.ToString()}");
 
-                // First, prompt for the music path if no arguments are provided.
-                string[] arguments = args.Where((arg) => !arg.StartsWith("-")).ToArray();
-                string[] switches = args.Where((arg) => arg.StartsWith("-")).ToArray();
-                bool isRadio = switches.Contains("-r");
-                if (arguments.Length != 0)
-                {
-                    string musicPath = args[0];
-
-                    // Check for existence.
-                    if (string.IsNullOrEmpty(musicPath) || (!isRadio && !File.Exists(musicPath)))
-                    {
-                        TextWriterColor.Write(LanguageTools.GetLocalized("MEDIABOOM_APP_NOTFOUND"), musicPath);
-                        return 1;
-                    }
-                    if (!isRadio)
-                        Player.passedMusicPaths.Add(musicPath);
-                }
+                // Parse arguments
+                ArgumentParse.ParseArguments(args, arguments);
 
                 // Initialize Basolia
                 basolia = new();
@@ -71,7 +63,7 @@ namespace MediaBoom.Cli
                 mpgVer = InitBasolia.NativeLibVersion;
 
                 // Now, open an interactive TUI
-                ConsoleResizeHandler.StartResizeListener((_, _, _, _) => ScreenTools.CurrentScreen?.RequireRefresh());
+                ConsoleResizeHandler.StartResizeListener();
                 if (isRadio)
                     Radio.RadioLoop();
                 else

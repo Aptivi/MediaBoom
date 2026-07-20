@@ -21,13 +21,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using MediaBoom.Basolia.File;
-using MediaBoom.Basolia.Playback;
-using MediaBoom.Basolia.Playback.Playlists;
-using MediaBoom.Basolia.Playback.Playlists.Enumerations;
-using MediaBoom.Basolia.Radio;
+using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Media.Playback;
+using MediaBoom.Basolia.Media.Playback.Playlists;
+using MediaBoom.Basolia.Media.Playback.Playlists.Enumerations;
+using MediaBoom.Basolia.Media.Radio;
 using MediaBoom.Cli.Languages;
 using MediaBoom.Cli.Tools;
+using MediaBoom.Native.Interop.Enumerations;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
 using Textify.General;
@@ -46,26 +47,38 @@ namespace MediaBoom.Cli.CliBase
 
             // There could be a chance that the music has fully stopped without any user interaction, but since we're on
             // a radio station, we should seek nothing.
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+
+            // Start the player thread
             Common.advance = true;
+            if (!Radio.playerThread.IsAlive)
+                Radio.playerThread.Regen();
             Radio.playerThread.Start();
-            SpinWait.SpinUntil(() => PlaybackTools.IsPlaying(MediaBoomCli.basolia) || Common.failedToPlay);
+
+            // Wait until radio is really playing
+            SpinWait.SpinUntil(() => MediaBoomCli.basolia.IsPlaying() || Common.failedToPlay);
             Common.failedToPlay = false;
         }
 
         internal static void Pause()
         {
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
             Common.advance = false;
             Common.paused = true;
-            PlaybackTools.Pause(MediaBoomCli.basolia);
+            MediaBoomCli.basolia.Pause();
         }
 
         internal static void Stop(bool resetCurrentStation = true)
         {
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
             Common.advance = false;
             Common.paused = false;
             if (resetCurrentStation)
                 Common.currentPos = 1;
-            PlaybackTools.Stop(MediaBoomCli.basolia);
+            MediaBoomCli.basolia.Stop();
         }
 
         internal static void NextStation()
@@ -74,7 +87,9 @@ namespace MediaBoom.Cli.CliBase
             if (Common.cachedInfos.Count == 0)
                 return;
 
-            PlaybackTools.Stop(MediaBoomCli.basolia);
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            MediaBoomCli.basolia.Stop();
             Common.currentPos++;
             if (Common.currentPos > Common.cachedInfos.Count)
                 Common.currentPos = 1;
@@ -86,7 +101,9 @@ namespace MediaBoom.Cli.CliBase
             if (Common.cachedInfos.Count == 0)
                 return;
 
-            PlaybackTools.Stop(MediaBoomCli.basolia);
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            MediaBoomCli.basolia.Stop();
             Common.currentPos--;
             if (Common.currentPos <= 0)
                 Common.currentPos = Common.cachedInfos.Count;
@@ -96,6 +113,8 @@ namespace MediaBoom.Cli.CliBase
         {
             string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_STATIONPROMPT"));
             ScreenTools.CurrentScreen?.RequireRefresh();
+            if (string.IsNullOrEmpty(path))
+                return;
             Common.populate = true;
             PopulateRadioStationInfo(path);
             Common.populate = true;
@@ -105,8 +124,10 @@ namespace MediaBoom.Cli.CliBase
         internal static void PromptForAddStations()
         {
             string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT"));
-            string extension = Path.GetExtension(path);
             ScreenTools.CurrentScreen?.RequireRefresh();
+            if (string.IsNullOrEmpty(path))
+                return;
+            string extension = Path.GetExtension(path);
             if (File.Exists(path) && (extension == ".m3u" || extension == ".m3u8"))
             {
                 var playlist = PlaylistParser.ParsePlaylist(path);
@@ -131,27 +152,32 @@ namespace MediaBoom.Cli.CliBase
         internal static void PopulateRadioStationInfo(string musicPath)
         {
             // Try to open the file after loading the library
-            if (PlaybackTools.IsPlaying(MediaBoomCli.basolia) || !Common.populate)
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+            if (MediaBoomCli.basolia.IsPlaying() || !Common.populate)
                 return;
-            Common.populate = false;
             Common.Switch(musicPath);
+            Common.populate = false;
             if (!Common.cachedInfos.Any((csi) => csi.MusicPath == musicPath))
             {
                 InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_OPENINGMUSICFILE"), musicPath);
 
                 // Try to open the lyrics
-                var instance = new CachedSongInfo(musicPath, -1, null, FileTools.CurrentFile(MediaBoomCli.basolia)?.StationName ?? "", true, null);
+                var instance = new CachedSongInfo(musicPath, -1, null, MediaBoomCli.basolia.CurrentFile()?.StationName ?? "", true, null);
                 Common.cachedInfos.Add(instance);
             }
         }
 
         internal static string RenderStationName()
         {
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+
             // Render the station name
-            string icy = PlaybackTools.GetRadioNowPlaying(MediaBoomCli.basolia);
+            string icy = MediaBoomCli.basolia.GetRadioNowPlaying();
 
             // Print the music name
-            return $"Now playing: {icy}";
+            return LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_NOWPLAYING") + $" {icy}";
         }
 
         internal static void RemoveCurrentStation()
@@ -187,11 +213,13 @@ namespace MediaBoom.Cli.CliBase
         {
             if (Common.CurrentCachedInfo is null)
                 return;
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
             InfoBoxModalColor.WriteInfoBoxModal(
                 LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO") + "\n\n" +
                 LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO_URL") + $" {Common.CurrentCachedInfo.MusicPath}" + "\n" +
                 LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO_NAME") + $" {Common.CurrentCachedInfo.StationName}" + "\n" +
-                LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO_CURRSONG") + $" {PlaybackTools.GetRadioNowPlaying(MediaBoomCli.basolia)}"
+                LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_INFO_STATIONINFO_CURRSONG") + $" {MediaBoomCli.basolia.GetRadioNowPlaying()}"
             );
         }
 

@@ -22,40 +22,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using MediaBoom.Basolia.Exceptions;
-using MediaBoom.Basolia.File;
-using MediaBoom.Basolia.Playback;
-using MediaBoom.Cli.Languages;
-using Terminaux.Base;
-using Terminaux.Base.Buffered;
-using Terminaux.Base.Extensions;
 using Colorimetry;
 using Colorimetry.Data;
 using Colorimetry.Transformation;
+using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Media.Playback;
+using MediaBoom.Cli.Languages;
+using MediaBoom.Native.Interop.Enumerations;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Threadify.Manager;
 
 namespace MediaBoom.Cli.CliBase
 {
     internal static class Player
     {
-        internal static Thread? playerThread;
+        internal static ThreadInstance? playerThread = new("Player thread", false, HandlePlay);
         internal static long position = 0;
         internal static readonly List<string> passedMusicPaths = [];
-        internal static readonly Keybinding[] showBindings =
+
+        internal static Keybinding[] ShowBindings =>
         [
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE"), ConsoleKey.Spacebar),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_STOP"), ConsoleKey.Escape),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_QUIT"), ConsoleKey.Q),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_HELP"), ConsoleKey.H),
         ];
-        internal static readonly Keybinding[] allBindings =
+
+        internal static Keybinding[] AllBindings =>
         [
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE"), ConsoleKey.Spacebar),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_STOP"), ConsoleKey.Escape),
@@ -88,6 +90,12 @@ namespace MediaBoom.Cli.CliBase
 
         public static void PlayerLoop()
         {
+            if (MediaBoomCli.basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+
+            // Check to see if we're populating music based on args
+            Common.PopulatePassedPaths();
+
             // Populate the screen
             Screen playerScreen = new();
             ScreenTools.SetCurrent(playerScreen);
@@ -115,12 +123,12 @@ namespace MediaBoom.Cli.CliBase
                 int songsPerPage = endPos - startPos;
 
                 // Get the position
-                position = FileTools.IsOpened(MediaBoomCli.basolia) ? PlaybackPositioningTools.GetCurrentDuration(MediaBoomCli.basolia) : 0;
-                var posSpan = FileTools.IsOpened(MediaBoomCli.basolia) ? PlaybackPositioningTools.GetCurrentDurationSpan(MediaBoomCli.basolia) : new();
+                long renderedPosition = MediaBoomCli.basolia.IsOpened() ? MediaBoomCli.basolia.GetCurrentDuration() : 0;
+                var posSpan = MediaBoomCli.basolia.IsOpened() ? MediaBoomCli.basolia.GetCurrentDurationSpan() : new();
 
                 // Disco effect!
-                var disco = PlaybackTools.IsPlaying(MediaBoomCli.basolia) && Common.enableDisco ? new Color($"hsl:{hue};50;50") : MediaBoomCli.white;
-                if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
+                var disco = MediaBoomCli.basolia.IsPlaying() && Common.enableDisco ? new Color($"hsl:{hue};50;50") : MediaBoomCli.white;
+                if (MediaBoomCli.basolia.IsPlaying())
                 {
                     hue++;
                     if (hue >= 360)
@@ -138,10 +146,11 @@ namespace MediaBoom.Cli.CliBase
                     FrameColor = disco,
                     TitleColor = disco,
                 };
-                var durationBar = new SimpleProgress((int)(100 * (position / (double)Common.CurrentCachedInfo.Duration)), 100)
+                var durationBar = new SimpleProgress((int)(100 * (renderedPosition / (double)Common.CurrentCachedInfo.Duration)), 100)
                 {
                     Width = ConsoleWrapper.WindowWidth - 4,
                     ShowPercentage = false,
+                    Accurate = true,
                     ProgressForegroundColor = TransformationTools.GetDarkBackground(disco),
                     ProgressActiveForegroundColor = disco,
                 };
@@ -161,7 +170,7 @@ namespace MediaBoom.Cli.CliBase
 
                 // Render the results
                 string indicatorTextStr = $"{posSpan} / {Common.CurrentCachedInfo.DurationSpan} | {indicator}";
-                string lyricTextStr = Common.CurrentCachedInfo.LyricInstance is not null && PlaybackTools.IsPlaying(MediaBoomCli.basolia) ? $"{finalLyric}" : "";
+                string lyricTextStr = Common.CurrentCachedInfo.LyricInstance is not null && MediaBoomCli.basolia.IsPlaying() ? $"{finalLyric}" : "";
                 int indicatorWidth = ConsoleChar.EstimateCellWidth(indicatorTextStr);
                 int lyricTextWidth = ConsoleChar.EstimateCellWidth(lyricTextStr);
                 var eraser = new Eraser()
@@ -212,38 +221,45 @@ namespace MediaBoom.Cli.CliBase
                 {
                     if (!playerScreen.CheckBufferedPart("MediaBoom Player"))
                         playerScreen.AddBufferedPart("MediaBoom Player", screenPart);
-                    ScreenTools.Render();
+                    if (playerScreen.NeedsRefresh || playerScreen.RefreshWasDone || MediaBoomCli.basolia.IsPlaying())
+                        ScreenTools.Render();
+
+                    // Obtain input
+                    Thread.Sleep(1);
+                    InputEventInfo? keystroke = Input.ReadPointerOrKeyNoBlock();
+                    if (MediaBoomCli.basolia.IsPlaying())
+                        position = MediaBoomCli.basolia.GetCurrentDuration();
 
                     // Handle the keystroke
-                    if (ConsoleWrapper.KeyAvailable)
+                    if (keystroke.ConsoleKeyInfo is ConsoleKeyInfo cki && !Input.PointerActive)
                     {
-                        var keystroke = Input.ReadKey();
-                        if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
-                            HandleKeypressPlayMode(keystroke, playerScreen);
+                        if (MediaBoomCli.basolia.IsPlaying())
+                            HandleKeypressPlayMode(cki, playerScreen);
                         else
-                            HandleKeypressIdleMode(keystroke, playerScreen);
+                            HandleKeypressIdleMode(cki, playerScreen);
+                        playerScreen.RequireRefresh();
                     }
                 }
                 catch (BasoliaException bex)
                 {
-                    if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
-                        PlaybackTools.Stop(MediaBoomCli.basolia);
+                    if (MediaBoomCli.basolia.IsPlaying())
+                        MediaBoomCli.basolia.Stop();
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_BASOLIAERROR") + "\n\n" + bex.Message);
                     playerScreen.RequireRefresh();
                 }
                 catch (Exception ex)
                 {
-                    if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
-                        PlaybackTools.Stop(MediaBoomCli.basolia);
+                    if (MediaBoomCli.basolia.IsPlaying())
+                        MediaBoomCli.basolia.Stop();
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_ERROR") + "\n\n" + ex.Message);
                     playerScreen.RequireRefresh();
                 }
             }
 
             // Close the file if open
-            if (FileTools.IsOpened(MediaBoomCli.basolia))
-                FileTools.CloseFile(MediaBoomCli.basolia);
-            MediaBoomCli.basolia?.CloseInstance();
+            if (MediaBoomCli.basolia.IsOpened())
+                MediaBoomCli.basolia.CloseFile();
+            MediaBoomCli.basolia.CloseInstance();
 
             // Restore state
             ConsoleWrapper.CursorVisible = true;
@@ -256,8 +272,19 @@ namespace MediaBoom.Cli.CliBase
         {
             switch (keystroke.Key)
             {
+                case ConsoleKey.RightArrow:
+                    if (keystroke.Modifiers == ConsoleModifiers.Control)
+                        PlayerControls.seekRate += 50;
+                    else
+                        PlayerControls.SeekForward();
+                    break;
+                case ConsoleKey.LeftArrow:
+                    if (keystroke.Modifiers == ConsoleModifiers.Control)
+                        PlayerControls.seekRate -= 50;
+                    else
+                        PlayerControls.SeekBackward();
+                    break;
                 case ConsoleKey.Spacebar:
-                    playerThread = new(HandlePlay);
                     PlayerControls.Play();
                     break;
                 case ConsoleKey.B:
@@ -300,7 +327,11 @@ namespace MediaBoom.Cli.CliBase
                     if (keystroke.Modifiers == ConsoleModifiers.Shift)
                         PlayerControls.SeekTo(Common.CurrentCachedInfo.RepeatCheckpoint);
                     else
-                        Common.CurrentCachedInfo.RepeatCheckpoint = PlaybackPositioningTools.GetCurrentDurationSpan(MediaBoomCli.basolia);
+                    {
+                        if (MediaBoomCli.basolia is null)
+                            throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+                        Common.CurrentCachedInfo.RepeatCheckpoint = MediaBoomCli.basolia.GetCurrentDurationSpan();
+                    }
                     break;
                 default:
                     Common.HandleKeypressCommon(keystroke, playerScreen, false);
@@ -328,7 +359,6 @@ namespace MediaBoom.Cli.CliBase
                     PlayerControls.Stop(false);
                     PlayerControls.SeekBeginning();
                     PlayerControls.PreviousSong();
-                    playerThread = new(HandlePlay);
                     PlayerControls.Play();
                     playerScreen.RequireRefresh();
                     break;
@@ -349,7 +379,6 @@ namespace MediaBoom.Cli.CliBase
                     PlayerControls.Stop(false);
                     PlayerControls.SeekBeginning();
                     PlayerControls.NextSong();
-                    playerThread = new(HandlePlay);
                     PlayerControls.Play();
                     playerScreen.RequireRefresh();
                     break;
@@ -380,7 +409,6 @@ namespace MediaBoom.Cli.CliBase
                 case ConsoleKey.D:
                     PlayerControls.Pause();
                     Common.HandleKeypressCommon(keystroke, playerScreen, false);
-                    playerThread = new(HandlePlay);
                     PlayerControls.Play();
                     playerScreen.RequireRefresh();
                     break;
@@ -390,7 +418,11 @@ namespace MediaBoom.Cli.CliBase
                     if (keystroke.Modifiers == ConsoleModifiers.Shift)
                         PlayerControls.SeekTo(Common.CurrentCachedInfo.RepeatCheckpoint);
                     else
-                        Common.CurrentCachedInfo.RepeatCheckpoint = PlaybackPositioningTools.GetCurrentDurationSpan(MediaBoomCli.basolia);
+                    {
+                        if (MediaBoomCli.basolia is null)
+                            throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+                        Common.CurrentCachedInfo.RepeatCheckpoint = MediaBoomCli.basolia.GetCurrentDurationSpan();
+                    }
                     break;
                 default:
                     Common.HandleKeypressCommon(keystroke, playerScreen, false);
@@ -402,6 +434,8 @@ namespace MediaBoom.Cli.CliBase
         {
             try
             {
+                if (MediaBoomCli.basolia is null)
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
                 foreach (var musicFile in Common.cachedInfos.Skip(Common.currentPos - 1))
                 {
                     if (!Common.advance || Common.exiting)
@@ -411,14 +445,19 @@ namespace MediaBoom.Cli.CliBase
                         ScreenTools.CurrentScreen?.RequireRefresh();
                         Common.populate = true;
                     }
+
+                    // Change position and populate music file info to open the music file for playing
                     Common.currentPos = Common.cachedInfos.IndexOf(musicFile) + 1;
                     PlayerControls.PopulateMusicFileInfo(musicFile.MusicPath);
-                    if (Common.paused)
-                    {
-                        Common.paused = false;
-                        PlaybackPositioningTools.SeekTo(MediaBoomCli.basolia, position);
-                    }
-                    PlaybackTools.Play(MediaBoomCli.basolia);
+
+                    // Seek to position and play the music
+                    MediaBoomCli.basolia.SeekTo(position);
+                    Common.paused = false;
+                    MediaBoomCli.basolia.Play();
+
+                    // A user might have let the music go to its ending
+                    if (MediaBoomCli.basolia.GetState() == PlaybackState.Stopped)
+                        position = 0;
                 }
             }
             catch (Exception ex)
@@ -426,6 +465,7 @@ namespace MediaBoom.Cli.CliBase
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_PLAYBACKFAILED") + $" {ex.Message}");
                 Common.failedToPlay = true;
             }
+            ScreenTools.CurrentScreen?.RequireRefresh();
         }
 
         private static string HandleDraw()
@@ -440,7 +480,7 @@ namespace MediaBoom.Cli.CliBase
             // First, print the keystrokes
             var keybindings = new Keybindings()
             {
-                KeybindingList = showBindings,
+                KeybindingList = ShowBindings,
                 Width = ConsoleWrapper.WindowWidth - 1,
             };
             drawn.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
@@ -448,30 +488,18 @@ namespace MediaBoom.Cli.CliBase
             // In case we have no songs in the playlist...
             if (Common.cachedInfos.Count == 0)
             {
-                if (passedMusicPaths.Count > 0)
+                int height = (ConsoleWrapper.WindowHeight - 2) / 2;
+                var message = new AlignedText()
                 {
-                    foreach (string path in passedMusicPaths)
+                    Top = height,
+                    Text = LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TIP"),
+                    Settings = new()
                     {
-                        PlayerControls.PopulateMusicFileInfo(path);
-                        Common.populate = true;
+                        Alignment = TextAlignment.Middle
                     }
-                    passedMusicPaths.Clear();
-                }
-                else
-                {
-                    int height = (ConsoleWrapper.WindowHeight - 2) / 2;
-                    var message = new AlignedText()
-                    {
-                        Top = height,
-                        Text = LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TIP"),
-                        Settings = new()
-                        {
-                            Alignment = TextAlignment.Middle
-                        }
-                    };
-                    drawn.Append(message.Render());
-                    return drawn.ToString();
-                }
+                };
+                drawn.Append(message.Render());
+                return drawn.ToString();
             }
 
             // Populate music file info, as necessary
