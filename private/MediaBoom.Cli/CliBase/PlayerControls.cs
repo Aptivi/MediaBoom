@@ -21,7 +21,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using BassBoom.Basolia.Enumerations;
 using MediaBoom.Basolia.File;
 using MediaBoom.Basolia.Helpers;
 using MediaBoom.Basolia.Lyrics;

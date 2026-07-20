@@ -29,9 +29,9 @@ using MediaBoom.Cli.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Colors.Transformation;
+using Colorimetry;
+using Colorimetry.Data;
+using Colorimetry.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -153,7 +153,7 @@ namespace MediaBoom.Cli.CliBase
                 // Render the indicator
                 string indicator =
                     LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_SEEKINDICATOR") + $" {PlayerControls.seekRate:0.00} | " +
-                    LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume:0}%{disco.VTSequenceForeground}";
+                    LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume:0}%{disco.VTSequenceForeground()}";
 
                 // Render the lyric
                 string lyric = Common.CurrentCachedInfo.LyricInstance is not null ? Common.CurrentCachedInfo.LyricInstance.GetLastLineCurrent(MediaBoomCli.basolia) : "";
@@ -246,7 +246,7 @@ namespace MediaBoom.Cli.CliBase
 
             // Restore state
             ConsoleWrapper.CursorVisible = true;
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
             playerScreen.RemoveBufferedParts();
             ScreenTools.UnsetCurrent(playerScreen);
         }

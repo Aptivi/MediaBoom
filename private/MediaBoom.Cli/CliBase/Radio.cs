@@ -29,8 +29,8 @@ using MediaBoom.Cli.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -97,7 +97,7 @@ namespace MediaBoom.Cli.CliBase
                 // Disco effect!
                 var buffer = new StringBuilder();
                 var disco = PlaybackTools.IsPlaying(MediaBoomCli.basolia) && Common.enableDisco ? new Color($"hsl:{hue};50;50") : MediaBoomCli.white;
-                string indicator = $"┤ " + LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume * 100:0}%{disco.VTSequenceForeground} ├";
+                string indicator = $"┤ " + LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume * 100:0}%{disco.VTSequenceForeground()} ├";
                 if (PlaybackTools.IsPlaying(MediaBoomCli.basolia))
                 {
                     hue++;
@@ -169,7 +169,7 @@ namespace MediaBoom.Cli.CliBase
 
             // Restore state
             ConsoleWrapper.CursorVisible = true;
-            ColorTools.LoadBack();
+            ConsoleColoring.LoadBack();
             radioScreen.RemoveBufferedParts();
             ScreenTools.UnsetCurrent(radioScreen);
         }
