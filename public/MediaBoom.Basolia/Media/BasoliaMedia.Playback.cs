@@ -25,7 +25,6 @@ using System.Threading.Tasks;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Media.Helpers;
-using MediaBoom.Basolia.Media.Lyrics;
 using MediaBoom.Basolia.Media.Playback;
 using MediaBoom.Native.Interop.Enumerations;
 

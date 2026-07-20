@@ -9,6 +9,8 @@
   </Folder>
   <Folder Name="/Private/Demos/">
     <Project Path="private/MediaBoom.Cli/MediaBoom.Cli.csproj" />
+    <Project Path="private/MediaBoom.QuickPlay/MediaBoom.QuickPlay.csproj" />
+    <Project Path="private/MediaBoom.QuickRadio/MediaBoom.QuickRadio.csproj" />
   </Folder>
   <Folder Name="/Public/">
     <Project Path="public/MediaBoom.Basolia/MediaBoom.Basolia.csproj" />

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Terminaux" Version="8.6.0.1" />
+    <PackageReference Include="Threadify" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Assets Include="..\..\assets\*.cmd" />
+    <Assets Include="..\..\assets\mb-sndplay.cmd" />
   </ItemGroup>
   <Target Name="UpdateCmdLaunchers" BeforeTargets="Compile">
     <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />

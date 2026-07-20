@@ -1,0 +1,40 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_NOTSPECIFIED",
+      "text": "Muziekpad niet opgegeven"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_NOTFOUND",
+      "text": "Muziekbestand {0} bestaat niet."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_OPENING",
+      "text": "Muziekbestand {0} openen..."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_UNKNOWNARTIST",
+      "text": "Onbekende artiest"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_EXITTIP",
+      "text": "Druk op 'Q' om het afspelen te stoppen."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_FAILURE",
+      "text": "Afspelen mislukt"
+    }
+  ]
+}

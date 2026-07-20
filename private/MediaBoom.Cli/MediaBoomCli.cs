@@ -44,7 +44,7 @@ namespace MediaBoom.Cli
         private static readonly Dictionary<string, ArgumentInfo> arguments = new()
         {
             { "radio", new("radio", "Radio mode", new RadioArgument()) },
-            { "path", new("path", "Path to MPEG music or MPEG radio URL", new PathArgument()) },
+            { "path", new("path", "Path to music or radio URL", new PathArgument()) },
         };
 
         static int Main(string[] args)

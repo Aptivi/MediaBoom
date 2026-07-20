@@ -1,0 +1,27 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_NOTSPECIFIED",
+      "text": "Radyo istasyonu yolu belirtilmedi"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_OPENING",
+      "text": "Radyo istasyonu {0} adresinde açılıyor..."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_EXITTIP",
+      "text": "Oynatmayı durdurmak için 'Q' tuşuna basın."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_FAILURE",
+      "text": "Oynatma hatası"
+    }
+  ]
+}

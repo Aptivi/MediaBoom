@@ -1,0 +1,25 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_NOTSPECIFIED",
+      "text": "Caminho da estação de rádio não especificado"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_OPENING",
+      "text": "Abrindo estação de rádio em {0}..."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_EXITTIP",
+      "text": "Para parar a reprodução, pressione 'Q'."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_FAILURE",
+      "text": "Falha na reprodução"
+    }
+  ]
+}

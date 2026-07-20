@@ -1,0 +1,26 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_NOTSPECIFIED",
+      "text": "ラジオ局のパスが指定されていません"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_OPENING",
+      "text": "{0}のラジオ局を開きます…"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_EXITTIP",
+      "text": "再生を停止するには、「Q」キーを押してください。"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_FAILURE",
+      "text": "再生失敗"
+    }
+  ]
+}

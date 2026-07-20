@@ -1,0 +1,26 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_NOTSPECIFIED",
+      "text": "Iter stationis radiophonicae non specificatum"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_OPENING",
+      "text": "Aperitur statio radiophonica apud {0}..."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_EXITTIP",
+      "text": "Ad sonum sistendum, preme 'Q'."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_FAILURE",
+      "text": "Defectus soni"
+    }
+  ]
+}

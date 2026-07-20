@@ -1,0 +1,26 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_NOTSPECIFIED",
+      "text": "Jalur stasiun radio tidak ditentukan"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_OPENING",
+      "text": "Membuka stasiun radio di {0}..."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_EXITTIP",
+      "text": "Untuk menghentikan pemutaran, tekan 'Q'."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKRADIO_FAILURE",
+      "text": "Kegagalan pemutaran"
+    }
+  ]
+}

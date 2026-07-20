@@ -1,0 +1,35 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_NOTSPECIFIED",
+      "text": "Müzik yolu belirtilmedi"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_NOTFOUND",
+      "text": "Müzik dosyası {0} mevcut değil."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_OPENING",
+      "text": "Müzik dosyası {0} açılıyor..."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_UNKNOWNARTIST",
+      "text": "Bilinmeyen Sanatçı"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_EXITTIP",
+      "text": "Oynatmayı durdurmak için 'Q' tuşuna basın."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_FAILURE",
+      "text": "Oynatma hatası"
+    }
+  ]
+}

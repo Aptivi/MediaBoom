@@ -22,7 +22,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using MediaBoom.Basolia.Exceptions;
-using MediaBoom.Basolia.Media.Playback;
 using MediaBoom.Basolia.Media.Playback.Playlists;
 using MediaBoom.Basolia.Media.Playback.Playlists.Enumerations;
 using MediaBoom.Basolia.Media.Radio;

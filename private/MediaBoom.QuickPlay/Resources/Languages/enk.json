@@ -1,0 +1,33 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_NOTSPECIFIED",
+      "text": "Music path not specified"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_NOTFOUND",
+      "text": "Music file {0} doesn't exist."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_OPENING",
+      "text": "Opening music file {0}..."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_UNKNOWNARTIST",
+      "text": "Unknown Artist"
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_EXITTIP",
+      "text": "To stop playing, press 'Q'."
+    },
+    {
+      "loc": "MEDIABOOM_QUICKPLAYER_FAILURE",
+      "text": "Playback failure"
+    }
+  ]
+}
