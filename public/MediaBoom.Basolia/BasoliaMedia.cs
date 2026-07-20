@@ -57,6 +57,16 @@ namespace MediaBoom.Basolia
         internal MpvHandle* _libmpvHandle;
 
         /// <summary>
+        /// String event property has changed
+        /// </summary>
+        public event Action<(string name, string value)>? StringEventPropertyChanged;
+
+        /// <summary>
+        /// Integer event property has changed
+        /// </summary>
+        public event Action<(string name, long value)>? IntegerEventPropertyChanged;
+
+        /// <summary>
         /// Closes the libmpv instance
         /// </summary>
         public void CloseInstance()
@@ -116,6 +126,25 @@ namespace MediaBoom.Basolia
                         break;
                     case MpvEventId.MPV_EVENT_SHUTDOWN:
                         isShuttingDown = true;
+                        break;
+                    case MpvEventId.MPV_EVENT_PROPERTY_CHANGE:
+                        var observedProperty = Marshal.PtrToStructure<MpvEventProperty>(mpvEvent.data);
+                        switch (observedProperty.format)
+                        {
+                            case MpvValueFormat.MPV_FORMAT_STRING:
+                                {
+                                    IntPtr valuePtr = Marshal.ReadIntPtr(observedProperty.data);
+                                    string value = Marshal.PtrToStringAnsi(valuePtr);
+                                    StringEventPropertyChanged?.Invoke((observedProperty.name, value));
+                                    break;
+                                }
+                            case MpvValueFormat.MPV_FORMAT_INT64:
+                                {
+                                    long value = Marshal.ReadInt64(observedProperty.data);
+                                    IntegerEventPropertyChanged?.Invoke((observedProperty.name, value));
+                                    break;
+                                }
+                        }
                         break;
                 }
             }

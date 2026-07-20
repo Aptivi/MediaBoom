@@ -102,6 +102,14 @@ namespace MediaBoom.Basolia.Playback
             if (!FileTools.IsOpened(basolia))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
+            // Helper function to observe pause
+            string pausing = "";
+            void ObservePause((string name, string value) property)
+            {
+                if (property.name == "pause")
+                    pausing = property.value;
+            }
+
             // We're now entering the dangerous zone
             unsafe
             {
@@ -109,17 +117,17 @@ namespace MediaBoom.Basolia.Playback
                 var bufferSize = AudioInfoTools.GetBufferSize(basolia);
                 Debug.WriteLine($"Buffer size is {bufferSize}");
                 MpvPropertyHandler.SetStringProperty(basolia, "pause", "no");
-                string pausing;
+                MpvPropertyHandler.ObserveStringProperty(basolia, "pause");
+                basolia.StringEventPropertyChanged += ObservePause;
                 basolia.state = PlaybackState.Playing;
-                do
-                {
-                    // First, let Basolia "hold on" until hold is released
-                    while (basolia.holding)
-                        Thread.Sleep(1);
 
-                    // Now, check for pause state
-                    pausing = MpvPropertyHandler.GetStringProperty(basolia, "pause");
-                } while (pausing != "yes" && IsPlaying(basolia));
+                // First, let Basolia "hold on" until hold is released
+                while (basolia.holding)
+                    Thread.Sleep(1);
+
+                // Wait until pause is requested
+                SpinWait.SpinUntil(() => pausing == "yes" || !IsPlaying(basolia));
+                basolia.StringEventPropertyChanged -= ObservePause;
                 if (IsPlaying(basolia) || basolia.state == PlaybackState.Stopping)
                     basolia.state = PlaybackState.Stopped;
             }

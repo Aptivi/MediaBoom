@@ -22,6 +22,7 @@ using MediaBoom.Basolia.Languages;
 using MediaBoom.Native;
 using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
+using MediaBoom.Native.Interop.Init;
 using System;
 using System.Runtime.InteropServices;
 using Textify.General;
@@ -78,7 +79,7 @@ namespace MediaBoom.Basolia.Helpers
             {
                 // Set the string property
                 var handle = basolia._libmpvHandle;
-                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_set_property_int>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_set_property)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_INT64, ref propertyValue);
+                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_set_property_int>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_set_property_int)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_INT64, ref propertyValue);
 
                 // TODO: MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED -> Failed to set integer property {0} to {1}
                 if (propertyResult < MpvError.MPV_ERROR_SUCCESS)
@@ -104,7 +105,7 @@ namespace MediaBoom.Basolia.Helpers
             {
                 // Set the string property
                 var handle = basolia._libmpvHandle;
-                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_set_property_double>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_set_property)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_DOUBLE, ref propertyValue);
+                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_set_property_double>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_set_property_double)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_DOUBLE, ref propertyValue);
 
                 // TODO: MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED -> Failed to set double property {0} to {1}
                 if (propertyResult < MpvError.MPV_ERROR_SUCCESS)
@@ -131,14 +132,22 @@ namespace MediaBoom.Basolia.Helpers
                 // Get the string property
                 var handle = basolia._libmpvHandle;
                 var buffer = IntPtr.Zero;
-                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_get_property>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_get_property)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_STRING, out buffer);
+                try
+                {
+                    MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_get_property>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_get_property)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_STRING, out buffer);
 
-                // TODO: MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED -> Failed to get string property {0}
-                if (propertyResult < MpvError.MPV_ERROR_SUCCESS)
-                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED").FormatString(propertyName), propertyResult);
+                    // TODO: MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED -> Failed to get string property {0}
+                    if (propertyResult < MpvError.MPV_ERROR_SUCCESS)
+                        throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED").FormatString(propertyName), propertyResult);
 
-                // Convert the integer pointer to the string
-                value = Marshal.PtrToStringAnsi(buffer);
+                    // Convert the integer pointer to the string
+                    value = Marshal.PtrToStringAnsi(buffer);
+                }
+                finally
+                {
+                    if (buffer != IntPtr.Zero)
+                        NativeInitializer.GetDelegate<NativeInit.mpv_free>(NativeInitializer.libManagerMpv, nameof(NativeInit.mpv_free)).Invoke(buffer);
+                }
             }
 
             // Return the property value
@@ -163,7 +172,7 @@ namespace MediaBoom.Basolia.Helpers
             {
                 // Get the string property
                 var handle = basolia._libmpvHandle;
-                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_get_property_int>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_get_property)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_INT64, out value);
+                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_get_property_int>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_get_property_int)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_INT64, out value);
 
                 // TODO: MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED -> Failed to get integer property {0}
                 if (propertyResult < MpvError.MPV_ERROR_SUCCESS)
@@ -192,11 +201,69 @@ namespace MediaBoom.Basolia.Helpers
             {
                 // Get the string property
                 var handle = basolia._libmpvHandle;
-                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_get_property_double>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_get_property)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_INT64, out value);
+                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_get_property_double>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_get_property_double)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_INT64, out value);
 
                 // TODO: MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED -> Failed to get double property {0}
                 if (propertyResult < MpvError.MPV_ERROR_SUCCESS)
                     throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED").FormatString(propertyName), propertyResult);
+            }
+
+            // Return the property value
+            return value;
+        }
+
+        /// <summary>
+        /// Observes an MPV string property
+        /// </summary>
+        /// <param name="basolia">Basolia instance that contains a valid handle</param>
+        /// <param name="propertyName">Property name to set</param>
+        /// <exception cref="BasoliaException"></exception>
+        public static string ObserveStringProperty(BasoliaMedia? basolia, string propertyName)
+        {
+            InitBasolia.CheckInited();
+            if (basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
+
+            // We're now entering the dangerous zone
+            string value = "";
+            unsafe
+            {
+                // Observe the string property
+                var handle = basolia._libmpvHandle;
+                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_observe_property>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_observe_property)).Invoke(handle, 0, propertyName, MpvValueFormat.MPV_FORMAT_STRING);
+
+                // TODO: MEDIABOOM_BASOLIA_EXCEPTION_OBSERVESTRINGPROPERTYFAILED -> Failed to observe string property {0}
+                if (propertyResult < MpvError.MPV_ERROR_SUCCESS)
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OBSERVESTRINGPROPERTYFAILED").FormatString(propertyName), propertyResult);
+            }
+
+            // Return the property value
+            return value;
+        }
+
+        /// <summary>
+        /// Observes an MPV numeric property
+        /// </summary>
+        /// <param name="basolia">Basolia instance that contains a valid handle</param>
+        /// <param name="propertyName">Property name to set</param>
+        /// <exception cref="BasoliaException"></exception>
+        public static long ObserveNumericProperty(BasoliaMedia? basolia, string propertyName)
+        {
+            InitBasolia.CheckInited();
+            if (basolia is null)
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_INVALID_PARAMETER);
+
+            // We're now entering the dangerous zone
+            long value = 0;
+            unsafe
+            {
+                // Observe the string property
+                var handle = basolia._libmpvHandle;
+                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_observe_property>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_observe_property)).Invoke(handle, 0, propertyName, MpvValueFormat.MPV_FORMAT_INT64);
+
+                // TODO: MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEINTEGERPROPERTYFAILED -> Failed to observe integer property {0}
+                if (propertyResult < MpvError.MPV_ERROR_SUCCESS)
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEINTEGERPROPERTYFAILED").FormatString(propertyName), propertyResult);
             }
 
             // Return the property value
