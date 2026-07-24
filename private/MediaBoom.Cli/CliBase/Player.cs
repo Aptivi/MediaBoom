@@ -96,6 +96,9 @@ namespace MediaBoom.Cli.CliBase
             // Check to see if we're populating music based on args
             Common.PopulatePassedPaths();
 
+            // Current volume
+            Common.volume = MediaBoomCli.basolia.GetVolume();
+
             // Populate the screen
             Screen playerScreen = new();
             ScreenTools.SetCurrent(playerScreen);

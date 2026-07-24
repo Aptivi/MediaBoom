@@ -78,6 +78,12 @@ namespace MediaBoom.Cli.CliBase
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
             Common.isRadioMode = true;
 
+            // Check to see if we're populating music based on args
+            Common.PopulatePassedPaths();
+
+            // Current volume
+            Common.volume = MediaBoomCli.basolia.GetVolume();
+
             // Populate the screen
             Screen radioScreen = new();
             ScreenTools.SetCurrent(radioScreen);
@@ -135,7 +141,7 @@ namespace MediaBoom.Cli.CliBase
                 );
 
                 // Render the indicator
-                string indicator = LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume * 100:0}%{disco.VTSequenceForeground()}";
+                string indicator = LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume:0}%{disco.VTSequenceForeground()}";
 
                 // Render the results
                 int indicatorWidth = ConsoleChar.EstimateCellWidth(indicator);

@@ -259,7 +259,7 @@ namespace MediaBoom.Basolia.Media
 
             try
             {
-                MpvPropertyHandler.SetDoubleProperty(this, "ao-volume", volume);
+                MpvPropertyHandler.SetIntegerProperty(this, "volume", (long)volume);
             }
             catch
             {
@@ -278,7 +278,7 @@ namespace MediaBoom.Basolia.Media
 
             try
             {
-                double baseLinearAddr = MpvPropertyHandler.GetDoubleProperty(this, "ao-volume");
+                double baseLinearAddr = MpvPropertyHandler.GetIntegerProperty(this, "volume");
                 return baseLinearAddr;
             }
             catch
