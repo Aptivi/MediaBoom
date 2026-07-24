@@ -38,7 +38,7 @@ namespace MediaBoom.Cli.CliBase
 {
     internal static class Common
     {
-        internal static double volume = 1.0;
+        internal static double volume = 100;
         internal static bool enableDisco = false;
         internal static int currentPos = 1;
         internal static bool exiting = false;
