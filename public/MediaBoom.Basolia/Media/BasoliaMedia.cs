@@ -27,6 +27,7 @@ using MediaBoom.Basolia.Media.File;
 using MediaBoom.Basolia.Media.Playback;
 using MediaBoom.Native;
 using MediaBoom.Native.Exceptions;
+using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Native.Interop.Event;
 using MediaBoom.Native.Interop.Init;
@@ -100,7 +101,6 @@ namespace MediaBoom.Basolia.Media
                 if (mpvEventPtr == 0)
                     continue;
                 var mpvEvent = Marshal.PtrToStructure<MpvEvent>(mpvEventPtr);
-                Debug.WriteLine(mpvEvent.event_id);
                 lastEventId = mpvEvent.event_id;
                 switch (mpvEvent.event_id)
                 {

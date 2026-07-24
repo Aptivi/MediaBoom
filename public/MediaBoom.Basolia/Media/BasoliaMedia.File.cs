@@ -18,9 +18,11 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Languages;
@@ -28,6 +30,7 @@ using MediaBoom.Basolia.Media.File;
 using MediaBoom.Basolia.Media.Helpers;
 using MediaBoom.Basolia.Media.Playback;
 using MediaBoom.Basolia.Media.Radio;
+using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
 using SpecProbe.Software.Platform;
 
@@ -98,7 +101,7 @@ namespace MediaBoom.Basolia.Media
             MpvCommandHandler.RunCommand(this, "loadfile", path);
             if (!loadEvent.Wait(new TimeSpan(0, 0, 10)))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT"), MpvError.MPV_ERROR_GENERIC);
-            currentFile = new(false, path, null, null, "");
+            currentFile = new(false, path, "");
         }
 
         /// <summary>
@@ -128,7 +131,7 @@ namespace MediaBoom.Basolia.Media
             if (PlatformHelper.IsDotNetFx())
                 RadioTools.client = new();
             RadioTools.client.DefaultRequestHeaders.Add("Icy-MetaData", "1");
-            var reply = await RadioTools.client.GetAsync(path, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
+            using var reply = await RadioTools.client.GetAsync(path, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
             RadioTools.client.DefaultRequestHeaders.Remove("Icy-MetaData");
             if (!reply.IsSuccessStatusCode)
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NORADIOSTATION") + $" {(int)reply.StatusCode} ({reply.StatusCode}).", MpvError.MPV_ERROR_INVALID_PARAMETER);
@@ -136,6 +139,7 @@ namespace MediaBoom.Basolia.Media
             // Check to see if there are any ICY headers
             if (!reply.Headers.Any((kvp) => kvp.Key.StartsWith("icy-")))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTARADIOSTATION"), MpvError.MPV_ERROR_INVALID_PARAMETER);
+            string radioName = reply.Headers.GetValues("icy-name").First();
 
             if (isOpened && currentFile?.Path == path)
                 return;
@@ -144,16 +148,18 @@ namespace MediaBoom.Basolia.Media
                 CloseFile();
 
             // Open the radio station
+            MpvPropertyHandler.SetStringProperty(this, "demuxer-lavf-o", "icy=1");
             loadEvent.Reset();
             MpvPropertyHandler.SetStringProperty(this, "pause", "yes");
             MpvCommandHandler.RunCommand(this, "loadfile", path);
             if (!loadEvent.Wait(new TimeSpan(0, 0, 10)))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT"), MpvError.MPV_ERROR_GENERIC);
             isRadioStation = true;
-            currentFile = new(true, path, await reply.Content.ReadAsStreamAsync().ConfigureAwait(false), reply.Headers, reply.Headers.GetValues("icy-name").First());
+            currentFile = new(true, path, radioName);
 
-            // If necessary, feed.
-            FeedRadio();
+            // Observe the "currently playing" song
+            MpvPropertyHandler.ObserveStringProperty(this, "metadata/by-key/icy-title");
+            StringEventPropertyChanged += ObserveRadioStationPlaying;
         }
 
         /// <summary>
@@ -179,9 +185,14 @@ namespace MediaBoom.Basolia.Media
                 MpvCommandHandler.RunCommand(this, "playlist-remove", "current");
                 isOpened = false;
                 isRadioStation = false;
-                currentFile?.Stream?.Close();
                 currentFile = null;
             }
+        }
+
+        private void ObserveRadioStationPlaying((string name, string value) property)
+        {
+            if (property.name == "metadata/by-key/icy-title" && !string.IsNullOrEmpty(property.value))
+                radioIcy = property.value;
         }
     }
 }

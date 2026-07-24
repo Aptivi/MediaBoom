@@ -30,8 +30,6 @@ namespace MediaBoom.Basolia.Media.File
     {
         private readonly bool isLink;
         private readonly string path;
-        private readonly Stream? stream;
-        private readonly HttpResponseHeaders? headers;
         private readonly string stationName;
 
         /// <summary>
@@ -47,29 +45,15 @@ namespace MediaBoom.Basolia.Media.File
             path;
 
         /// <summary>
-        /// Radio station stream
-        /// </summary>
-        public Stream? Stream =>
-            stream;
-
-        /// <summary>
-        /// Radio station ICY headers
-        /// </summary>
-        public HttpResponseHeaders? Headers =>
-            headers;
-
-        /// <summary>
         /// Radio station name
         /// </summary>
         public string StationName =>
             stationName;
 
-        internal FileType(bool isLink, string path, Stream? stream, HttpResponseHeaders? headers, string stationName)
+        internal FileType(bool isLink, string path, string stationName)
         {
             this.isLink = isLink;
             this.path = path ?? throw new ArgumentNullException(nameof(path));
-            this.stream = stream;
-            this.headers = headers;
             this.stationName = stationName;
         }
     }

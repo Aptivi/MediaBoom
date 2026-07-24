@@ -135,20 +135,8 @@ namespace MediaBoom.Basolia.Media
         /// <summary>
         /// Current radio ICY metadata
         /// </summary>
-        public string GetRadioIcy() =>
+        public string GetRadioNowPlaying() =>
             radioIcy;
-
-        /// <summary>
-        /// Current radio ICY metadata
-        /// </summary>
-        public string GetRadioNowPlaying()
-        {
-            string icy = GetRadioIcy();
-            if (icy.Length == 0 || !IsRadioStation())
-                return "";
-            icy = Regex.Match(icy, @"StreamTitle='(.+?(?=\';))'").Groups[1].Value.Trim().Replace("\\'", "'");
-            return icy;
-        }
 
         /// <summary>
         /// Plays the currently open file (synchronous)
