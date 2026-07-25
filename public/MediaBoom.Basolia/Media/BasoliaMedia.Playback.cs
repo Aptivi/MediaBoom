@@ -162,8 +162,6 @@ namespace MediaBoom.Basolia.Media
             unsafe
             {
                 // Now, buffer the entire music file and create an empty array based on its size
-                var bufferSize = GetBufferSize();
-                Debug.WriteLine($"Buffer size is {bufferSize}");
                 MpvPropertyHandler.SetStringProperty(this, "pause", "no");
                 MpvPropertyHandler.ObserveProperty(this, "pause");
                 FlagEventPropertyChanged += ObservePause;
@@ -255,7 +253,7 @@ namespace MediaBoom.Basolia.Media
             }
             catch
             {
-                // TODO: Add debug later
+                Debug.WriteLine("Set volume failed: " + volume);
             }
         }
 
