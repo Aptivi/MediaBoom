@@ -151,13 +151,20 @@ namespace MediaBoom.Basolia.Media
             // Open the radio station
             loadEvent.Reset();
             MpvPropertyHandler.SetStringProperty(this, "pause", "yes");
-            MpvPropertyHandler.SetStringProperty(this, "stream-lavf-o", "icy=1");
-            MpvPropertyHandler.SetStringProperty(this, "ytdl", "no");
-            MpvCommandHandler.RunCommand(this, "loadfile", path);
+
+            // Since Basolia tries to load HTTP radio stations with curl, which trashes icy-title and all other metadata, we need
+            // to prepend it with FFmpeg to force libmpv to load the radio stream with FFmpeg instead of CURL. This way, we'd
+            // preserve the icy-title that we need for the "Now Playing" feature that Basolia provides.
+            string ffmpegUrl = path.StartsWith("http", StringComparison.OrdinalIgnoreCase) ? $"ffmpeg://{path}" : path;
+            MpvCommandHandler.RunCommand(this, "loadfile", ffmpegUrl);
             if (!loadEvent.Wait(new TimeSpan(0, 0, 10)))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT"), MpvError.MPV_ERROR_GENERIC);
             isRadioStation = true;
             currentFile = new(true, path, radioName);
+
+            // Observe the metadata
+            MpvPropertyHandler.ObserveProperty(this, "metadata");
+            NodeMapEventPropertyChanged += ObserveRadioStationPlaying;
         }
 
         /// <summary>

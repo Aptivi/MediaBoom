@@ -167,16 +167,8 @@ namespace MediaBoom.Basolia.Media
                 FlagEventPropertyChanged += ObservePause;
                 state = PlaybackState.Playing;
 
-                // First, let Basolia "hold on" until hold is released
-                bool looping = true;
-                while (looping)
-                {
-                    string currentTitle = MpvPropertyHandler.GetNodeMapProperty(this, "metadata").TryGetValue("icy-title", out var title) == true ? title : "";
-                    Debug.WriteLine($"title obtained from metadata is {currentTitle}");
-                    looping = !SpinWait.SpinUntil(() => pausing || !IsPlaying(), 5000);
-                }
-
                 // Wait until pause is requested
+                SpinWait.SpinUntil(() => pausing || !IsPlaying());
                 FlagEventPropertyChanged -= ObservePause;
                 if (state == PlaybackState.Pausing)
                     state = PlaybackState.Paused;
