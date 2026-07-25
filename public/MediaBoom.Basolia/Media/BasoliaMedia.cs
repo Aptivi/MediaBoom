@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -41,8 +42,6 @@ namespace MediaBoom.Basolia.Media
     /// </summary>
     public unsafe partial class BasoliaMedia
     {
-        internal bool bufferPlaying = false;
-        internal bool holding = false;
         internal string radioIcy = "";
         internal PlaybackState state = PlaybackState.Stopped;
         internal bool isOpened = false;
@@ -65,6 +64,21 @@ namespace MediaBoom.Basolia.Media
         /// Integer event property has changed
         /// </summary>
         public event Action<(string name, long value)>? IntegerEventPropertyChanged;
+
+        /// <summary>
+        /// Double event property has changed
+        /// </summary>
+        public event Action<(string name, double value)>? DoubleEventPropertyChanged;
+
+        /// <summary>
+        /// Flag event property has changed
+        /// </summary>
+        public event Action<(string name, bool value)>? FlagEventPropertyChanged;
+
+        /// <summary>
+        /// Node map event property has changed
+        /// </summary>
+        public event Action<(string name, Dictionary<string, string> value)>? NodeMapEventPropertyChanged;
 
         /// <summary>
         /// Closes the libmpv instance
@@ -111,6 +125,7 @@ namespace MediaBoom.Basolia.Media
                         break;
                     case MpvEventId.MPV_EVENT_END_FILE:
                         var endFile = Marshal.PtrToStructure<MpvEventEndFile>(mpvEvent.data);
+                        Debug.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] END_FILE reason={endFile.reason} error={endFile.error}");
                         if (!loadEvent.IsSet)
                         {
                             lastError =
@@ -133,21 +148,64 @@ namespace MediaBoom.Basolia.Media
                     case MpvEventId.MPV_EVENT_SHUTDOWN:
                         isShuttingDown = true;
                         break;
+                    case MpvEventId.MPV_EVENT_LOG_MESSAGE:
+                        var logMsg = Marshal.PtrToStructure<MpvEventLogMessage>(mpvEvent.data);
+                        Debug.WriteLine($"[{logMsg.prefix}] {logMsg.text?.TrimEnd()}");
+                        break;
                     case MpvEventId.MPV_EVENT_PROPERTY_CHANGE:
                         var observedProperty = Marshal.PtrToStructure<MpvEventProperty>(mpvEvent.data);
-                        switch (observedProperty.format)
+                        if (observedProperty.format == MpvValueFormat.MPV_FORMAT_NONE)
+                            continue;
+                        var propertyNode = Marshal.PtrToStructure<MpvNode>(observedProperty.data);
+                        switch (propertyNode.format)
                         {
                             case MpvValueFormat.MPV_FORMAT_STRING:
                                 {
-                                    IntPtr valuePtr = Marshal.ReadIntPtr(observedProperty.data);
+                                    IntPtr valuePtr = Marshal.ReadIntPtr(propertyNode.u.@string);
                                     string value = Marshal.PtrToStringAnsi(valuePtr);
                                     StringEventPropertyChanged?.Invoke((observedProperty.name, value));
                                     break;
                                 }
                             case MpvValueFormat.MPV_FORMAT_INT64:
                                 {
-                                    long value = Marshal.ReadInt64(observedProperty.data);
+                                    long value = propertyNode.u.int64;
                                     IntegerEventPropertyChanged?.Invoke((observedProperty.name, value));
+                                    break;
+                                }
+                            case MpvValueFormat.MPV_FORMAT_DOUBLE:
+                                {
+                                    double value = propertyNode.u.double_;
+                                    DoubleEventPropertyChanged?.Invoke((observedProperty.name, value));
+                                    break;
+                                }
+                            case MpvValueFormat.MPV_FORMAT_FLAG:
+                                {
+                                    bool value = propertyNode.u.flag > 0;
+                                    FlagEventPropertyChanged?.Invoke((observedProperty.name, value));
+                                    break;
+                                }
+                            case MpvValueFormat.MPV_FORMAT_NODE_MAP:
+                                {
+                                    Debug.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] metadata event fired, observedProperty.format={observedProperty.format}");
+                                    var nodeMap = Marshal.PtrToStructure<MpvNodeList>(propertyNode.u.list);
+                                    int num = nodeMap.num;
+                                    Debug.WriteLine($"  num={num}");
+                                    int nodeSize = Marshal.SizeOf<MpvNode>();
+                                    var strings = new Dictionary<string, string>();
+                                    for (int i = 0; i < num; i++)
+                                    {
+                                        // Get the key and the value
+                                        IntPtr keyPtr = Marshal.ReadIntPtr(nodeMap.keys, i * IntPtr.Size);
+                                        IntPtr valueNodePtr = IntPtr.Add(nodeMap.values, i * nodeSize);
+                                        string key = Marshal.PtrToStringAnsi(keyPtr);
+                                        var valueNode = Marshal.PtrToStructure<MpvNode>(valueNodePtr);
+
+                                        // Convert the value to the string
+                                        string value = valueNode.format == MpvValueFormat.MPV_FORMAT_STRING ? Marshal.PtrToStringAnsi(valueNode.u.@string) : "";
+                                        Debug.WriteLine($"  {key} = {value}");
+                                        strings[key] = value;
+                                    }
+                                    NodeMapEventPropertyChanged?.Invoke((observedProperty.name, strings));
                                     break;
                                 }
                         }
@@ -178,6 +236,8 @@ namespace MediaBoom.Basolia.Media
                 if (initResult < MpvError.MPV_ERROR_SUCCESS)
                     throw new BasoliaException("Can't initialize MPV core", initResult);
                 _libmpvHandle = handle;
+
+                NativeInitializer.GetDelegate<NativeLogging.mpv_request_log_messages>(NativeInitializer.libManagerMpv, nameof(NativeLogging.mpv_request_log_messages)).Invoke(_libmpvHandle, "v");
                 StartEventLoop();
             }
             catch (Exception ex)

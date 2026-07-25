@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -148,18 +149,15 @@ namespace MediaBoom.Basolia.Media
                 CloseFile();
 
             // Open the radio station
-            MpvPropertyHandler.SetStringProperty(this, "demuxer-lavf-o", "icy=1");
             loadEvent.Reset();
             MpvPropertyHandler.SetStringProperty(this, "pause", "yes");
+            MpvPropertyHandler.SetStringProperty(this, "stream-lavf-o", "icy=1");
+            MpvPropertyHandler.SetStringProperty(this, "ytdl", "no");
             MpvCommandHandler.RunCommand(this, "loadfile", path);
             if (!loadEvent.Wait(new TimeSpan(0, 0, 10)))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT"), MpvError.MPV_ERROR_GENERIC);
             isRadioStation = true;
             currentFile = new(true, path, radioName);
-
-            // Observe the "currently playing" song
-            MpvPropertyHandler.ObserveStringProperty(this, "metadata/by-key/icy-title");
-            StringEventPropertyChanged += ObserveRadioStationPlaying;
         }
 
         /// <summary>
@@ -184,15 +182,17 @@ namespace MediaBoom.Basolia.Media
                 // Close the file
                 MpvCommandHandler.RunCommand(this, "playlist-remove", "current");
                 isOpened = false;
+                if (isRadioStation)
+                    NodeMapEventPropertyChanged -= ObserveRadioStationPlaying;
                 isRadioStation = false;
                 currentFile = null;
             }
         }
 
-        private void ObserveRadioStationPlaying((string name, string value) property)
+        private void ObserveRadioStationPlaying((string name, Dictionary<string, string> value) property)
         {
-            if (property.name == "metadata/by-key/icy-title" && !string.IsNullOrEmpty(property.value))
-                radioIcy = property.value;
+            if (property.name == "metadata" && property.value.TryGetValue("icy-title", out string icyTitle))
+                radioIcy = icyTitle;
         }
     }
 }

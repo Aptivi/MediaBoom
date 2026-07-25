@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using Colorimetry.Data;
@@ -52,6 +53,7 @@ namespace MediaBoom.QuickRadio
         {
             // Parse the arguments
             ArgumentParse.ParseArguments(args, arguments);
+            Debugger.Launch();
 
             // Check to see if a music file has been specified and is found
             if (string.IsNullOrEmpty(radioPath))

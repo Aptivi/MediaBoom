@@ -151,8 +151,8 @@ namespace MediaBoom.Basolia.Media
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY"), MpvError.MPV_ERROR_INVALID_PARAMETER);
 
             // Helper function to observe pause
-            string pausing = "";
-            void ObservePause((string name, string value) property)
+            bool pausing = false;
+            void ObservePause((string name, bool value) property)
             {
                 if (property.name == "pause")
                     pausing = property.value;
@@ -165,17 +165,21 @@ namespace MediaBoom.Basolia.Media
                 var bufferSize = GetBufferSize();
                 Debug.WriteLine($"Buffer size is {bufferSize}");
                 MpvPropertyHandler.SetStringProperty(this, "pause", "no");
-                MpvPropertyHandler.ObserveStringProperty(this, "pause");
-                StringEventPropertyChanged += ObservePause;
+                MpvPropertyHandler.ObserveProperty(this, "pause");
+                FlagEventPropertyChanged += ObservePause;
                 state = PlaybackState.Playing;
 
                 // First, let Basolia "hold on" until hold is released
-                while (holding)
-                    Thread.Sleep(1);
+                bool looping = true;
+                while (looping)
+                {
+                    string currentTitle = MpvPropertyHandler.GetNodeMapProperty(this, "metadata").TryGetValue("icy-title", out var title) == true ? title : "";
+                    Debug.WriteLine($"title obtained from metadata is {currentTitle}");
+                    looping = !SpinWait.SpinUntil(() => pausing || !IsPlaying(), 5000);
+                }
 
                 // Wait until pause is requested
-                SpinWait.SpinUntil(() => pausing == "yes" || !IsPlaying());
-                StringEventPropertyChanged -= ObservePause;
+                FlagEventPropertyChanged -= ObservePause;
                 if (state == PlaybackState.Pausing)
                     state = PlaybackState.Paused;
                 if (IsPlaying() || state == PlaybackState.Stopping)
