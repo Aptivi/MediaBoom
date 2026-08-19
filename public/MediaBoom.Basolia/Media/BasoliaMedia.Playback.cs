@@ -26,6 +26,7 @@ using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Media.Helpers;
 using MediaBoom.Basolia.Media.Playback;
+using MediaBoom.Basolia.Media.Video;
 using MediaBoom.Native.Interop.Enumerations;
 
 namespace MediaBoom.Basolia.Media
@@ -268,6 +269,11 @@ namespace MediaBoom.Basolia.Media
                 return 0;
             }
         }
+        #endregion
+
+        #region Video playback tools
+        internal void FireFrameAvailableEvent(VideoFrameEventArgs videoFrameEventArgs) =>
+            FrameAvailable?.Invoke(this, videoFrameEventArgs);
         #endregion
     }
 }

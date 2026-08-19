@@ -26,12 +26,14 @@ using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Media.File;
 using MediaBoom.Basolia.Media.Playback;
+using MediaBoom.Basolia.Media.Video;
 using MediaBoom.Native;
 using MediaBoom.Native.Exceptions;
 using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Native.Interop.Event;
 using MediaBoom.Native.Interop.Init;
+using MediaBoom.Native.Interop.Rendering;
 using Textify.General;
 using Threadify.Manager;
 
@@ -49,10 +51,11 @@ namespace MediaBoom.Basolia.Media
         internal bool isOutputOpen = false;
         internal bool isShuttingDown = false;
         internal FileType? currentFile;
+        internal MpvRenderContext* renderContext;
         internal ManualResetEventSlim loadEvent = new(false);
         internal MpvEventId lastEventId = MpvEventId.MPV_EVENT_NONE;
         internal MpvError lastError = MpvError.MPV_ERROR_SUCCESS;
-
+        internal ThreadInstance? renderThread;
         internal MpvHandle* _libmpvHandle;
 
         /// <summary>
@@ -81,6 +84,11 @@ namespace MediaBoom.Basolia.Media
         public event Action<(string name, Dictionary<string, string> value)>? NodeMapEventPropertyChanged;
 
         /// <summary>
+        /// Video frame data available
+        /// </summary>
+        public event EventHandler<VideoFrameEventArgs>? FrameAvailable;
+
+        /// <summary>
         /// Closes the libmpv instance
         /// </summary>
         public void CloseInstance()
@@ -88,6 +96,7 @@ namespace MediaBoom.Basolia.Media
             // Verify that we've actually loaded the library!
             try
             {
+                VideoRenderingTools.ShutdownVideoRenderer();
                 var @delegate = NativeInitializer.GetDelegate<NativeInit.mpv_terminate_destroy>(NativeInitializer.libManagerMpv, nameof(NativeInit.mpv_terminate_destroy));
                 @delegate.Invoke(_libmpvHandle);
             }
@@ -238,6 +247,12 @@ namespace MediaBoom.Basolia.Media
                 _libmpvHandle = handle;
 
                 NativeInitializer.GetDelegate<NativeLogging.mpv_request_log_messages>(NativeInitializer.libManagerMpv, nameof(NativeLogging.mpv_request_log_messages)).Invoke(_libmpvHandle, "v");
+                VideoRenderingTools.InitializeVideoRenderer(this, VideoRendererBackend.Software);
+                if (VideoRenderingTools.videoRenderer is not null)
+                {
+                    renderThread ??= new("Video renderer", true, VideoRenderingTools.VideoRendererLoop);
+                    renderThread.Start();
+                }
                 StartEventLoop();
             }
             catch (Exception ex)
