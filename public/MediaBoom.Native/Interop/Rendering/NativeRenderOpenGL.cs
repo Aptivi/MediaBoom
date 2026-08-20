@@ -158,16 +158,8 @@ namespace MediaBoom.Native.Interop.Rendering
     {
         [DllImport("opengl32.dll", CharSet = CharSet.Ansi)]
         internal static extern IntPtr wglGetProcAddress(string name);
-        [DllImport("kernel32.dll", CharSet = CharSet.Ansi)]
-        internal static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
-        [DllImport("kernel32.dll", CharSet = CharSet.Ansi)]
-        internal static extern IntPtr LoadLibrary(string lpFileName);
 
         [DllImport("libGL.so.1")]
         internal static extern IntPtr glXGetProcAddressARB([MarshalAs(UnmanagedType.LPStr)] string procName);
-        [DllImport("libdl.so.2")]
-        internal static extern IntPtr dlopen(string filename, int flags);
-        [DllImport("libdl.so.2")]
-        internal static extern IntPtr dlsym(IntPtr handle, string symbol);
     }
 }

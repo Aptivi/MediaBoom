@@ -34,9 +34,7 @@ namespace MediaBoom.Basolia.Media.Video
         internal BasoliaMedia media;
         private NativeRender.mpv_render_update_fn callback = (_) => VideoRenderingTools.needsRedraw = true;
         private mpv_opengl_init_params_get_proc_address procAddressDelegate = (_, _) => IntPtr.Zero;
-        private IntPtr _opengl32Module;
-        private IntPtr _openGLFrameworkHandle;
-        private IntPtr _libGLHandle;
+        private LibraryManager? libGLLibManager;
         private uint ownedFbo;
         private uint colorTexture;
         private int texWidth, texHeight;
@@ -205,31 +203,38 @@ namespace MediaBoom.Basolia.Media.Video
         private nint OpenGLGetProcAddress(nint ctx, string name)
         {
             // If we're running on Windows
-            // TODO: This is only a referernce implementation. Remove it once we make a pubilic property for handle.
             if (PlatformHelper.IsOnWindows())
             {
                 IntPtr addr = MpvOpenGLHelpers.wglGetProcAddress(name);
                 if (addr == IntPtr.Zero || addr == (IntPtr)1 || addr == (IntPtr)2 || addr == (IntPtr)3 || addr == (IntPtr)(-1))
                 {
-                    if (_opengl32Module == IntPtr.Zero)
-                        _opengl32Module = MpvOpenGLHelpers.LoadLibrary("opengl32.dll");
-                    addr = MpvOpenGLHelpers.GetProcAddress(_opengl32Module, name);
+                    if (libGLLibManager is null)
+                    {
+                        libGLLibManager = new(new LibraryFile(["opengl32.dll"]));
+                        libGLLibManager.LoadNativeLibrary();
+                    }
+                    addr = libGLLibManager.GetNativeMethodAddress(name);
                 }
                 return addr;
             }
             else if (PlatformHelper.IsOnMacOS())
             {
-                if (_openGLFrameworkHandle == IntPtr.Zero)
-                    _openGLFrameworkHandle = MpvOpenGLHelpers.dlopen(
-                        "/System/Library/Frameworks/OpenGL.framework/OpenGL", 2);
-                return MpvOpenGLHelpers.dlsym(_openGLFrameworkHandle, name);
+                if (libGLLibManager is null)
+                {
+                    libGLLibManager = new(new LibraryFile(["/System/Library/Frameworks/OpenGL.framework/OpenGL"]));
+                    libGLLibManager.LoadNativeLibrary();
+                }
+                return libGLLibManager.GetNativeMethodAddress(name);
             }
             else if (PlatformHelper.IsOnUnix())
             {
-                if (_libGLHandle == IntPtr.Zero)
-                    _libGLHandle = MpvOpenGLHelpers.dlopen("libGL.so.1", 2);
+                if (libGLLibManager is null)
+                {
+                    libGLLibManager = new(new LibraryFile(["libGL.so.1"]));
+                    libGLLibManager.LoadNativeLibrary();
+                }
                 IntPtr addr = MpvOpenGLHelpers.glXGetProcAddressARB(name);
-                return addr != IntPtr.Zero ? addr : MpvOpenGLHelpers.dlsym(_libGLHandle, name);
+                return addr != IntPtr.Zero ? addr : libGLLibManager.GetNativeMethodAddress(name);
             }
             return IntPtr.Zero;
         }
