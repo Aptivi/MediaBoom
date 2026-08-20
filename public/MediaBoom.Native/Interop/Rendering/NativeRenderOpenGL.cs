@@ -21,6 +21,7 @@ using System;
 using System.Runtime.InteropServices;
 using MediaBoom.Native.Exceptions;
 using MediaBoom.Native.Interop.Enumerations;
+using SpecProbe.Loader;
 
 namespace MediaBoom.Native.Interop.Rendering
 {
@@ -113,6 +114,38 @@ namespace MediaBoom.Native.Interop.Rendering
         public const uint GL_FRAMEBUFFER_COMPLETE = 0x8CD5;
     }
 
+    internal static class GLFW
+    {
+        internal static LibraryManager? glfwLibManager;
+
+        internal delegate int glfwInit();
+        internal delegate void glfwTerminate();
+        internal delegate void glfwWindowHint(int hint, int value);
+        internal delegate IntPtr glfwCreateWindow(int width, int height, [MarshalAs(UnmanagedType.LPStr)] string title, IntPtr monitor, IntPtr share);
+        internal delegate void glfwMakeContextCurrent(IntPtr window);
+        internal delegate void glfwDestroyWindow(IntPtr window);
+        internal delegate IntPtr glfwGetProcAddress([MarshalAs(UnmanagedType.LPStr)] string procname);
+        private static bool loaded;
+
+        public const int GLFW_VISIBLE = 0x00020004;
+        public const int GLFW_FALSE = 0;
+        public const int GLFW_CONTEXT_VERSION_MAJOR = 0x00022002;
+        public const int GLFW_CONTEXT_VERSION_MINOR = 0x00022003;
+        public const int GLFW_OPENGL_PROFILE = 0x00022008;
+        public const int GLFW_OPENGL_CORE_PROFILE = 0x00032001;
+
+        public static void Load()
+        {
+            if (loaded)
+                return;
+
+            glfwLibManager = new LibraryManager(new LibraryFile(NativeInitializer.GetLibPath(NativeInitializer.LibraryPath + "/../../../..", "glfw3"), "libglfw.so.3", "libglfw.3.dylib"));
+            glfwLibManager.LoadNativeLibrary();
+
+            loaded = true;
+        }
+    }
+
     internal static class GLFunctions
     {
         public static GenTexturesFn GenTextures = null!;
@@ -125,11 +158,13 @@ namespace MediaBoom.Native.Interop.Rendering
         public static FramebufferTexture2DFn FramebufferTexture2D = null!;
         public static DeleteFramebuffersFn DeleteFramebuffers = null!;
         public static CheckFramebufferStatusFn CheckFramebufferStatus = null!;
+        private static bool essentialsLoaded;
         private static bool loaded;
 
-        public static void Load(Func<string, IntPtr> getProcAddress)
+        public static void LoadEssentials(Func<string, IntPtr> getProcAddress)
         {
-            if (loaded) return;
+            if (essentialsLoaded)
+                return;
 
             T Bind<T>(string name) where T : Delegate
             {
@@ -144,6 +179,23 @@ namespace MediaBoom.Native.Interop.Rendering
             TexImage2D = Bind<TexImage2DFn>("glTexImage2D");
             TexParameteri = Bind<TexParameteriFn>("glTexParameteri");
             DeleteTextures = Bind<DeleteTexturesFn>("glDeleteTextures");
+
+            essentialsLoaded = true;
+        }
+
+        public static void Load(Func<string, IntPtr> getProcAddress)
+        {
+            if (loaded)
+                return;
+
+            T Bind<T>(string name) where T : Delegate
+            {
+                IntPtr ptr = getProcAddress(name);
+                if (ptr == IntPtr.Zero)
+                    throw new BasoliaNativeLibraryException($"GL function not found: {name}");
+                return Marshal.GetDelegateForFunctionPointer<T>(ptr);
+            }
+
             GenFramebuffers = Bind<GenFramebuffersFn>("glGenFramebuffers");
             BindFramebuffer = Bind<BindFramebufferFn>("glBindFramebuffer");
             FramebufferTexture2D = Bind<FramebufferTexture2DFn>("glFramebufferTexture2D");

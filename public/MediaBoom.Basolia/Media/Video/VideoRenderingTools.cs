@@ -29,28 +29,56 @@ namespace MediaBoom.Basolia.Media.Video
     internal static class VideoRenderingTools
     {
         internal static IVideoRenderer? videoRenderer;
+        internal static VideoRendererBackend backend = VideoRendererBackend.Software;
         internal static bool needsRedraw = false;
         internal static bool customVoSet = false;
         internal static bool renderLooping = true;
+        internal static bool switching = true;
 
-        internal static void InitializeVideoRenderer(BasoliaMedia media, VideoRendererBackend backend)
+        internal static VideoRendererBackend Backend
+        {
+            get => backend;
+            set
+            {
+                backend = value;
+                switching = true;
+            }
+        }
+
+        internal static void PrepareVideoRenderer(BasoliaMedia media)
         {
             SetCustomVo(media);
 
             // Determine which video renderer to use, and attach
-            videoRenderer = backend == VideoRendererBackend.OpenGL ? new OpenGLRenderer(media) : new SoftwareRenderer(media);
+            videoRenderer = Backend == VideoRendererBackend.OpenGL ? new OpenGLRenderer(media) : new SoftwareRenderer(media);
+        }
+
+        internal static void InitializeVideoRenderer()
+        {
+            if (videoRenderer is null)
+                return;
             videoRenderer.Attach();
         }
 
-        internal static void ShutdownVideoRenderer() =>
-            videoRenderer?.Detach();
+        internal static void ShutdownVideoRenderer()
+        {
+            if (videoRenderer is null)
+                return;
+            videoRenderer.Detach();
+        }
 
-        internal static void VideoRendererLoop()
+        internal static void VideoRendererLoop(BasoliaMedia basoliaMedia)
         {
             while (renderLooping)
             {
+                if (switching)
+                {
+                    PrepareVideoRenderer(basoliaMedia);
+                    InitializeVideoRenderer();
+                    switching = false;
+                }
                 videoRenderer?.RenderFrame();
-                SpinWait.SpinUntil(() => (videoRenderer?.NeedsRedraw ?? false) || !renderLooping);
+                SpinWait.SpinUntil(() => (videoRenderer?.NeedsRedraw ?? false) || !renderLooping || switching);
             }
         }
 

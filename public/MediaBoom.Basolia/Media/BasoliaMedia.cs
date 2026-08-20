@@ -247,12 +247,9 @@ namespace MediaBoom.Basolia.Media
                 _libmpvHandle = handle;
 
                 NativeInitializer.GetDelegate<NativeLogging.mpv_request_log_messages>(NativeInitializer.libManagerMpv, nameof(NativeLogging.mpv_request_log_messages)).Invoke(_libmpvHandle, "v");
-                VideoRenderingTools.InitializeVideoRenderer(this, VideoRendererBackend.Software);
-                if (VideoRenderingTools.videoRenderer is not null)
-                {
-                    renderThread ??= new("Video renderer", true, VideoRenderingTools.VideoRendererLoop);
-                    renderThread.Start();
-                }
+                renderThread ??= new("Video renderer", true, () => VideoRenderingTools.VideoRendererLoop(this));
+                renderThread.Start();
+                SpinWait.SpinUntil(() => !VideoRenderingTools.switching);
                 StartEventLoop();
             }
             catch (Exception ex)

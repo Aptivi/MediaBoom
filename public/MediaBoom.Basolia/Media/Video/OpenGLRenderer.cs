@@ -38,6 +38,7 @@ namespace MediaBoom.Basolia.Media.Video
         private uint ownedFbo;
         private uint colorTexture;
         private int texWidth, texHeight;
+        private IntPtr glfwWindow;
 
         public bool NeedsRedraw =>
             VideoRenderingTools.needsRedraw;
@@ -63,6 +64,10 @@ namespace MediaBoom.Basolia.Media.Video
                     new() { type = MpvRenderParamType.MPV_RENDER_PARAM_OPENGL_INIT_PARAMS, data = glParamsMemory },
                     new() { type = MpvRenderParamType.MPV_RENDER_PARAM_INVALID, data = IntPtr.Zero },
                 ];
+
+                // Open the GL context
+                GLFunctions.LoadEssentials(name => OpenGLGetProcAddress(IntPtr.Zero, name));
+                CreateGLContext();
 
                 // Add the parameters and open the render context
                 unsafe
@@ -237,6 +242,41 @@ namespace MediaBoom.Basolia.Media.Video
                 return addr != IntPtr.Zero ? addr : libGLLibManager.GetNativeMethodAddress(name);
             }
             return IntPtr.Zero;
+        }
+
+        public void CreateGLContext()
+        {
+            GLFW.Load();
+            var glfwInit = NativeInitializer.GetDelegate<GLFW.glfwInit>(GLFW.glfwLibManager, nameof(GLFW.glfwInit));
+            var glfwWindowHint = NativeInitializer.GetDelegate<GLFW.glfwWindowHint>(GLFW.glfwLibManager, nameof(GLFW.glfwWindowHint));
+            var glfwCreateWindow = NativeInitializer.GetDelegate<GLFW.glfwCreateWindow>(GLFW.glfwLibManager, nameof(GLFW.glfwCreateWindow));
+            var glfwMakeContextCurrent = NativeInitializer.GetDelegate<GLFW.glfwMakeContextCurrent>(GLFW.glfwLibManager, nameof(GLFW.glfwMakeContextCurrent));
+
+            if (glfwInit() == GLFW.GLFW_FALSE)
+                throw new BasoliaException("Failed to initialize GLFW", MpvError.MPV_ERROR_GENERIC);
+
+            glfwWindowHint(GLFW.GLFW_VISIBLE, GLFW.GLFW_FALSE);
+            glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MAJOR, 3);
+            glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 3);
+            glfwWindowHint(GLFW.GLFW_OPENGL_PROFILE, GLFW.GLFW_OPENGL_CORE_PROFILE);
+
+            glfwWindow = glfwCreateWindow(1, 1, "BasoliaMedia (offscreen)", IntPtr.Zero, IntPtr.Zero);
+            if (glfwWindow == IntPtr.Zero)
+                throw new BasoliaException("Failed to create GL context", MpvError.MPV_ERROR_GENERIC);
+
+            glfwMakeContextCurrent(glfwWindow);
+        }
+
+        public void DestroyGLContext()
+        {
+            var glfwDestroyWindow = NativeInitializer.GetDelegate<GLFW.glfwDestroyWindow>(GLFW.glfwLibManager, nameof(GLFW.glfwDestroyWindow));
+            var glfwTerminate = NativeInitializer.GetDelegate<GLFW.glfwTerminate>(GLFW.glfwLibManager, nameof(GLFW.glfwTerminate));
+            if (glfwWindow != IntPtr.Zero)
+            {
+                glfwDestroyWindow(glfwWindow);
+                glfwWindow = IntPtr.Zero;
+            }
+            glfwTerminate();
         }
 
         public OpenGLRenderer(BasoliaMedia media)

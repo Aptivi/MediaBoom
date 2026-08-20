@@ -412,6 +412,6 @@ DocGen/api/
 *.swp
 
 # Native libraries
-public/MediaBoom.Native/runtimes/win-x64/
-public/MediaBoom.Native/runtimes/win-arm64/
+public/MediaBoom.Native/runtimes/win-x64/native/libmpv-2.dll
+public/MediaBoom.Native/runtimes/win-arm64/native/libmpv-2.dll
 libmpv-win/
