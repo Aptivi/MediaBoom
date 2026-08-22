@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Native.Interop.Init;
 
@@ -40,12 +41,12 @@ namespace MediaBoom.Native.Interop.Analysis
         /// <summary>
         /// MPV_EXPORT int mpv_set_property(mpv_handle *ctx, const char *name, mpv_format format, void *data);
         /// </summary>
-        internal delegate int mpv_set_property(MpvHandle* ctx, string name, MpvValueFormat format, ref string data);
+        internal delegate int mpv_set_property(MpvHandle* ctx, string name, MpvValueFormat format, ref IntPtr data);
 
         /// <summary>
         /// MPV_EXPORT int mpv_set_property_async(mpv_handle *ctx, uint64_t reply_userdata, const char *name, mpv_format format, void *data);
         /// </summary>
-        internal delegate int mpv_set_property_async(MpvHandle* ctx, ulong reply_userdata, string name, MpvValueFormat format, ref string data);
+        internal delegate int mpv_set_property_async(MpvHandle* ctx, ulong reply_userdata, string name, MpvValueFormat format, ref IntPtr data);
 
         /// <summary>
         /// MPV_EXPORT int mpv_set_property(mpv_handle *ctx, const char *name, mpv_format format, void *data);

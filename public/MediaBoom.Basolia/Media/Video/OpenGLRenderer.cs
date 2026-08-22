@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Media.Helpers;
@@ -32,7 +33,11 @@ namespace MediaBoom.Basolia.Media.Video
     internal class OpenGLRenderer : IVideoRenderer
     {
         internal BasoliaMedia media;
-        private NativeRender.mpv_render_update_fn callback = (_) => VideoRenderingTools.needsRedraw = true;
+        private NativeRender.mpv_render_update_fn callback = (_) =>
+        {
+            VideoRenderingTools.needsRedraw = true;
+            VideoRenderingTools.redrawSignal.Set();
+        };
         private mpv_opengl_init_params_get_proc_address procAddressDelegate = (_, _) => IntPtr.Zero;
         private LibraryManager? libGLLibManager;
         private uint ownedFbo;
@@ -40,8 +45,18 @@ namespace MediaBoom.Basolia.Media.Video
         private int texWidth, texHeight;
         private IntPtr glfwWindow;
 
-        public bool NeedsRedraw =>
-            VideoRenderingTools.needsRedraw;
+        public bool NeedsRedraw
+        {
+            get
+            {
+                unsafe
+                {
+                    ulong needed = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_update>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_update)).Invoke(media.renderContext);
+                    bool isNeeded = needed == 1 << 0;
+                    return isNeeded;
+                }
+            }
+        }
 
         public void Attach()
         {
@@ -112,25 +127,15 @@ namespace MediaBoom.Basolia.Media.Video
 
         public void RenderFrame()
         {
-            lock (media)
+            unsafe
             {
                 if (!NeedsRedraw)
                     return;
                 VideoRenderingTools.needsRedraw = false;
 
                 // Get the size
-                long width = 0, height = 0;
-                try
-                {
-                    width = MpvPropertyHandler.GetIntegerProperty(media, "dwidth");
-                    height = MpvPropertyHandler.GetIntegerProperty(media, "dheight");
-                }
-                catch
-                {
-                    return;
-                }
-                if (width <= 0 || height <= 0)
-                    return;
+                long width = media.cachedWidth > 0 ? media.cachedWidth : 640;
+                long height = media.cachedHeight > 0 ? media.cachedHeight : 480;
 
                 // Initialize parameters in the managed context
                 EnsureFbo((int)width, (int)height);
@@ -140,28 +145,31 @@ namespace MediaBoom.Basolia.Media.Video
                 Marshal.StructureToPtr(fboParameters, fboMemory, false);
                 IntPtr flipYPtr = Marshal.AllocHGlobal(sizeof(int));
                 Marshal.WriteInt32(flipYPtr, 1);
+                IntPtr blockForTargetTimePtr = Marshal.AllocHGlobal(sizeof(int));
+                Marshal.WriteInt32(blockForTargetTimePtr, 0);
                 MpvRenderParam[] parameters =
                 [
                     new() { type = MpvRenderParamType.MPV_RENDER_PARAM_OPENGL_FBO, data = fboMemory },
                     new() { type = MpvRenderParamType.MPV_RENDER_PARAM_FLIP_Y, data = flipYPtr },
+                    new() { type = MpvRenderParamType.MPV_RENDER_PARAM_BLOCK_FOR_TARGET_TIME, data = blockForTargetTimePtr },
                     new() { type = MpvRenderParamType.MPV_RENDER_PARAM_INVALID, data = IntPtr.Zero },
                 ];
 
                 // Add the parameters and render
-                unsafe
-                {
-                    int paramSize = Marshal.SizeOf<MpvRenderParam>();
-                    IntPtr parametersMemory = Marshal.AllocHGlobal(paramSize * parameters.Length);
-                    for (int i = 0; i < parameters.Length; i++)
-                        Marshal.StructureToPtr(parameters[i], parametersMemory + (i * paramSize), false);
-                    var renderDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_render>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_render));
-                    MpvError result = (MpvError)renderDelegate.Invoke(media.renderContext, parametersMemory);
-                    Marshal.FreeHGlobal(flipYPtr);
-                    Marshal.FreeHGlobal(fboMemory);
-                    Marshal.FreeHGlobal(parametersMemory);
-                    if (result < MpvError.MPV_ERROR_SUCCESS)
-                        throw new BasoliaException("Can't render", result);
-                }
+                int paramSize = Marshal.SizeOf<MpvRenderParam>();
+                IntPtr parametersMemory = Marshal.AllocHGlobal(paramSize * parameters.Length);
+                for (int i = 0; i < parameters.Length; i++)
+                    Marshal.StructureToPtr(parameters[i], parametersMemory + (i * paramSize), false);
+                var renderDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_render>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_render));
+                MpvError result = (MpvError)renderDelegate.Invoke(media.renderContext, parametersMemory);
+                Marshal.FreeHGlobal(flipYPtr);
+                Marshal.FreeHGlobal(blockForTargetTimePtr);
+                Marshal.FreeHGlobal(fboMemory);
+                Marshal.FreeHGlobal(parametersMemory);
+                if (result < MpvError.MPV_ERROR_SUCCESS)
+                    throw new BasoliaException("Can't render before swap", result);
+                var reportSwapDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_report_swap>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_report_swap));
+                reportSwapDelegate.Invoke(media.renderContext);
 
                 // Fire the updated frame event
                 media.FireFrameAvailableEvent(new VideoFrameEventArgs
@@ -198,6 +206,7 @@ namespace MediaBoom.Basolia.Media.Video
                 GLConstants.GL_TEXTURE_2D, colorTexture, 0);
 
             uint status = GLFunctions.CheckFramebufferStatus(GLConstants.GL_FRAMEBUFFER);
+            Debug.WriteLine($"framebuffer status returned: {status:x} = 0x8CD5");
             if (status != GLConstants.GL_FRAMEBUFFER_COMPLETE)
                 throw new BasoliaException($"Framebuffer incomplete: 0x{status:X}", MpvError.MPV_ERROR_GENERIC);
 

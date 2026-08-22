@@ -25,6 +25,7 @@ using System.Threading;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Media.File;
+using MediaBoom.Basolia.Media.Helpers;
 using MediaBoom.Basolia.Media.Playback;
 using MediaBoom.Basolia.Media.Video;
 using MediaBoom.Native;
@@ -57,6 +58,8 @@ namespace MediaBoom.Basolia.Media
         internal MpvError lastError = MpvError.MPV_ERROR_SUCCESS;
         internal ThreadInstance? renderThread;
         internal MpvHandle* _libmpvHandle;
+        internal int cachedWidth;
+        internal int cachedHeight;
 
         /// <summary>
         /// String event property has changed
@@ -247,6 +250,9 @@ namespace MediaBoom.Basolia.Media
                 _libmpvHandle = handle;
 
                 NativeInitializer.GetDelegate<NativeLogging.mpv_request_log_messages>(NativeInitializer.libManagerMpv, nameof(NativeLogging.mpv_request_log_messages)).Invoke(_libmpvHandle, "v");
+                MpvPropertyHandler.ObserveProperty(this, "pause");
+                FlagEventPropertyChanged += (evt) =>
+                    Debug.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] {evt.name} = {evt.value}");
                 renderThread ??= new("Video renderer", true, () => VideoRenderingTools.VideoRendererLoop(this));
                 renderThread.Start();
                 SpinWait.SpinUntil(() => !VideoRenderingTools.switching);

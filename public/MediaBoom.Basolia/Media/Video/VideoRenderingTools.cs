@@ -18,8 +18,10 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Media.Helpers;
 using MediaBoom.Native;
 using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
@@ -29,11 +31,12 @@ namespace MediaBoom.Basolia.Media.Video
     internal static class VideoRenderingTools
     {
         internal static IVideoRenderer? videoRenderer;
-        internal static VideoRendererBackend backend = VideoRendererBackend.Software;
+        internal static VideoRendererBackend backend = VideoRendererBackend.OpenGL;
         internal static bool needsRedraw = false;
         internal static bool customVoSet = false;
         internal static bool renderLooping = true;
         internal static bool switching = true;
+        internal static readonly AutoResetEvent redrawSignal = new(false);
 
         internal static VideoRendererBackend Backend
         {
@@ -69,16 +72,33 @@ namespace MediaBoom.Basolia.Media.Video
 
         internal static void VideoRendererLoop(BasoliaMedia basoliaMedia)
         {
+            MpvPropertyHandler.ObserveProperty(basoliaMedia, "dwidth");
+            MpvPropertyHandler.ObserveProperty(basoliaMedia, "dheight");
+
+            basoliaMedia.IntegerEventPropertyChanged += (evt) =>
+            {
+                if (evt.name == "dwidth")
+                    basoliaMedia.cachedWidth = (int)evt.value;
+                else if (evt.name == "dheight")
+                    basoliaMedia.cachedHeight = (int)evt.value;
+            };
             while (renderLooping)
             {
-                if (switching)
+                try
                 {
-                    PrepareVideoRenderer(basoliaMedia);
-                    InitializeVideoRenderer();
-                    switching = false;
+                    if (switching)
+                    {
+                        PrepareVideoRenderer(basoliaMedia);
+                        InitializeVideoRenderer();
+                        switching = false;
+                    }
+                    videoRenderer?.RenderFrame();
                 }
-                videoRenderer?.RenderFrame();
-                SpinWait.SpinUntil(() => (videoRenderer?.NeedsRedraw ?? false) || !renderLooping || switching);
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"[RENDER THREAD EXCEPTION] {ex}");
+                }
+                redrawSignal.WaitOne(TimeSpan.FromMilliseconds(16));
             }
         }
 

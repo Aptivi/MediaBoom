@@ -163,7 +163,9 @@ namespace MediaBoom.Basolia.Media
             unsafe
             {
                 // Now, buffer the entire music file and create an empty array based on its size
+                Debug.WriteLine("Calling SetStringProperty(pause, no)...");
                 MpvPropertyHandler.SetStringProperty(this, "pause", "no");
+                Debug.WriteLine("SetStringProperty(pause, no) returned");
                 MpvPropertyHandler.ObserveProperty(this, "pause");
                 FlagEventPropertyChanged += ObservePause;
                 state = PlaybackState.Playing;

@@ -54,8 +54,9 @@ namespace MediaBoom.Basolia.Media.Helpers
             {
                 // Set the string property
                 var handle = basolia._libmpvHandle;
-                var propertyValuePointer = NativeArrayBuilder.GetUtf8BytesPointer(propertyValue);
-                MpvError propertyResult = (MpvError)NativeInitializer.GetDelegate<NativeParameters.mpv_set_property>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_set_property)).Invoke(handle, propertyName, MpvValueFormat.MPV_FORMAT_STRING, ref propertyValue);
+                MpvError propertyResult = (MpvError)NativeInitializer
+                    .GetDelegate<NativeParameters.mpv_set_property_string>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_set_property_string))
+                    .Invoke(handle, propertyName, propertyValue);
 
                 // TODO: MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED -> Failed to set string property {0} to {1}
                 if (propertyResult < MpvError.MPV_ERROR_SUCCESS)

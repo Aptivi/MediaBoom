@@ -34,7 +34,11 @@ namespace MediaBoom.Basolia.Media.Video
         private int frontIndex = 0;
         private long bufferSize = 0;
         private readonly object frameLock = new();
-        private NativeRender.mpv_render_update_fn callback = (_) => VideoRenderingTools.needsRedraw = true;
+        private NativeRender.mpv_render_update_fn callback = (_) =>
+        {
+            VideoRenderingTools.needsRedraw = true;
+            VideoRenderingTools.redrawSignal.Set();
+        };
 
         public bool NeedsRedraw =>
             VideoRenderingTools.needsRedraw;
@@ -96,90 +100,87 @@ namespace MediaBoom.Basolia.Media.Video
 
         public void RenderFrame()
         {
-            lock (media)
+            if (!NeedsRedraw)
+                return;
+            VideoRenderingTools.needsRedraw = false;
+
+            // Get the size
+            long width = 0, height = 0;
+            try
             {
-                if (!NeedsRedraw)
-                    return;
-                VideoRenderingTools.needsRedraw = false;
-
-                // Get the size
-                long width = 0, height = 0;
-                try
-                {
-                    width = MpvPropertyHandler.GetIntegerProperty(media, "dwidth");
-                    height = MpvPropertyHandler.GetIntegerProperty(media, "dheight");
-                }
-                catch
-                {
-                    return;
-                }
-                if (width <= 0 || height <= 0)
-                    return;
-
-                // Get the stride and the size
-                int bytesPerPixel = 3;
-                long stride = width * bytesPerPixel;
-                long neededSize = stride * height;
-
-                int backIndex = 1 - frontIndex;
-                lock (frameLock)
-                {
-                    if (buffers[backIndex] == IntPtr.Zero || bufferSize != neededSize)
-                    {
-                        if (buffers[backIndex] != IntPtr.Zero)
-                            Marshal.FreeHGlobal(buffers[backIndex]);
-                        buffers[backIndex] = Marshal.AllocHGlobal((IntPtr)neededSize);
-                        bufferSize = neededSize;
-                    }
-                }
-
-                // Initialize parameters in the managed context
-                IntPtr sizePtr = Marshal.AllocHGlobal(sizeof(int) * 2);
-                Marshal.WriteInt32(sizePtr, 0, (int)width);
-                Marshal.WriteInt32(sizePtr, sizeof(int), (int)height);
-                IntPtr formatString = Marshal.StringToHGlobalAnsi("rgb24");
-                IntPtr stridePtr = Marshal.AllocHGlobal(IntPtr.Size);
-                Marshal.WriteIntPtr(stridePtr, (IntPtr)stride);
-                MpvRenderParam[] parameters =
-                [
-                    new() { type = MpvRenderParamType.MPV_RENDER_PARAM_SW_SIZE, data = sizePtr },
-                    new() { type = MpvRenderParamType.MPV_RENDER_PARAM_SW_FORMAT, data = formatString },
-                    new() { type = MpvRenderParamType.MPV_RENDER_PARAM_SW_STRIDE, data = stridePtr },
-                    new() { type = MpvRenderParamType.MPV_RENDER_PARAM_SW_POINTER, data = buffers[backIndex] },
-                    new() { type = MpvRenderParamType.MPV_RENDER_PARAM_INVALID, data = IntPtr.Zero },
-                ];
-
-                // Add the parameters and render
-                unsafe
-                {
-                    int paramSize = Marshal.SizeOf<MpvRenderParam>();
-                    IntPtr parametersMemory = Marshal.AllocHGlobal(paramSize * parameters.Length);
-                    for (int i = 0; i < parameters.Length; i++)
-                        Marshal.StructureToPtr(parameters[i], parametersMemory + (i * paramSize), false);
-                    var renderDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_render>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_render));
-                    MpvError result = (MpvError)renderDelegate.Invoke(media.renderContext, parametersMemory);
-                    Marshal.FreeHGlobal(parametersMemory);
-                    Marshal.FreeHGlobal(formatString);
-                    Marshal.FreeHGlobal(sizePtr);
-                    Marshal.FreeHGlobal(stridePtr);
-                    if (result < MpvError.MPV_ERROR_SUCCESS)
-                        throw new BasoliaException("Can't render", result);
-                }
-
-                // Fire the updated frame event
-                lock (frameLock)
-                {
-                    frontIndex = backIndex;
-                }
-                media.FireFrameAvailableEvent(new VideoFrameEventArgs
-                {
-                    SWFramePointer = buffers[frontIndex],
-                    Width = (int)width,
-                    Height = (int)height,
-                    Stride = stride,
-                    Format = "rgb24"
-                });
+                width = MpvPropertyHandler.GetIntegerProperty(media, "dwidth");
+                height = MpvPropertyHandler.GetIntegerProperty(media, "dheight");
             }
+            catch
+            {
+                return;
+            }
+            if (width <= 0 || height <= 0)
+                return;
+
+            // Get the stride and the size
+            int bytesPerPixel = 3;
+            long stride = width * bytesPerPixel;
+            long neededSize = stride * height;
+
+            int backIndex = 1 - frontIndex;
+            lock (frameLock)
+            {
+                if (buffers[backIndex] == IntPtr.Zero || bufferSize != neededSize)
+                {
+                    if (buffers[backIndex] != IntPtr.Zero)
+                        Marshal.FreeHGlobal(buffers[backIndex]);
+                    buffers[backIndex] = Marshal.AllocHGlobal((IntPtr)neededSize);
+                    bufferSize = neededSize;
+                }
+            }
+
+            // Initialize parameters in the managed context
+            IntPtr sizePtr = Marshal.AllocHGlobal(sizeof(int) * 2);
+            Marshal.WriteInt32(sizePtr, 0, (int)width);
+            Marshal.WriteInt32(sizePtr, sizeof(int), (int)height);
+            IntPtr formatString = Marshal.StringToHGlobalAnsi("rgb24");
+            IntPtr stridePtr = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(stridePtr, (IntPtr)stride);
+            MpvRenderParam[] parameters =
+            [
+                new() { type = MpvRenderParamType.MPV_RENDER_PARAM_SW_SIZE, data = sizePtr },
+                new() { type = MpvRenderParamType.MPV_RENDER_PARAM_SW_FORMAT, data = formatString },
+                new() { type = MpvRenderParamType.MPV_RENDER_PARAM_SW_STRIDE, data = stridePtr },
+                new() { type = MpvRenderParamType.MPV_RENDER_PARAM_SW_POINTER, data = buffers[backIndex] },
+                new() { type = MpvRenderParamType.MPV_RENDER_PARAM_INVALID, data = IntPtr.Zero },
+            ];
+
+            // Add the parameters and render
+            unsafe
+            {
+                int paramSize = Marshal.SizeOf<MpvRenderParam>();
+                IntPtr parametersMemory = Marshal.AllocHGlobal(paramSize * parameters.Length);
+                for (int i = 0; i < parameters.Length; i++)
+                    Marshal.StructureToPtr(parameters[i], parametersMemory + (i * paramSize), false);
+                var renderDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_render>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_render));
+                MpvError result = (MpvError)renderDelegate.Invoke(media.renderContext, parametersMemory);
+                Marshal.FreeHGlobal(parametersMemory);
+                Marshal.FreeHGlobal(formatString);
+                Marshal.FreeHGlobal(sizePtr);
+                Marshal.FreeHGlobal(stridePtr);
+                if (result < MpvError.MPV_ERROR_SUCCESS)
+                    throw new BasoliaException("Can't render", result);
+            }
+
+            // Fire the updated frame event
+            lock (frameLock)
+            {
+                frontIndex = backIndex;
+            }
+            media.FireFrameAvailableEvent(new VideoFrameEventArgs
+            {
+                SWFramePointer = buffers[frontIndex],
+                Width = (int)width,
+                Height = (int)height,
+                Stride = stride,
+                Format = "rgb24"
+            });
         }
 
         public SoftwareRenderer(BasoliaMedia media)
