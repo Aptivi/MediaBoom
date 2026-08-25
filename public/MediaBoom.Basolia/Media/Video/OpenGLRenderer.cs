@@ -181,6 +181,7 @@ namespace MediaBoom.Basolia.Media.Video
                 reportSwapDelegate.Invoke(media.renderContext);
 
                 // Fire the updated frame event
+                Debug.WriteLine("[OPENGL RENDERER] Frame pushed!");
                 media.FireFrameAvailableEvent(new VideoFrameEventArgs
                 {
                     GLTexturePointer = colorTexture,

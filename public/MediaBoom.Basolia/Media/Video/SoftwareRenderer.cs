@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Media.Helpers;
@@ -173,6 +174,7 @@ namespace MediaBoom.Basolia.Media.Video
             {
                 frontIndex = backIndex;
             }
+            Debug.WriteLine("[SOFTWARE RENDERER] Frame pushed!");
             media.FireFrameAvailableEvent(new VideoFrameEventArgs
             {
                 SWFramePointer = buffers[frontIndex],

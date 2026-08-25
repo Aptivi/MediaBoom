@@ -194,7 +194,10 @@ namespace MediaBoom.Cli.CliBase
                     break;
                 case ConsoleKey.Z:
                     if (keystroke.Modifiers == ConsoleModifiers.Shift)
-                        VideoRenderingTools.Backend = VideoRenderingTools.Backend == VideoRendererBackend.Software ? VideoRendererBackend.OpenGL : VideoRendererBackend.Software;
+                    {
+                        if (MediaBoomCli.basolia is not null && !MediaBoomCli.basolia.IsPlaying())
+                            VideoRenderingTools.Backend = VideoRenderingTools.Backend == VideoRendererBackend.Software ? VideoRendererBackend.OpenGL : VideoRendererBackend.Software;
+                    }
                     else
                         ShowSpecs();
                     playerScreen.RequireRefresh();
