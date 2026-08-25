@@ -154,9 +154,9 @@ namespace MediaBoom.Basolia.Media
                             {
                                 if (isOpened)
                                     isOpened = false;
-                                state = PlaybackState.Stopped;
                             }
                         }
+                        state = PlaybackState.Stopped;
                         break;
                     case MpvEventId.MPV_EVENT_SHUTDOWN:
                         isShuttingDown = true;

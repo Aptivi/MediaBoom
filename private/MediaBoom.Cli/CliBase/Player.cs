@@ -171,7 +171,7 @@ namespace MediaBoom.Cli.CliBase
                     LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_VOLINDICATOR") + $" {Common.volume:0}%{disco.VTSequenceForeground()}";
 
                 // Render the lyric
-                string lyric = Common.CurrentCachedInfo.LyricInstance is not null ? Common.CurrentCachedInfo.LyricInstance.GetLastLineCurrent(MediaBoomCli.basolia) : "";
+                string lyric = Common.CurrentCachedInfo.LyricInstance is not null && MediaBoomCli.basolia.IsPlaying() ? Common.CurrentCachedInfo.LyricInstance.GetLastLineCurrent(MediaBoomCli.basolia) : "";
                 string finalLyric = string.IsNullOrWhiteSpace(lyric) ? "..." : lyric;
 
                 // Render the results
