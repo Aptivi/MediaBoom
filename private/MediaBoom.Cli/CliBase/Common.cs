@@ -24,6 +24,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using MediaBoom.Basolia;
 using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Media.Video;
 using MediaBoom.Cli.Languages;
 using MediaBoom.Cli.Tools;
 using MediaBoom.Native.Interop.Enumerations;
@@ -192,7 +193,10 @@ namespace MediaBoom.Cli.CliBase
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.Z:
-                    ShowSpecs();
+                    if (keystroke.Modifiers == ConsoleModifiers.Shift)
+                        VideoRenderingTools.Backend = VideoRenderingTools.Backend == VideoRendererBackend.Software ? VideoRendererBackend.OpenGL : VideoRendererBackend.Software;
+                    else
+                        ShowSpecs();
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.L:
