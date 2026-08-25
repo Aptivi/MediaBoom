@@ -31,7 +31,7 @@ namespace MediaBoom.Basolia.Media.Video
     internal static class VideoRenderingTools
     {
         internal static IVideoRenderer? videoRenderer;
-        internal static VideoRendererBackend backend = VideoRendererBackend.OpenGL;
+        internal static VideoRendererBackend backend = VideoRendererBackend.Software;
         internal static bool needsRedraw = false;
         internal static bool customVoSet = false;
         internal static bool renderLooping = true;
