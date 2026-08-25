@@ -60,14 +60,18 @@ namespace MediaBoom.Basolia.Media.Video
         {
             if (videoRenderer is null)
                 return;
+            renderLooping = true;
             videoRenderer.Attach();
         }
 
-        internal static void ShutdownVideoRenderer()
+        internal static void ShutdownVideoRenderer(bool signal = true)
         {
             if (videoRenderer is null)
                 return;
-            videoRenderer.Detach();
+            if (!signal)
+                videoRenderer.Detach();
+            else
+                renderLooping = false;
         }
 
         internal static void VideoRendererLoop(BasoliaMedia basoliaMedia)
@@ -88,6 +92,7 @@ namespace MediaBoom.Basolia.Media.Video
                 {
                     if (switching)
                     {
+                        ShutdownVideoRenderer(false);
                         PrepareVideoRenderer(basoliaMedia);
                         InitializeVideoRenderer();
                         switching = false;
@@ -100,6 +105,7 @@ namespace MediaBoom.Basolia.Media.Video
                 }
                 redrawSignal.WaitOne(TimeSpan.FromMilliseconds(16));
             }
+            ShutdownVideoRenderer(false);
         }
 
         internal static void SetCustomVo(BasoliaMedia media)

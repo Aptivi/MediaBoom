@@ -96,10 +96,11 @@ namespace MediaBoom.Basolia.Media
         /// </summary>
         public void CloseInstance()
         {
-            // Verify that we've actually loaded the library!
+            // Shut down the video renderer
             try
             {
                 VideoRenderingTools.ShutdownVideoRenderer();
+                renderThread?.Wait();
                 var @delegate = NativeInitializer.GetDelegate<NativeInit.mpv_terminate_destroy>(NativeInitializer.libManagerMpv, nameof(NativeInit.mpv_terminate_destroy));
                 @delegate.Invoke(_libmpvHandle);
             }

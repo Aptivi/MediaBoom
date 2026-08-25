@@ -114,11 +114,20 @@ namespace MediaBoom.Basolia.Media.Video
         {
             lock (media)
             {
+                if (ownedFbo != 0)
+                {
+                    uint fbo = ownedFbo, tex = colorTexture;
+                    GLFunctions.DeleteFramebuffers(1, ref fbo);
+                    GLFunctions.DeleteTextures(1, ref tex);
+                    ownedFbo = 0;
+                    colorTexture = 0;
+                }
                 unsafe
                 {
                     var renderContextFreeDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_free>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_free));
                     renderContextFreeDelegate.Invoke(media.renderContext);
                 }
+                DestroyGLContext();
             }
         }
 
