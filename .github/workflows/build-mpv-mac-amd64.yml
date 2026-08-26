@@ -20,7 +20,7 @@ jobs:
           brew install meson ffmpeg libass luajit jpeg-turbo libplacebo
       - name: MPV compilation
         run: |
-          cd assets/mpv ; meson setup build --prefix=$(pwd)/outlib ; meson compile -C build
+          cd assets/mpv ; meson setup build --prefix=$(pwd)/outlib ; meson compile -C build ; meson install -C build
       - name: Artifacts
         uses: actions/upload-artifact@v7
         with:

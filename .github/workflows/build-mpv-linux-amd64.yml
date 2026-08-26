@@ -18,10 +18,10 @@ jobs:
       - name: Setting up environment
         run: |
           sudo apt update
-          sudo apt install build-essential meson pkg-config libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev libass-dev zlib1g-dev libjpeg-dev libgl-dev libx11-dev libxrandr-dev libxext-dev libxss-dev libxpresent-dev libvdpau-dev
+          sudo apt install build-essential meson pkg-config libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev libass-dev zlib1g-dev libjpeg-dev libgl-dev libx11-dev libxrandr-dev libxext-dev libxss-dev libxpresent-dev libvdpau-dev libplacebo-dev
       - name: MPV compilation
         run: |
-          cd assets/mpv ; meson setup build --prefix=$(pwd)/outlib ; meson compile -C build
+          cd assets/mpv ; meson setup build --prefix=$(pwd)/outlib ; meson compile -C build ; meson install -C build
       - name: Artifacts
         uses: actions/upload-artifact@v7
         with:
