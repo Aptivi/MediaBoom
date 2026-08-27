@@ -18,10 +18,10 @@ jobs:
       - name: Setting up environment
         run: |
           sudo apt update
-          sudo apt install build-essential meson pkg-config libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev libass-dev zlib1g-dev libjpeg-dev libgl-dev libx11-dev libxrandr-dev libxext-dev libxss-dev libxpresent-dev libvdpau-dev libplacebo-dev
+          sudo apt install build-essential meson pkg-config libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev libass-dev zlib1g-dev libjpeg-dev libgl-dev libx11-dev libxrandr-dev libxext-dev libxss-dev libxpresent-dev libvdpau-dev
       - name: MPV compilation
         run: |
-          cd assets/mpv ; meson setup build --prefix=$(pwd)/outlib ; meson compile -C build ; meson install -C build
+          cd assets/mpv ; mkdir -p subprojects ; git clone https://code.videolan.org/videolan/libplacebo.git --depth=1 --recursive subprojects/libplacebo ; meson setup build --prefix=$(pwd)/outlib ; meson compile -C build ; meson install -C build
       - name: Artifacts
         uses: actions/upload-artifact@v7
         with:

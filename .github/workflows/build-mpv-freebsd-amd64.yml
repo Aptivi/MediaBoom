@@ -22,7 +22,7 @@ jobs:
           release: "15.0"
           arch: "x86_64"
           run: |
-            pkg install -y multimedia/ffmpeg textproc/py-docutils multimedia/ffnvcodec-headers multimedia/v4l_compat graphics/vulkan-headers graphics/wayland-protocols devel/evdev-proto devel/desktop-file-utils devel/meson devel/ninja devel/pkgconf lang/python312 python3 x11/xorgproto x11/libX11 x11/libXext x11/libXfixes x11/libXinerama x11/libXpresent x11/libXrandr x11/libXScrnSaver x11/libXv x11/libXxf86vm
+            pkg install -y multimedia/ffmpeg textproc/py-docutils multimedia/ffnvcodec-headers multimedia/v4l_compat graphics/vulkan-headers graphics/wayland-protocols devel/evdev-proto devel/desktop-file-utils devel/meson devel/ninja devel/pkgconf lang/python312 python3 x11/xorgproto x11/libX11 x11/libXext x11/libXfixes x11/libXinerama x11/libXpresent x11/libXrandr x11/libXScrnSaver x11/libXv x11/libXxf86vm converters/libiconv
             cd assets/mpv ; meson setup build --prefix=$(pwd)/outlib ; meson compile -C build ; meson install -C build
       - name: Artifacts
         uses: actions/upload-artifact@v7
