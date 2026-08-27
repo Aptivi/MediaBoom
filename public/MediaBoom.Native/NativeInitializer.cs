@@ -102,16 +102,9 @@ namespace MediaBoom.Native
 
         internal static string GetLibPath(string root, string libName)
         {
-            string runtimesPath = root + "/";
-            string lowerArch = RuntimeInformation.OSArchitecture.ToString().ToLower();
-            if (PlatformHelper.IsOnWindows())
-                runtimesPath += $"runtimes/win-{lowerArch}/native/{libName}.dll";
-            else if (PlatformHelper.IsOnMacOS())
-                runtimesPath += $"runtimes/osx-{lowerArch}/native/{libName}.dylib";
-            else if (PlatformHelper.IsOnUnix())
-                runtimesPath += $"runtimes/linux-{lowerArch}/native/{libName}.so";
-            else
-                runtimesPath += $"runtimes/freebsd-{lowerArch}/native/{libName}.so";
+            string genericRid = PlatformHelper.GetCurrentGenericRid();
+            string extension = PlatformHelper.IsOnWindows() ? ".dll" : PlatformHelper.IsOnMacOS() ? ".dylib" : ".so";
+            string runtimesPath = root + $"/runtimes/{genericRid}/native/{libName}{extension}";
             return runtimesPath;
         }
 
