@@ -46,7 +46,9 @@ def download_libmpv_win(root_dir, extract: bool = True):
 def bcj2_workaround(path: str, outdir: str) -> None:
     result = run(['7z', 'x', '-y', f'-o{outdir}', f'{path}', 'libmpv-2.dll'])
     if result.returncode != 0:
-        raise RuntimeError(f'7z error while decompressing {path}')
+        resultzz = run(['7zz', 'x', '-y', f'-o{outdir}', f'{path}', 'libmpv-2.dll'])
+        if resultzz.returncode != 0:
+            raise RuntimeError(f'tried 7z and 7zz - failed processing {path}')
 
 
 def extract_mpv(path: str, outdir: str) -> None:
