@@ -28,7 +28,7 @@ jobs:
         run: sudo apt install mono-complete
       - name: Setup Mono (macOS)
         if: matrix.runs-on == 'macos-latest'
-        run: brew install mono
+        run: brew install mono sevenzip
       - name: Solution Compilation
         run: |
           pip install py7zr aptivi-adt
