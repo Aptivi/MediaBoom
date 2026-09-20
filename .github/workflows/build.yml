@@ -35,3 +35,4 @@ jobs:
         run: |
           pip install py7zr aptivi-adt
           adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
+          adt checklocs
