@@ -37,16 +37,10 @@ namespace MediaBoom.Basolia.Media.Video
         internal static bool renderLooping = true;
         internal static bool switching = true;
         internal static readonly AutoResetEvent redrawSignal = new(false);
+        internal static readonly ManualResetEventSlim switchDone = new(false);
 
-        internal static VideoRendererBackend Backend
-        {
-            get => backend;
-            set
-            {
-                backend = value;
-                switching = true;
-            }
-        }
+        internal static VideoRendererBackend Backend =>
+            backend;
 
         internal static void PrepareVideoRenderer(BasoliaMedia media)
         {
@@ -96,6 +90,7 @@ namespace MediaBoom.Basolia.Media.Video
                         PrepareVideoRenderer(basoliaMedia);
                         InitializeVideoRenderer();
                         switching = false;
+                        switchDone.Set();
                     }
                     videoRenderer?.RenderFrame();
                 }
@@ -122,6 +117,28 @@ namespace MediaBoom.Basolia.Media.Video
                     customVoSet = true;
                 }
             }
+        }
+
+        internal static void SwitchBackend(BasoliaMedia media, VideoRendererBackend target)
+        {
+            // Remember the selected video track ("no" if video is already off)
+            string previousVid = MpvPropertyHandler.GetStringProperty(media, "vid");
+            bool hadVideo = previousVid != "no";
+
+            // 1. Clean teardown of the video chain, so nothing gets force-disabled later
+            if (hadVideo)
+                MpvPropertyHandler.SetStringProperty(media, "vid", "no");
+
+            // 2. Have the render thread swap contexts, and wait for it to finish
+            switchDone.Reset();
+            backend = target;
+            switching = true;
+            redrawSignal.Set();
+            switchDone.Wait();
+
+            // 3. Re-select video: this creates a VO against the NEW render context
+            if (hadVideo)
+                MpvPropertyHandler.SetStringProperty(media, "vid", previousVid);
         }
     }
 }

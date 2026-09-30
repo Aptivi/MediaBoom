@@ -193,7 +193,14 @@ namespace MediaBoom.Cli.CliBase
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.Z:
-                    ShowSpecs();
+                    if (keystroke.Modifiers.HasFlag(ConsoleModifiers.Shift))
+                    {
+                        if (MediaBoomCli.basolia is null)
+                            throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
+                        VideoRenderingTools.SwitchBackend(MediaBoomCli.basolia, VideoRenderingTools.Backend == VideoRendererBackend.Software ? VideoRendererBackend.OpenGL : VideoRendererBackend.Software);
+                    }
+                    else
+                        ShowSpecs();
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.L:

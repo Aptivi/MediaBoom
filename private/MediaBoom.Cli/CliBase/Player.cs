@@ -86,6 +86,9 @@ namespace MediaBoom.Cli.CliBase
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_DISCO"), ConsoleKey.L),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST"), ConsoleKey.F1),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO"), ConsoleKey.Z),
+
+            // TODO: MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER -> Switch renderer
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER"), ConsoleKey.Z, ConsoleModifiers.Shift),
         ];
 
         public static void PlayerLoop()
