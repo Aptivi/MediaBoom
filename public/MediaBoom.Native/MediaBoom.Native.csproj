@@ -34,8 +34,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SpecProbe.Loader" Version="3.9.1" />
-    <PackageReference Include="SpecProbe.Software" Version="3.9.1" />
+    <PackageReference Include="SpecProbe.Loader" Version="3.9.1.1" />
+    <PackageReference Include="SpecProbe.Software" Version="3.9.1.1" />
   </ItemGroup>
 
 </Project>
