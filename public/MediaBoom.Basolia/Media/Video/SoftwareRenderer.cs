@@ -106,16 +106,8 @@ namespace MediaBoom.Basolia.Media.Video
             VideoRenderingTools.needsRedraw = false;
 
             // Get the size
-            long width = 0, height = 0;
-            try
-            {
-                width = MpvPropertyHandler.GetIntegerProperty(media, "dwidth");
-                height = MpvPropertyHandler.GetIntegerProperty(media, "dheight");
-            }
-            catch
-            {
-                return;
-            }
+            long width = media.cachedWidth;
+            long height = media.cachedHeight;
             if (width <= 0 || height <= 0)
                 return;
 
