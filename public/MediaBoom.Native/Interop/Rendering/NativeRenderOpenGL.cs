@@ -57,6 +57,12 @@ namespace MediaBoom.Native.Interop.Rendering
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     internal delegate uint CheckFramebufferStatusFn(uint target);
 
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+    internal delegate void PixelStoreiFn(uint pname, int param);
+
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+    internal delegate void ReadPixelsFn(int x, int y, int width, int height, uint format, uint type, IntPtr pixels);
+
     [StructLayout(LayoutKind.Sequential)]
     internal struct MpvOpenGLInitParams
     {
@@ -112,6 +118,8 @@ namespace MediaBoom.Native.Interop.Rendering
         public const uint GL_FRAMEBUFFER = 0x8D40;
         public const uint GL_COLOR_ATTACHMENT0 = 0x8CE0;
         public const uint GL_FRAMEBUFFER_COMPLETE = 0x8CD5;
+        public const uint GL_RGB = 0x1907;
+        public const uint GL_PACK_ALIGNMENT = 0x0D05;
     }
 
     internal static class GLFW
@@ -158,6 +166,8 @@ namespace MediaBoom.Native.Interop.Rendering
         public static FramebufferTexture2DFn FramebufferTexture2D = null!;
         public static DeleteFramebuffersFn DeleteFramebuffers = null!;
         public static CheckFramebufferStatusFn CheckFramebufferStatus = null!;
+        public static PixelStoreiFn PixelStorei = null!;
+        public static ReadPixelsFn ReadPixels = null!;
         private static bool essentialsLoaded;
         private static bool loaded;
 
@@ -179,6 +189,8 @@ namespace MediaBoom.Native.Interop.Rendering
             TexImage2D = Bind<TexImage2DFn>("glTexImage2D");
             TexParameteri = Bind<TexParameteriFn>("glTexParameteri");
             DeleteTextures = Bind<DeleteTexturesFn>("glDeleteTextures");
+            PixelStorei = Bind<PixelStoreiFn>("glPixelStorei");
+            ReadPixels = Bind<ReadPixelsFn>("glReadPixels");
 
             essentialsLoaded = true;
         }

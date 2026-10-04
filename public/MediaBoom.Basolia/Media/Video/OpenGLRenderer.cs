@@ -44,6 +44,8 @@ namespace MediaBoom.Basolia.Media.Video
         private uint colorTexture;
         private int texWidth, texHeight;
         private IntPtr glfwWindow;
+        private IntPtr readbackBuffer;
+        private long readbackSize;
 
         public bool NeedsRedraw
         {
@@ -152,14 +154,11 @@ namespace MediaBoom.Basolia.Media.Video
                 int fboSize = Marshal.SizeOf<MpvOpenGLFbo>();
                 IntPtr fboMemory = Marshal.AllocHGlobal(fboSize);
                 Marshal.StructureToPtr(fboParameters, fboMemory, false);
-                IntPtr flipYPtr = Marshal.AllocHGlobal(sizeof(int));
-                Marshal.WriteInt32(flipYPtr, 1);
                 IntPtr blockForTargetTimePtr = Marshal.AllocHGlobal(sizeof(int));
                 Marshal.WriteInt32(blockForTargetTimePtr, 0);
                 MpvRenderParam[] parameters =
                 [
                     new() { type = MpvRenderParamType.MPV_RENDER_PARAM_OPENGL_FBO, data = fboMemory },
-                    new() { type = MpvRenderParamType.MPV_RENDER_PARAM_FLIP_Y, data = flipYPtr },
                     new() { type = MpvRenderParamType.MPV_RENDER_PARAM_BLOCK_FOR_TARGET_TIME, data = blockForTargetTimePtr },
                     new() { type = MpvRenderParamType.MPV_RENDER_PARAM_INVALID, data = IntPtr.Zero },
                 ];
@@ -171,7 +170,6 @@ namespace MediaBoom.Basolia.Media.Video
                     Marshal.StructureToPtr(parameters[i], parametersMemory + (i * paramSize), false);
                 var renderDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_render>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_render));
                 MpvError result = (MpvError)renderDelegate.Invoke(media.renderContext, parametersMemory);
-                Marshal.FreeHGlobal(flipYPtr);
                 Marshal.FreeHGlobal(blockForTargetTimePtr);
                 Marshal.FreeHGlobal(fboMemory);
                 Marshal.FreeHGlobal(parametersMemory);
@@ -179,15 +177,26 @@ namespace MediaBoom.Basolia.Media.Video
                     throw new BasoliaException("Can't render before swap", result);
                 var reportSwapDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_report_swap>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_report_swap));
                 reportSwapDelegate.Invoke(media.renderContext);
+                
+                // Read back the pixels if required
+                IntPtr pixels = IntPtr.Zero;
+                if (media.GLReadbackEnabled)
+                {
+                    ReadBack((int)width, (int)height);
+                    pixels = readbackBuffer;
+                }
 
                 // Fire the updated frame event
                 Debug.WriteLine("[OPENGL RENDERER] Frame pushed!");
                 media.FireFrameAvailableEvent(new VideoFrameEventArgs
                 {
+                    Backend = VideoRendererBackend.OpenGL,
                     GLTexturePointer = colorTexture,
+                    GLPixelPointer = pixels,
                     Width = (int)width,
                     Height = (int)height,
-                    Format = "rgb24"
+                    Stride = width * 3,
+                    Format = "rgba8"
                 });
             }
         }
@@ -296,6 +305,22 @@ namespace MediaBoom.Basolia.Media.Video
                 glfwWindow = IntPtr.Zero;
             }
             glfwTerminate();
+        }
+
+        private void ReadBack(int width, int height)
+        {
+            long needed = (long)width * height * 3;
+            if (readbackBuffer == IntPtr.Zero || readbackSize != needed)
+            {
+                if (readbackBuffer != IntPtr.Zero)
+                    Marshal.FreeHGlobal(readbackBuffer);
+                readbackBuffer = Marshal.AllocHGlobal((IntPtr)needed);
+                readbackSize = needed;
+            }
+
+            GLFunctions.BindFramebuffer(GLConstants.GL_FRAMEBUFFER, ownedFbo);
+            GLFunctions.PixelStorei(GLConstants.GL_PACK_ALIGNMENT, 1);
+            GLFunctions.ReadPixels(0, 0, width, height, GLConstants.GL_RGB, GLConstants.GL_UNSIGNED_BYTE, readbackBuffer);
         }
 
         public OpenGLRenderer(BasoliaMedia media)

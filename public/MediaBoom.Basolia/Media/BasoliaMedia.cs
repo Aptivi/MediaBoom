@@ -51,6 +51,7 @@ namespace MediaBoom.Basolia.Media
         internal bool isRadioStation = false;
         internal bool isOutputOpen = false;
         internal bool isShuttingDown = false;
+        internal volatile bool glReadbackEnabled;
         internal FileType? currentFile;
         internal MpvRenderContext* renderContext;
         internal ManualResetEventSlim loadEvent = new(false);
@@ -90,6 +91,15 @@ namespace MediaBoom.Basolia.Media
         /// Video frame data available
         /// </summary>
         public event EventHandler<VideoFrameEventArgs>? FrameAvailable;
+
+        /// <summary>
+        /// Whether the GL readback is enabled or not
+        /// </summary>
+        public bool GLReadbackEnabled
+        {
+            get => glReadbackEnabled;
+            set => glReadbackEnabled = value;
+        }
 
         /// <summary>
         /// Closes the libmpv instance

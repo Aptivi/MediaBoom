@@ -29,12 +29,17 @@ namespace MediaBoom.Basolia.Media.Video
     public class VideoFrameEventArgs
     {
         /// <summary>
+        /// Rendering backend used
+        /// </summary>
+        public VideoRendererBackend Backend { get; internal set; }
+
+        /// <summary>
         /// Frame pointer (software renderer)
         /// </summary>
         public IntPtr SWFramePointer { get; internal set; }
 
         /// <summary>
-        /// Stride (software renderer)
+        /// Stride
         /// </summary>
         public long Stride { get; internal set; }
         
@@ -42,6 +47,11 @@ namespace MediaBoom.Basolia.Media.Video
         /// OpenGL texture pointer
         /// </summary>
         public uint GLTexturePointer { get; internal set; }
+        
+        /// <summary>
+        /// OpenGL pixel pointer
+        /// </summary>
+        public IntPtr GLPixelPointer { get; internal set; }
 
         /// <summary>
         /// Buffer width

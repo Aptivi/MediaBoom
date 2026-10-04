@@ -169,6 +169,7 @@ namespace MediaBoom.Basolia.Media.Video
             Debug.WriteLine("[SOFTWARE RENDERER] Frame pushed!");
             media.FireFrameAvailableEvent(new VideoFrameEventArgs
             {
+                Backend = VideoRendererBackend.Software,
                 SWFramePointer = buffers[frontIndex],
                 Width = (int)width,
                 Height = (int)height,

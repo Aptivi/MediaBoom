@@ -121,22 +121,20 @@ namespace MediaBoom.Basolia.Media.Video
 
         internal static void SwitchBackend(BasoliaMedia media, VideoRendererBackend target)
         {
-            // Remember the selected video track ("no" if video is already off)
+            // Remember the selected video track and tear down the chain if there is one
             string previousVid = MpvPropertyHandler.GetStringProperty(media, "vid");
             bool hadVideo = previousVid != "no";
-
-            // 1. Clean teardown of the video chain, so nothing gets force-disabled later
             if (hadVideo)
                 MpvPropertyHandler.SetStringProperty(media, "vid", "no");
 
-            // 2. Have the render thread swap contexts, and wait for it to finish
+            // Wait for the renderer to swap context
             switchDone.Reset();
             backend = target;
             switching = true;
             redrawSignal.Set();
             switchDone.Wait();
 
-            // 3. Re-select video: this creates a VO against the NEW render context
+            // Go back to the previous vid
             if (hadVideo)
                 MpvPropertyHandler.SetStringProperty(media, "vid", previousVid);
         }

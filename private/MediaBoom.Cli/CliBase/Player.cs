@@ -27,6 +27,7 @@ using Colorimetry.Data;
 using Colorimetry.Transformation;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Media.Playback;
+using MediaBoom.Cli.CliBase.VideoDisplay;
 using MediaBoom.Cli.Languages;
 using MediaBoom.Native.Interop.Enumerations;
 using Terminaux.Base;
@@ -88,7 +89,9 @@ namespace MediaBoom.Cli.CliBase
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO"), ConsoleKey.Z),
 
             // TODO: MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER -> Switch renderer
+            // TODO: MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO -> Display video
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER"), ConsoleKey.Z, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO"), ConsoleKey.D),
         ];
 
         public static void PlayerLoop()
@@ -413,9 +416,7 @@ namespace MediaBoom.Cli.CliBase
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.D:
-                    PlayerControls.Pause();
-                    Common.HandleKeypressCommon(keystroke, playerScreen, false);
-                    PlayerControls.Play();
+                    VideoDisplayer.Display(MediaBoomCli.basolia, playerScreen);
                     playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.C:
