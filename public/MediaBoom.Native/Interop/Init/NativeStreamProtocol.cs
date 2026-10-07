@@ -25,19 +25,19 @@ namespace MediaBoom.Native.Interop.Init
     internal struct MpvStreamCallbackInfo
     {
         public nint cookie;
-        public mpv_stream_cb_read_fn read_fn;
-        public mpv_stream_cb_seek_fn seek_fn;
-        public mpv_stream_cb_size_fn size_fn;
-        public mpv_stream_cb_close_fn close_fn;
-        public mpv_stream_cb_cancel_fn cancel_fn;
+        public nint read_fn;
+        public nint seek_fn;
+        public nint size_fn;
+        public nint close_fn;
+        public nint cancel_fn;
     }
 
-    internal delegate int mpv_stream_cb_read_fn(nint cookie, nint buf, uint nbytes);
-    internal delegate int mpv_stream_cb_seek_fn(nint cookie, int offset);
-    internal delegate int mpv_stream_cb_size_fn(nint cookie);
+    internal delegate long mpv_stream_cb_read_fn(nint cookie, nint buf, ulong nbytes);
+    internal delegate long mpv_stream_cb_seek_fn(nint cookie, long offset);
+    internal delegate long mpv_stream_cb_size_fn(nint cookie);
     internal delegate void mpv_stream_cb_close_fn(nint cookie);
     internal delegate void mpv_stream_cb_cancel_fn(nint cookie);
-    internal delegate int mpv_stream_cb_open_ro_fn(nint user_data, nint uri, ref MpvStreamCallbackInfo info);
+    internal delegate int mpv_stream_cb_open_ro_fn(nint userData, nint uri, nint info);
 
     /// <summary>
     /// Custom stream protocol group from libmpv

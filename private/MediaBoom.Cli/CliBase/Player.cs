@@ -86,6 +86,7 @@ namespace MediaBoom.Cli.CliBase
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_SEEKTOREPEATCHECKPOINT"), ConsoleKey.C, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_DISCO"), ConsoleKey.L),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST"), ConsoleKey.F1),
+            new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYTESTSOUND"), ConsoleKey.F2),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO"), ConsoleKey.Z),
 
             // TODO: MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER -> Switch renderer
@@ -341,6 +342,10 @@ namespace MediaBoom.Cli.CliBase
                             throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
                         Common.CurrentCachedInfo.RepeatCheckpoint = MediaBoomCli.basolia.GetCurrentDurationSpan();
                     }
+                    break;
+                case ConsoleKey.F2:
+                    PlayerControls.PlayTest();
+                    playerScreen.RequireRefresh();
                     break;
                 default:
                     Common.HandleKeypressCommon(keystroke, playerScreen, false);

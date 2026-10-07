@@ -23,6 +23,7 @@ using System.Linq;
 using System.Threading;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Media.Helpers;
+using MediaBoom.Basolia.Media.Independent;
 using MediaBoom.Basolia.Media.Lyrics;
 using MediaBoom.Basolia.Media.Playback;
 using MediaBoom.Basolia.Media.Playback.Playlists;
@@ -33,6 +34,7 @@ using MediaBoom.Native.Interop.Enumerations;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Textify.General;
 
 namespace MediaBoom.Cli.CliBase
@@ -477,6 +479,36 @@ namespace MediaBoom.Cli.CliBase
                     Player.position = Common.CurrentCachedInfo.Duration;
                 MediaBoomCli.basolia.SeekTo(Player.position);
             }
+        }
+
+        internal static void PlayTest()
+        {
+            if (Common.CurrentCachedInfo is not null)
+                return;
+
+            // Ignore all settings while playing test sound, because it IS a test session.
+            InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TESTSOUNDPLAYING"), false);
+
+            // Extract the test sound asset to a temporary file
+            var stream = typeof(PlayerControls).Assembly.GetManifestResourceStream("MediaBoom.Cli.sample.mp3") ??
+                throw new Exception(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_EXCEPTION_TESTSOUNDMISSING"));
+
+            // Now, close the file and play it
+            PlayForget.PlayStream(stream);
+
+            // Ask the user if everything is OK.
+            int answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
+                [
+                    new InputChoiceInfo("yes", LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_YES")),
+                    new InputChoiceInfo("no", LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_NO"))
+                ], LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_DESC"), new InfoBoxSettings()
+                {
+                    Title = LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_TITLE")
+                });
+            if (answer == 0)
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_SUCCESS"));
+            else if (answer == 1)
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_TESTSOUNDREVIEW_FAILURE"));
         }
 
         internal static void ShowSongInfo()

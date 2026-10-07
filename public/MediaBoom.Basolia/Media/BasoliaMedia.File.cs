@@ -31,6 +31,7 @@ using MediaBoom.Basolia.Media.File;
 using MediaBoom.Basolia.Media.Helpers;
 using MediaBoom.Basolia.Media.Playback;
 using MediaBoom.Basolia.Media.Radio;
+using MediaBoom.Basolia.Media.Streaming;
 using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
 using SpecProbe.Software.Platform;
@@ -102,7 +103,7 @@ namespace MediaBoom.Basolia.Media
             MpvCommandHandler.RunCommand(this, "loadfile", path);
             if (!loadEvent.Wait(new TimeSpan(0, 0, 10)))
                 throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT"), MpvError.MPV_ERROR_GENERIC);
-            currentFile = new(false, path, "");
+            currentFile = new(true, path, "");
         }
 
         /// <summary>
@@ -165,6 +166,33 @@ namespace MediaBoom.Basolia.Media
             // Observe the metadata
             MpvPropertyHandler.ObserveProperty(this, "metadata");
             NodeMapEventPropertyChanged += ObserveRadioStationPlaying;
+        }
+
+        /// <summary>
+        /// Opens a media file
+        /// </summary>
+        /// <param name="stream">Path to a valid stream</param>
+        /// <param name="leaveOpen">Whether to leave the stream open or not</param>
+        public void OpenStream(Stream stream, bool leaveOpen = true)
+        {
+            InitBasolia.CheckInited();
+            MpvStreamProtocol.EnsureRegistered(this);
+            string uri = MpvStreamProtocol.Add(stream, leaveOpen);
+
+            // Check to see if the file is open
+            if (IsOpened())
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_FILE_EXCEPTION_FILEALREADYOPEN"), MpvError.MPV_ERROR_INVALID_PARAMETER);
+
+            if (isOpened)
+                CloseFile();
+
+            // Open the file
+            loadEvent.Reset();
+            MpvPropertyHandler.SetStringProperty(this, "pause", "yes");
+            MpvCommandHandler.RunCommand(this, "loadfile", uri);
+            if (!loadEvent.Wait(new TimeSpan(0, 0, 10)))
+                throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT"), MpvError.MPV_ERROR_GENERIC);
+            currentFile = new(false, uri, "");
         }
 
         /// <summary>
