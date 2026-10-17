@@ -88,12 +88,12 @@ namespace MediaBoom.Basolia.Media
         /// <summary>
         /// Node map event property has changed
         /// </summary>
-        public event Action<(string name, Dictionary<string, string> value)>? NodeMapEventPropertyChanged;
+        public event Action<(string name, Dictionary<string, object> value)>? NodeMapEventPropertyChanged;
 
         /// <summary>
         /// Node array event property has changed
         /// </summary>
-        public event Action<(string name, List<Dictionary<string, string>> value)>? NodeArrayEventPropertyChanged;
+        public event Action<(string name, List<object> value)>? NodeArrayEventPropertyChanged;
 
         /// <summary>
         /// Video frame data available
@@ -217,27 +217,14 @@ namespace MediaBoom.Basolia.Media
                                 }
                             case MpvValueFormat.MPV_FORMAT_NODE_MAP:
                                 {
-                                    var strings = ProcessNodeMap(propertyNode);
-                                    NodeMapEventPropertyChanged?.Invoke((observedProperty.name, strings));
+                                    var objects = ProcessNodeMap(propertyNode);
+                                    NodeMapEventPropertyChanged?.Invoke((observedProperty.name, objects));
                                     break;
                                 }
                             case MpvValueFormat.MPV_FORMAT_NODE_ARRAY:
                                 {
-                                    var nodeMap = Marshal.PtrToStructure<MpvNodeList>(propertyNode.u.list);
-                                    int num = nodeMap.num;
-                                    int nodeSize = Marshal.SizeOf<MpvNode>();
-                                    var strings = new List<Dictionary<string, string>>();
-                                    for (int i = 0; i < num; i++)
-                                    {
-                                        // Get the value
-                                        IntPtr valueNodePtr = IntPtr.Add(nodeMap.values, i * nodeSize);
-                                        var valueNode = Marshal.PtrToStructure<MpvNode>(valueNodePtr);
-
-                                        // Convert the node map value (if any) to dictionary
-                                        var nodeStrings = valueNode.format == MpvValueFormat.MPV_FORMAT_NODE_MAP ? ProcessNodeMap(valueNode) : [];
-                                        strings.Add(nodeStrings);
-                                    }
-                                    NodeArrayEventPropertyChanged?.Invoke((observedProperty.name, strings));
+                                    var objects = ProcessNodeArray(propertyNode);
+                                    NodeArrayEventPropertyChanged?.Invoke((observedProperty.name, objects));
                                     break;
                                 }
                         }
@@ -246,26 +233,64 @@ namespace MediaBoom.Basolia.Media
             }
         }
 
-        private Dictionary<string, string> ProcessNodeMap(MpvNode propertyNode)
+        private Dictionary<string, object> ProcessNodeMap(MpvNode propertyNode)
         {
             var nodeMap = Marshal.PtrToStructure<MpvNodeList>(propertyNode.u.list);
             int num = nodeMap.num;
             int nodeSize = Marshal.SizeOf<MpvNode>();
-            var strings = new Dictionary<string, string>();
+            var objects = new Dictionary<string, object>();
             for (int i = 0; i < num; i++)
             {
-                // Get the key and the value
+                // Get the key
                 IntPtr keyPtr = Marshal.ReadIntPtr(nodeMap.keys, i * IntPtr.Size);
-                IntPtr valueNodePtr = IntPtr.Add(nodeMap.values, i * nodeSize);
                 string key = Marshal.PtrToStringAnsi(keyPtr);
+                Debug.Write($"  {key} = ");
+
+                // Get the value
+                IntPtr valueNodePtr = IntPtr.Add(nodeMap.values, i * nodeSize);
                 var valueNode = Marshal.PtrToStructure<MpvNode>(valueNodePtr);
 
-                // Convert the value to the string
-                string value = valueNode.format == MpvValueFormat.MPV_FORMAT_STRING ? Marshal.PtrToStringAnsi(valueNode.u.@string) : "";
-                Debug.WriteLine($"  {key} = {value}");
-                strings[key] = value;
+                // Convert the value to the object
+                object value = ProcessValue(valueNode);
+                Debug.WriteLine($"{value}");
+                objects[key] = value;
             }
-            return strings;
+            return objects;
+        }
+
+        private List<object> ProcessNodeArray(MpvNode propertyNode)
+        {
+            var nodeMap = Marshal.PtrToStructure<MpvNodeList>(propertyNode.u.list);
+            int num = nodeMap.num;
+            int nodeSize = Marshal.SizeOf<MpvNode>();
+            var objects = new List<object>();
+            for (int i = 0; i < num; i++)
+            {
+                // Get the value
+                IntPtr valueNodePtr = IntPtr.Add(nodeMap.values, i * nodeSize);
+                var valueNode = Marshal.PtrToStructure<MpvNode>(valueNodePtr);
+
+                // Convert the value to the object
+                object value = ProcessValue(valueNode);
+                Debug.WriteLine($"  {value}");
+                objects.Add(value);
+            }
+            return objects;
+        }
+
+        private object ProcessValue(MpvNode valueNode)
+        {
+            // Convert the value to the object
+            object value =
+                valueNode.format == MpvValueFormat.MPV_FORMAT_STRING ? Marshal.PtrToStringAnsi(valueNode.u.@string) :
+                valueNode.format == MpvValueFormat.MPV_FORMAT_OSD_STRING ? Marshal.PtrToStringAnsi(valueNode.u.@string) :
+                valueNode.format == MpvValueFormat.MPV_FORMAT_INT64 ? valueNode.u.int64 :
+                valueNode.format == MpvValueFormat.MPV_FORMAT_DOUBLE ? valueNode.u.double_ :
+                valueNode.format == MpvValueFormat.MPV_FORMAT_FLAG ? valueNode.u.flag > 0 :
+                valueNode.format == MpvValueFormat.MPV_FORMAT_NODE_MAP ? ProcessNodeMap(valueNode) :
+                valueNode.format == MpvValueFormat.MPV_FORMAT_NODE_ARRAY ? ProcessNodeArray(valueNode) :
+                "";
+            return value;
         }
 
         /// <summary>
@@ -301,7 +326,7 @@ namespace MediaBoom.Basolia.Media
                     isVideo = false;
                     foreach (var dict in evt.value)
                     {
-                        if (dict.TryGetValue("type", out string type) && type == "video")
+                        if (dict is Dictionary<string, object> objs && objs.TryGetValue("type", out object type) && (string)type == "video")
                             isVideo = true;
                     }
                 };

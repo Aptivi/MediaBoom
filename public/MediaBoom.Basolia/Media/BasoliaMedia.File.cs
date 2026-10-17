@@ -224,10 +224,10 @@ namespace MediaBoom.Basolia.Media
             }
         }
 
-        private void ObserveRadioStationPlaying((string name, Dictionary<string, string> value) property)
+        private void ObserveRadioStationPlaying((string name, Dictionary<string, object> value) property)
         {
-            if (property.name == "metadata" && property.value.TryGetValue("icy-title", out string icyTitle))
-                radioIcy = icyTitle;
+            if (property.name == "metadata" && property.value.TryGetValue("icy-title", out object icyTitle))
+                radioIcy = (string)icyTitle;
         }
     }
 }
