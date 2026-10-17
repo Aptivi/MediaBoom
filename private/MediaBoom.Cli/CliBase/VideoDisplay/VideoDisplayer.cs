@@ -68,6 +68,8 @@ namespace MediaBoom.Cli.CliBase.VideoDisplay
             {
                 if (!basolia.IsPlaying())
                     break;
+                if (!basolia.IsVideo())
+                    break;
                 if (!drawSignal.WaitOne(100))
                     continue;
 

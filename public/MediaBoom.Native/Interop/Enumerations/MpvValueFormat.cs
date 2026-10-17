@@ -57,7 +57,7 @@ namespace MediaBoom.Native.Interop.Enumerations
         /// </summary>
         MPV_FORMAT_NODE_ARRAY = 7,
         /// <summary>
-        /// MPV node array type (used within node type)
+        /// MPV node dictionary type (used within node type)
         /// </summary>
         MPV_FORMAT_NODE_MAP = 8,
         /// <summary>

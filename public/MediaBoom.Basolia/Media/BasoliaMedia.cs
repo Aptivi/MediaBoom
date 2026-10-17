@@ -20,7 +20,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using MediaBoom.Basolia.Exceptions;
 using MediaBoom.Basolia.Languages;
@@ -49,6 +51,7 @@ namespace MediaBoom.Basolia.Media
         internal PlaybackState state = PlaybackState.Stopped;
         internal bool isOpened = false;
         internal bool isRadioStation = false;
+        internal bool isVideo = false;
         internal bool isOutputOpen = false;
         internal bool isShuttingDown = false;
         internal volatile bool glReadbackEnabled;
@@ -86,6 +89,11 @@ namespace MediaBoom.Basolia.Media
         /// Node map event property has changed
         /// </summary>
         public event Action<(string name, Dictionary<string, string> value)>? NodeMapEventPropertyChanged;
+
+        /// <summary>
+        /// Node array event property has changed
+        /// </summary>
+        public event Action<(string name, List<Dictionary<string, string>> value)>? NodeArrayEventPropertyChanged;
 
         /// <summary>
         /// Video frame data available
@@ -209,32 +217,55 @@ namespace MediaBoom.Basolia.Media
                                 }
                             case MpvValueFormat.MPV_FORMAT_NODE_MAP:
                                 {
-                                    Debug.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] metadata event fired, observedProperty.format={observedProperty.format}");
+                                    var strings = ProcessNodeMap(propertyNode);
+                                    NodeMapEventPropertyChanged?.Invoke((observedProperty.name, strings));
+                                    break;
+                                }
+                            case MpvValueFormat.MPV_FORMAT_NODE_ARRAY:
+                                {
                                     var nodeMap = Marshal.PtrToStructure<MpvNodeList>(propertyNode.u.list);
                                     int num = nodeMap.num;
-                                    Debug.WriteLine($"  num={num}");
                                     int nodeSize = Marshal.SizeOf<MpvNode>();
-                                    var strings = new Dictionary<string, string>();
+                                    var strings = new List<Dictionary<string, string>>();
                                     for (int i = 0; i < num; i++)
                                     {
-                                        // Get the key and the value
-                                        IntPtr keyPtr = Marshal.ReadIntPtr(nodeMap.keys, i * IntPtr.Size);
+                                        // Get the value
                                         IntPtr valueNodePtr = IntPtr.Add(nodeMap.values, i * nodeSize);
-                                        string key = Marshal.PtrToStringAnsi(keyPtr);
                                         var valueNode = Marshal.PtrToStructure<MpvNode>(valueNodePtr);
 
-                                        // Convert the value to the string
-                                        string value = valueNode.format == MpvValueFormat.MPV_FORMAT_STRING ? Marshal.PtrToStringAnsi(valueNode.u.@string) : "";
-                                        Debug.WriteLine($"  {key} = {value}");
-                                        strings[key] = value;
+                                        // Convert the node map value (if any) to dictionary
+                                        var nodeStrings = valueNode.format == MpvValueFormat.MPV_FORMAT_NODE_MAP ? ProcessNodeMap(valueNode) : [];
+                                        strings.Add(nodeStrings);
                                     }
-                                    NodeMapEventPropertyChanged?.Invoke((observedProperty.name, strings));
+                                    NodeArrayEventPropertyChanged?.Invoke((observedProperty.name, strings));
                                     break;
                                 }
                         }
                         break;
                 }
             }
+        }
+
+        private Dictionary<string, string> ProcessNodeMap(MpvNode propertyNode)
+        {
+            var nodeMap = Marshal.PtrToStructure<MpvNodeList>(propertyNode.u.list);
+            int num = nodeMap.num;
+            int nodeSize = Marshal.SizeOf<MpvNode>();
+            var strings = new Dictionary<string, string>();
+            for (int i = 0; i < num; i++)
+            {
+                // Get the key and the value
+                IntPtr keyPtr = Marshal.ReadIntPtr(nodeMap.keys, i * IntPtr.Size);
+                IntPtr valueNodePtr = IntPtr.Add(nodeMap.values, i * nodeSize);
+                string key = Marshal.PtrToStringAnsi(keyPtr);
+                var valueNode = Marshal.PtrToStructure<MpvNode>(valueNodePtr);
+
+                // Convert the value to the string
+                string value = valueNode.format == MpvValueFormat.MPV_FORMAT_STRING ? Marshal.PtrToStringAnsi(valueNode.u.@string) : "";
+                Debug.WriteLine($"  {key} = {value}");
+                strings[key] = value;
+            }
+            return strings;
         }
 
         /// <summary>
@@ -262,8 +293,18 @@ namespace MediaBoom.Basolia.Media
 
                 NativeInitializer.GetDelegate<NativeLogging.mpv_request_log_messages>(NativeInitializer.libManagerMpv, nameof(NativeLogging.mpv_request_log_messages)).Invoke(_libmpvHandle, "v");
                 MpvPropertyHandler.ObserveProperty(this, "pause");
-                FlagEventPropertyChanged += (evt) =>
-                    Debug.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] {evt.name} = {evt.value}");
+                MpvPropertyHandler.ObserveProperty(this, "track-list");
+                NodeArrayEventPropertyChanged += (evt) =>
+                {
+                    if (evt.name != "track-list")
+                        return;
+                    isVideo = false;
+                    foreach (var dict in evt.value)
+                    {
+                        if (dict.TryGetValue("type", out string type) && type == "video")
+                            isVideo = true;
+                    }
+                };
                 renderThread ??= new("Video renderer", true, () => VideoRenderingTools.VideoRendererLoop(this));
                 renderThread.Start();
                 SpinWait.SpinUntil(() => !VideoRenderingTools.switching);

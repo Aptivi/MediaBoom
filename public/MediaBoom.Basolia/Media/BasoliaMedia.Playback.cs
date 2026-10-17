@@ -126,6 +126,12 @@ namespace MediaBoom.Basolia.Media
         /// </summary>
         public bool IsPlaying() =>
             state == PlaybackState.Playing;
+            
+        /// <summary>
+        /// Checks to see whether the media is a video
+        /// </summary>
+        public bool IsVideo() =>
+            isVideo;
 
         /// <summary>
         /// The current state of the playback
