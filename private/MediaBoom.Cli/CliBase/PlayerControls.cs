@@ -200,6 +200,22 @@ namespace MediaBoom.Cli.CliBase
             MediaBoomCli.basolia.SeekTo(Player.position);
         }
 
+        internal static void ChangeSeekFactor(bool decrease)
+        {
+            if (decrease)
+            {
+                seekRate -= 1;
+                if (seekRate < 1)
+                    seekRate = 1;
+            }
+            else
+            {
+                seekRate += 1;
+                if (seekRate > 60)
+                    seekRate = 60;
+            }
+        }
+
         internal static void Play()
         {
             // In case we have no songs in the playlist...

@@ -284,13 +284,13 @@ namespace MediaBoom.Cli.CliBase
             {
                 case ConsoleKey.RightArrow:
                     if (keystroke.Modifiers == ConsoleModifiers.Control)
-                        PlayerControls.seekRate += 50;
+                        PlayerControls.ChangeSeekFactor(false);
                     else
                         PlayerControls.SeekForward();
                     break;
                 case ConsoleKey.LeftArrow:
                     if (keystroke.Modifiers == ConsoleModifiers.Control)
-                        PlayerControls.seekRate -= 50;
+                        PlayerControls.ChangeSeekFactor(true);
                     else
                         PlayerControls.SeekBackward();
                     break;
@@ -359,13 +359,13 @@ namespace MediaBoom.Cli.CliBase
             {
                 case ConsoleKey.RightArrow:
                     if (keystroke.Modifiers == ConsoleModifiers.Control)
-                        PlayerControls.seekRate += 50;
+                        PlayerControls.ChangeSeekFactor(false);
                     else
                         PlayerControls.SeekForward();
                     break;
                 case ConsoleKey.LeftArrow:
                     if (keystroke.Modifiers == ConsoleModifiers.Control)
-                        PlayerControls.seekRate -= 50;
+                        PlayerControls.ChangeSeekFactor(true);
                     else
                         PlayerControls.SeekBackward();
                     break;
