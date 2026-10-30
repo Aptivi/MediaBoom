@@ -36,3 +36,5 @@ jobs:
           pip install py7zr aptivi-adt
           adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
           adt checklocs
+      - name: Test versions
+        run: dotnet private/MediaBoom.Cli/bin/Debug/net10.0/MediaBoom.Cli.dll --test

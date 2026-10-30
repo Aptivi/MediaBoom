@@ -6,6 +6,10 @@
     "MediaBoom.Cli - Radio": {
       "commandName": "Project",
       "commandLineArgs": "--radio"
+    },
+    "MediaBoom.Cli - Test": {
+      "commandName": "Project",
+      "commandLineArgs": "--test"
     }
   }
 }
