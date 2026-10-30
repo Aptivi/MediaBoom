@@ -87,7 +87,10 @@ namespace MediaBoom.Native
                 var architecture = PlatformHelper.GetArchitecture();
                 if (architecture == Architecture.X86 || architecture == Architecture.Arm)
                     throw new BasoliaNativeLibraryException(LanguageTools.GetLocalized("MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED"));
-                libManagerMpv = new LibraryManager(new LibraryFile(libmpvLibPath, "libmpv.so.2", "libmpv.2.dylib"));
+                if (PlatformHelper.IsOnWindows())
+                    libManagerMpv = new LibraryManager(new LibraryFile(libmpvLibPath));
+                else
+                    libManagerMpv = new LibraryManager(new LibraryFile("libmpv.so.2", "libmpv.2.dylib", "/opt/homebrew/lib/libmpv.2.dylib"));
                 libManagerMpv.LoadNativeLibrary();
             }
             catch (Exception ex)
