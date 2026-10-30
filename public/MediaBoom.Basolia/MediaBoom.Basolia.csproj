@@ -8,7 +8,7 @@
     <PackageId>MediaBoom.Basolia</PackageId>
     <Title>MediaBoom.Basolia</Title>
     <PackageDescription>MediaBoom! Managed playback library</PackageDescription>
-    <PackageTags>mediaboom;basolia;native;runtime;csharp;library;music;player;mpeg;mp3;mp2;mpg;libmpv</PackageTags>
+    <PackageTags>mediaboom;basolia;native;runtime;csharp;library;music;player;libmpv</PackageTags>
     <PackageProjectUrl>https://github.com/Aptivi/MediaBoom</PackageProjectUrl>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageIcon>OfficialAppIcon-MediaBoom-512.png</PackageIcon>

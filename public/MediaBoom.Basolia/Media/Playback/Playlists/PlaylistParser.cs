@@ -117,7 +117,8 @@ namespace MediaBoom.Basolia.Media.Playback.Playlists
                     if (FileIo.Exists(absolutePath))
                         proposedTracks.Add((trackInfoString, null, absolutePath));
                     else
-                        throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND").FormatString(absolutePath));
+                        // TODO: MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW -> Music file {0} is either not found or is invalid
+                        throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW").FormatString(absolutePath));
                 }
                 trackInfoString = "";
             }
@@ -131,8 +132,7 @@ namespace MediaBoom.Basolia.Media.Playback.Playlists
                 SongType trackType = trackPathUri is not null ? SongType.URL : SongType.File;
 
                 // Now, determine if this URL is a radio station
-                string streamType = "";
-                bool radio = trackPathUri is not null && RadioTools.IsRadio(trackPath, out streamType);
+                bool radio = trackPathUri is not null && RadioTools.IsRadio(trackPath, out _);
                 trackType = trackType == SongType.URL && radio ? SongType.Radio : trackType;
 
                 // Parse the track info (ex: 123,Artist Name - Track Title) if found
@@ -150,10 +150,6 @@ namespace MediaBoom.Basolia.Media.Playback.Playlists
                         throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFOINVALIDSECS").FormatString(lengthStr));
                     title = titleStr.Length == 1 ? "" : titleStr.Substring(1);
                 }
-
-                // Check to see if we have an MPEG stream type (radios)
-                if (radio && streamType != "audio/mpeg")
-                    continue;
 
                 // Make a new instance of TrackInfo to install its values and to add this instance to the array of tracks
                 var trackInfoInstance = new TrackInfo(length, title, trackPath, trackType);

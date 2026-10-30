@@ -153,7 +153,7 @@ namespace MediaBoom.Basolia.Media.Radio
         /// </summary>
         public int SampleRate => sampleRate;
         /// <summary>
-        /// MIME info for stream, usually audio/mpeg.
+        /// MIME info for stream
         /// </summary>
         public string MimeInfo => mimeInfo;
 

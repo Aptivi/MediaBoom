@@ -124,9 +124,6 @@
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_EXTINFNEEDSARGS" xml:space="preserve">
     <value>EXTINF에는 정확히 두 개의 인수가 필요하며 인수 표시기가 없습니다.</value>
   </data>
-  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND" xml:space="preserve">
-    <value>음악 파일 {0}을(를) 찾을 수 없거나 MPEG 파일이 아닙니다.</value>
-  </data>
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS" xml:space="preserve">
     <value>트랙 정보는 트랙 길이(초)(라이브 스트림인 경우 -1)와 원본 트랙 제목, 이 두 개의 인수를 정확히 제공해야 합니다.</value>
   </data>

@@ -94,10 +94,6 @@
       "text": "EXTINF requires exactly two arguments, and there is no argument indicator."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
-      "text": "Music file {0} not found or not an MPEG file"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
       "text": "Track info must provide exactly two arguments: track length in seconds (-1 if it's a livestream) and the raw track title."
     },

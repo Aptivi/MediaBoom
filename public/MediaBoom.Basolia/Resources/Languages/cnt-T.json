@@ -98,10 +98,6 @@
       "text": "EXTINF 需要兩個參數，但沒有參數指示符。"
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
-      "text": "找不到音樂檔案 {0} 或該檔案不是 MPEG 文件"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
       "text": "曲目資訊必須提供兩個參數：曲目長度（以秒為單位）（如果是直播，則為 -1）和原始曲目標題。"
     },

@@ -101,10 +101,6 @@
       "text": "EXTINF vereist precies twee argumenten en er is geen argumentindicator."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
-      "text": "Muziekbestand {0} niet gevonden of geen MPEG-bestand"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
       "text": "Trackinfo moet precies twee argumenten bevatten: de lengte van het nummer in seconden (-1 als het een livestream is) en de onbewerkte titel van het nummer."
     },

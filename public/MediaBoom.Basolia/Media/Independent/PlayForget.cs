@@ -58,7 +58,7 @@ namespace MediaBoom.Basolia.Media.Independent
         /// <summary>
         /// Plays the stream (synchronous)
         /// </summary>
-        /// <param name="stream">Stream that contains valid MPEG audio stream</param>
+        /// <param name="stream">Stream that contains valid audio stream</param>
         /// <param name="settings">Settings of the play/forget technique</param>
         public static void PlayStream(Stream stream, PlayForgetSettings? settings = null)
         {
@@ -78,7 +78,7 @@ namespace MediaBoom.Basolia.Media.Independent
         /// <summary>
         /// Plays the stream (asynchronous)
         /// </summary>
-        /// <param name="stream">Stream that contains valid MPEG audio stream</param>
+        /// <param name="stream">Stream that contains valid audio stream</param>
         /// <param name="settings">Settings of the play/forget technique</param>
         public static async Task PlayStreamAsync(Stream stream, PlayForgetSettings? settings = null) =>
             await Task.Run(() => PlayStream(stream, settings));

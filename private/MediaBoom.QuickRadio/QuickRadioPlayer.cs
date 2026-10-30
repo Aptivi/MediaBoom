@@ -46,7 +46,7 @@ namespace MediaBoom.QuickRadio
         private static readonly Dictionary<string, ArgumentInfo> arguments = new()
         {
             { "quiet", new("quiet", "Quiet mode", new QuietArgument()) },
-            { "path", new("path", "Path to MPEG radio URL", new PathArgument()) },
+            { "path", new("path", "Path to radio URL", new PathArgument()) },
         };
 
         static int Main(string[] args)

@@ -124,9 +124,6 @@
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_EXTINFNEEDSARGS" xml:space="preserve">
     <value>EXTINF के लिए ठीक दो तर्कों की आवश्यकता होती है, और कोई तर्क सूचक नहीं है।</value>
   </data>
-  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND" xml:space="preserve">
-    <value>म्यूजिक फ़ाइल {0} नहीं मिली या MPEG फ़ाइल नहीं है</value>
-  </data>
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS" xml:space="preserve">
     <value>ट्रैक जानकारी को ठीक दो तर्क प्रदान करने होंगे: सेकंड में ट्रैक की लंबाई (-1 अगर यह लाइवस्ट्रीम है) और कच्चा ट्रैक शीर्षक।</value>
   </data>

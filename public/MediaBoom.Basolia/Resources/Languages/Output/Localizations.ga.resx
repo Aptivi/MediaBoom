@@ -124,9 +124,6 @@
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_EXTINFNEEDSARGS" xml:space="preserve">
     <value>Éilíonn EXTINF dhá argóint go díreach, agus níl aon táscaire argóinte ann.</value>
   </data>
-  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND" xml:space="preserve">
-    <value>Comhad ceoil {0} gan aimsiú nó ní comhad MPEG é</value>
-  </data>
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS" xml:space="preserve">
     <value>Ní mór d'fhaisnéis an riain dhá argóint dhíreacha a sholáthar: fad an riain i soicindí (-1 más sruth beo é) agus teideal amh an riain.</value>
   </data>

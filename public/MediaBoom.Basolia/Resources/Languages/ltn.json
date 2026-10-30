@@ -95,10 +95,6 @@
       "text": "EXTINF exacte duo argumenta requirit, et nullus argumenti indicator est."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
-      "text": "Fasciculus musicus {0} non inventus est aut non fasciculus MPEG"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
       "text": "Informationes carminis exacte duo argumenta praebere debent: longitudinem carminis in secundis (-1 si est transmissio viva) et titulum carminis crudum."
     },

@@ -105,10 +105,6 @@
       "text": "O EXTINF requer exatamente dois argumentos e não existe um indicador de argumento."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
-      "text": "Ficheiro de música {0} não encontrado ou não é um ficheiro MPEG"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
       "text": "As informações da faixa devem fornecer exatamente dois argumentos: duração da faixa em segundos (-1 se for uma transmissão em direto) e o título original da faixa."
     },

@@ -124,9 +124,6 @@
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_EXTINFNEEDSARGS" xml:space="preserve">
     <value>EXTINF richiede esattamente due argomenti e non è presente alcun indicatore di argomento.</value>
   </data>
-  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND" xml:space="preserve">
-    <value>File musicale {0} non trovato o non è un file MPEG</value>
-  </data>
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS" xml:space="preserve">
     <value>Le informazioni sulla traccia devono fornire esattamente due argomenti: la durata della traccia in secondi (-1 se si tratta di un live streaming) e il titolo grezzo della traccia.</value>
   </data>

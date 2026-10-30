@@ -95,10 +95,6 @@
       "text": "EXTINF yêu cầu chính xác hai đối số và không có chỉ báo đối số."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
-      "text": "Không tìm thấy tệp nhạc {0} hoặc không phải là tệp MPEG"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
       "text": "Thông tin bản nhạc phải cung cấp chính xác hai đối số: độ dài bản nhạc tính bằng giây (-1 nếu là phát trực tiếp) và tiêu đề bản nhạc thô."
     },

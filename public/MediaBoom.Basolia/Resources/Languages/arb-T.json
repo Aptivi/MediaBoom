@@ -121,10 +121,6 @@
       "text": "يتطلب EXTINF وسيطتين فقط، ولا يوجد مؤشر وسيطة."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
-      "text": "لم يتم العثور على ملف الموسيقى {0} أو أنه ليس ملف MPEG."
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
       "text": "يجب أن توفر معلومات المسار وسيطتين فقط: طول المسار بالثواني (-1 إذا كان بثًا مباشرًا) وعنوان المسار الخام."
     },

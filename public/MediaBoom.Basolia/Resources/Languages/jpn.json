@@ -95,10 +95,6 @@
       "text": "EXTINF には 2 つの引数が必要ですが、引数インジケータがありません。"
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND",
-      "text": "音楽ファイル {0} が見つからないか、MPEG ファイルではありません。"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS",
       "text": "トラック情報には、トラックの長さ（秒数、ライブストリームの場合は -1）とトラックの生のタイトルの 2 つの引数が必要です。"
     },

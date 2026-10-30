@@ -124,9 +124,6 @@
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_EXTINFNEEDSARGS" xml:space="preserve">
     <value>EXTINF exacte duo argumenta requirit, et nullus argumenti indicator est.</value>
   </data>
-  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND" xml:space="preserve">
-    <value>Fasciculus musicus {0} non inventus est aut non fasciculus MPEG</value>
-  </data>
   <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_TRACKINFONEEDSARGS" xml:space="preserve">
     <value>Informationes carminis exacte duo argumenta praebere debent: longitudinem carminis in secundis (-1 si est transmissio viva) et titulum carminis crudum.</value>
   </data>
