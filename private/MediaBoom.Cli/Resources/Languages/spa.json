@@ -32,108 +32,12 @@
   ],
   "locs": [
     {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICE",
-      "text": "Dispositivo:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DRIVER",
-      "text": "Controlador:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICECACHED",
-      "text": "Dispositivo (en caché):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DRIVERCACHED",
-      "text": "Controlador (en caché):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING",
-      "text": "No se pueden consultar los dispositivos actuales mientras no se reproduce."
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICEANDDRIVER",
-      "text": "Dispositivo y controlador"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS",
-      "text": "Dispositivos y controladores disponibles"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_EXTRASPECS",
-      "text": "Especificaciones adicionales (para desarrolladores)"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_PCMSAMPLESIZE",
-      "text": "Tamaño de muestra PCM:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ZEROSAMPLE",
-      "text": "Muestra cero (desplazamiento 0):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DURATIONSAMPLES",
-      "text": "Duración en muestras:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_FRAMELEN",
-      "text": "Longitud de fotograma:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SPF",
-      "text": "Muestras/fotograma:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_TPF",
-      "text": "Segundos/fotograma:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DECODERS",
-      "text": "Decodificadores"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS",
-      "text": "Decodificadores compatibles:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ALLDECODERS",
-      "text": "Todos los decodificadores:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ENCODINGSANDRATES",
-      "text": "Codificaciones y velocidades"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ENCODINGS",
-      "text": "Codificaciones:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_RATES",
-      "text": "Velocidades:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_BUFFERINFO",
-      "text": "Información del búfer"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE",
-      "text": "Tamaño de búfer genérico:"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS",
       "text": "Especificaciones de MediaBoom"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER",
       "text": "Versión de Basolia:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER",
-      "text": "Versión de MPG123:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER",
-      "text": "Versión de OUT123:"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS",
@@ -164,14 +68,6 @@
       "text": "Pulsaciones de teclas disponibles"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_SELECTDRIVER",
-      "text": "Seleccione un controlador. Esc para salir."
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SELECTDEVICE",
-      "text": "Seleccione un dispositivo. El controlador actual es {0}. Esc para salir."
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_PATHTOPLAYLIST",
       "text": "Introduce la ruta del archivo de la lista de reproducción que quieres guardar"
     },
@@ -188,10 +84,6 @@
       "text": "Ayuda"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER",
-      "text": "Abrir el ecualizador"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO",
       "text": "Información del sistema"
     },
@@ -200,88 +92,12 @@
       "text": "¡Modo Disco!"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST",
-      "text": "Activar el aumento de volumen"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO",
-      "text": "Información del dispositivo y del controlador"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET",
-      "text": "Configurar dispositivo y controlador"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET",
-      "text": "Restablecer dispositivo y controlador"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST",
       "text": "Guardar en la lista de reproducción"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_QUIT",
       "text": "Salir"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE",
-      "text": "Disminuir"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE",
-      "text": "Aumentar"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND",
-      "text": "Banda anterior"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND",
-      "text": "Banda siguiente"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET",
-      "text": "Restablecer"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAERROR",
-      "text": "Se produce un error con Basolia al intentar procesar la operación del ecualizador."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR",
-      "text": "Se produce un error con la salida de Basolia al intentar procesar la operación del ecualizador."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_ERROR",
-      "text": "Se produce un error desconocido al intentar procesar la operación del ecualizador."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_NOTPLAYING",
-      "text": "No se reproduce. El reproductor de música está inactivo."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASS",
-      "text": "Graves"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_UPPERMID",
-      "text": "Medios altos"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_TREBLE",
-      "text": "Agudos"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_DEVICEBAND",
-      "text": "Banda específica del dispositivo"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND",
-      "text": "Tipo de banda desconocido"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BAND",
-      "text": "Banda"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE",
@@ -384,10 +200,6 @@
       "text": "Hay un error con Basolia al intentar procesar el archivo de música."
     },
     {
-      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR",
-      "text": "Hay un error con la salida de Basolia al intentar procesar el archivo de música."
-    },
-    {
       "loc": "MEDIABOOM_APP_PLAYER_ERROR",
       "text": "Hay un error desconocido al intentar procesar el archivo de música."
     },
@@ -438,10 +250,6 @@
     {
       "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNARTIST",
       "text": "Artista desconocido"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNGENRE",
-      "text": "Género desconocido"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE",
@@ -504,16 +312,8 @@
       "text": "Título:"
     },
     {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM",
-      "text": "Álbum:"
-    },
-    {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE",
       "text": "Género:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT",
-      "text": "Comentario:"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION",
@@ -530,90 +330,6 @@
     {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS",
       "text": "Sin letra"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO",
-      "text": "Información de la capa"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION",
-      "text": "Versión:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER",
-      "text": "Capa:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE",
-      "text": "Velocidad:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE",
-      "text": "Modo:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT",
-      "text": "Extensión del modo:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE",
-      "text": "Tamaño del fotograma:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS",
-      "text": "Indicadores:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS",
-      "text": "Énfasis:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE",
-      "text": "Velocidad de bits:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR",
-      "text": "Velocidad ABR:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR",
-      "text": "VBR:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE",
-      "text": "Estado nativo"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING",
-      "text": "Renderizado preciso:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL",
-      "text": "Relleno de búfer:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY",
-      "text": "Retardo de decodificación:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY",
-      "text": "Retardo de codificación:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING",
-      "text": "Relleno de codificación:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN",
-      "text": "Frankenstein stream:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER",
-      "text": "Decodificador actualizado:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS",
-      "text": "Textos y extras"
     },
     {
       "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO",
@@ -650,14 +366,6 @@
     {
       "loc": "MEDIABOOM_APP_RADIO_TIP",
       "text": "Pulse 'A' para añadir una emisora ​​de radio a la lista de reproducción."
-    },
-    {
-      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT",
-      "text": "Introduzca la ruta de la emisora ​​de radio. La URL de la emisora ​​debe indicar una emisora ​​de radio MPEG. Las emisoras AAC aún no son compatibles."
-    },
-    {
-      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT",
-      "text": "Introduzca una ruta a la lista de reproducción de emisoras de radio. Las URL de las emisoras deben incluir una emisora ​​de radio MPEG. Las emisoras AAC aún no son compatibles."
     },
     {
       "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND",

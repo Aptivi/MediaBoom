@@ -23,20 +23,8 @@
       "text": "库路径为 {0}"
     },
     {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
-      "text": "库路径 {0} 不存在。"
-    },
-    {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
       "text": "不再支持 32 位平台。"
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
-      "text": "无法设置环境变量 MPG123_MODDIR"
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
-      "text": "加载库失败。"
     },
     {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",

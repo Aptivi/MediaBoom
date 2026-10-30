@@ -7,108 +7,12 @@
   ],
   "locs": [
     {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICE",
-      "text": "Пристрій:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DRIVER",
-      "text": "Драйвер:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICECACHED",
-      "text": "Пристрій (кешований):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DRIVERCACHED",
-      "text": "Драйвер (кешований):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING",
-      "text": "Неможливо запитувати поточні пристрої, коли не відтворюється."
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICEANDDRIVER",
-      "text": "Пристрій та драйвер"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS",
-      "text": "Доступні пристрої та драйвери"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_EXTRASPECS",
-      "text": "Додаткові характеристики (для розробників)"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_PCMSAMPLESIZE",
-      "text": "Розмір вибірки PCM:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ZEROSAMPLE",
-      "text": "Нульова вибірка (зсув 0):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DURATIONSAMPLES",
-      "text": "Тривалість у вибірках:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_FRAMELEN",
-      "text": "Довжина кадру:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SPF",
-      "text": "Вибірки/кадр:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_TPF",
-      "text": "Секунди/кадр:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DECODERS",
-      "text": "Декодери"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS",
-      "text": "Підтримувані декодери:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ALLDECODERS",
-      "text": "Усі декодери:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ENCODINGSANDRATES",
-      "text": "Кодування та швидкості"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ENCODINGS",
-      "text": "Кодування:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_RATES",
-      "text": "Швидкість:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_BUFFERINFO",
-      "text": "Інформація про буфер"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE",
-      "text": "Загальний розмір буфера:"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS",
       "text": "Специфікації MediaBoom"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER",
       "text": "Версія Basolia:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER",
-      "text": "Версія MPG123:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER",
-      "text": "Версія OUT123:"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS",
@@ -139,14 +43,6 @@
       "text": "Доступні комбінації клавіш"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_SELECTDRIVER",
-      "text": "Виберіть драйвер. ESC для виходу."
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SELECTDEVICE",
-      "text": "Виберіть пристрій. Поточний драйвер — {0}. ESC для виходу."
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_PATHTOPLAYLIST",
       "text": "Введіть шлях до файлу списку відтворення, який ви хочете зберегти"
     },
@@ -163,10 +59,6 @@
       "text": "Довідка"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER",
-      "text": "Відкрити еквалайзер"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO",
       "text": "Інформація про систему"
     },
@@ -175,88 +67,12 @@
       "text": "Режим дискотека!"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST",
-      "text": "Увімкнути посилення гучності"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO",
-      "text": "Інформація про пристрій та драйвер"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET",
-      "text": "Встановити пристрій та драйвер"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET",
-      "text": "Скинути налаштування пристрою та драйвера"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST",
       "text": "Зберегти до списку відтворення"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_QUIT",
       "text": "Вихід"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE",
-      "text": "Зменшити"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE",
-      "text": "Збільшити"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND",
-      "text": "Попередній діапазон"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND",
-      "text": "Наступний діапазон"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET",
-      "text": "Скинути"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAERROR",
-      "text": "Виникла помилка Basolia під час спроби обробки операції еквалайзера."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR",
-      "text": "Виникла помилка з виводом Basolia під час спроби обробки операції еквалайзера."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_ERROR",
-      "text": "Виникла невідома помилка під час спроби обробки операції еквалайзера."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_NOTPLAYING",
-      "text": "Не відтворюється. Музичний плеєр неактивний."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASS",
-      "text": "Баси"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_UPPERMID",
-      "text": "Верхні середні частоти"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_TREBLE",
-      "text": "Високі частоти"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_DEVICEBAND",
-      "text": "Діапазон, специфічний для пристрою"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND",
-      "text": "Невідомий тип діапазону"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BAND",
-      "text": "Діапазон"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE",
@@ -359,10 +175,6 @@
       "text": "Виникла помилка з Basolia під час спроби обробки музичного файлу."
     },
     {
-      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR",
-      "text": "Виникла помилка з виводом Basolia під час спроби обробки музичного файлу."
-    },
-    {
       "loc": "MEDIABOOM_APP_PLAYER_ERROR",
       "text": "Виникла невідома помилка під час спроби обробки музичного файлу."
     },
@@ -413,10 +225,6 @@
     {
       "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNARTIST",
       "text": "Невідомий виконавець"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNGENRE",
-      "text": "Невідомий жанр"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE",
@@ -479,16 +287,8 @@
       "text": "Назва:"
     },
     {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM",
-      "text": "Альбом:"
-    },
-    {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE",
       "text": "Жанр:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT",
-      "text": "Коментар:"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION",
@@ -505,90 +305,6 @@
     {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS",
       "text": "Немає тексту"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO",
-      "text": "Інформація про шар"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION",
-      "text": "Версія:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER",
-      "text": "Шар:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE",
-      "text": "Швидкість:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE",
-      "text": "Режим:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT",
-      "text": "Розширення режиму:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE",
-      "text": "Розмір кадру:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS",
-      "text": "Прапорці:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS",
-      "text": "Наголос:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE",
-      "text": "Бітрейт:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR",
-      "text": "Швидкість ABR:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR",
-      "text": "VBR:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE",
-      "text": "Вихідний стан"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING",
-      "text": "Точне рендеринг:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL",
-      "text": "Заповнення буфера:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY",
-      "text": "Затримка декодування:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY",
-      "text": "Затримка кодування:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING",
-      "text": "Доповнення кодування:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN",
-      "text": "Потік Франкенштейна:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER",
-      "text": "Свіжий декодер:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS",
-      "text": "Тексти та додаткові елементи"
     },
     {
       "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO",
@@ -625,14 +341,6 @@
     {
       "loc": "MEDIABOOM_APP_RADIO_TIP",
       "text": "Натисніть «A», щоб додати радіостанцію до списку відтворення."
-    },
-    {
-      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT",
-      "text": "Введіть шлях до радіостанції. URL-адреса станції повинна містити радіостанцію MPEG. AAC-адреси поки що не підтримуються."
-    },
-    {
-      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT",
-      "text": "Введіть шлях до списку відтворення радіостанцій. URL-адреси станцій повинні містити назву радіостанції MPEG. AAC-файли поки що не підтримуються."
     },
     {
       "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND",

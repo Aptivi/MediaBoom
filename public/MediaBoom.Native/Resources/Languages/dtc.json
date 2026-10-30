@@ -21,20 +21,8 @@
       "text": "Bibliotheekpad is {0}"
     },
     {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
-      "text": "Bibliotheekpad {0} bestaat niet."
-    },
-    {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
       "text": "32-bits platforms worden niet langer ondersteund."
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
-      "text": "Kan omgevingsvariabele MPG123_MODDIR niet instellen"
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
-      "text": "Bibliotheken kunnen niet worden geladen."
     },
     {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",

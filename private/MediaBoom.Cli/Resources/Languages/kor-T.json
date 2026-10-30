@@ -8,108 +8,12 @@
   ],
   "locs": [
     {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICE",
-      "text": "장치:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DRIVER",
-      "text": "드라이버:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICECACHED",
-      "text": "장치(캐시됨):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DRIVERCACHED",
-      "text": "드라이버(캐시됨):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING",
-      "text": "재생 중이 아닐 때는 현재 장치를 쿼리할 수 없습니다."
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DEVICEANDDRIVER",
-      "text": "장치 및 드라이버"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS",
-      "text": "사용 가능한 장치 및 드라이버"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_EXTRASPECS",
-      "text": "추가 사양(개발자용)"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_PCMSAMPLESIZE",
-      "text": "PCM 샘플 크기:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ZEROSAMPLE",
-      "text": "제로 샘플(오프셋 0):"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DURATIONSAMPLES",
-      "text": "샘플 지속 시간:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_FRAMELEN",
-      "text": "프레임 길이:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SPF",
-      "text": "프레임당 샘플:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_TPF",
-      "text": "프레임당 초:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_DECODERS",
-      "text": "디코더"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS",
-      "text": "지원되는 디코더:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ALLDECODERS",
-      "text": "모든 디코더:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ENCODINGSANDRATES",
-      "text": "인코딩 및 속도"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_ENCODINGS",
-      "text": "인코딩:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_RATES",
-      "text": "속도:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_BUFFERINFO",
-      "text": "버퍼 정보"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE",
-      "text": "일반 버퍼 크기:"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS",
       "text": "MediaBoom 사양"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER",
       "text": "Basolia 버전:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER",
-      "text": "MPG123 버전:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER",
-      "text": "OUT123 버전:"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_SYSTEMSPECS",
@@ -140,14 +44,6 @@
       "text": "사용 가능한 키 입력"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_SELECTDRIVER",
-      "text": "드라이버를 선택하세요. 종료하려면 ESC 키를 누르세요."
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_SELECTDEVICE",
-      "text": "장치를 선택하세요. 현재 드라이버는 {0}입니다. 종료하려면 ESC 키를 누르세요."
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_PATHTOPLAYLIST",
       "text": "저장하려는 재생 목록 파일의 경로를 입력하세요."
     },
@@ -164,10 +60,6 @@
       "text": "도움말"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER",
-      "text": "이퀄라이저 열기"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO",
       "text": "시스템 정보"
     },
@@ -176,88 +68,12 @@
       "text": "디스코 모드!"
     },
     {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST",
-      "text": "볼륨 부스트 활성화"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO",
-      "text": "장치 및 드라이버 정보"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET",
-      "text": "장치 및 드라이버 설정"
-    },
-    {
-      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET",
-      "text": "장치 및 드라이버 재설정"
-    },
-    {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST",
       "text": "재생 목록에 저장"
     },
     {
       "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_QUIT",
       "text": "종료"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE",
-      "text": "낮추기"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE",
-      "text": "높이기"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND",
-      "text": "이전 대역"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND",
-      "text": "다음 대역"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET",
-      "text": "재설정"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAERROR",
-      "text": "이퀄라이저 작업을 처리하는 동안 Basolia에 오류가 발생했습니다."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR",
-      "text": "이퀄라이저 작업을 처리하는 동안 Basolia 출력에 오류가 발생했습니다."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_ERROR",
-      "text": "이퀄라이저 작업을 처리하는 동안 알 수 없는 오류가 발생했습니다."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_NOTPLAYING",
-      "text": "재생되지 않습니다. 음악 플레이어가 유휴 상태입니다."
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BASS",
-      "text": "저음"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_UPPERMID",
-      "text": "고음 중음"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_TREBLE",
-      "text": "고음"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_DEVICEBAND",
-      "text": "장치별 대역"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND",
-      "text": "알 수 없는 대역 유형"
-    },
-    {
-      "loc": "MEDIABOOM_APP_EQUALIZER_BAND",
-      "text": "대역"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE",
@@ -360,10 +176,6 @@
       "text": "음악 파일을 처리하는 중 Basolia에 오류가 있습니다."
     },
     {
-      "loc": "MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR",
-      "text": "음악 파일을 처리하는 중 Basolia 출력에 오류가 있습니다."
-    },
-    {
       "loc": "MEDIABOOM_APP_PLAYER_ERROR",
       "text": "음악 파일을 처리하는 중 알 수 없는 오류가 있습니다."
     },
@@ -414,10 +226,6 @@
     {
       "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNARTIST",
       "text": "알 수 없는 아티스트"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_UNKNOWNGENRE",
-      "text": "알 수 없는 장르"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE",
@@ -480,16 +288,8 @@
       "text": "제목:"
     },
     {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM",
-      "text": "앨범:"
-    },
-    {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE",
       "text": "장르:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT",
-      "text": "코멘트:"
     },
     {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION",
@@ -506,90 +306,6 @@
     {
       "loc": "MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS",
       "text": "가사 없음"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO",
-      "text": "레이어 정보"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION",
-      "text": "버전:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER",
-      "text": "레이어:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE",
-      "text": "레이트:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE",
-      "text": "모드:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT",
-      "text": "모드 확장:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE",
-      "text": "프레임 크기:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS",
-      "text": "플래그:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS",
-      "text": "강조:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE",
-      "text": "비트 전송률:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR",
-      "text": "ABR 속도:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR",
-      "text": "VBR:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE",
-      "text": "네이티브 상태"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING",
-      "text": "정확한 렌더링:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL",
-      "text": "버퍼 채우기:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY",
-      "text": "디코딩 지연:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY",
-      "text": "인코딩 지연:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING",
-      "text": "인코딩 패딩:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN",
-      "text": "프랑켄슈타인 스트림:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER",
-      "text": "새로운 디코더:"
-    },
-    {
-      "loc": "MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS",
-      "text": "텍스트 및 추가 기능"
     },
     {
       "loc": "MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO",
@@ -626,14 +342,6 @@
     {
       "loc": "MEDIABOOM_APP_RADIO_TIP",
       "text": "재생 목록에 라디오 방송국을 삽입하려면 'A'를 누르세요."
-    },
-    {
-      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT",
-      "text": "라디오 방송국 경로를 입력하세요. 방송국 URL은 MPEG 라디오 방송국을 제공해야 합니다. AAC 방송국은 아직 지원되지 않습니다."
-    },
-    {
-      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT",
-      "text": "라디오 방송국 재생 목록 경로를 입력하세요. 방송국 URL은 MPEG 라디오 방송국을 제공해야 합니다. AAC는 아직 지원되지 않습니다."
     },
     {
       "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND",

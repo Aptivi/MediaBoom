@@ -24,20 +24,8 @@
       "text": "Bibliothekspfad ist {0}"
     },
     {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
-      "text": "Bibliothekspfad {0} existiert nicht."
-    },
-    {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
       "text": "32-Bit-Plattformen werden nicht mehr unterstützt."
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
-      "text": "Umgebungsvariable MPG123_MODDIR kann nicht gesetzt werden."
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
-      "text": "Bibliotheken konnten nicht geladen werden."
     },
     {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",

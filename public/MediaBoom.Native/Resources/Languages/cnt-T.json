@@ -18,20 +18,8 @@
       "text": "庫路徑為 {0}"
     },
     {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
-      "text": "函式庫路徑 {0} 不存在。"
-    },
-    {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
       "text": "不再支援 32 位元平台。"
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
-      "text": "無法設定環境變數 MPG123_MODDIR"
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
-      "text": "載入庫失敗。"
     },
     {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",

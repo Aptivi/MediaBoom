@@ -40,20 +40,8 @@
       "text": "La ruta de la biblioteca es {0}"
     },
     {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
-      "text": "La ruta de la biblioteca {0} no existe."
-    },
-    {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
       "text": "Las plataformas de 32 bits ya no son compatibles."
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
-      "text": "No se puede establecer la variable de entorno MPG123_MODDIR."
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
-      "text": "No se pudieron cargar las bibliotecas."
     },
     {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",

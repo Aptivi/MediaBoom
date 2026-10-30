@@ -15,10 +15,6 @@
       "text": "Шлях до бібліотеки libmpv {0} не містить дійсної бібліотеки libmpv."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OUT123LIBINVALID",
-      "text": "Шлях до бібліотеки out123 {0} не містить дійсної бібліотеки out123."
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_EXCEPTION_VERSIONNEEDSLIB",
       "text": "Неможливо отримати версію, доки бібліотека не буде ініціалізована"
     },
@@ -27,36 +23,12 @@
       "text": "Basolia ще не ініціалізувала бібліотеку libmpv!"
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERQUERY",
-      "text": "Неможливо запитати драйвери"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICEQUERY",
-      "text": "Неможливо запитати пристрої"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERNOTFOUND",
-      "text": "Драйвер {0} не існує"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICENOTFOUND",
-      "text": "Пристрій {0} не існує"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALERROR",
       "text": "Загальна помилка Basolia"
     },
     {
       "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR",
       "text": "libmpv повернув таку помилку:"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALOUTERROR",
-      "text": "Загальна помилка системи виводу Basolia"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_OUT123ERROR",
-      "text": "OUT123 повернув таку помилку:"
     },
     {
       "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_FILEALREADYOPEN",
@@ -69,10 +41,6 @@
     {
       "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILENOTFOUND",
       "text": "Музичний файл не існує"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILEOPENFAILED",
-      "text": "Неможливо відкрити файл"
     },
     {
       "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_URLALREADYOPEN",
@@ -91,28 +59,8 @@
       "text": "Це не схоже на радіостанцію. Ви впевнені?"
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTMPEGRADIOSTATION",
-      "text": "Це не схоже на радіостанцію MP3. У вас тип (n) {0}. Ви впевнені?"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
-      "text": "Не вдається відкрити радіостанцію"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSAUDIOSTREAM",
-      "text": "Аудіопотік не надано"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICSTREAMOPENFAILED",
-      "text": "Не вдається відкрити потік"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_ALREADYCLOSED",
       "text": "Не вдається закрити файл або радіостанцію, яка вже закрита"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_CLOSEFAILED",
-      "text": "Не вдається закрити файл"
     },
     {
       "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY",
@@ -121,106 +69,6 @@
     {
       "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONONPLAYBACK",
       "text": "Спроба отримати тривалість під час відтворення призводить до пошкодження відтворення! Не викликайте цю функцію під час відтворення."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONSCANFAILED",
-      "text": "Не вдається сканувати файл на наявність інформації про довжину"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILELENGTHFAILED",
-      "text": "Не вдається визначити довжину файлу"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTGETFAILED",
-      "text": "Не вдається отримати вихід."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMELENGETFAILED",
-      "text": "Не вдається отримати довжину кадру."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_SPFGETFAILED",
-      "text": "Не вдається отримати кількість семплів на кадр."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_TPFGETFAILED",
-      "text": "Не вдається отримати кількість секунд на кадр."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_GENERICBUFFSIZEGETFAILED",
-      "text": "Не вдається отримати загальний розмір буфера."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ID3ONPLAYBACK",
-      "text": "Спроба отримати метадані ID3 під час відтворення призводить до пошкодження відтворення! Не викликайте цю функцію під час відтворення."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMESCANFAILED",
-      "text": "Не вдається просканувати файл на наявність інформації про кадр"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_METADATAGETFAILED",
-      "text": "Не вдається отримати інформацію про метадані"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ICYONPLAYBACK",
-      "text": "Спроба отримати метадані ICY під час відтворення призводить до пошкодження відтворення! Не викликайте цю функцію під час відтворення."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOONPLAYBACK",
-      "text": "Спроба отримати інформацію про кадр під час відтворення призводить до пошкодження відтворення! Не викликайте цю функцію під час відтворення."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOGETFAILED",
-      "text": "Не вдається отримати інформацію про кадр"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_DECODE",
-      "text": "Не вдається декодувати кадр файлу, який не відкритий"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODEFAILED",
-      "text": "Не вдається декодувати кадр"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERNOTFOUND",
-      "text": "Декодер {0} не знайдено"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERUNSUPPORTED",
-      "text": "Декодер {0} не підтримується вашим пристроєм"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERSETFAILED",
-      "text": "Не вдається встановити декодер на {0}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILEFORMATFAILED",
-      "text": "Не вдається визначити формат файлу"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ENCODINGNOTFOUND",
-      "text": "Кодування {0} не знайдено."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FORMATINFOGETFAILED",
-      "text": "Не вдається отримати інформацію про формат"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGGETFAILED",
-      "text": "Не вдається скинути вихідне кодування"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTFORMATSETFAILED",
-      "text": "Не вдається встановити вихідний формат"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGSETFAILED",
-      "text": "Не вдається встановити вихідне кодування на:"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_INDEPENDENT_EXCEPTION_ROOTLIBPATHNEEDED",
-      "text": "Вказати шлях до кореневої бібліотеки."
     },
     {
       "loc": "MEDIABOOM_BASOLIA_LYRICS_EXCEPTION_LYRICSNOTFOUND",
@@ -259,28 +107,8 @@
       "text": "Інформація про трек неправильно вказала кількість секунд [{0}]."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DURATIONFAILED",
-      "text": "Неможливо визначити поточну тривалість файлу."
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_SEEK",
       "text": "Неможливо виконати пошук у файлі, який не відкритий."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOSTARTFAILED",
-      "text": "Неможливо виконати пошук на початок файлу."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOFRAMEFAILED",
-      "text": "Неможливо виконати пошук до кадру №{0} файлу."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOLYRICLINEFAILED",
-      "text": "Не надано рядок тексту пісні для пошуку."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DROPFAILED",
-      "text": "Неможливо перетягнути."
     },
     {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY",
@@ -293,50 +121,6 @@
     {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_STOP",
       "text": "Неможливо зупинити файл, який не відкритий"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETVOLUMEFAILED",
-      "text": "Неможливо встановити гучність на {0}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETVOLUMEFAILED",
-      "text": "Неможливо отримати гучність (базову, насправді, та децибели)"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQBANDFAILED",
-      "text": "Неможливо встановити діапазон еквалайзера {0}/32 на {1} для {2}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQRANGEBANDFAILED",
-      "text": "Неможливо встановити діапазони еквалайзера {0}/32 -> {1}/32 на {2} для {3}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RESETEQBANDSFAILED",
-      "text": "Неможливо скинути діапазони еквалайзера до їх початкових значень!"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETNATIVESTATEFAILED",
-      "text": "Неможливо отримати власний стан {0}!"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_OPENOUTPUTFAILED",
-      "text": "Неможливо відкрити вихід на пристрій {0} на драйвері {1}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_NEEDSOUTPUT",
-      "text": "Вам потрібно відкрити вихід"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RATEENCODINGUNSUPPORTED",
-      "text": "Вибрана частота [{0} Гц] та кодування [{1}] не підтримуються"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_STARTOUTPUTFAILED",
-      "text": "Неможливо розпочати вихід."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FEEDFAILED",
-      "text": "Неможливо налаштувати канал."
     },
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED",

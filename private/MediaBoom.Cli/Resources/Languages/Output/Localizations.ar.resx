@@ -1,199 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="MEDIABOOM_APP_COMMON_DEVICE" xml:space="preserve">
-    <value>الجهاز:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DRIVER" xml:space="preserve">
-    <value>برنامج التشغيل:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DEVICECACHED" xml:space="preserve">
-    <value>الجهاز (مُخزَّن مؤقتًا):</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DRIVERCACHED" xml:space="preserve">
-    <value>برنامج التشغيل (مُخزَّن مؤقتًا):</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING" xml:space="preserve">
-    <value>لا يُمكن الاستعلام عن الأجهزة الحالية أثناء عدم التشغيل.</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DEVICEANDDRIVER" xml:space="preserve">
-    <value>الجهاز وبرنامج التشغيل</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS" xml:space="preserve">
-    <value>الأجهزة وبرامج التشغيل المتاحة</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_EXTRASPECS" xml:space="preserve">
-    <value>مواصفات إضافية (للمطورين)</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_PCMSAMPLESIZE" xml:space="preserve">
-    <value>حجم عينة PCM:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_ZEROSAMPLE" xml:space="preserve">
-    <value>عينة صفرية (إزاحة 0):</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DURATIONSAMPLES" xml:space="preserve">
-    <value>المدة بالعينات:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_FRAMELEN" xml:space="preserve">
-    <value>طول الإطار:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_SPF" xml:space="preserve">
-    <value>العينات/الإطار:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_TPF" xml:space="preserve">
-    <value>الثواني/الإطار:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DECODERS" xml:space="preserve">
-    <value>وحدات فك التشفير</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS" xml:space="preserve">
-    <value>وحدات فك التشفير المدعومة:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_ALLDECODERS" xml:space="preserve">
-    <value>جميع وحدات فك التشفير:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_ENCODINGSANDRATES" xml:space="preserve">
-    <value>الترميزات والمعدلات</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_ENCODINGS" xml:space="preserve">
-    <value>الترميزات:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_RATES" xml:space="preserve">
-    <value>المعدلات:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_BUFFERINFO" xml:space="preserve">
-    <value>معلومات المخزن المؤقت</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE" xml:space="preserve">
-    <value>حجم المخزن المؤقت العام:</value>
-  </data>
+  </resheader>
   <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS" xml:space="preserve">
     <value>مواصفات MediaBoom</value>
   </data>
   <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER" xml:space="preserve">
     <value>إصدار Basolia:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER" xml:space="preserve">
-    <value>إصدار MPG123:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER" xml:space="preserve">
-    <value>إصدار OUT123:</value>
   </data>
   <data name="MEDIABOOM_APP_COMMON_SYSTEMSPECS" xml:space="preserve">
     <value>مواصفات النظام</value>
@@ -216,12 +85,6 @@
   <data name="MEDIABOOM_APP_COMMON_AVAILABLEKEYSTROKES" xml:space="preserve">
     <value>ضغطات المفاتيح المتاحة</value>
   </data>
-  <data name="MEDIABOOM_APP_COMMON_SELECTDRIVER" xml:space="preserve">
-    <value>حدد برنامج تشغيل. ESC للخروج.</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_SELECTDEVICE" xml:space="preserve">
-    <value>حدد جهازًا. برنامج التشغيل الحالي هو {0}. ESC للخروج. أدخل مسار ملف قائمة التشغيل الذي ترغب في حفظه.</value>
-  </data>
   <data name="MEDIABOOM_APP_COMMON_PATHTOPLAYLIST" xml:space="preserve">
     <value>رفع مستوى الصوت</value>
   </data>
@@ -234,77 +97,17 @@
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_HELP" xml:space="preserve">
     <value>فتح مُعادل الصوت</value>
   </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER" xml:space="preserve">
-    <value>معلومات النظام</value>
-  </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO" xml:space="preserve">
     <value>وضع الديسكو!</value>
   </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DISCO" xml:space="preserve">
     <value>تفعيل رفع مستوى الصوت</value>
   </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST" xml:space="preserve">
-    <value>معلومات الجهاز وبرنامج التشغيل</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO" xml:space="preserve">
-    <value>تعيين الجهاز وبرنامج التشغيل</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET" xml:space="preserve">
-    <value>إعادة تعيين الجهاز وبرنامج التشغيل</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET" xml:space="preserve">
-    <value>حفظ في قائمة التشغيل</value>
-  </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST" xml:space="preserve">
     <value>خروج</value>
   </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_QUIT" xml:space="preserve">
     <value>خفض</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE" xml:space="preserve">
-    <value>زيادة</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE" xml:space="preserve">
-    <value>النطاق السابق</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND" xml:space="preserve">
-    <value>النطاق التالي</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND" xml:space="preserve">
-    <value>إعادة تعيين</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET" xml:space="preserve">
-    <value>هناك خطأ في Basolia عند محاولة معالجة عملية مُعادل الصوت.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_BASOLIAERROR" xml:space="preserve">
-    <value>هناك خطأ في مُخرجات Basolia عند محاولة معالجة عملية مُعادل الصوت.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR" xml:space="preserve">
-    <value>هناك خطأ غير معروف عند محاولة معالجة عملية مُعادل الصوت.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_ERROR" xml:space="preserve">
-    <value>لا يعمل. مُشغل الموسيقى خامل.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_NOTPLAYING" xml:space="preserve">
-    <value>جهير</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_BASS" xml:space="preserve">
-    <value>متوسط ​​علوي</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_UPPERMID" xml:space="preserve">
-    <value>عالي</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_TREBLE" xml:space="preserve">
-    <value>عالي</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_DEVICEBAND" xml:space="preserve">
-    <value>نطاق صوتي خاص بالجهاز</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND" xml:space="preserve">
-    <value>نوع نطاق صوتي غير معروف</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_BAND" xml:space="preserve">
-    <value>النطاق</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE" xml:space="preserve">
     <value>تشغيل/إيقاف مؤقت</value>
@@ -381,9 +184,6 @@
   <data name="MEDIABOOM_APP_PLAYER_BASOLIAERROR" xml:space="preserve">
     <value>هناك خطأ في Basolia عند محاولة معالجة ملف الموسيقى.</value>
   </data>
-  <data name="MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR" xml:space="preserve">
-    <value>هناك خطأ في إخراج Basolia عند محاولة معالجة ملف الموسيقى.</value>
-  </data>
   <data name="MEDIABOOM_APP_PLAYER_ERROR" xml:space="preserve">
     <value>حدث خطأ غير معروف عند محاولة معالجة ملف الموسيقى.</value>
   </data>
@@ -391,7 +191,7 @@
     <value>فشل التشغيل:</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_TIP" xml:space="preserve">
-    <value>اضغط على &apos;A&apos; لإدراج أغنية واحدة في قائمة التشغيل، أو &apos;S&apos; لإدراج مكتبة الموسيقى كاملة.</value>
+    <value>اضغط على 'A' لإدراج أغنية واحدة في قائمة التشغيل، أو 'S' لإدراج مكتبة الموسيقى كاملة.</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_SELECTLYRICSEEK" xml:space="preserve">
     <value>حدد كلمات الأغاني للبحث عنها.</value>
@@ -400,7 +200,7 @@
     <value>أدخل مسار ملف الموسيقى.</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_MUSICFILENOTFOUND" xml:space="preserve">
-    <value>الملف &apos;{0}&apos; غير موجود.</value>
+    <value>الملف '{0}' غير موجود.</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_MUSICPLAYLISTPROMPT" xml:space="preserve">
     <value>أدخل مسار قائمة تشغيل الموسيقى.</value>
@@ -422,9 +222,6 @@
   </data>
   <data name="MEDIABOOM_APP_PLAYER_UNKNOWNARTIST" xml:space="preserve">
     <value>فنان غير معروف</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_UNKNOWNGENRE" xml:space="preserve">
-    <value>نوع غير معروف</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE" xml:space="preserve">
     <value>جارٍ محاولة فتح ملف كلمات الأغاني {0}...</value>
@@ -471,14 +268,8 @@
   <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_TITLE" xml:space="preserve">
     <value>العنوان:</value>
   </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM" xml:space="preserve">
-    <value>الألبوم:</value>
-  </data>
   <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE" xml:space="preserve">
     <value>النوع:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT" xml:space="preserve">
-    <value>التعليق:</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION" xml:space="preserve">
     <value>المدة:</value>
@@ -491,69 +282,6 @@
   </data>
   <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS" xml:space="preserve">
     <value>بدون كلمات</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO" xml:space="preserve">
-    <value>معلومات الطبقة</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION" xml:space="preserve">
-    <value>الإصدار:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER" xml:space="preserve">
-    <value>الطبقة:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE" xml:space="preserve">
-    <value>المعدل:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE" xml:space="preserve">
-    <value>الوضع:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT" xml:space="preserve">
-    <value>امتداد الوضع:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE" xml:space="preserve">
-    <value>حجم الإطار:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS" xml:space="preserve">
-    <value>الأعلام:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS" xml:space="preserve">
-    <value>التشديد:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE" xml:space="preserve">
-    <value>معدل البت:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR" xml:space="preserve">
-    <value>معدل ABR:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR" xml:space="preserve">
-    <value>VBR:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE" xml:space="preserve">
-    <value>الحالة الأصلية</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING" xml:space="preserve">
-    <value>دقة العرض:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL" xml:space="preserve">
-    <value>ملء المخزن المؤقت:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY" xml:space="preserve">
-    <value>تأخير فك التشفير:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY" xml:space="preserve">
-    <value>تأخير التشفير:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING" xml:space="preserve">
-    <value>حشو التشفير:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN" xml:space="preserve">
-    <value>بث فرانكشتاين:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER" xml:space="preserve">
-    <value>فك التشفير الجديد:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS" xml:space="preserve">
-    <value>النصوص والإضافات</value>
   </data>
   <data name="MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO" xml:space="preserve">
     <value>معلومات محطة الراديو</value>
@@ -580,13 +308,7 @@
     <value>إزالة جميع محطات الراديو</value>
   </data>
   <data name="MEDIABOOM_APP_RADIO_TIP" xml:space="preserve">
-    <value>اضغط على &quot;A&quot; لإدراج محطة راديو في قائمة التشغيل.</value>
-  </data>
-  <data name="MEDIABOOM_APP_RADIO_STATIONPROMPT" xml:space="preserve">
-    <value>أدخل مسارًا لمحطة الراديو. يجب أن يوفر رابط URL للمحطة محطة راديو MPEG. أما AAC، فلا يدعمها حاليًا.</value>
-  </data>
-  <data name="MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT" xml:space="preserve">
-    <value>أدخل مسارًا لقائمة تشغيل محطات الراديو. يجب أن توفر عناوين URL للمحطات محطة راديو MPEG. أما AAC، فلا يدعمها حاليًا.</value>
+    <value>اضغط على "A" لإدراج محطة راديو في قائمة التشغيل.</value>
   </data>
   <data name="MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND" xml:space="preserve">
     <value>لم يتم العثور على قائمة تشغيل محطة الراديو.</value>
@@ -648,5 +370,4 @@
   <data name="MEDIABOOM_APP_FATALERROR" xml:space="preserve">
     <value>خطأ فادح في واجهة سطر أوامر MediaBoom.</value>
   </data>
-
 </root>

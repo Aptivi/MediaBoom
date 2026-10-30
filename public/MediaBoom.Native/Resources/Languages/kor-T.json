@@ -16,20 +16,8 @@
       "text": "라이브러리 경로는 {0}입니다."
     },
     {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
-      "text": "라이브러리 경로 {0}이(가) 존재하지 않습니다."
-    },
-    {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
       "text": "32비트 플랫폼은 더 이상 지원되지 않습니다."
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
-      "text": "환경 변수 MPG123_MODDIR을(를) 설정할 수 없습니다."
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
-      "text": "라이브러리를 로드하지 못했습니다."
     },
     {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",

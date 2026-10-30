@@ -16,20 +16,8 @@
       "text": "Η διαδρομή βιβλιοθήκης είναι {0}"
     },
     {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBPATHNOTFOUND",
-      "text": "Η διαδρομή βιβλιοθήκης {0} δεν υπάρχει."
-    },
-    {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_32BITUNSUPPORTED",
       "text": "Οι πλατφόρμες 32-bit δεν υποστηρίζονται πλέον."
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_MODDIRSETFAILED",
-      "text": "Δεν είναι δυνατός ο ορισμός της μεταβλητής περιβάλλοντος MPG123_MODDIR"
-    },
-    {
-      "loc": "MEDIABOOM_NATIVE_EXCEPTION_LIBSLOADFAILED",
-      "text": "Αποτυχία φόρτωσης βιβλιοθηκών."
     },
     {
       "loc": "MEDIABOOM_NATIVE_EXCEPTION_DELEGATEGETFAILED_NOINIT",

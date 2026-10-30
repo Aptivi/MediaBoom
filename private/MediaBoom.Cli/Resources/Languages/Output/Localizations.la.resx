@@ -1,199 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="MEDIABOOM_APP_COMMON_DEVICE" xml:space="preserve">
-    <value>Instrumentum:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DRIVER" xml:space="preserve">
-    <value>Auriga:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DEVICECACHED" xml:space="preserve">
-    <value>Instrumentum (in cella recondita):</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DRIVERCACHED" xml:space="preserve">
-    <value>Auriga (in cella recondita):</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DEVICESQUERYNOTPLAYING" xml:space="preserve">
-    <value>Instrumenta currentia interrogare non potest dum non luditur.</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DEVICEANDDRIVER" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_AVAILABLEDEVICESANDDRIVERS" xml:space="preserve">
-    <value>Instrumentum et Auriga</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_EXTRASPECS" xml:space="preserve">
-    <value>Instrumenta et aurigae praesto</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_PCMSAMPLESIZE" xml:space="preserve">
-    <value>Specificationes additae (pro fabricatoribus)</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_ZEROSAMPLE" xml:space="preserve">
-    <value>Magnitudo exempli PCM:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DURATIONSAMPLES" xml:space="preserve">
-    <value>Exempli nullius (offset 0):</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_FRAMELEN" xml:space="preserve">
-    <value>Duratio in exemplis:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_SPF" xml:space="preserve">
-    <value>Longitudo imaginis:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_TPF" xml:space="preserve">
-    <value>Exempla/imago:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_DECODERS" xml:space="preserve">
-    <value>Secunda/imago:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_SUPPORTEDDECODERS" xml:space="preserve">
-    <value>Decodificatores</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_ALLDECODERS" xml:space="preserve">
-    <value>Decodificatores sustentati:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_ENCODINGSANDRATES" xml:space="preserve">
-    <value>Omnes decodificatores:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_ENCODINGS" xml:space="preserve">
-    <value>Codificationes et Frequentiae</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_RATES" xml:space="preserve">
-    <value>Codificationes:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_BUFFERINFO" xml:space="preserve">
-    <value>Frequentiae:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_GENERICBUFFERSIZE" xml:space="preserve">
-    <value>Informationes de memoria intermedia</value>
-  </data>
+  </resheader>
   <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS" xml:space="preserve">
     <value>Magnitudo memoriae intermediae generica:</value>
   </data>
   <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER" xml:space="preserve">
     <value>Specificationes MediaBoom</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPG123VER" xml:space="preserve">
-    <value>Versio Basolia:</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_OUT123VER" xml:space="preserve">
-    <value>Versio MPG123:</value>
   </data>
   <data name="MEDIABOOM_APP_COMMON_SYSTEMSPECS" xml:space="preserve">
     <value>Versio OUT123:</value>
@@ -216,14 +85,8 @@
   <data name="MEDIABOOM_APP_COMMON_AVAILABLEKEYSTROKES" xml:space="preserve">
     <value>Descriptio .NET:</value>
   </data>
-  <data name="MEDIABOOM_APP_COMMON_SELECTDRIVER" xml:space="preserve">
-    <value>Ictus clavium praesto</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_SELECTDEVICE" xml:space="preserve">
-    <value>Aurigam elige. ESC ad exeundum.</value>
-  </data>
   <data name="MEDIABOOM_APP_COMMON_PATHTOPLAYLIST" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_VOLUMEUP" xml:space="preserve">
     <value>Instrumentum elige. Auriga praesens est {0}. ESC ad exeundum.</value>
@@ -234,77 +97,17 @@
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_HELP" xml:space="preserve">
     <value>Volumen auge.</value>
   </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_EQUALIZER" xml:space="preserve">
-    <value>Volumen minue.</value>
-  </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO" xml:space="preserve">
     <value>Auxilium.</value>
   </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DISCO" xml:space="preserve">
     <value>Aequalisatorem aperi.</value>
   </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_VOLBOOST" xml:space="preserve">
-    <value>Informationes systematis.</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERINFO" xml:space="preserve">
-    <value>Modus discothecae!</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERSET" xml:space="preserve">
-    <value>Augmentum voluminis activa.</value>
-  </data>
-  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DEVICEDRIVERRESET" xml:space="preserve">
-    <value>Informationes de instrumento et gubernatore.</value>
-  </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST" xml:space="preserve">
     <value>Instrumentum et gubernatorem constitue.</value>
   </data>
   <data name="MEDIABOOM_APP_COMMON_KEYBINDING_QUIT" xml:space="preserve">
     <value>Instrumentum et gubernatorem resetta.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_DECREASE" xml:space="preserve">
-    <value>In indice musico serva.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_INCREASE" xml:space="preserve">
-    <value>Exi.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_PREVBAND" xml:space="preserve">
-    <value>Minue.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_NEXTBAND" xml:space="preserve">
-    <value>Auge.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_KEYBINDING_RESET" xml:space="preserve">
-    <value>Grex musicus prior.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_BASOLIAERROR" xml:space="preserve">
-    <value>Grex musicus proximus.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_BASOLIAOUTERROR" xml:space="preserve">
-    <value>Resetta.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_ERROR" xml:space="preserve">
-    <value>Error cum Basolia est cum operationem aequalisatoris perficere conatur.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_NOTPLAYING" xml:space="preserve">
-    <value>Error cum output Basolia est cum operationem aequalisatoris perficere conatur.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_BASS" xml:space="preserve">
-    <value>Error ignotus est cum operationem aequalisatoris perficere conatur.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_UPPERMID" xml:space="preserve">
-    <value>Non luditur. Lusor musicae otiosus est.</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_TREBLE" xml:space="preserve">
-    <value>Graves</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_DEVICEBAND" xml:space="preserve">
-    <value>Medi Superiores</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_UNKNOWNBAND" xml:space="preserve">
-    <value>Acuti</value>
-  </data>
-  <data name="MEDIABOOM_APP_EQUALIZER_BAND" xml:space="preserve">
-    <value>Gamma sonorum specifica machinae</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYPAUSE" xml:space="preserve">
     <value>Genus manus ignotum</value>
@@ -381,9 +184,6 @@
   <data name="MEDIABOOM_APP_PLAYER_BASOLIAERROR" xml:space="preserve">
     <value>Quaerere:</value>
   </data>
-  <data name="MEDIABOOM_APP_PLAYER_BASOLIAOUTERROR" xml:space="preserve">
-    <value>Volumen:</value>
-  </data>
   <data name="MEDIABOOM_APP_PLAYER_ERROR" xml:space="preserve">
     <value>Error est cum Basolia cum fasciculum musicum tractare conatur.</value>
   </data>
@@ -397,7 +197,7 @@
     <value>Defectus reproductionis:</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_MUSICFILEPROMPT" xml:space="preserve">
-    <value>Preme &apos;A&apos; ut unum carmen in indicem inseras, vel &apos;S&apos; ut totam bibliothecam musicam inseras.</value>
+    <value>Preme 'A' ut unum carmen in indicem inseras, vel 'S' ut totam bibliothecam musicam inseras.</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_MUSICFILENOTFOUND" xml:space="preserve">
     <value>Elige verba carminum quae quaeras.</value>
@@ -406,7 +206,7 @@
     <value>Inscribe semitam ad fasciculum musicum.</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_MUSICPLAYLISTNOTFOUND" xml:space="preserve">
-    <value>Fasciculus &apos;{0}&apos; non existit.</value>
+    <value>Fasciculus '{0}' non existit.</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_MUSICLIBRARYPROMPT" xml:space="preserve">
     <value>Inscribe semitam ad indicem musicum.</value>
@@ -422,9 +222,6 @@
   </data>
   <data name="MEDIABOOM_APP_PLAYER_UNKNOWNARTIST" xml:space="preserve">
     <value>Aperitur {0}...</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_UNKNOWNGENRE" xml:space="preserve">
-    <value>Nunc luditur:</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_OPENINGMUSICLYRICFILE" xml:space="preserve">
     <value>Artifex ignotus.</value>
@@ -471,14 +268,8 @@
   <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_TITLE" xml:space="preserve">
     <value>Artifex:</value>
   </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_ALBUM" xml:space="preserve">
-    <value>Titulus:</value>
-  </data>
   <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_GENRE" xml:space="preserve">
     <value>Album:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_COMMENT" xml:space="preserve">
-    <value>Genus:</value>
   </data>
   <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_DURATION" xml:space="preserve">
     <value>Commentarium:</value>
@@ -491,69 +282,6 @@
   </data>
   <data name="MEDIABOOM_APP_PLAYER_INFO_SONGINFO_LYRICS_NOLYRICS" xml:space="preserve">
     <value>{0} lineae</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO" xml:space="preserve">
-    <value>Nulla verba carminis</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VERSION" xml:space="preserve">
-    <value>Informationes strati</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_LAYER" xml:space="preserve">
-    <value>Versio:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_RATE" xml:space="preserve">
-    <value>Stratum:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODE" xml:space="preserve">
-    <value>Celeritas:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_MODEEXT" xml:space="preserve">
-    <value>Modus:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FRAMESIZE" xml:space="preserve">
-    <value>Modus Ext:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_FLAGS" xml:space="preserve">
-    <value>Magnitudo imaginum:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_EMPHASIS" xml:space="preserve">
-    <value>Vexilla:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_BITRATE" xml:space="preserve">
-    <value>Emphasis:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_ABR" xml:space="preserve">
-    <value>Celeritas bit:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_LAYERINFO_VBR" xml:space="preserve">
-    <value>Celeritas ABR:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE" xml:space="preserve">
-    <value>VBR:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ACCURATERENDERING" xml:space="preserve">
-    <value>Status nativus</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_BUFFERFILL" xml:space="preserve">
-    <value>Redditio accurata:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_DECODINGDELAY" xml:space="preserve">
-    <value>Impletio buffer:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGDELAY" xml:space="preserve">
-    <value>Mora decodificationis:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_ENCODINGPADDING" xml:space="preserve">
-    <value>Mora codificationis:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRANKENSTEIN" xml:space="preserve">
-    <value>Integritas codificationis:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_NATIVESTATE_FRESHDECODER" xml:space="preserve">
-    <value>Fluxus Frankenstein:</value>
-  </data>
-  <data name="MEDIABOOM_APP_PLAYER_INFO_TEXTSANDEXTRAS" xml:space="preserve">
-    <value>Decodificator recens:</value>
   </data>
   <data name="MEDIABOOM_APP_RADIO_KEYBINDING_STATIONINFO" xml:space="preserve">
     <value>Textus et additamenta</value>
@@ -581,12 +309,6 @@
   </data>
   <data name="MEDIABOOM_APP_RADIO_TIP" xml:space="preserve">
     <value>Remove omnes stationes radiophonicas</value>
-  </data>
-  <data name="MEDIABOOM_APP_RADIO_STATIONPROMPT" xml:space="preserve">
-    <value>Preme &apos;A&apos; ut stationem radiophonicam in indicem musicum inseras.</value>
-  </data>
-  <data name="MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT" xml:space="preserve">
-    <value>Inscribe viam ad stationem radiophonicam. URL ad stationem stationem radiophonicam MPEG praebere debet. AAC nondum sustinentur. Semitam ad indicem stationum radiophonicarum inscribe. URL stationum radiophonicarum MPEG praebere debent. AAC nondum sustinentur.</value>
   </data>
   <data name="MEDIABOOM_APP_RADIO_STATIONGROUPNOTFOUND" xml:space="preserve">
     <value>Index stationum radiophonicarum non inventus est.</value>
@@ -648,5 +370,4 @@
   <data name="MEDIABOOM_APP_FATALERROR" xml:space="preserve">
     <value>Error fatalis in MediaBoom CLI.</value>
   </data>
-
 </root>

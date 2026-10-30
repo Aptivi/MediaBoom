@@ -61,10 +61,6 @@
       "text": "Le chemin de la bibliothèque libmpv {0} ne contient pas de bibliothèque libmpv valide."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OUT123LIBINVALID",
-      "text": "Le chemin de la bibliothèque out123 {0} ne contient pas de bibliothèque out123 valide."
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_EXCEPTION_VERSIONNEEDSLIB",
       "text": "Impossible d'obtenir la version tant que la bibliothèque n'est pas initialisée"
     },
@@ -73,36 +69,12 @@
       "text": "Basolia n'a pas encore initialisé la bibliothèque libmpv !"
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERQUERY",
-      "text": "Impossible d'interroger les pilotes"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICEQUERY",
-      "text": "Impossible d'interroger les périphériques"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DRIVERNOTFOUND",
-      "text": "Le pilote {0} n'existe pas"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_DEVICES_EXCEPTION_DEVICENOTFOUND",
-      "text": "Le périphérique {0} n'existe pas"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALERROR",
       "text": "Erreur Basolia générale"
     },
     {
       "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_LIBMPVERROR",
       "text": "libmpv a renvoyé l'erreur suivante :"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_GENERALOUTERROR",
-      "text": "Erreur système de sortie Basolia générale"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_EXCEPTIONS_EXCEPTION_OUT123ERROR",
-      "text": "OUT123 a renvoyé l'erreur suivante :"
     },
     {
       "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_FILEALREADYOPEN",
@@ -115,10 +87,6 @@
     {
       "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILENOTFOUND",
       "text": "Le fichier musical n'existe pas"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICFILEOPENFAILED",
-      "text": "Impossible d'ouvrir le fichier"
     },
     {
       "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_URLALREADYOPEN",
@@ -137,28 +105,8 @@
       "text": "Cela ne ressemble pas à une station de radio. Êtes-vous sûr ?"
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NOTMPEGRADIOSTATION",
-      "text": "Cela ne ressemble pas à une station de radio MP3. Vous avez un type {0}. Êtes-vous sûr ?"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
-      "text": "Impossible d'ouvrir la station de radio"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_NEEDSAUDIOSTREAM",
-      "text": "Flux audio non fourni"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICSTREAMOPENFAILED",
-      "text": "Impossible d'ouvrir le flux"
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_ALREADYCLOSED",
       "text": "Impossible de fermer un fichier ou une station de radio déjà fermée"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_CLOSEFAILED",
-      "text": "Impossible de fermer le fichier"
     },
     {
       "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_QUERY",
@@ -167,106 +115,6 @@
     {
       "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONONPLAYBACK",
       "text": "Tenter d'obtenir la durée pendant la lecture entraîne une corruption de la lecture ! N'appelez pas cette fonction pendant la lecture."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DURATIONSCANFAILED",
-      "text": "Impossible d'analyser le fichier pour obtenir des informations sur la longueur"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILELENGTHFAILED",
-      "text": "Impossible de déterminer la longueur du fichier"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTGETFAILED",
-      "text": "Impossible d'obtenir la sortie."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMELENGETFAILED",
-      "text": "Impossible d'obtenir la longueur de l'image."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_SPFGETFAILED",
-      "text": "Impossible d'obtenir le nombre d'échantillons par image."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_TPFGETFAILED",
-      "text": "Impossible d'obtenir le nombre de secondes par image."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_GENERICBUFFSIZEGETFAILED",
-      "text": "Impossible d'obtenir la taille de la mémoire tampon générique."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ID3ONPLAYBACK",
-      "text": "Tenter d'obtenir les métadonnées ID3 pendant la lecture entraîne une corruption de la lecture ! N'appelez pas cette fonction pendant la lecture."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMESCANFAILED",
-      "text": "Impossible d'analyser le fichier pour les informations d'image"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_METADATAGETFAILED",
-      "text": "Impossible d'obtenir les métadonnées"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ICYONPLAYBACK",
-      "text": "Tenter d'obtenir les métadonnées ICY pendant la lecture peut altérer la lecture ! N'appelez pas cette fonction pendant la lecture."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOONPLAYBACK",
-      "text": "Tenter d'obtenir les informations d'image pendant la lecture peut altérer la lecture ! N'appelez pas cette fonction pendant la lecture."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FRAMEINFOGETFAILED",
-      "text": "Impossible d'obtenir les informations d'image"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILENOTOPEN_DECODE",
-      "text": "Impossible de décoder l'image d'un fichier qui n'est pas ouvert"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODEFAILED",
-      "text": "Impossible de décoder l'image"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERNOTFOUND",
-      "text": "Décodeur {0} introuvable"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERUNSUPPORTED",
-      "text": "Décodeur {0} non pris en charge par votre appareil"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_DECODERSETFAILED",
-      "text": "Impossible de définir le décodeur sur {0}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FILEFORMATFAILED",
-      "text": "Impossible de déterminer le format du fichier"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_ENCODINGNOTFOUND",
-      "text": "Encodage {0} introuvable."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_FORMATINFOGETFAILED",
-      "text": "Impossible d'obtenir les informations de format"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGGETFAILED",
-      "text": "Impossible de réinitialiser l'encodage de sortie"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTFORMATSETFAILED",
-      "text": "Impossible de définir le format de sortie"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_FORMAT_EXCEPTION_OUTPUTENCODINGSETFAILED",
-      "text": "Impossible de définir l'encodage de sortie sur :"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_INDEPENDENT_EXCEPTION_ROOTLIBPATHNEEDED",
-      "text": "Fournir un chemin d'accès à la bibliothèque racine."
     },
     {
       "loc": "MEDIABOOM_BASOLIA_LYRICS_EXCEPTION_LYRICSNOTFOUND",
@@ -305,28 +153,8 @@
       "text": "Les informations sur la piste n'ont pas fourni correctement le nombre de secondes [{0}]."
     },
     {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DURATIONFAILED",
-      "text": "Impossible de déterminer la durée actuelle du fichier."
-    },
-    {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_SEEK",
       "text": "Impossible de rechercher un fichier qui n'est pas ouvert."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOSTARTFAILED",
-      "text": "Impossible de rechercher le début du fichier."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOFRAMEFAILED",
-      "text": "Impossible de rechercher l'image n° {0} du fichier."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SEEKTOLYRICLINEFAILED",
-      "text": "La ligne de paroles n'est pas fournie pour la recherche."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_DROPFAILED",
-      "text": "Impossible de supprimer."
     },
     {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_PLAY",
@@ -339,50 +167,6 @@
     {
       "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FILENOTOPEN_STOP",
       "text": "Impossible d'arrêter un fichier fermé"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETVOLUMEFAILED",
-      "text": "Impossible de régler le volume à {0}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETVOLUMEFAILED",
-      "text": "Impossible d'obtenir le volume (basique, réel et décibels)"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQBANDFAILED",
-      "text": "Impossible de régler la bande d'égalisation {0}/32 à {1} sous {2}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_SETEQRANGEBANDFAILED",
-      "text": "Impossible de régler les bandes d'égalisation {0}/32 -> {1}/32 à {2} sous {3}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RESETEQBANDSFAILED",
-      "text": "Impossible de réinitialiser les bandes d'égalisation à leurs valeurs initiales !"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_GETNATIVESTATEFAILED",
-      "text": "Impossible d'obtenir l'état natif de {0} !"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_OPENOUTPUTFAILED",
-      "text": "Impossible d'ouvrir la sortie vers le périphérique {0} sur le pilote {1}"
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_NEEDSOUTPUT",
-      "text": "Vous devez ouvrir la sortie."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_RATEENCODINGUNSUPPORTED",
-      "text": "Le débit sélectionné [{0} Hz] et l'encodage [{1}] ne sont pas pris en charge."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_STARTOUTPUTFAILED",
-      "text": "Impossible de démarrer la sortie."
-    },
-    {
-      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_EXCEPTION_FEEDFAILED",
-      "text": "Impossible d'alimenter."
     },
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_PARSEFAILED",
