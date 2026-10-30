@@ -415,3 +415,6 @@ DocGen/api/
 public/MediaBoom.Native/runtimes/win-x64/native/libmpv-2.dll
 public/MediaBoom.Native/runtimes/win-arm64/native/libmpv-2.dll
 libmpv-win/
+
+# adt checklocs
+dirty-*.txt
