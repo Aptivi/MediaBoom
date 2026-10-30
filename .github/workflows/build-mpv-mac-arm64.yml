@@ -17,6 +17,7 @@ jobs:
           ref: ${{ github.ref }}
       - name: Setting up environment
         run: |
+          brew update
           brew install meson ffmpeg libass luajit jpeg-turbo libplacebo
       - name: MPV compilation
         run: |
