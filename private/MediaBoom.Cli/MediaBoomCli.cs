@@ -53,8 +53,6 @@ namespace MediaBoom.Cli
         {
             try
             {
-                ConsoleMisc.SetTitle($"MediaBoom CLI - Basolia v{version?.ToString()}");
-
                 // Parse arguments
                 ArgumentParse.ParseArguments(args, arguments);
 
@@ -71,6 +69,9 @@ namespace MediaBoom.Cli
                     TextWriterColor.Write("libmpv:  " + $"{InitBasolia.NativeLibVersion}");
                     return 0;
                 }
+
+                // Set the title
+                ConsoleMisc.SetTitle($"MediaBoom CLI - Basolia v{version?.ToString()}");
 
                 // Now, open an interactive TUI
                 ConsoleResizeHandler.StartResizeListener();

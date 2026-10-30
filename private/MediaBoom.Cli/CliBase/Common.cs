@@ -139,23 +139,18 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void ShowSpecs()
         {
+            // TODO: MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER -> MPV version:
             InfoBoxModalColor.WriteInfoBoxModal(
-                $$"""
-                MediaBoom specifications
-                =======================
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_MEDIABOOMSPECS") + "\n\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER") + $" {InitBasolia.BasoliaVersion}" + "\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER") + $" {InitBasolia.NativeLibVersion}" + "\n\n" +
 
-                Basolia version: {{InitBasolia.BasoliaVersion}}
-                libmpv version: {{InitBasolia.NativeLibVersion}}
-
-                System specifications
-                =====================
-
-                System: {{(PlatformHelper.IsOnWindows() ? "Windows" : PlatformHelper.IsOnMacOS() ? "macOS" : "Unix/Linux")}}
-                System Architecture: {{RuntimeInformation.OSArchitecture}}
-                Process Architecture: {{RuntimeInformation.ProcessArchitecture}}
-                System description: {{RuntimeInformation.OSDescription}}
-                .NET description: {{RuntimeInformation.FrameworkDescription}}
-                """
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_SYSTEMSPECS") + "\n\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEM") + $" {(PlatformHelper.IsOnWindows() ? "Windows" : PlatformHelper.IsOnMacOS() ? "macOS" : "Unix/Linux")}" + "\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMARCH") + $" {RuntimeInformation.OSArchitecture}" + "\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_SYSTEMSPECS_PROCESSARCH") + $" {RuntimeInformation.ProcessArchitecture}" + "\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_SYSTEMSPECS_SYSTEMDESC") + $" {RuntimeInformation.OSDescription}" + "\n" +
+                LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_SYSTEMSPECS_DOTNETDESC") + $" {RuntimeInformation.FrameworkDescription}"
             );
         }
 
