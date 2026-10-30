@@ -429,6 +429,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "MediaBoom CLI 出现致命错误。"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "无法打开此广播电台"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "MPV 版本："
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "切换渲染器"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "显示视频"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "输入广播电台的路径。"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "输入广播电台播放列表的路径。"
     }
   ]
 }

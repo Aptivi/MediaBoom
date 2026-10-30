@@ -154,6 +154,58 @@
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
       "text": "Akış kimliği {0} ayrıştırılamadı. Daha fazla bilgi iç istisnada bulunabilir."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED",
+      "text": "Örnek kapatılamadı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT",
+      "text": "İşlem zaman aşımına uğradı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED",
+      "text": "Komut yürütülemedi"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED",
+      "text": "{0} dize özelliğine {1} değeri atanamadı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED",
+      "text": "{0} tamsayı özelliğine {1} değeri atanamadı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED",
+      "text": "{0} ondalık sayı özelliğine {1} değeri atanamadı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED",
+      "text": "{0} dize özelliği alınamadı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED",
+      "text": "{0} tamsayı özelliği alınamadı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED",
+      "text": "{0} ondalık sayı özelliği alınamadı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED",
+      "text": "{0} düğüm eşlemesi özelliği alınamadı"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED",
+      "text": "{0} özelliği gözlemlenemedi"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW",
+      "text": "{0} müzik dosyası bulunamadı veya geçersiz"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
+      "text": "Akış protokolü kaydedilemiyor"
     }
   ]
 }

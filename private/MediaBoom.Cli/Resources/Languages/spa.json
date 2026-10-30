@@ -446,6 +446,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Error grave en la CLI de MediaBoom."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "No se pudo abrir esta emisora ​​de radio"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "Versión de MPV:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Cambiar renderizador"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Mostrar vídeo"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Introduce la ruta de la emisora ​​de radio."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Introduce la ruta de la lista de reproducción de emisoras de radio."
     }
   ]
 }

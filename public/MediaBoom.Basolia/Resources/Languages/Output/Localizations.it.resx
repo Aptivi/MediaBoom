@@ -169,4 +169,43 @@
   <data name="MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED" xml:space="preserve">
     <value>Impossibile analizzare l'ID stream {0}. Ulteriori informazioni sono disponibili nell'eccezione interna.</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED" xml:space="preserve">
+    <value>Chiusura dell'istanza non riuscita</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT" xml:space="preserve">
+    <value>Timeout dell'operazione</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED" xml:space="preserve">
+    <value>Esecuzione del comando non riuscita</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>Impossibile impostare la proprietà stringa {0} su {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>Impossibile impostare la proprietà intera {0} su {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>Impossibile impostare la proprietà double {0} su {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>Impossibile recuperare la proprietà stringa {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>Impossibile recuperare la proprietà intera {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>Impossibile recuperare la proprietà double {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED" xml:space="preserve">
+    <value>Impossibile recuperare la proprietà della mappa dei nodi {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED" xml:space="preserve">
+    <value>Impossibile osservare la proprietà {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW" xml:space="preserve">
+    <value>Il file musicale {0} non è stato trovato oppure non è valido</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
+    <value>Impossibile registrare il protocollo di flusso</value>
+  </data>
 </root>

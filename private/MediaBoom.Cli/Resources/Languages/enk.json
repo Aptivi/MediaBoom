@@ -420,6 +420,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Fatal error in the MediaBoom CLI."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Previous visualiser"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "Next visualiser"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Change mode"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "There's an error with Basolia when trying to process the visualiser operation."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "There's an error with Basolia output when trying to process the visualiser operation."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "There's an unknown error when trying to process the visualiser operation."
     }
   ]
 }

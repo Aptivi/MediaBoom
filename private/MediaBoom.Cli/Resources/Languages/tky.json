@@ -422,6 +422,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "MediaBoom CLI'da ölümcül hata."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Bu radyo istasyonu açılamadı"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "MPV sürümü:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Oynatıcıyı değiştir"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Videoyu görüntüle"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Radyo istasyonu için bir yol girin."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Radyo istasyonları çalma listesi için bir yol girin."
     }
   ]
 }

@@ -178,6 +178,58 @@
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
       "text": "No se pudo analizar el ID de transmisión {0}. Puede encontrar más información en la excepción interna."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED",
+      "text": "Error al cerrar la instancia"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT",
+      "text": "Tiempo de espera de la operación agotado"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED",
+      "text": "Error al ejecutar el comando"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED",
+      "text": "Error al establecer la propiedad de cadena {0} en {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED",
+      "text": "Error al establecer la propiedad entera {0} en {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED",
+      "text": "Error al establecer la propiedad de tipo double {0} en {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED",
+      "text": "Error al obtener la propiedad de cadena {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED",
+      "text": "Error al obtener la propiedad entera {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED",
+      "text": "Error al obtener la propiedad de tipo double {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED",
+      "text": "Error al obtener la propiedad de mapa de nodos {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED",
+      "text": "Error al observar la propiedad {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW",
+      "text": "El archivo de música {0} no se encuentra o no es válido"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
+      "text": "No se puede registrar el protocolo de flujo"
     }
   ]
 }

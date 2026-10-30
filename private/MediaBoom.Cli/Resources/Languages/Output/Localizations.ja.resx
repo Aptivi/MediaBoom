@@ -370,4 +370,22 @@
   <data name="MEDIABOOM_APP_FATALERROR" xml:space="preserve">
     <value>MediaBoom CLI で致命的なエラーが発生しました。</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED" xml:space="preserve">
+    <value>このラジオ局を開けませんでした</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER" xml:space="preserve">
+    <value>MPVのバージョン:</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER" xml:space="preserve">
+    <value>レンダラーを切り替える</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO" xml:space="preserve">
+    <value>動画を表示する</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW" xml:space="preserve">
+    <value>ラジオ局のパスを入力してください。</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW" xml:space="preserve">
+    <value>ラジオ局のプレイリストへのパスを入力してください。</value>
+  </data>
 </root>

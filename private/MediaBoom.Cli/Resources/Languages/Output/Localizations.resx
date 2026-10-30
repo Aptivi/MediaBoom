@@ -370,4 +370,22 @@
   <data name="MEDIABOOM_APP_FATALERROR" xml:space="preserve">
     <value>Fatal error in the MediaBoom CLI.</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED" xml:space="preserve">
+    <value>Failed to open this radio station</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER" xml:space="preserve">
+    <value>MPV version:</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER" xml:space="preserve">
+    <value>Switch renderer</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO" xml:space="preserve">
+    <value>Display video</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW" xml:space="preserve">
+    <value>Enter a path to the radio station.</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW" xml:space="preserve">
+    <value>Enter a path to the playlist of radio stations.</value>
+  </data>
 </root>

@@ -154,6 +154,58 @@
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
       "text": "Nu s-a putut analiza ID-ul fluxului {0}. Mai multe informații pot fi găsite în excepția internă."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED",
+      "text": "Închiderea instanței a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT",
+      "text": "Expirarea timpului de așteptare pentru operațiune"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED",
+      "text": "Executarea comenzii a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED",
+      "text": "Setarea proprietății de tip șir {0} la {1} a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED",
+      "text": "Setarea proprietății de tip întreg {0} la {1} a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED",
+      "text": "Setarea proprietății de tip double {0} la {1} a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED",
+      "text": "Obținerea proprietății de tip șir {0} a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED",
+      "text": "Obținerea proprietății de tip întreg {0} a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED",
+      "text": "Obținerea proprietății de tip double {0} a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED",
+      "text": "Obținerea proprietății de tip hartă de noduri {0} a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED",
+      "text": "Monitorizarea proprietății {0} a eșuat"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW",
+      "text": "Fișierul muzical {0} fie nu a fost găsit, fie este invalid"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
+      "text": "Nu se poate înregistra protocolul de flux"
     }
   ]
 }

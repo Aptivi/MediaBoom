@@ -370,4 +370,22 @@
   <data name="MEDIABOOM_APP_FATALERROR" xml:space="preserve">
     <value>Erreur fatale dans l'interface de ligne de commande MediaBoom.</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED" xml:space="preserve">
+    <value>Échec de l'ouverture de cette station de radio</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER" xml:space="preserve">
+    <value>Version de MPV :</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER" xml:space="preserve">
+    <value>Changer de moteur de rendu</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO" xml:space="preserve">
+    <value>Afficher la vidéo</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW" xml:space="preserve">
+    <value>Saisissez un chemin vers la station de radio.</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW" xml:space="preserve">
+    <value>Saisissez un chemin vers la liste de lecture des stations de radio.</value>
+  </data>
 </root>

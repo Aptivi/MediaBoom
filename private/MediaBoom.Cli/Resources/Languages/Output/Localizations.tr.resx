@@ -370,4 +370,22 @@
   <data name="MEDIABOOM_APP_FATALERROR" xml:space="preserve">
     <value>MediaBoom CLI'da ölümcül hata.</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED" xml:space="preserve">
+    <value>Bu radyo istasyonu açılamadı</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER" xml:space="preserve">
+    <value>MPV sürümü:</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER" xml:space="preserve">
+    <value>Oynatıcıyı değiştir</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO" xml:space="preserve">
+    <value>Videoyu görüntüle</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW" xml:space="preserve">
+    <value>Radyo istasyonu için bir yol girin.</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW" xml:space="preserve">
+    <value>Radyo istasyonları çalma listesi için bir yol girin.</value>
+  </data>
 </root>

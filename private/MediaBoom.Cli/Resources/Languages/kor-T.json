@@ -422,6 +422,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "MediaBoom CLI에서 치명적인 오류가 발생했습니다."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "이 라디오 방송국을 열지 못했습니다."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "MPV 버전:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "렌더러 전환"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "비디오 표시"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "라디오 방송국 경로를 입력하세요."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "라디오 방송국 재생 목록 경로를 입력하세요."
     }
   ]
 }

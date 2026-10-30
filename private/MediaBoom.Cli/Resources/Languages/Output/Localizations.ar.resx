@@ -370,4 +370,22 @@
   <data name="MEDIABOOM_APP_FATALERROR" xml:space="preserve">
     <value>خطأ فادح في واجهة سطر أوامر MediaBoom.</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED" xml:space="preserve">
+    <value>تعذر فتح محطة الراديو هذه</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER" xml:space="preserve">
+    <value>إصدار MPV:</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER" xml:space="preserve">
+    <value>تبديل المُصيِّر (Renderer)</value>
+  </data>
+  <data name="MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO" xml:space="preserve">
+    <value>عرض الفيديو</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW" xml:space="preserve">
+    <value>أدخل مسار محطة الراديو.</value>
+  </data>
+  <data name="MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW" xml:space="preserve">
+    <value>أدخل مسار قائمة محطات الراديو.</value>
+  </data>
 </root>

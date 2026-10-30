@@ -124,7 +124,6 @@ namespace MediaBoom.Basolia.Media
             }
             catch (Exception ex)
             {
-                // TODO: MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED -> "Instance closure failed"
                 throw new BasoliaNativeLibraryException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED") + $" {ex.Message}");
             }
         }

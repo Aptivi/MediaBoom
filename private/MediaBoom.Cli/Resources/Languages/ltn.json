@@ -421,6 +421,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Error fatalis in MediaBoom CLI."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Hanc stationem radiophonicam aperire non potuit"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "Versio MPV:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Muta reddatorem"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Ostende pelliculam"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Inscribe viam ad stationem radiophonicam."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Inscribe viam ad indicem stationum radiophonicarum."
     }
   ]
 }

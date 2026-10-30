@@ -169,4 +169,43 @@
   <data name="MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED" xml:space="preserve">
     <value>Không phân tích được ID luồng {0}. Có thể tìm thêm thông tin trong ngoại lệ bên trong.</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED" xml:space="preserve">
+    <value>Không thể đóng thực thể</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT" xml:space="preserve">
+    <value>Hết thời gian chờ thao tác</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED" xml:space="preserve">
+    <value>Không thể thực thi lệnh</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>Không thể đặt thuộc tính chuỗi {0} thành {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>Không thể đặt thuộc tính số nguyên {0} thành {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>Không thể đặt thuộc tính số thực {0} thành {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>Không thể lấy thuộc tính chuỗi {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>Không thể lấy thuộc tính số nguyên {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>Không thể lấy thuộc tính số thực {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED" xml:space="preserve">
+    <value>Không thể lấy thuộc tính bản đồ nút {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED" xml:space="preserve">
+    <value>Không thể theo dõi thuộc tính {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW" xml:space="preserve">
+    <value>Tệp nhạc {0} không tồn tại hoặc không hợp lệ</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
+    <value>Không thể đăng ký giao thức luồng</value>
+  </data>
 </root>

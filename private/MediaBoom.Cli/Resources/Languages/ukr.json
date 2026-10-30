@@ -421,6 +421,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Фатальна помилка в інтерфейсі командного рядка MediaBoom."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Не вдалося відкрити цю радіостанцію"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "Версія MPV:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Змінити візуалізатор"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Відображати відео"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Введіть шлях до радіостанції."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Введіть шлях до списку відтворення радіостанцій."
     }
   ]
 }

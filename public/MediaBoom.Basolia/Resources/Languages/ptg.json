@@ -163,6 +163,58 @@
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
       "text": "Falha ao analisar o ID da transmissão {0}. Mais informações podem ser encontradas na exceção interna."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED",
+      "text": "Falha no fecho da instância"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT",
+      "text": "Tempo limite da operação excedido"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED",
+      "text": "Falha ao executar o comando"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED",
+      "text": "Falha ao definir a propriedade de string {0} para {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED",
+      "text": "Falha ao definir a propriedade de inteiro {0} para {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED",
+      "text": "Falha ao definir a propriedade de ponto flutuante {0} para {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED",
+      "text": "Falha ao obter a propriedade de string {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED",
+      "text": "Falha ao obter a propriedade de inteiro {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED",
+      "text": "Falha ao obter a propriedade de ponto flutuante {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED",
+      "text": "Falha ao obter a propriedade do mapa de nós {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED",
+      "text": "Falha ao observar a propriedade {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW",
+      "text": "O ficheiro de música {0} não foi encontrado ou é inválido"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
+      "text": "Não foi possível registar o protocolo de fluxo"
     }
   ]
 }

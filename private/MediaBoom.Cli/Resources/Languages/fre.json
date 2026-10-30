@@ -467,6 +467,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Erreur fatale dans l'interface de ligne de commande MediaBoom."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Échec de l'ouverture de cette station de radio"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "Version de MPV :"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Changer de moteur de rendu"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Afficher la vidéo"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Saisissez un chemin vers la station de radio."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Saisissez un chemin vers la liste de lecture des stations de radio."
     }
   ]
 }

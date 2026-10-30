@@ -421,6 +421,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Lỗi nghiêm trọng trong MediaBoom CLI."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Không thể mở đài phát thanh này"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "Phiên bản MPV:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Chuyển đổi bộ kết xuất (renderer)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Hiển thị video"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Nhập đường dẫn đến đài phát thanh."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Nhập đường dẫn đến danh sách các đài phát thanh."
     }
   ]
 }

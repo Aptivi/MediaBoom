@@ -169,4 +169,43 @@
   <data name="MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED" xml:space="preserve">
     <value>Failed to parse stream ID {0}. More information can be found in the inner exception.</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED" xml:space="preserve">
+    <value>Instance closure failed</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT" xml:space="preserve">
+    <value>Operation timeout</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED" xml:space="preserve">
+    <value>Failed to execute command</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>Failed to set string property {0} to {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>Failed to set integer property {0} to {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>Failed to set double property {0} to {1}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>Failed to get string property {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>Failed to get integer property {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>Failed to get double property {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED" xml:space="preserve">
+    <value>Failed to get node map property {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED" xml:space="preserve">
+    <value>Failed to observe property {0}</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW" xml:space="preserve">
+    <value>Music file {0} is either not found or is invalid</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
+    <value>Can't register the stream protocol</value>
+  </data>
 </root>

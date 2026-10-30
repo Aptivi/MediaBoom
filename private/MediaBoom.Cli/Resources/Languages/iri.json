@@ -422,6 +422,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Earráid mharfach i CLI MediaBoom."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Theip ar oscailt an stáisiúin raidió seo"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "Leagan MPV:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Athraigh an rindreálaí"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Taispeáin físeán"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Cuir isteach cosán chuig an stáisiún raidió."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Cuir isteach cosán chuig an seinmliosta stáisiún raidió."
     }
   ]
 }

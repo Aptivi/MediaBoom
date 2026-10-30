@@ -154,6 +154,58 @@
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
       "text": "Theip ar ID an tsrutha {0} a pharsáil. Is féidir tuilleadh eolais a fháil san eisceacht inmheánach."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED",
+      "text": "Theip ar dhúnadh an tsampla"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT",
+      "text": "Am amach don oibríocht"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED",
+      "text": "Theip ar fhorghníomhú an ordaithe"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED",
+      "text": "Theip ar shocrú na maoine teaghráin {0} go {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED",
+      "text": "Theip ar shocrú na maoine slánuimhriúla {0} go {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED",
+      "text": "Theip ar shocrú na maoine uimhriúla (snámhphointe) {0} go {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED",
+      "text": "Theip ar fháil na maoine teaghráin {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED",
+      "text": "Theip ar fháil na maoine slánuimhriúla {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED",
+      "text": "Theip ar fháil na maoine uimhriúla (snámhphointe) {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED",
+      "text": "Theip ar fháil na maoine léarscáile nóid {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED",
+      "text": "Theip ar bhreathnú ar an maoin {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW",
+      "text": "Níor aimsíodh an comhad ceoil {0} nó tá sé neamhbhailí"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
+      "text": "Ní féidir an prótacal sruthaithe a chlárú"
     }
   ]
 }

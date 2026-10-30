@@ -169,4 +169,43 @@
   <data name="MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED" xml:space="preserve">
     <value>स्ट्रीम ID {0} को पार्स करने में विफल। अधिक जानकारी आंतरिक अपवाद में पाई जा सकती है।</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED" xml:space="preserve">
+    <value>इंस्टेंस बंद करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT" xml:space="preserve">
+    <value>ऑपरेशन का समय समाप्त (टाइमआउट)</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED" xml:space="preserve">
+    <value>कमांड निष्पादित करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>स्ट्रिंग प्रॉपर्टी {0} को {1} पर सेट करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>इंटीजर प्रॉपर्टी {0} को {1} पर सेट करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>डबल प्रॉपर्टी {0} को {1} पर सेट करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>स्ट्रिंग प्रॉपर्टी {0} प्राप्त करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>इंटीजर प्रॉपर्टी {0} प्राप्त करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>डबल प्रॉपर्टी {0} प्राप्त करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED" xml:space="preserve">
+    <value>नोड मैप प्रॉपर्टी {0} प्राप्त करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED" xml:space="preserve">
+    <value>प्रॉपर्टी {0} को ऑब्ज़र्व करने में विफलता</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW" xml:space="preserve">
+    <value>म्यूज़िक फ़ाइल {0} या तो मिली नहीं या अमान्य है</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
+    <value>स्ट्रीम प्रोटोकॉल को रजिस्टर नहीं किया जा सका</value>
+  </data>
 </root>

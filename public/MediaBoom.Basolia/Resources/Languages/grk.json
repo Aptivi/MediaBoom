@@ -154,6 +154,58 @@
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
       "text": "Αποτυχία ανάλυσης του αναγνωριστικού ροής {0}. Περισσότερες πληροφορίες μπορείτε να βρείτε στην εσωτερική εξαίρεση."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED",
+      "text": "Το κλείσιμο της παρουσίας απέτυχε"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT",
+      "text": "Λήξη χρονικού ορίου λειτουργίας"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED",
+      "text": "Η εκτέλεση της εντολής απέτυχε"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED",
+      "text": "Αποτυχία ορισμού της ιδιότητας συμβολοσειράς {0} σε {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED",
+      "text": "Αποτυχία ορισμού της ακέραιας ιδιότητας {0} σε {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED",
+      "text": "Αποτυχία ορισμού της ιδιότητας διπλής ακρίβειας {0} σε {1}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED",
+      "text": "Αποτυχία λήψης της ιδιότητας συμβολοσειράς {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED",
+      "text": "Αποτυχία λήψης της ακέραιας ιδιότητας {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED",
+      "text": "Αποτυχία λήψης της ιδιότητας διπλής ακρίβειας {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED",
+      "text": "Αποτυχία λήψης της ιδιότητας χάρτη κόμβων {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED",
+      "text": "Αποτυχία παρακολούθησης της ιδιότητας {0}"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW",
+      "text": "Το αρχείο μουσικής {0} είτε δεν βρέθηκε είτε είναι μη έγκυρο"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
+      "text": "Αδυναμία καταχώρισης του πρωτοκόλλου ροής"
     }
   ]
 }

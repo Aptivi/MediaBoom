@@ -153,6 +153,58 @@
     {
       "loc": "MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED",
       "text": "स्ट्रीम ID {0} को पार्स करने में विफल। अधिक जानकारी आंतरिक अपवाद में पाई जा सकती है।"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED",
+      "text": "इंस्टेंस बंद करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT",
+      "text": "ऑपरेशन का समय समाप्त (टाइमआउट)"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED",
+      "text": "कमांड निष्पादित करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED",
+      "text": "स्ट्रिंग प्रॉपर्टी {0} को {1} पर सेट करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED",
+      "text": "इंटीजर प्रॉपर्टी {0} को {1} पर सेट करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED",
+      "text": "डबल प्रॉपर्टी {0} को {1} पर सेट करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED",
+      "text": "स्ट्रिंग प्रॉपर्टी {0} प्राप्त करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED",
+      "text": "इंटीजर प्रॉपर्टी {0} प्राप्त करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED",
+      "text": "डबल प्रॉपर्टी {0} प्राप्त करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED",
+      "text": "नोड मैप प्रॉपर्टी {0} प्राप्त करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED",
+      "text": "प्रॉपर्टी {0} को ऑब्ज़र्व करने में विफलता"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW",
+      "text": "म्यूज़िक फ़ाइल {0} या तो मिली नहीं या अमान्य है"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
+      "text": "स्ट्रीम प्रोटोकॉल को रजिस्टर नहीं किया जा सका"
     }
   ]
 }

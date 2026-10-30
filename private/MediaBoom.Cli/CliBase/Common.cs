@@ -139,7 +139,6 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void ShowSpecs()
         {
-            // TODO: MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER -> MPV version:
             InfoBoxModalColor.WriteInfoBoxModal(
                 LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_MEDIABOOMSPECS") + "\n\n" +
                 LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_BASOLIAVER") + $" {InitBasolia.BasoliaVersion}" + "\n" +

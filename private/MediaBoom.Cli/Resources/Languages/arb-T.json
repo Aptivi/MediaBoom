@@ -447,6 +447,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "خطأ فادح في واجهة سطر أوامر MediaBoom."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "تعذر فتح محطة الراديو هذه"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "إصدار MPV:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "تبديل المُصيِّر (Renderer)"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "عرض الفيديو"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "أدخل مسار محطة الراديو."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "أدخل مسار قائمة محطات الراديو."
     }
   ]
 }

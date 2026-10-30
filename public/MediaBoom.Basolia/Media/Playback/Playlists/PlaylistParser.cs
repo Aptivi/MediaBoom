@@ -117,7 +117,6 @@ namespace MediaBoom.Basolia.Media.Playback.Playlists
                     if (FileIo.Exists(absolutePath))
                         proposedTracks.Add((trackInfoString, null, absolutePath));
                     else
-                        // TODO: MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW -> Music file {0} is either not found or is invalid
                         throw new BasoliaMiscException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW").FormatString(absolutePath));
                 }
                 trackInfoString = "";

@@ -53,8 +53,6 @@ namespace MediaBoom.Basolia.Media.Helpers
                 foreach (var ptr in argPointers)
                     Marshal.FreeHGlobal(ptr);
                 Marshal.FreeHGlobal(argPointer);
-
-                // TODO: MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED -> Failed to execute command
                 if (commandResult < MpvError.MPV_ERROR_SUCCESS)
                     throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED") + $" [{string.Join(", ", commandArgs)}]", commandResult);
             }

@@ -88,9 +88,6 @@ namespace MediaBoom.Cli.CliBase
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SAVETOPLAYLIST"), ConsoleKey.F1),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_PLAYER_KEYBINDING_PLAYTESTSOUND"), ConsoleKey.F2),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SYSINFO"), ConsoleKey.Z),
-
-            // TODO: MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER -> Switch renderer
-            // TODO: MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO -> Display video
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER"), ConsoleKey.Z, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO"), ConsoleKey.D),
         ];

@@ -430,6 +430,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Schwerwiegender Fehler in der MediaBoom-CLI."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Dieser Radiosender konnte nicht geöffnet werden."
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "MPV-Version:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Renderer wechseln"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Video anzeigen"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Geben Sie einen Pfad zum Radiosender ein."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Geben Sie einen Pfad zur Wiedergabeliste mit Radiosendern ein."
     }
   ]
 }

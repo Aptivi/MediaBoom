@@ -169,4 +169,43 @@
   <data name="MEDIABOOM_BASOLIA_RADIO_EXCEPTION_STREAMIDFAILED" xml:space="preserve">
     <value>streem id {0} ko paars karane mein viphal. adhik jaanakaaree aantarik apavaad mein paee ja sakatee hai.</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_INSTANCECLOSEFAILED" xml:space="preserve">
+    <value>instance band karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OPERATIONTIMEOUT" xml:space="preserve">
+    <value>oparation ka samay samapt (timeout)</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_MPVCOMMANDFAILED" xml:space="preserve">
+    <value>kamand nishpadit karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>string property {0} ko {1} par set karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>intieser property {0} ko {1} par set karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_SETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>duble property {0} ko {1} par set karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETSTRINGPROPERTYFAILED" xml:space="preserve">
+    <value>string property {0} prapt karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETINTEGERPROPERTYFAILED" xml:space="preserve">
+    <value>intieser property {0} prapt karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETDOUBLEPROPERTYFAILED" xml:space="preserve">
+    <value>duble property {0} prapt karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_GETNODEMAPPROPERTYFAILED" xml:space="preserve">
+    <value>nod map property {0} prapt karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_EXCEPTION_OBSERVEPROPERTYFAILED" xml:space="preserve">
+    <value>proparti {0} ko obzarv karne mein vifalta</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_PLAYBACK_PLAYLISTS_EXCEPTION_MUSICFILENOTFOUND_NEW" xml:space="preserve">
+    <value>mewsik file {0} ya to mili nahin ya amanya hai</value>
+  </data>
+  <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
+    <value>strim protocol ko register nahin kiya ja saka</value>
+  </data>
 </root>

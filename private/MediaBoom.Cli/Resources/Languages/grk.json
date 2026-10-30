@@ -422,6 +422,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "Μοιραίο σφάλμα στο MediaBoom CLI."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "Αποτυχία ανοίγματος αυτού του ραδιοφωνικού σταθμού"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "Έκδοση MPV:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "Εναλλαγή μηχανής απόδοσης"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "Προβολή βίντεο"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "Εισαγάγετε μια διαδρομή προς τον ραδιοφωνικό σταθμό."
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "Εισαγάγετε μια διαδρομή προς τη λίστα αναπαραγωγής ραδιοφωνικών σταθμών."
     }
   ]
 }

@@ -110,7 +110,6 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void PromptForAddStation()
         {
-            // TODO: MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW -> Enter a path to the radio station.
             string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW"));
             ScreenTools.CurrentScreen?.RequireRefresh();
             if (string.IsNullOrEmpty(path))
@@ -123,7 +122,6 @@ namespace MediaBoom.Cli.CliBase
 
         internal static void PromptForAddStations()
         {
-            // TODO: MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW -> Enter a path to the playlist of radio stations.
             string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW"));
             ScreenTools.CurrentScreen?.RequireRefresh();
             if (string.IsNullOrEmpty(path))

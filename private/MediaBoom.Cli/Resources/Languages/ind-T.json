@@ -421,6 +421,30 @@
     {
       "loc": "MEDIABOOM_APP_FATALERROR",
       "text": "MediaBoom CLI में घातक त्रुटि।"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_FILE_EXCEPTION_MUSICRADIOOPENFAILED",
+      "text": "इस रेडियो स्टेशन को खोलने में विफल"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_MEDIABOOMSPECS_MPVVER",
+      "text": "MPV वर्ज़न:"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_SWITCHRENDERER",
+      "text": "रेंडरर बदलें"
+    },
+    {
+      "loc": "MEDIABOOM_APP_COMMON_KEYBINDING_DISPLAYVIDEO",
+      "text": "वीडियो दिखाएं"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONPROMPT_NEW",
+      "text": "रेडियो स्टेशन का पाथ (path) डालें।"
+    },
+    {
+      "loc": "MEDIABOOM_APP_RADIO_STATIONGROUPPROMPT_NEW",
+      "text": "रेडियो स्टेशनों की प्लेलिस्ट का पाथ (path) डालें।"
     }
   ]
 }

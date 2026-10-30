@@ -24,6 +24,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Languages;
 using MediaBoom.Native;
 using MediaBoom.Native.Interop.Enumerations;
 using MediaBoom.Native.Interop.Init;
@@ -50,9 +51,8 @@ namespace MediaBoom.Basolia.Media.Streaming
                     return;
                 var add = NativeInitializer.GetDelegate<NativeStreamProtocol.mpv_stream_cb_add_ro>(NativeInitializer.libManagerMpv, nameof(NativeStreamProtocol.mpv_stream_cb_add_ro));
                 var result = (MpvError)add.Invoke(media._libmpvHandle, Protocol, IntPtr.Zero, openFn);
-                // TODO: MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE -> Can't register the stream protocol
                 if (result < MpvError.MPV_ERROR_SUCCESS)
-                    throw new BasoliaException("Can't register the stream protocol", result);
+                    throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE"), result);
             }
         }
 
