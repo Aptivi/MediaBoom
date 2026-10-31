@@ -1,12 +1,6 @@
-(Errata release) We've updated libmpv to version 1.32.9 as there was a security vulnerability that was fixed.
+Three years after BassBoom was first released, we have made many improvements to it, but we wanted to extend format support. And with that as our goal, MediaBoom is now available!
 
-### Changes
-
-This release contains a variety of changes, including, but not limited to:
-
-- `[*]` Fixed [CVE-2024-10573](https://nvd.nist.gov/vuln/detail/CVE-2024-10573)
-
-Review the commit history if you want to get a deep insight about the changes.
+This is the first version of MediaBoom that uses libmpv as the library backend that is installed in your system. It plays a wide variety of music and video files, as well as radio stations.
 
 ### Feedback?
 

@@ -2,8 +2,11 @@
     <Fragment>
         <StandardDirectory Id="ProgramFiles6432Folder">
             <Directory Id="INSTALLFOLDER" Name="!(bind.Property.Manufacturer)\!(bind.Property.ProductName)" />
+            <Directory Id="INSTALLFOLDER_MAIN" Name="!(bind.Property.Manufacturer)\!(bind.Property.ProductName)\Main" />
+            <Directory Id="INSTALLFOLDER_QUICKPLAY" Name="!(bind.Property.Manufacturer)\!(bind.Property.ProductName)\QuickPlay" />
+            <Directory Id="INSTALLFOLDER_QUICKRADIO" Name="!(bind.Property.Manufacturer)\!(bind.Property.ProductName)\QuickRadio" />
         </StandardDirectory>
-        
+
         <StandardDirectory Id="ProgramMenuFolder">
             <Directory Id="ApplicationProgramsFolder" Name="!(bind.Property.Manufacturer) !(bind.Property.ProductName)" >
                 <Component Id="ApplicationProgramsFolder" Guid="b44c5027-1ded-41bb-b18f-a2f0af758fc2">
@@ -12,21 +15,21 @@
                     <Shortcut Id="ApplicationStartMenuShortcut"
                               Name="!(bind.Property.ProductName)"
                               Description="Cross-platform music player written in C#"
-                              Target="[INSTALLFOLDER]\MediaBoom.Cli.exe"
-                              WorkingDirectory="INSTALLFOLDER"
+                              Target="[INSTALLFOLDER_MAIN]\MediaBoom.Cli.exe"
+                              WorkingDirectory="INSTALLFOLDER_MAIN"
                               />
                 </Component>
             </Directory>
         </StandardDirectory>
-        
+
         <StandardDirectory Id="DesktopFolder">
             <Component Id="DesktopIcon" Guid="b44c5027-1eed-41bb-b18f-a2f0af758fc2">
                 <RegistryValue Root="HKCU" Key="Software\!(bind.Property.Manufacturer)\!(bind.Property.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
                 <Shortcut Id="DesktopShortcut"
                             Name="!(bind.Property.ProductName)"
                             Description="Cross-platform music player written in C#"
-                            Target="[INSTALLFOLDER]\MediaBoom.Cli.exe"
-                            WorkingDirectory="INSTALLFOLDER"
+                            Target="[INSTALLFOLDER_MAIN]\MediaBoom.Cli.exe"
+                            WorkingDirectory="INSTALLFOLDER_MAIN"
                             />
             </Component>
         </StandardDirectory>
