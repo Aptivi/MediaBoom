@@ -134,6 +134,14 @@ namespace MediaBoom.QuickPlay
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("MEDIABOOM_QUICKPLAYER_FAILURE") + $": {ex.Message}", ThemeColorType.Error);
             }
+            finally
+            {
+                if (playerThread.IsAlive)
+                {
+                    playerThread.Stop();
+                    playerThread.Wait();
+                }
+            }
 
             // Return success to the OS
             return 0;
