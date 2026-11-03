@@ -134,7 +134,7 @@ namespace MediaBoom.Basolia.Media.Streaming
             try
             {
                 var stream = Get(cookie).stream;
-                if (stream is FeedStream feedStream)
+                if (stream is MpvFeedStream feedStream)
                     feedStream.Cancel();
             }
             catch

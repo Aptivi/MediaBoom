@@ -27,7 +27,7 @@ namespace MediaBoom.Basolia.Media.Streaming
     /// <summary>
     /// Feed stream
     /// </summary>
-    public sealed class FeedStream : Stream
+    public sealed class MpvFeedStream : Stream
     {
         private readonly BlockingCollection<byte[]> chunks = [];
         private readonly CancellationTokenSource cts = new();
