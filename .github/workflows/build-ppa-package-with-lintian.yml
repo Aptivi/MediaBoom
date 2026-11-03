@@ -58,4 +58,4 @@ jobs:
       - name: Try to install and execute
         run: |
           sudo apt install ./mediaboom-3_*.deb
-          mediaboom --test
+          mediaboom-3 --test
