@@ -47,8 +47,35 @@ namespace MediaBoom.Basolia.Media
         internal readonly AutoResetEvent redrawSignal = new(false);
         internal readonly ManualResetEventSlim switchDone = new(false);
 
-        internal VideoRendererBackend Backend =>
+        /// <summary>
+        /// Current video rendering backend
+        /// </summary>
+        public VideoRendererBackend Backend =>
             backend;
+
+        /// <summary>
+        /// Switches between backends
+        /// </summary>
+        /// <param name="target">The target video backend</param>
+        public void SwitchBackend(VideoRendererBackend target)
+        {
+            // Remember the selected video track and tear down the chain if there is one
+            string previousVid = MpvPropertyHandler.GetStringProperty(this, "vid");
+            bool hadVideo = previousVid != "no";
+            if (hadVideo)
+                MpvPropertyHandler.SetStringProperty(this, "vid", "no");
+
+            // Wait for the renderer to swap context
+            switchDone.Reset();
+            backend = target;
+            switching = true;
+            redrawSignal.Set();
+            switchDone.Wait();
+
+            // Go back to the previous vid
+            if (hadVideo)
+                MpvPropertyHandler.SetStringProperty(this, "vid", previousVid);
+        }
 
         internal void PrepareVideoRenderer()
         {
@@ -125,26 +152,6 @@ namespace MediaBoom.Basolia.Media
                     customVoSet = true;
                 }
             }
-        }
-
-        internal void SwitchBackend(VideoRendererBackend target)
-        {
-            // Remember the selected video track and tear down the chain if there is one
-            string previousVid = MpvPropertyHandler.GetStringProperty(this, "vid");
-            bool hadVideo = previousVid != "no";
-            if (hadVideo)
-                MpvPropertyHandler.SetStringProperty(this, "vid", "no");
-
-            // Wait for the renderer to swap context
-            switchDone.Reset();
-            backend = target;
-            switching = true;
-            redrawSignal.Set();
-            switchDone.Wait();
-
-            // Go back to the previous vid
-            if (hadVideo)
-                MpvPropertyHandler.SetStringProperty(this, "vid", previousVid);
         }
     }
 }
