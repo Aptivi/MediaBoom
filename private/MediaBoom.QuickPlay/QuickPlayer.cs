@@ -53,7 +53,6 @@ namespace MediaBoom.QuickPlay
 
         static int Main(string[] args)
         {
-            Debugger.Launch();
             // Parse the arguments
             ArgumentParse.ParseArguments(args, arguments);
 
