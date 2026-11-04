@@ -173,7 +173,15 @@ namespace MediaBoom.Basolia.Media
         /// </summary>
         /// <param name="stream">Path to a valid stream</param>
         /// <param name="leaveOpen">Whether to leave the stream open or not</param>
-        public void OpenStream(Stream stream, bool leaveOpen = true)
+        public void OpenStream(Stream stream, bool leaveOpen = true) =>
+            Task.Run(() => OpenStreamAsync(stream, leaveOpen)).Wait();
+
+        /// <summary>
+        /// Opens a media file
+        /// </summary>
+        /// <param name="stream">Path to a valid stream</param>
+        /// <param name="leaveOpen">Whether to leave the stream open or not</param>
+        public async Task OpenStreamAsync(Stream stream, bool leaveOpen = true)
         {
             InitBasolia.CheckInited();
             MpvStreamProtocol.EnsureRegistered(this);
