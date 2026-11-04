@@ -117,7 +117,7 @@ namespace MediaBoom.Basolia.Media
             // Shut down the video renderer
             try
             {
-                VideoRenderingTools.ShutdownVideoRenderer();
+                ShutdownVideoRenderer();
                 renderThread?.Wait();
                 var @delegate = NativeInitializer.GetDelegate<NativeInit.mpv_terminate_destroy>(NativeInitializer.libManagerMpv, nameof(NativeInit.mpv_terminate_destroy));
                 @delegate.Invoke(_libmpvHandle);
@@ -329,9 +329,9 @@ namespace MediaBoom.Basolia.Media
                             isVideo = true;
                     }
                 };
-                renderThread ??= new("Video renderer", true, () => VideoRenderingTools.VideoRendererLoop(this));
+                renderThread ??= new("Video renderer", true, VideoRendererLoop);
                 renderThread.Start();
-                SpinWait.SpinUntil(() => !VideoRenderingTools.switching);
+                SpinWait.SpinUntil(() => !switching);
                 StartEventLoop();
             }
             catch (Exception ex)

@@ -191,7 +191,7 @@ namespace MediaBoom.Cli.CliBase
                     {
                         if (MediaBoomCli.basolia is null)
                             throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_EXCEPTION_BASOLIAMEDIA"), MpvError.MPV_ERROR_GENERIC);
-                        VideoRenderingTools.SwitchBackend(MediaBoomCli.basolia, VideoRenderingTools.Backend == VideoRendererBackend.Software ? VideoRendererBackend.OpenGL : VideoRendererBackend.Software);
+                        MediaBoomCli.basolia.SwitchBackend(MediaBoomCli.basolia.Backend == VideoRendererBackend.Software ? VideoRendererBackend.OpenGL : VideoRendererBackend.Software);
                     }
                     else
                         ShowSpecs();

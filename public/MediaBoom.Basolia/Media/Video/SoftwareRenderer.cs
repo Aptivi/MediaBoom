@@ -35,14 +35,10 @@ namespace MediaBoom.Basolia.Media.Video
         private int frontIndex = 0;
         private long bufferSize = 0;
         private readonly object frameLock = new();
-        private NativeRender.mpv_render_update_fn callback = (_) =>
-        {
-            VideoRenderingTools.needsRedraw = true;
-            VideoRenderingTools.redrawSignal.Set();
-        };
+        private NativeRender.mpv_render_update_fn? callback;
 
         public bool NeedsRedraw =>
-            VideoRenderingTools.needsRedraw;
+            media.needsRedraw;
 
         public void Attach()
         {
@@ -78,6 +74,11 @@ namespace MediaBoom.Basolia.Media.Video
                 // Add the callback
                 unsafe
                 {
+                    callback = (_) =>
+                    {
+                        media.needsRedraw = true;
+                        media.redrawSignal.Set();
+                    };
                     var setUpdateCallbackDelegate = NativeInitializer.GetDelegate<NativeRender.mpv_render_context_set_update_callback>(NativeInitializer.libManagerMpv, nameof(NativeRender.mpv_render_context_set_update_callback));
                     setUpdateCallbackDelegate.Invoke(media.renderContext, callback, IntPtr.Zero);
                 }
@@ -103,7 +104,7 @@ namespace MediaBoom.Basolia.Media.Video
         {
             if (!NeedsRedraw)
                 return;
-            VideoRenderingTools.needsRedraw = false;
+            media.needsRedraw = false;
 
             // Get the size
             long width = media.cachedWidth;

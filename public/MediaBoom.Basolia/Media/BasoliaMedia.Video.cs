@@ -19,38 +19,46 @@
 
 using System;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using MediaBoom.Basolia.Exceptions;
+using MediaBoom.Basolia.Languages;
 using MediaBoom.Basolia.Media.Helpers;
+using MediaBoom.Basolia.Media.Playback;
+using MediaBoom.Basolia.Media.Video;
 using MediaBoom.Native;
 using MediaBoom.Native.Interop.Analysis;
 using MediaBoom.Native.Interop.Enumerations;
 
-namespace MediaBoom.Basolia.Media.Video
+namespace MediaBoom.Basolia.Media
 {
-    internal static class VideoRenderingTools
+    /// <summary>
+    /// Basolia instance for media manipulation
+    /// </summary>
+    public partial class BasoliaMedia
     {
-        internal static IVideoRenderer? videoRenderer;
-        internal static VideoRendererBackend backend = VideoRendererBackend.Software;
-        internal static bool needsRedraw = false;
-        internal static bool customVoSet = false;
-        internal static bool renderLooping = true;
-        internal static bool switching = true;
-        internal static readonly AutoResetEvent redrawSignal = new(false);
-        internal static readonly ManualResetEventSlim switchDone = new(false);
+        internal IVideoRenderer? videoRenderer;
+        internal VideoRendererBackend backend = VideoRendererBackend.Software;
+        internal bool needsRedraw = false;
+        internal bool customVoSet = false;
+        internal bool renderLooping = true;
+        internal bool switching = true;
+        internal readonly AutoResetEvent redrawSignal = new(false);
+        internal readonly ManualResetEventSlim switchDone = new(false);
 
-        internal static VideoRendererBackend Backend =>
+        internal VideoRendererBackend Backend =>
             backend;
 
-        internal static void PrepareVideoRenderer(BasoliaMedia media)
+        internal void PrepareVideoRenderer()
         {
-            SetCustomVo(media);
+            SetCustomVo();
 
             // Determine which video renderer to use, and attach
-            videoRenderer = Backend == VideoRendererBackend.OpenGL ? new OpenGLRenderer(media) : new SoftwareRenderer(media);
+            videoRenderer = Backend == VideoRendererBackend.OpenGL ? new OpenGLRenderer(this) : new SoftwareRenderer(this);
         }
 
-        internal static void InitializeVideoRenderer()
+        internal void InitializeVideoRenderer()
         {
             if (videoRenderer is null)
                 return;
@@ -58,7 +66,7 @@ namespace MediaBoom.Basolia.Media.Video
             videoRenderer.Attach();
         }
 
-        internal static void ShutdownVideoRenderer(bool signal = true)
+        internal void ShutdownVideoRenderer(bool signal = true)
         {
             if (videoRenderer is null)
                 return;
@@ -68,17 +76,17 @@ namespace MediaBoom.Basolia.Media.Video
                 renderLooping = false;
         }
 
-        internal static void VideoRendererLoop(BasoliaMedia basoliaMedia)
+        internal void VideoRendererLoop()
         {
-            MpvPropertyHandler.ObserveProperty(basoliaMedia, "dwidth");
-            MpvPropertyHandler.ObserveProperty(basoliaMedia, "dheight");
+            MpvPropertyHandler.ObserveProperty(this, "dwidth");
+            MpvPropertyHandler.ObserveProperty(this, "dheight");
 
-            basoliaMedia.IntegerEventPropertyChanged += (evt) =>
+            IntegerEventPropertyChanged += (evt) =>
             {
                 if (evt.name == "dwidth")
-                    basoliaMedia.cachedWidth = (int)evt.value;
+                    cachedWidth = (int)evt.value;
                 else if (evt.name == "dheight")
-                    basoliaMedia.cachedHeight = (int)evt.value;
+                    cachedHeight = (int)evt.value;
             };
             while (renderLooping)
             {
@@ -87,7 +95,7 @@ namespace MediaBoom.Basolia.Media.Video
                     if (switching)
                     {
                         ShutdownVideoRenderer(false);
-                        PrepareVideoRenderer(basoliaMedia);
+                        PrepareVideoRenderer();
                         InitializeVideoRenderer();
                         switching = false;
                         switchDone.Set();
@@ -103,7 +111,7 @@ namespace MediaBoom.Basolia.Media.Video
             ShutdownVideoRenderer(false);
         }
 
-        internal static void SetCustomVo(BasoliaMedia media)
+        internal void SetCustomVo()
         {
             unsafe
             {
@@ -111,7 +119,7 @@ namespace MediaBoom.Basolia.Media.Video
                 if (!customVoSet)
                 {
                     var setOptionDelegate = NativeInitializer.GetDelegate<NativeParameters.mpv_set_option_string>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_set_option_string));
-                    MpvError initResult = (MpvError)setOptionDelegate.Invoke(media._libmpvHandle, "vo", "libmpv");
+                    MpvError initResult = (MpvError)setOptionDelegate.Invoke(_libmpvHandle, "vo", "libmpv");
                     if (initResult < MpvError.MPV_ERROR_SUCCESS)
                         throw new BasoliaException("Can't initialize libmpv VO", initResult);
                     customVoSet = true;
@@ -119,13 +127,13 @@ namespace MediaBoom.Basolia.Media.Video
             }
         }
 
-        internal static void SwitchBackend(BasoliaMedia media, VideoRendererBackend target)
+        internal void SwitchBackend(VideoRendererBackend target)
         {
             // Remember the selected video track and tear down the chain if there is one
-            string previousVid = MpvPropertyHandler.GetStringProperty(media, "vid");
+            string previousVid = MpvPropertyHandler.GetStringProperty(this, "vid");
             bool hadVideo = previousVid != "no";
             if (hadVideo)
-                MpvPropertyHandler.SetStringProperty(media, "vid", "no");
+                MpvPropertyHandler.SetStringProperty(this, "vid", "no");
 
             // Wait for the renderer to swap context
             switchDone.Reset();
@@ -136,7 +144,7 @@ namespace MediaBoom.Basolia.Media.Video
 
             // Go back to the previous vid
             if (hadVideo)
-                MpvPropertyHandler.SetStringProperty(media, "vid", previousVid);
+                MpvPropertyHandler.SetStringProperty(this, "vid", previousVid);
         }
     }
 }
