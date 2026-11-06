@@ -12,7 +12,7 @@ jobs:
       - name: Download original source
         id: dl
         env:
-          ORIG_VERSION: "2.0.3.0-1.0.0.0-1"
+          ORIG_VERSION: "2.0.3.0-1.0.0.1-1"
         run: |
           UPSTREAM_VERSION=$(echo "$ORIG_VERSION" | sed -E 's/-[^-]+$//')
           ORIG_NAME="mediaboom-3_${UPSTREAM_VERSION}.orig.tar.xz"
