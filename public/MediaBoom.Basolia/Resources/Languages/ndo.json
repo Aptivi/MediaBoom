@@ -205,6 +205,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "Tidak dapat mendaftarkan protokol aliran (stream protocol)"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "Inisialisasi output video gagal"
     }
   ]
 }

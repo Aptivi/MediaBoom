@@ -208,4 +208,7 @@
   <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
     <value>Não foi possível registar o protocolo de fluxo</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED" xml:space="preserve">
+    <value>Falha na inicialização da saída de vídeo</value>
+  </data>
 </root>

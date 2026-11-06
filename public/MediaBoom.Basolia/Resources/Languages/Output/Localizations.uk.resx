@@ -208,4 +208,7 @@
   <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
     <value>Не вдалося зареєструвати протокол потоку</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED" xml:space="preserve">
+    <value>Не вдалося ініціалізувати виведення відео</value>
+  </data>
 </root>

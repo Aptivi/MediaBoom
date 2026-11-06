@@ -208,6 +208,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "無法註冊流協議"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "視訊輸出初始化失敗"
     }
   ]
 }

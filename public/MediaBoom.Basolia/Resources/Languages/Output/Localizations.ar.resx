@@ -208,4 +208,7 @@
   <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
     <value>تعذّر تسجيل بروتوكول البث</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED" xml:space="preserve">
+    <value>فشل تهيئة مخرجات الفيديو</value>
+  </data>
 </root>

@@ -208,4 +208,7 @@
   <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
     <value>स्ट्रीम प्रोटोकॉल को रजिस्टर नहीं किया जा सका</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED" xml:space="preserve">
+    <value>वीडियो आउटपुट इनिशियलाइज़ेशन विफल रहा</value>
+  </data>
 </root>

@@ -208,4 +208,7 @@
   <data name="MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE" xml:space="preserve">
     <value>Ní féidir an prótacal sruthaithe a chlárú</value>
   </data>
+  <data name="MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED" xml:space="preserve">
+    <value>Theip ar thúsú an aschuir físe</value>
+  </data>
 </root>

@@ -205,6 +205,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "Protocollum fluxus (stream protocol) in tabulas referre non potuit"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "Initium exitus visifici defecit."
     }
   ]
 }

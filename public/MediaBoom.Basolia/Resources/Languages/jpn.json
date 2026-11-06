@@ -205,6 +205,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "ストリームプロトコルを登録できません"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "ビデオ出力の初期化に失敗しました"
     }
   ]
 }

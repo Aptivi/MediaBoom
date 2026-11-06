@@ -206,6 +206,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "스트림 프로토콜을 등록할 수 없습니다."
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "비디오 출력 초기화 실패"
     }
   ]
 }

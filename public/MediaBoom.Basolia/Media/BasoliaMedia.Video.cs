@@ -148,7 +148,7 @@ namespace MediaBoom.Basolia.Media
                     var setOptionDelegate = NativeInitializer.GetDelegate<NativeParameters.mpv_set_option_string>(NativeInitializer.libManagerMpv, nameof(NativeParameters.mpv_set_option_string));
                     MpvError initResult = (MpvError)setOptionDelegate.Invoke(_libmpvHandle, "vo", "libmpv");
                     if (initResult < MpvError.MPV_ERROR_SUCCESS)
-                        throw new BasoliaException("Can't initialize libmpv VO", initResult);
+                        throw new BasoliaException(LanguageTools.GetLocalized("MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED"), initResult);
                     customVoSet = true;
                 }
             }

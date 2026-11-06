@@ -205,6 +205,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "स्ट्रीम प्रोटोकॉल को रजिस्टर नहीं किया जा सका"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "वीडियो आउटपुट इनिशियलाइज़ेशन विफल रहा"
     }
   ]
 }

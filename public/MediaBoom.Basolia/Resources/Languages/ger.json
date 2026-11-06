@@ -214,6 +214,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "Stream-Protokoll kann nicht registriert werden"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "Initialisierung der Videoausgabe fehlgeschlagen"
     }
   ]
 }

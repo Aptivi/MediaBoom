@@ -206,6 +206,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "Αδυναμία καταχώρισης του πρωτοκόλλου ροής"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "Η προετοιμασία της εξόδου βίντεο απέτυχε"
     }
   ]
 }

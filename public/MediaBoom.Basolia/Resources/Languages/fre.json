@@ -251,6 +251,10 @@
     {
       "loc": "MEDIABOOM_BASOLIA_MEDIA_EXCEPTION_STREAMPROTOCOLUNREGISTERABLE",
       "text": "Impossible d'enregistrer le protocole de flux"
+    },
+    {
+      "loc": "MEDIABOOM_BASOLIA_VIDEO_EXCEPTION_VOINITFAILED",
+      "text": "L’initialisation de la sortie vidéo a échoué."
     }
   ]
 }
