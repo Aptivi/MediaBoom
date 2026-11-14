@@ -25,12 +25,12 @@ jobs:
           dotnet-version: '10.0.x'
       - name: Setup environment (Unix)
         if: matrix.runs-on == 'ubuntu-latest'
-        run: sudo apt install mono-complete libmpv2
+        run: sudo apt install libmpv2
       - name: Setup environment (macOS)
         if: matrix.runs-on == 'macos-latest'
         run: |
           brew uninstall p7zip
-          brew install mono sevenzip mpv
+          brew install sevenzip mpv
       - name: Solution Compilation
         run: |
           pip install py7zr aptivi-adt
