@@ -9,9 +9,9 @@ import os
 def download_libmpv_win(root_dir, extract: bool = True):
     # Download LibMPV for Windows
     output_dir = root_dir + "/libmpv-win"
-    revision = "2026-11-15-3d73d07e6c"
-    filename_amd = "mpv-dev-x86_64-20261115-git-3d73d07e6c.7z"
-    filename_arm = "mpv-dev-aarch64-20261115-git-3d73d07e6c.7z"
+    revision = "2026-11-16-543a8c2c59"
+    filename_amd = "mpv-dev-x86_64-20261116-git-543a8c2c59.7z"
+    filename_arm = "mpv-dev-aarch64-20261116-git-543a8c2c59.7z"
     link_base = "https://github.com/zhongfly/mpv-winbuild/releases/download/"
     path_amd = output_dir + '/' + filename_amd
     path_arm = output_dir + '/' + filename_arm
